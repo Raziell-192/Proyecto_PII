@@ -106,7 +106,7 @@
               <Font name="Liberation Serif" size="36" style="1"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="Bonjour"/>
+            <Property name="text" type="java.lang.String" value="Iniciar sesi&#xf3;n"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="lblUsuario">

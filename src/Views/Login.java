@@ -1,8 +1,10 @@
+package Views;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package principal;
+
 
 /**
  *
@@ -44,7 +46,7 @@ public class Login extends javax.swing.JFrame {
 
         lblTitulo.setFont(new java.awt.Font("Liberation Serif", 1, 36)); // NOI18N
         lblTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTitulo.setText("Bonjour");
+        lblTitulo.setText("Iniciar sesión");
 
         lblUsuario.setFont(new java.awt.Font("Liberation Serif", 1, 18)); // NOI18N
         lblUsuario.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
