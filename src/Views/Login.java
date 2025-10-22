@@ -69,24 +69,24 @@ public class Login extends javax.swing.JFrame {
         pnlAccesoLayout.setHorizontalGroup(
             pnlAccesoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlAccesoLayout.createSequentialGroup()
+                .addGap(14, 14, 14)
                 .addGroup(pnlAccesoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlAccesoLayout.createSequentialGroup()
-                        .addGap(75, 75, 75)
+                        .addGap(59, 59, 59)
                         .addComponent(lblTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(pnlAccesoLayout.createSequentialGroup()
-                        .addGap(16, 16, 16)
                         .addComponent(lblUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(ComboBoxUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(pnlAccesoLayout.createSequentialGroup()
-                        .addGap(16, 16, 16)
                         .addComponent(lblContrasenya, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(6, 6, 6)
-                        .addComponent(PasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(pnlAccesoLayout.createSequentialGroup()
-                        .addGap(154, 154, 154)
-                        .addComponent(btnIngresar)))
-                .addGap(48, 48, 48))
+                        .addComponent(PasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(20, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlAccesoLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnIngresar)
+                .addGap(123, 123, 123))
         );
         pnlAccesoLayout.setVerticalGroup(
             pnlAccesoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -103,21 +103,21 @@ public class Login extends javax.swing.JFrame {
                     .addGroup(pnlAccesoLayout.createSequentialGroup()
                         .addGap(1, 1, 1)
                         .addComponent(PasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(38, 38, 38)
+                .addGap(18, 18, 18)
                 .addComponent(btnIngresar)
-                .addGap(145, 145, 145))
+                .addContainerGap())
         );
 
-        getContentPane().add(pnlAcceso, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 0, 400, 400));
+        getContentPane().add(pnlAcceso, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 0, 370, 400));
 
         pnlLateral.setBackground(new java.awt.Color(0, 204, 204));
         pnlLateral.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logo2.png"))); // NOI18N
-        pnlLateral.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 400));
+        pnlLateral.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 230, 400));
 
-        getContentPane().add(pnlLateral, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 400));
+        getContentPane().add(pnlLateral, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 230, 400));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
