@@ -33,10 +33,10 @@ public class Login extends javax.swing.JFrame {
         lblUsuario = new javax.swing.JLabel();
         lblContrasenya = new javax.swing.JLabel();
         btnIngresar = new javax.swing.JButton();
-        txtUsuario = new javax.swing.JTextField();
         PasswordField = new javax.swing.JPasswordField();
         ComboBoxUsuario = new javax.swing.JComboBox<>();
         pnlLateral = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("BIENVENIDO");
@@ -87,9 +87,6 @@ public class Login extends javax.swing.JFrame {
                         .addGap(154, 154, 154)
                         .addComponent(btnIngresar)))
                 .addGap(48, 48, 48))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlAccesoLayout.createSequentialGroup()
-                .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(92, 92, 92))
         );
         pnlAccesoLayout.setVerticalGroup(
             pnlAccesoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -108,15 +105,18 @@ public class Login extends javax.swing.JFrame {
                         .addComponent(PasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(38, 38, 38)
                 .addComponent(btnIngresar)
-                .addGap(18, 18, 18)
-                .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(145, 145, 145))
         );
 
         getContentPane().add(pnlAcceso, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 0, 400, 400));
 
         pnlLateral.setBackground(new java.awt.Color(0, 204, 204));
         pnlLateral.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logo2.png"))); // NOI18N
+        pnlLateral.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 400));
+
         getContentPane().add(pnlLateral, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 400));
 
         pack();
@@ -161,11 +161,11 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> ComboBoxUsuario;
     private javax.swing.JPasswordField PasswordField;
     private javax.swing.JButton btnIngresar;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblContrasenya;
     private javax.swing.JLabel lblTitulo;
     private javax.swing.JLabel lblUsuario;
     private javax.swing.JPanel pnlAcceso;
     private javax.swing.JPanel pnlLateral;
-    private javax.swing.JTextField txtUsuario;
     // End of variables declaration//GEN-END:variables
 }
