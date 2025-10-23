@@ -40,27 +40,34 @@ public class Login extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("BIENVENIDO");
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        pnlAcceso.setBackground(new java.awt.Color(204, 255, 255));
+        pnlAcceso.setBackground(new java.awt.Color(0, 81, 135));
 
         lblTitulo.setFont(new java.awt.Font("Liberation Serif", 1, 36)); // NOI18N
+        lblTitulo.setForeground(new java.awt.Color(255, 255, 255));
         lblTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTitulo.setText("Iniciar sesión");
 
         lblUsuario.setFont(new java.awt.Font("Liberation Serif", 1, 18)); // NOI18N
+        lblUsuario.setForeground(new java.awt.Color(255, 255, 255));
         lblUsuario.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblUsuario.setText("Usuario:");
 
         lblContrasenya.setFont(new java.awt.Font("Liberation Serif", 1, 18)); // NOI18N
+        lblContrasenya.setForeground(new java.awt.Color(255, 255, 255));
         lblContrasenya.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblContrasenya.setText("Contraseña:");
 
+        btnIngresar.setBackground(new java.awt.Color(196, 218, 250));
         btnIngresar.setFont(new java.awt.Font("Liberation Serif", 1, 24)); // NOI18N
         btnIngresar.setText("Ingresar");
 
+        PasswordField.setBackground(new java.awt.Color(196, 218, 250));
         PasswordField.setFont(new java.awt.Font("Liberation Serif", 1, 14)); // NOI18N
 
+        ComboBoxUsuario.setBackground(new java.awt.Color(196, 218, 250));
         ComboBoxUsuario.setFont(new java.awt.Font("Liberation Serif", 1, 14)); // NOI18N
         ComboBoxUsuario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Administrador", "Usuario" }));
 
@@ -86,7 +93,7 @@ public class Login extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlAccesoLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnIngresar)
-                .addGap(123, 123, 123))
+                .addGap(121, 121, 121))
         );
         pnlAccesoLayout.setVerticalGroup(
             pnlAccesoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -103,23 +110,25 @@ public class Login extends javax.swing.JFrame {
                     .addGroup(pnlAccesoLayout.createSequentialGroup()
                         .addGap(1, 1, 1)
                         .addComponent(PasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
+                .addGap(40, 40, 40)
                 .addComponent(btnIngresar)
                 .addContainerGap())
         );
 
         getContentPane().add(pnlAcceso, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 0, 370, 400));
 
-        pnlLateral.setBackground(new java.awt.Color(0, 204, 204));
+        pnlLateral.setBackground(new java.awt.Color(77, 130, 188));
         pnlLateral.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel1.setBackground(new java.awt.Color(77, 130, 188));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logo2.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tooth.png"))); // NOI18N
         pnlLateral.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 230, 400));
 
         getContentPane().add(pnlLateral, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 230, 400));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     /**
