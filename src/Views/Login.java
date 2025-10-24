@@ -8,7 +8,7 @@ package Views;
 
 /**
  *
- * @author joaqu
+ * @author jakim
  */
 public class Login extends javax.swing.JFrame {
 
@@ -18,7 +18,7 @@ public class Login extends javax.swing.JFrame {
     public Login() {
         initComponents();
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -45,30 +45,30 @@ public class Login extends javax.swing.JFrame {
 
         pnlAcceso.setBackground(new java.awt.Color(0, 81, 135));
 
-        lblTitulo.setFont(new java.awt.Font("Liberation Serif", 1, 36)); // NOI18N
+        lblTitulo.setFont(new java.awt.Font("Ubuntu Sans", 1, 36)); // NOI18N
         lblTitulo.setForeground(new java.awt.Color(255, 255, 255));
         lblTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTitulo.setText("Iniciar sesión");
 
-        lblUsuario.setFont(new java.awt.Font("Liberation Serif", 1, 18)); // NOI18N
+        lblUsuario.setFont(new java.awt.Font("Ubuntu Sans", 1, 18)); // NOI18N
         lblUsuario.setForeground(new java.awt.Color(255, 255, 255));
         lblUsuario.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblUsuario.setText("Usuario:");
 
-        lblContrasenya.setFont(new java.awt.Font("Liberation Serif", 1, 18)); // NOI18N
+        lblContrasenya.setFont(new java.awt.Font("Ubuntu Sans", 1, 18)); // NOI18N
         lblContrasenya.setForeground(new java.awt.Color(255, 255, 255));
         lblContrasenya.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblContrasenya.setText("Contraseña:");
 
         btnIngresar.setBackground(new java.awt.Color(196, 218, 250));
-        btnIngresar.setFont(new java.awt.Font("Liberation Serif", 1, 24)); // NOI18N
+        btnIngresar.setFont(new java.awt.Font("Ubuntu Sans Mono", 1, 24)); // NOI18N
         btnIngresar.setText("Ingresar");
 
         PasswordField.setBackground(new java.awt.Color(196, 218, 250));
-        PasswordField.setFont(new java.awt.Font("Liberation Serif", 1, 14)); // NOI18N
+        PasswordField.setFont(new java.awt.Font("Ubuntu Sans", 1, 18)); // NOI18N
 
         ComboBoxUsuario.setBackground(new java.awt.Color(196, 218, 250));
-        ComboBoxUsuario.setFont(new java.awt.Font("Liberation Serif", 1, 14)); // NOI18N
+        ComboBoxUsuario.setFont(new java.awt.Font("Ubuntu Sans", 1, 18)); // NOI18N
         ComboBoxUsuario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Administrador", "Usuario" }));
 
         javax.swing.GroupLayout pnlAccesoLayout = new javax.swing.GroupLayout(pnlAcceso);
