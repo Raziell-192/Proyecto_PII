@@ -80,7 +80,13 @@ public class Empleados extends javax.swing.JPanel {
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
 
-        jPanel1.setBackground(new java.awt.Color(204, 204, 255));
+        setBackground(new java.awt.Color(18, 39, 75));
+
+        jTabbedPane1.setBackground(new java.awt.Color(20, 104, 177));
+
+        jPanel1.setBackground(new java.awt.Color(196, 218, 250));
+
+        jPanel4.setBackground(new java.awt.Color(132, 182, 244));
 
         Buscar.add(jRadioButton1);
         jRadioButton1.setText("ID Empleado");
@@ -166,7 +172,9 @@ public class Empleados extends javax.swing.JPanel {
 
         jTabbedPane1.addTab("Buscar", jPanel1);
 
-        jPanel2.setBackground(new java.awt.Color(102, 102, 255));
+        jPanel2.setBackground(new java.awt.Color(196, 218, 250));
+
+        jPanel5.setBackground(new java.awt.Color(132, 182, 244));
 
         jLabel2.setText("Datos del Empleado:");
 
@@ -331,7 +339,7 @@ public class Empleados extends javax.swing.JPanel {
                                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE))))
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel2)
@@ -418,7 +426,7 @@ public class Empleados extends javax.swing.JPanel {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 668, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(32, 32, 32))
         );
         jPanel2Layout.setVerticalGroup(
@@ -431,8 +439,9 @@ public class Empleados extends javax.swing.JPanel {
 
         jTabbedPane1.addTab("Nuevo/Editar", jPanel2);
 
-        jPanel3.setBackground(new java.awt.Color(204, 255, 255));
+        jPanel3.setBackground(new java.awt.Color(77, 130, 188));
 
+        jButton1.setBackground(new java.awt.Color(204, 204, 204));
         jButton1.setText("Guardar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -440,12 +449,16 @@ public class Empleados extends javax.swing.JPanel {
             }
         });
 
+        jButton2.setBackground(new java.awt.Color(204, 204, 204));
         jButton2.setText("Cancelar");
 
+        jButton3.setBackground(new java.awt.Color(204, 204, 204));
         jButton3.setText("Nuevo");
 
+        jButton4.setBackground(new java.awt.Color(204, 204, 204));
         jButton4.setText("Salir");
 
+        jButton5.setBackground(new java.awt.Color(204, 204, 204));
         jButton5.setText("Modificar");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
