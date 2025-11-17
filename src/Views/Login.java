@@ -1,14 +1,19 @@
 package Views;
 
 import controllers.LoginController;
+import java.awt.Graphics2D;
+import java.awt.Image;
+import java.awt.RenderingHints;
+import java.awt.image.BufferedImage;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-
-
-/**
+ /*
  *
  * @author jakim
  */
@@ -19,10 +24,12 @@ public class Login extends javax.swing.JFrame {
      */
     public Login() {
         initComponents();
+        //colocarImagenLabel(jlabel1, "/images/logo_UnsiSmile.png");
+        //colocarImagenLabel(jlabel1, "/images/tooth.png");
         //Controlador de login
         LoginController emplado_login = new LoginController(this);
     }
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -40,14 +47,15 @@ public class Login extends javax.swing.JFrame {
         PasswordField = new javax.swing.JPasswordField();
         ComboBoxUsuario = new javax.swing.JComboBox<>();
         pnlLateral = new javax.swing.JPanel();
+        jlabel1 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Bienvenido");
+        setTitle("UnsiSmile");
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        pnlAcceso.setBackground(new java.awt.Color(0, 81, 135));
+        pnlAcceso.setBackground(new java.awt.Color(0, 56, 101));
 
         lblTitulo.setFont(new java.awt.Font("Calibri", 1, 36)); // NOI18N
         lblTitulo.setForeground(new java.awt.Color(255, 255, 255));
@@ -80,24 +88,24 @@ public class Login extends javax.swing.JFrame {
         pnlAccesoLayout.setHorizontalGroup(
             pnlAccesoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlAccesoLayout.createSequentialGroup()
-                .addGap(14, 14, 14)
+                .addGap(26, 26, 26)
                 .addGroup(pnlAccesoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlAccesoLayout.createSequentialGroup()
-                        .addGap(59, 59, 59)
+                        .addGap(34, 34, 34)
                         .addComponent(lblTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(pnlAccesoLayout.createSequentialGroup()
-                        .addComponent(lblUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(ComboBoxUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(pnlAccesoLayout.createSequentialGroup()
-                        .addComponent(lblContrasenya, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(6, 6, 6)
-                        .addComponent(PasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(20, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlAccesoLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnIngresar)
-                .addGap(121, 121, 121))
+                        .addGap(98, 98, 98)
+                        .addComponent(btnIngresar))
+                    .addGroup(pnlAccesoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(pnlAccesoLayout.createSequentialGroup()
+                            .addComponent(lblUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(ComboBoxUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(pnlAccesoLayout.createSequentialGroup()
+                            .addComponent(lblContrasenya, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(PasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(33, Short.MAX_VALUE))
         );
         pnlAccesoLayout.setVerticalGroup(
             pnlAccesoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -124,16 +132,35 @@ public class Login extends javax.swing.JFrame {
         pnlLateral.setBackground(new java.awt.Color(77, 130, 188));
         pnlLateral.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setBackground(new java.awt.Color(77, 130, 188));
+        jlabel1.setBackground(new java.awt.Color(77, 130, 188));
+        jlabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jlabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tooth.png"))); // NOI18N
+        pnlLateral.add(jlabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 230, 230));
+
+        jLabel1.setFont(new java.awt.Font("Lucida Calligraphy", 1, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tooth.png"))); // NOI18N
-        pnlLateral.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 230, 400));
+        jLabel1.setText("UnsiSmile");
+        pnlLateral.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, 230, 60));
 
         getContentPane().add(pnlLateral, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 230, 400));
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+//    public void colocarImagenLabel(JLabel etiqueta, String ruta) {
+//        ImageIcon imagen = new ImageIcon(getClass().getResource(ruta));
+//        Icon icono = new ImageIcon(
+//                imagen.getImage().getScaledInstance(
+//                        etiqueta.getWidth(),
+//                        etiqueta.getHeight(),
+//                        Image.SCALE_DEFAULT
+//                )
+//        );
+//        etiqueta.setIcon(icono);
+//        this.repaint();
+//    }
 
     /**
      * @param args the command line arguments
@@ -175,6 +202,7 @@ public class Login extends javax.swing.JFrame {
     public javax.swing.JPasswordField PasswordField;
     public javax.swing.JButton btnIngresar;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jlabel1;
     private javax.swing.JLabel lblContrasenya;
     private javax.swing.JLabel lblTitulo;
     private javax.swing.JLabel lblUsuario;

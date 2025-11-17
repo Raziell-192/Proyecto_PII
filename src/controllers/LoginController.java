@@ -48,7 +48,7 @@ public class LoginController implements ActionListener {
                 }
                 //this.login_view.dispose();
             } else {
-                JOptionPane.showMessageDialog(null, "Campo vacío.", "Advertencia", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Campo vacío.", "Advertencia", JOptionPane.WARNING_MESSAGE);
             }
         }
     }
