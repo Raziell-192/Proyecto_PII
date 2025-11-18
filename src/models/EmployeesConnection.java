@@ -18,7 +18,8 @@ public class EmployeesConnection {
     
     //Variables para enviar datos entre interfaces
     public static int idUsuario = 0;
-    public static String nombreCompletoUsuario = "";
+    public static String nombreUsuario = "";
+    public static String apellidoUsuario = "";
     public static String usernameUsuario = "";
     public static String direccionUsuario = "";
     public static String telefonoUsuario = "";
@@ -26,13 +27,13 @@ public class EmployeesConnection {
     public static String rolUsuario = "";
     
     //Método Login
-    public Employee ingresarConsulta(String usuario, String contrasenya){
-        String query = "SELECT * FROM empleados WHERE username = ? AND password = ?";
+    public Employee consultarEmpleado(String usuario, String contrasenya){
+        String query = "SELECT * FROM empleados WHERE username = ? AND contrasenya = ?";
         Employee empleado = new Employee();
         try{
             con = cn.conectar();
             ps = con.prepareStatement(query);
-            
+
             //Enviar parámetros
             ps.setString(1, usuario);
             ps.setString(2, contrasenya);
@@ -40,10 +41,12 @@ public class EmployeesConnection {
             rs = ps.executeQuery();
             
             if(rs.next()){
-                empleado.setId(rs.getInt("id"));
+                empleado.setId(rs.getInt("\"idEmpleado\""));
                 idUsuario = empleado.getId();
-                empleado.setNombreCompleto(rs.getString("nombreCompleto"));
-                nombreCompletoUsuario = empleado.getNombreCompleto();
+                empleado.setNombre(rs.getString("nombre"));
+                nombreUsuario = empleado.getNombre();
+                empleado.setApellido(rs.getString("apellido"));
+                apellidoUsuario = empleado.getApellido();
                 empleado.setNombreDeUsuario(rs.getString("username"));
                 usernameUsuario = empleado.getNombreDeUsuario();
                 empleado.setDireccion(rs.getString("direccion"));
@@ -64,19 +67,20 @@ public class EmployeesConnection {
     
     //Registrar empleado
     public boolean registrarEmpleadoQuery(Employee empleado) {
-        String query = "INSERT INTO empleados (id,nombreCompleto, username, direccion, telefono, email, contrasenya, rol, cretaed, updated) VALUES (?,?,?,?,?,?,?,?,?,?)";
+        String query = "INSERT INTO empleados (\"idEmpleado\", nombre, apellido, username, direccion, telefono, email, contrasenya, rol) VALUES (?,?,?,?,?,?,?,?,?)";
         //Timestamp dateTime = new Timestamp(new Date().getTime());
         try {
             con = cn.conectar();
             ps = con.prepareStatement(query);
             ps.setInt(1, empleado.getId());
-            ps.setString(2, empleado.getNombreCompleto());
-            ps.setString(3, empleado.getNombreDeUsuario());
-            ps.setString(4, empleado.getDireccion());
-            ps.setString(5, empleado.getTelefono());
-            ps.setString(6, empleado.getEmail());
-            ps.setString(7, empleado.getContrasenya());
-            ps.setString(8, empleado.getRol());
+            ps.setString(2, empleado.getNombre());
+            ps.setString(3, empleado.getApellido());
+            ps.setString(4, empleado.getNombreDeUsuario());
+            ps.setString(5, empleado.getDireccion());
+            ps.setString(6, empleado.getTelefono());
+            ps.setString(7, empleado.getEmail());
+            ps.setString(8, empleado.getContrasenya());
+            ps.setString(9, empleado.getRol());
 
 //            ps.setTimestamp(9, dateTime);
 //            ps.setTimestamp(10, dateTime);
@@ -90,54 +94,56 @@ public class EmployeesConnection {
     }
 
     //Método listar empleado
-    public List listaEmpleadosQuery(String valor) {
-        List<Employee> listaEmpleados = new ArrayList();
-        String query = "SELECT * FROM emplados ORDER BY rol ASC";
-        String queryBuscarEmpleado = "SELECT * FROM empleados WHERE id LIKE '%" + valor + "%'";
-        try {
-            con = cn.conectar();
-            if (valor.equalsIgnoreCase("")) {
-                ps = con.prepareStatement(query);
-                rs = ps.executeQuery();
-            } else {
-                ps = con.prepareStatement(queryBuscarEmpleado);
-                rs = ps.executeQuery();
-            }
-            while (rs.next()) {
-                Employee empleado = new Employee();
-                empleado.setId(rs.getInt("id"));
-                empleado.setNombreCompleto(rs.getString("nombreCompleto"));
-                empleado.setNombreDeUsuario(rs.getString("username"));
-                empleado.setDireccion(rs.getString("direccion"));
-                empleado.setTelefono(rs.getString("telefono"));
-                empleado.setEmail(rs.getString("email"));
-                empleado.setRol(rs.getString("rol"));
-
-                listaEmpleados.add(empleado);
-
-            }
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, e.toString());
-        }
-        return listaEmpleados;
-    }
+//    public List listaEmpleadosQuery(String valor) {
+//        List<Employee> listaEmpleados = new ArrayList();
+//        String query = "SELECT * FROM emplados ORDER BY rol ASC";
+//        String queryBuscarEmpleado = "SELECT * FROM empleados WHERE id LIKE '%" + valor + "%'";
+//        try {
+//            con = cn.conectar();
+//            if (valor.equalsIgnoreCase("")) {
+//                ps = con.prepareStatement(query);
+//                rs = ps.executeQuery();
+//            } else {
+//                ps = con.prepareStatement(queryBuscarEmpleado);
+//                rs = ps.executeQuery();
+//            }
+//            while (rs.next()) {
+//                Employee empleado = new Employee();
+//                empleado.setId(rs.getInt("\"idEmpleado\""));
+//                empleado.setNombre(rs.getString("nombre"));
+//                empleado.setApellido(rs.getString("apellido"));
+//                empleado.setNombreDeUsuario(rs.getString("username"));
+//                empleado.setDireccion(rs.getString("direccion"));
+//                empleado.setTelefono(rs.getString("telefono"));
+//                empleado.setEmail(rs.getString("email"));
+//                empleado.setRol(rs.getString("rol"));
+//
+//                listaEmpleados.add(empleado);
+//
+//            }
+//        } catch (SQLException e) {
+//            JOptionPane.showMessageDialog(null, e.toString());
+//        }
+//        return listaEmpleados;
+//    }
 
     //Modificar empleado
     public boolean actualizarEmpleadoQuery(Employee empleado) {
-        String query = "UPDATE empleados SET nombreCompleto = ?, username =?, "
-                + "direccion =?, telefono=?, email=?, rol=? WHERE id=?";
+        String query = "UPDATE empleados SET nombre = ?, apellido = ?, username = ?, "
+                + "direccion = ?, telefono= ?, email = ?, rol = ? WHERE \"idEmpleado\" = ?";
         try {
             con = cn.conectar();
             ps = con.prepareStatement(query);
 
-            ps.setString(1, empleado.getNombreCompleto());
-            ps.setString(2, empleado.getNombreDeUsuario());
-            ps.setString(3, empleado.getDireccion());
-            ps.setString(4, empleado.getTelefono());
-            ps.setString(5, empleado.getEmail());
-            ps.setString(6, empleado.getContrasenya());
-            ps.setString(7, empleado.getRol());
-            ps.setInt(8, empleado.getId());
+            ps.setString(1, empleado.getNombre());
+            ps.setString(2, empleado.getApellido());
+            ps.setString(3, empleado.getNombreDeUsuario());
+            ps.setString(4, empleado.getDireccion());
+            ps.setString(5, empleado.getTelefono());
+            ps.setString(6, empleado.getEmail());
+            ps.setString(7, empleado.getContrasenya());
+            ps.setString(8, empleado.getRol());
+            ps.setInt(9, empleado.getId());
 
             ps.execute();
 
@@ -150,7 +156,7 @@ public class EmployeesConnection {
 
     //Eliminar empleado
     public boolean eliminarEmpleadoQuery(int id) {
-        String query = "DELETE FROM empleados WHERE id = " + id;
+        String query = "DELETE FROM empleados WHERE idEmpleado = " + id;
         try {
             con = cn.conectar();
             ps = con.prepareStatement(query);
@@ -164,7 +170,7 @@ public class EmployeesConnection {
     }
 
     //Cambiar contraseña
-    public boolean eliminarEmpleadoContrasenya(Employee empleado) {
+    public boolean cambiarEmpleadoContrasenya(Employee empleado) {
         String query = "UPDATE empleados SET contrasenya = ? WHERE username = '" + usernameUsuario + "'";
         try{
             con = cn.conectar();
