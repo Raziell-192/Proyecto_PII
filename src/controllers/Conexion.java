@@ -14,7 +14,22 @@ public class Conexion {
     private static String url="jdbc:postgresql://localhost:5432/bd_clinica_dental";
     private static String contra="*****";
     
-    public static void conectar(){
+//    public static void conectar(){
+//        try{
+//            con = DriverManager.getConnection(
+//                url, 
+//                "postgres", 
+//                contra
+//            );
+//            System.out.println("Conexión establecida");
+//            st=con.createStatement();
+//        }
+//        catch(Exception ex){
+//            System.out.println("Error de conexión: " + ex.getMessage());
+//        }   
+//    }
+    
+    public static Connection conectar(){
         try{
             con = DriverManager.getConnection(
                 url, 
@@ -26,7 +41,8 @@ public class Conexion {
         }
         catch(Exception ex){
             System.out.println("Error de conexión: " + ex.getMessage());
-        }   
+        }
+        return con;
     }
     
     public static boolean Operacion(String sql) {
