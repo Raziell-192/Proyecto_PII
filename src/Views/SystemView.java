@@ -158,6 +158,10 @@ public class SystemView extends javax.swing.JFrame {
         cmbRolEmpleado = new javax.swing.JComboBox<>();
         passwordEmpleado = new javax.swing.JPasswordField();
         btnRegistrarEmpleado = new javax.swing.JButton();
+        jPanel23 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        jLabel57 = new javax.swing.JLabel();
         jPanel8 = new javax.swing.JPanel();
         jPanel9 = new javax.swing.JPanel();
         jPanel10 = new javax.swing.JPanel();
@@ -926,91 +930,142 @@ public class SystemView extends javax.swing.JFrame {
         jPanel21.setBackground(new java.awt.Color(132, 182, 244));
         jPanel21.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel51.setFont(new java.awt.Font("Liberation Serif", 1, 24)); // NOI18N
         jLabel51.setText("Registrar empleado ");
         jPanel21.add(jLabel51, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, -1, -1));
 
-        jLabel52.setText("Número de identificación:");
-        jPanel21.add(jLabel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(23, 43, -1, -1));
+        jLabel52.setFont(new java.awt.Font("Liberation Serif", 0, 18)); // NOI18N
+        jLabel52.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel52.setText("Id:");
+        jPanel21.add(jLabel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 50, -1, -1));
 
+        jLabel53.setFont(new java.awt.Font("Liberation Serif", 0, 18)); // NOI18N
         jLabel53.setText("Nombre:");
-        jPanel21.add(jLabel53, new org.netbeans.lib.awtextra.AbsoluteConstraints(23, 80, -1, -1));
+        jPanel21.add(jLabel53, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, -1, -1));
 
+        jLabel55.setFont(new java.awt.Font("Liberation Serif", 0, 18)); // NOI18N
         jLabel55.setText("Apellidos:");
-        jPanel21.add(jLabel55, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, -1, -1));
+        jPanel21.add(jLabel55, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, -1, -1));
 
+        jLabel56.setFont(new java.awt.Font("Liberation Serif", 0, 18)); // NOI18N
         jLabel56.setText("Email:");
-        jPanel21.add(jLabel56, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, -1, -1));
+        jPanel21.add(jLabel56, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 90, -1, -1));
 
+        txtIdEmpleado.setFont(new java.awt.Font("Liberation Serif", 0, 18)); // NOI18N
         txtIdEmpleado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtIdEmpleadoActionPerformed(evt);
             }
         });
-        jPanel21.add(txtIdEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(181, 40, 158, -1));
+        jPanel21.add(txtIdEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 50, 200, -1));
 
+        txtNombreEmpleado.setFont(new java.awt.Font("Liberation Serif", 0, 18)); // NOI18N
         txtNombreEmpleado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNombreEmpleadoActionPerformed(evt);
             }
         });
-        jPanel21.add(txtNombreEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(181, 80, 158, -1));
+        jPanel21.add(txtNombreEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 90, 200, -1));
 
+        txtApellidoEmpleado.setFont(new java.awt.Font("Liberation Serif", 0, 18)); // NOI18N
         txtApellidoEmpleado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtApellidoEmpleadoActionPerformed(evt);
             }
         });
-        jPanel21.add(txtApellidoEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 120, 158, -1));
+        jPanel21.add(txtApellidoEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 130, 200, -1));
 
+        txtEmailEmpleado.setFont(new java.awt.Font("Liberation Serif", 0, 18)); // NOI18N
         txtEmailEmpleado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtEmailEmpleadoActionPerformed(evt);
             }
         });
-        jPanel21.add(txtEmailEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 310, 140, -1));
+        jPanel21.add(txtEmailEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 90, 200, -1));
 
+        jLabel60.setFont(new java.awt.Font("Liberation Serif", 0, 18)); // NOI18N
         jLabel60.setText("Dirección:");
-        jPanel21.add(jLabel60, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 138, -1));
+        jPanel21.add(jLabel60, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 90, 80, -1));
 
+        jLabel61.setFont(new java.awt.Font("Liberation Serif", 0, 18)); // NOI18N
         jLabel61.setText("Contraseña:");
-        jPanel21.add(jLabel61, new org.netbeans.lib.awtextra.AbsoluteConstraints(23, 243, -1, -1));
+        jPanel21.add(jLabel61, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 130, -1, -1));
 
+        jLabel62.setFont(new java.awt.Font("Liberation Serif", 0, 18)); // NOI18N
         jLabel62.setText("Teléfono:");
-        jPanel21.add(jLabel62, new org.netbeans.lib.awtextra.AbsoluteConstraints(23, 277, -1, -1));
+        jPanel21.add(jLabel62, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 50, -1, -1));
 
+        jLabel63.setFont(new java.awt.Font("Liberation Serif", 0, 18)); // NOI18N
         jLabel63.setText("Rol:");
-        jPanel21.add(jLabel63, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 340, -1, -1));
-        jPanel21.add(txtTelefonoEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 274, 160, -1));
-        jPanel21.add(txtDireccionEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 200, 154, -1));
+        jPanel21.add(jLabel63, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 130, -1, -1));
 
+        txtTelefonoEmpleado.setFont(new java.awt.Font("Liberation Serif", 0, 18)); // NOI18N
+        jPanel21.add(txtTelefonoEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 50, 200, -1));
+
+        txtDireccionEmpleado.setFont(new java.awt.Font("Liberation Serif", 0, 18)); // NOI18N
+        jPanel21.add(txtDireccionEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 90, 200, -1));
+
+        jLabel125.setFont(new java.awt.Font("Liberation Serif", 0, 18)); // NOI18N
         jLabel125.setText("Username:");
-        jPanel21.add(jLabel125, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
+        jPanel21.add(jLabel125, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 50, -1, -1));
 
+        txtUsernameEmpleado.setFont(new java.awt.Font("Liberation Serif", 0, 18)); // NOI18N
         txtUsernameEmpleado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtUsernameEmpleadoActionPerformed(evt);
             }
         });
-        jPanel21.add(txtUsernameEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 160, 129, -1));
+        jPanel21.add(txtUsernameEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 50, 200, -1));
 
+        cmbRolEmpleado.setFont(new java.awt.Font("Liberation Serif", 0, 18)); // NOI18N
         cmbRolEmpleado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Administrador", "Auxiliar" }));
-        jPanel21.add(cmbRolEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 340, -1, -1));
-        jPanel21.add(passwordEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 240, 170, -1));
+        jPanel21.add(cmbRolEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 130, 200, -1));
 
+        passwordEmpleado.setFont(new java.awt.Font("Liberation Serif", 0, 18)); // NOI18N
+        jPanel21.add(passwordEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 130, 200, -1));
+
+        btnRegistrarEmpleado.setFont(new java.awt.Font("Liberation Serif", 1, 24)); // NOI18N
         btnRegistrarEmpleado.setText("Registrar");
-        jPanel21.add(btnRegistrarEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 440, -1, -1));
+        jPanel21.add(btnRegistrarEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 180, -1, -1));
+
+        jPanel23.setBackground(new java.awt.Color(204, 255, 204));
+        jPanel23.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Id", "Nombre", "Apellido", "Username", "Dirección", "Teléfono", "Email", "Rol"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
+        jPanel23.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 50, 790, 300));
+
+        jLabel57.setFont(new java.awt.Font("Liberation Serif", 1, 24)); // NOI18N
+        jLabel57.setText("Empleados");
+        jPanel23.add(jLabel57, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 10, -1, -1));
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
-                .addComponent(jPanel21, javax.swing.GroupLayout.PREFERRED_SIZE, 984, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel21, javax.swing.GroupLayout.DEFAULT_SIZE, 984, Short.MAX_VALUE)
+                    .addComponent(jPanel23, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(0, 64, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addComponent(jPanel21, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel23, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         Productos.addTab("Empleados", jPanel7);
@@ -1438,6 +1493,7 @@ public class SystemView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel54;
     private javax.swing.JLabel jLabel55;
     private javax.swing.JLabel jLabel56;
+    private javax.swing.JLabel jLabel57;
     private javax.swing.JLabel jLabel60;
     private javax.swing.JLabel jLabel61;
     private javax.swing.JLabel jLabel62;
@@ -1457,6 +1513,7 @@ public class SystemView extends javax.swing.JFrame {
     public javax.swing.JPanel jPanel20;
     private javax.swing.JPanel jPanel21;
     private javax.swing.JPanel jPanel22;
+    private javax.swing.JPanel jPanel23;
     private javax.swing.JPanel jPanel28;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -1474,7 +1531,9 @@ public class SystemView extends javax.swing.JFrame {
     private javax.swing.JRadioButton jRadioButton7;
     private javax.swing.JRadioButton jRadioButton8;
     private javax.swing.JRadioButton jRadioButton9;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
+    private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField102;
     private javax.swing.JTextField jTextField14;
     private javax.swing.JTextField jTextField15;
