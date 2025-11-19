@@ -171,8 +171,8 @@ public class SystemView extends javax.swing.JFrame {
         Nommmm = new javax.swing.JTextField();
         Buscar = new javax.swing.JButton();
         jPanel9 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTable3 = new javax.swing.JTable();
         jLabel5 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
@@ -965,35 +965,15 @@ public class SystemView extends javax.swing.JFrame {
         jPanel21.add(jLabel56, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 90, -1, -1));
 
         txtIdEmpleado.setFont(new java.awt.Font("Liberation Serif", 0, 18)); // NOI18N
-        txtIdEmpleado.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtIdEmpleadoActionPerformed(evt);
-            }
-        });
         jPanel21.add(txtIdEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 50, 200, -1));
 
         txtNombreEmpleado.setFont(new java.awt.Font("Liberation Serif", 0, 18)); // NOI18N
-        txtNombreEmpleado.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNombreEmpleadoActionPerformed(evt);
-            }
-        });
         jPanel21.add(txtNombreEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 90, 200, -1));
 
         txtApellidoEmpleado.setFont(new java.awt.Font("Liberation Serif", 0, 18)); // NOI18N
-        txtApellidoEmpleado.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtApellidoEmpleadoActionPerformed(evt);
-            }
-        });
         jPanel21.add(txtApellidoEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 130, 200, -1));
 
         txtEmailEmpleado.setFont(new java.awt.Font("Liberation Serif", 0, 18)); // NOI18N
-        txtEmailEmpleado.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtEmailEmpleadoActionPerformed(evt);
-            }
-        });
         jPanel21.add(txtEmailEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 90, 200, -1));
 
         jLabel60.setFont(new java.awt.Font("Liberation Serif", 0, 18)); // NOI18N
@@ -1023,11 +1003,6 @@ public class SystemView extends javax.swing.JFrame {
         jPanel21.add(jLabel125, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 50, -1, -1));
 
         txtUsernameEmpleado.setFont(new java.awt.Font("Liberation Serif", 0, 18)); // NOI18N
-        txtUsernameEmpleado.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtUsernameEmpleadoActionPerformed(evt);
-            }
-        });
         jPanel21.add(txtUsernameEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 50, 200, -1));
 
         cmbRolEmpleado.setFont(new java.awt.Font("Liberation Serif", 0, 18)); // NOI18N
@@ -1039,6 +1014,7 @@ public class SystemView extends javax.swing.JFrame {
 
         btnRegistrarEmpleado.setFont(new java.awt.Font("Liberation Serif", 1, 24)); // NOI18N
         btnRegistrarEmpleado.setText("Registrar");
+        btnRegistrarEmpleado.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel21.add(btnRegistrarEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 180, -1, -1));
 
         jPanel23.setBackground(new java.awt.Color(204, 255, 204));
@@ -1116,49 +1092,18 @@ public class SystemView extends javax.swing.JFrame {
 
         Insert.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Insert.setText("Insertar");
-        Insert.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                InsertActionPerformed(evt);
-            }
-        });
 
         Edit.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Edit.setText("Editar");
-        Edit.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                EditActionPerformed(evt);
-            }
-        });
 
         Clear.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Clear.setText("Limpiar");
-        Clear.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ClearActionPerformed(evt);
-            }
-        });
 
         Delete.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Delete.setText("Eliminar");
-        Delete.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DeleteActionPerformed(evt);
-            }
-        });
-
-        Nommmm.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NommmmActionPerformed(evt);
-            }
-        });
 
         Buscar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Buscar.setText("Buscar");
-        Buscar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BuscarActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
@@ -1211,8 +1156,8 @@ public class SystemView extends javax.swing.JFrame {
 
         jPanel9.setBackground(new java.awt.Color(196, 218, 250));
 
-        jTable1.setBackground(new java.awt.Color(153, 255, 204));
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jTable3.setBackground(new java.awt.Color(153, 255, 204));
+        jTable3.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
                 {null, null, null, null, null},
@@ -1223,7 +1168,7 @@ public class SystemView extends javax.swing.JFrame {
                 "Parametros", "Resultado", "Unidad", "Indice de Referencia", "Fecha"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane3.setViewportView(jTable3);
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel5.setText("Datos del Paciente");
@@ -1255,24 +1200,6 @@ public class SystemView extends javax.swing.JFrame {
         jLabel16.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel16.setText("Registro");
 
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
-            }
-        });
-
-        jTextField7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField7ActionPerformed(evt);
-            }
-        });
-
-        jTextField8.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField8ActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
         jPanel9Layout.setHorizontalGroup(
@@ -1281,7 +1208,7 @@ public class SystemView extends javax.swing.JFrame {
                 .addGap(110, 110, 110)
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel9Layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 692, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 692, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel9Layout.createSequentialGroup()
                         .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1334,11 +1261,12 @@ public class SystemView extends javax.swing.JFrame {
                 .addGap(50, 50, 50)
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel9Layout.createSequentialGroup()
-                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel7)
-                            .addComponent(jLabel14)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel14, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel7)
+                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel8)
@@ -1359,7 +1287,7 @@ public class SystemView extends javax.swing.JFrame {
                         .addComponent(jLabel13)
                         .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(64, 64, 64))
         );
 
@@ -1396,32 +1324,8 @@ public class SystemView extends javax.swing.JFrame {
         jLabel127.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel127.setText("Fecha de ingreso:");
 
-        jTextField94.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField94ActionPerformed(evt);
-            }
-        });
-
-        jTextField95.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField95ActionPerformed(evt);
-            }
-        });
-
-        jTextField96.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField96ActionPerformed(evt);
-            }
-        });
-
         jLabel131.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel131.setText("Direccion:");
-
-        jTextField98.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField98ActionPerformed(evt);
-            }
-        });
 
         jLabel132.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel132.setText("Teléfono:");
@@ -1545,7 +1449,7 @@ public class SystemView extends javax.swing.JFrame {
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Productos, javax.swing.GroupLayout.DEFAULT_SIZE, 750, Short.MAX_VALUE)
+            .addComponent(Productos)
         );
 
         getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 0, 990, 750));
@@ -1653,42 +1557,6 @@ public class SystemView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jPasswordField1ActionPerformed
 
-    private void txtIdEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdEmpleadoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtIdEmpleadoActionPerformed
-
-    private void txtNombreEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreEmpleadoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtNombreEmpleadoActionPerformed
-
-    private void txtApellidoEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtApellidoEmpleadoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtApellidoEmpleadoActionPerformed
-
-    private void txtEmailEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmailEmpleadoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtEmailEmpleadoActionPerformed
-
-    private void jTextField98ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField98ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField98ActionPerformed
-
-    private void jTextField96ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField96ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField96ActionPerformed
-
-    private void jTextField95ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField95ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField95ActionPerformed
-
-    private void jTextField94ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField94ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField94ActionPerformed
-
-    private void txtUsernameEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsernameEmpleadoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtUsernameEmpleadoActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -1748,8 +1616,11 @@ public class SystemView extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     public javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel122;
     private javax.swing.JLabel jLabel123;
     private javax.swing.JLabel jLabel124;
@@ -1795,6 +1666,7 @@ public class SystemView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel47;
     private javax.swing.JLabel jLabel48;
     private javax.swing.JLabel jLabel49;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel51;
     private javax.swing.JLabel jLabel52;
     private javax.swing.JLabel jLabel53;
@@ -1802,10 +1674,14 @@ public class SystemView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel55;
     private javax.swing.JLabel jLabel56;
     private javax.swing.JLabel jLabel57;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel60;
     private javax.swing.JLabel jLabel61;
     private javax.swing.JLabel jLabel62;
     private javax.swing.JLabel jLabel63;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
@@ -1840,8 +1716,14 @@ public class SystemView extends javax.swing.JFrame {
     private javax.swing.JRadioButton jRadioButton8;
     private javax.swing.JRadioButton jRadioButton9;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTable2;
+    private javax.swing.JTable jTable3;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField10;
     private javax.swing.JTextField jTextField102;
     private javax.swing.JTextField jTextField14;
     private javax.swing.JTextField jTextField15;
@@ -1869,6 +1751,12 @@ public class SystemView extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField35;
     private javax.swing.JTextField jTextField36;
     private javax.swing.JTextField jTextField37;
+    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField jTextField6;
+    private javax.swing.JTextField jTextField7;
+    private javax.swing.JTextField jTextField8;
+    private javax.swing.JTextField jTextField9;
     private javax.swing.JTextField jTextField94;
     private javax.swing.JTextField jTextField95;
     private javax.swing.JTextField jTextField96;
