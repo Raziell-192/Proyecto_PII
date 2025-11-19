@@ -18,45 +18,46 @@ public class EmployeesController implements ActionListener{
     private SystemView vista;
     String rol = rolUsuario;
 
-//    public EmployeesController(Employee empleado, EmployeesConnection empleadoConexion, SystemView vista) {
-//        this.empleado = empleado;
-//        this.empleadoConexion = empleadoConexion;
-//        this.vista = vista;
-//        this.vista.btnRegistrarEmpleado.addActionListener(this);
-//    }
-//
-//    @Override
-//    public void actionPerformed(ActionEvent e) {
-//        if(e.getSource() == vista.btnRegistrarEmpleado){
-//            if(vista.txtIdEmpleado.getText().equals("")
-//                    || vista.txtNombreEmpleado.getText().equals("")
-//                    || vista.txtUsernameEmpleado.getText().equals("")
-//                    || vista.txtDireccionEmpleado.getText().equals("")
-//                    || vista.txtTelefonoEmpleado.getText().equals("")
-//                    || vista.txtEmailEmpleado.getText().equals("")
-//                    || vista.txtRolEmpleado.getSelectedItem().toString().equals("")
-//                    || String.valueOf(vista.passwordEmpleado.getPassword()).equals(""))){
-//            
-//                JOptionPane.showMessageDialog(null, "Todos los campos son obligatorios.");
-//            }else{
-//                    empleado.setId(Integer.parseInt(vista.txtIdEmpleado.getText().trim()));
-//                    empleado.setNombreCompleto(vista.txtNombreEmpleado.getText().trim());
-//                    /**/
-//                    empleado.setContrasenya(String.valueOf(vista.passwordEmpleado.getPassword()));
-//                    empleado.setRol(vista.cmbRol.getSelectedItem().toString());
-//                    }
-//            if(empleadoConexion.registrarEmpleadoQuery(empleado)){
-//                JOptionPane.showMessageDialog(null, "Empleado registrado con éxito.");
-//            }else{
-//                JOptionPane.showMessageDialog(null, "Ocurrió un error al registrar empleado.");
-//            }
-//        }
-//    }
+    public EmployeesController(Employee empleado, EmployeesConnection empleadoConexion, SystemView vista) {
+        this.empleado = empleado;
+        this.empleadoConexion = empleadoConexion;
+        this.vista = vista;
+        this.vista.btnRegistrarEmpleado.addActionListener(this);
+    }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        if(e.getSource() == vista.btnRegistrarEmpleado){
+            if(vista.txtIdEmpleado.getText().equals("")
+                    || vista.txtNombreEmpleado.getText().equals("")
+                    || vista.txtApellidoEmpleado.getText().equals("")
+                    || vista.txtUsernameEmpleado.getText().equals("")
+                    || vista.txtDireccionEmpleado.getText().equals("")
+                    || vista.txtTelefonoEmpleado.getText().equals("")
+                    || vista.txtEmailEmpleado.getText().equals("")
+                    || vista.cmbRolEmpleado.getSelectedItem().toString().equals("")
+                    || String.valueOf(vista.passwordEmpleado.getPassword()).equals("")){
+            
+                JOptionPane.showMessageDialog(null, "Todos los campos son obligatorios.");
+            }else{
+                    empleado.setId(Integer.parseInt(vista.txtIdEmpleado.getText().trim()));
+                    empleado.setNombre(vista.txtNombreEmpleado.getText().trim());
+                    empleado.setApellido(vista.txtApellidoEmpleado.getText().trim());
+                    empleado.setNombreDeUsuario(vista.txtUsernameEmpleado.getText().trim());
+                    empleado.setDireccion(vista.txtDireccionEmpleado.getText().trim());
+                    empleado.setTelefono(vista.txtTelefonoEmpleado.getText().trim());
+                    empleado.setEmail(vista.txtEmailEmpleado.getText().trim());
+                    empleado.setContrasenya(String.valueOf(vista.passwordEmpleado.getPassword()));
+                    empleado.setRol(vista.cmbRolEmpleado.getSelectedItem().toString());
+                    }
+            if(empleadoConexion.registrarEmpleadoQuery(empleado)){
+                JOptionPane.showMessageDialog(null, "Empleado registrado con éxito.");
+            }else{
+                JOptionPane.showMessageDialog(null, "Ocurrió un error al registrar empleado.");
+            }
+        }
     }
+
     
     
 }

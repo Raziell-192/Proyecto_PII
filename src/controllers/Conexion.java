@@ -9,10 +9,10 @@ import java.sql.*;
  * @author macair
  */
 public class Conexion {
-    public static Connection con;
-    public static Statement st;
-    private static String url="jdbc:postgresql://localhost:5432/bd_clinica_dental";
-    private static String contra="*****";
+//    public static Connection con;
+//    public static Statement st;
+//    private static String url="jdbc:postgresql://localhost:5432/bd_clinica_dental";
+//    private static String contra="*****";
     
 //    public static void conectar(){
 //        try{
@@ -29,17 +29,39 @@ public class Conexion {
 //        }   
 //    }
     
-    public static Connection conectar(){
-        try{
-            con = DriverManager.getConnection(
-                url, 
-                "postgres", 
-                contra
-            );
+//    public static Connection conectar(){
+//        try{
+//            con = DriverManager.getConnection(
+//                url, 
+//                "postgres", 
+//                contra
+//            );
+//            System.out.println("Conexión establecida");
+//            st=con.createStatement();
+//        }
+//        catch(Exception ex){
+//            System.out.println("Error de conexión: " + ex.getMessage());
+//        }
+//        return con;
+//    }
+    
+    public static Connection con = null;
+    public static Statement st;
+
+    private static String ip = "localhost";
+    private static String puerto = "5432";
+    private static String usuario = "postgres";
+    private static String bd = "bd_clinica_dental";
+    private static String contra = "JAKIM";
+
+    private static String url = "jdbc:postgresql://" + ip + ":" + puerto + "/" + bd;
+
+    public Connection conectar() {
+        try {
+            con = DriverManager.getConnection(url, usuario, contra);
             System.out.println("Conexión establecida");
-            st=con.createStatement();
-        }
-        catch(Exception ex){
+            st = con.createStatement();
+        } catch (Exception ex) {
             System.out.println("Error de conexión: " + ex.getMessage());
         }
         return con;
