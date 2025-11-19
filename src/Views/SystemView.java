@@ -63,13 +63,6 @@ public class SystemView extends javax.swing.JFrame {
         Usuario = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         Productos = new javax.swing.JTabbedPane();
-        jPanel4 = new javax.swing.JPanel();
-        jLabel54 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jPasswordField1 = new javax.swing.JPasswordField();
         jPanel5 = new javax.swing.JPanel();
         jPanel11 = new javax.swing.JPanel();
         jLabel19 = new javax.swing.JLabel();
@@ -162,6 +155,9 @@ public class SystemView extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jLabel57 = new javax.swing.JLabel();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
         jPanel8 = new javax.swing.JPanel();
         jPanel9 = new javax.swing.JPanel();
         jPanel10 = new javax.swing.JPanel();
@@ -179,6 +175,13 @@ public class SystemView extends javax.swing.JFrame {
         jLabel132 = new javax.swing.JLabel();
         jTextField102 = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
+        jPanel4 = new javax.swing.JPanel();
+        jLabel54 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jTextField3 = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
+        jPasswordField1 = new javax.swing.JPasswordField();
         jPanel13 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -401,34 +404,6 @@ public class SystemView extends javax.swing.JFrame {
         jPanel3.setBackground(new java.awt.Color(196, 218, 250));
 
         Productos.setBackground(new java.awt.Color(196, 218, 250));
-
-        jPanel4.setBackground(new java.awt.Color(152, 202, 240));
-        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel54.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Usuario.png"))); // NOI18N
-        jPanel4.add(jLabel54, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 140, 70, 70));
-
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel2.setText("Contraseña:");
-        jPanel4.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 240, 140, 40));
-
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel3.setText("Usuario:");
-        jPanel4.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 150, 140, 40));
-        jPanel4.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 150, 110, 30));
-
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton1.setText("Ingresar");
-        jPanel4.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 220, -1, -1));
-
-        jPasswordField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jPasswordField1ActionPerformed(evt);
-            }
-        });
-        jPanel4.add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 250, 120, -1));
-
-        Productos.addTab("Usuarios", jPanel4);
 
         jPanel5.setBackground(new java.awt.Color(196, 218, 250));
 
@@ -1050,6 +1025,15 @@ public class SystemView extends javax.swing.JFrame {
         jLabel57.setText("Empleados");
         jPanel23.add(jLabel57, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 10, -1, -1));
 
+        jButton3.setText("jButton3");
+        jPanel23.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 370, -1, -1));
+
+        jButton4.setText("jButton4");
+        jPanel23.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 370, -1, -1));
+
+        jButton5.setText("jButton5");
+        jPanel23.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 370, -1, -1));
+
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
@@ -1236,6 +1220,34 @@ public class SystemView extends javax.swing.JFrame {
         );
 
         Productos.addTab("Configuraciones", jPanel22);
+
+        jPanel4.setBackground(new java.awt.Color(152, 202, 240));
+        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel54.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Usuario.png"))); // NOI18N
+        jPanel4.add(jLabel54, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 140, 70, 70));
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel2.setText("Contraseña:");
+        jPanel4.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 240, 140, 40));
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel3.setText("Usuario:");
+        jPanel4.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 150, 140, 40));
+        jPanel4.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 150, 110, 30));
+
+        jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton1.setText("Ingresar");
+        jPanel4.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 220, -1, -1));
+
+        jPasswordField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jPasswordField1ActionPerformed(evt);
+            }
+        });
+        jPanel4.add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 250, 120, -1));
+
+        Productos.addTab("Usuarios", jPanel4);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -1445,6 +1457,9 @@ public class SystemView extends javax.swing.JFrame {
     public javax.swing.JComboBox<String> cmbRolEmpleado;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     public javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel122;
