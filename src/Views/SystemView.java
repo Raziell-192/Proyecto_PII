@@ -1039,14 +1039,19 @@ public class SystemView extends javax.swing.JFrame {
         jLabel57.setText("Empleados");
         jPanel23.add(jLabel57, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 10, -1, -1));
 
-        jButton3.setText("jButton3");
-        jPanel23.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 370, -1, -1));
+        jButton3.setText("Buscar");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        jPanel23.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 380, -1, -1));
 
-        jButton4.setText("jButton4");
-        jPanel23.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 370, -1, -1));
+        jButton4.setText("Editar");
+        jPanel23.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 380, -1, -1));
 
-        jButton5.setText("jButton5");
-        jPanel23.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 370, -1, -1));
+        jButton5.setText("Eliminar");
+        jPanel23.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 380, -1, -1));
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -1470,7 +1475,7 @@ public class SystemView extends javax.swing.JFrame {
         jPanel13.setLayout(jPanel13Layout);
         jPanel13Layout.setHorizontalGroup(
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
+            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 210, Short.MAX_VALUE)
             .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel13Layout.setVerticalGroup(
@@ -1557,6 +1562,10 @@ public class SystemView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jPasswordField1ActionPerformed
 
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton3ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1613,9 +1622,9 @@ public class SystemView extends javax.swing.JFrame {
     public javax.swing.JComboBox<String> cmbRolEmpleado;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
+    public javax.swing.JButton jButton3;
+    public javax.swing.JButton jButton4;
+    public javax.swing.JButton jButton5;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     public javax.swing.JLabel jLabel10;
@@ -1719,7 +1728,7 @@ public class SystemView extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTabbedPane jTabbedPane2;
-    private javax.swing.JTable jTable1;
+    public javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;
     private javax.swing.JTextField jTextField1;

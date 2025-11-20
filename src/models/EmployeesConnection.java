@@ -5,6 +5,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -128,9 +129,9 @@ public class EmployeesConnection {
 //    }
 
     //Modificar empleado
-    public boolean actualizarEmpleadoQuery(Employee empleado) {
+   public boolean actualizarEmpleado(Employee empleado) {
         String query = "UPDATE empleados SET nombre = ?, apellido = ?, username = ?, "
-                + "direccion = ?, telefono= ?, email = ?, rol = ? WHERE \"idEmpleado\" = ?";
+                + "direccion = ?, telefono = ?, email = ?, rol = ?, contrasenya = ? WHERE \"idEmpleado\" = ?";
         try {
             con = cn.conectar();
             ps = con.prepareStatement(query);
@@ -183,5 +184,100 @@ public class EmployeesConnection {
             return false;
         }
     }
+    
+    public List<Employee> obtenerTodosLosEmpleados() {
+        List<Employee> listaEmpleados = new ArrayList<>();
+        String query = "SELECT * FROM empleados ORDER BY \"idEmpleado\" ASC";
+        try {
+            con = cn.conectar();
+            ps = con.prepareStatement(query);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                Employee empleado = new Employee();
+                empleado.setId(rs.getInt("\"idEmpleado\""));
+                empleado.setNombre(rs.getString("nombre"));
+                empleado.setApellido(rs.getString("apellido"));
+                empleado.setNombreDeUsuario(rs.getString("username"));
+                empleado.setDireccion(rs.getString("direccion"));
+                empleado.setTelefono(rs.getString("telefono"));
+                empleado.setEmail(rs.getString("email"));
+                empleado.setRol(rs.getString("rol"));
+                listaEmpleados.add(empleado);}            } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error al obtener empleados: " + e.toString());
+        } finally {
+            try {
+                if (rs != null) rs.close();
+                if (ps != null) ps.close();
+                if (con != null) con.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return listaEmpleados;
+    }
+        
+    public List<Employee> buscarEmpleados(String valor) {
+        List<Employee> listaEmpleados = new ArrayList<>();
+        String query = "SELECT * FROM empleados WHERE \"idEmpleado\"::text LIKE ? OR nombre LIKE ? OR apellido LIKE ? ORDER BY \"idEmpleado\" ASC";
+        
+        try {
+            con = cn.conectar();
+            ps = con.prepareStatement(query);
+            String likeValor = "%" + valor + "%";
+            ps.setString(1, likeValor);
+            ps.setString(2, likeValor);
+            ps.setString(3, likeValor);
+            
+            rs = ps.executeQuery();
+             while (rs.next()) {
+                Employee empleado = new Employee();
+                empleado.setId(rs.getInt("\"idEmpleado\""));
+                empleado.setNombre(rs.getString("nombre"));
+                empleado.setApellido(rs.getString("apellido"));
+                empleado.setNombreDeUsuario(rs.getString("username"));
+                empleado.setDireccion(rs.getString("direccion"));
+                empleado.setTelefono(rs.getString("telefono"));
+                empleado.setEmail(rs.getString("email"));
+                empleado.setRol(rs.getString("rol"));
+                
+                listaEmpleados.add(empleado);
+            }
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error al buscar empleados: " + e.toString());
+            } finally {
+            try {
+                if (rs != null) rs.close();
+                if (ps != null) ps.close();
+                if (con != null) con.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return listaEmpleados;
+    }
+    
+    public boolean eliminarEmpleado(int id) {
+        String query = "DELETE FROM empleados WHERE \"idEmpleado\" = ?";
+        try {
+            con = cn.conectar();
+            ps = con.prepareStatement(query);
+            ps.setInt(1, id);
+            
+            int resultado = ps.executeUpdate();
+            return resultado > 0;
+            
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error al eliminar empleado: " + e.toString());
+            return false;
+        } finally {
+            try {
+                if (ps != null) ps.close();
+                if (con != null) con.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+    
 
 }
