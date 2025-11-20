@@ -42,7 +42,7 @@ public class EmployeesConnection {
             rs = ps.executeQuery();
             
             if(rs.next()){
-                empleado.setId(rs.getInt("\"idEmpleado\""));
+                empleado.setId(rs.getInt("id_empleado"));
                 idUsuario = empleado.getId();
                 empleado.setNombre(rs.getString("nombre"));
                 nombreUsuario = empleado.getNombre();
@@ -68,7 +68,7 @@ public class EmployeesConnection {
     
     //Registrar empleado
     public boolean registrarEmpleadoQuery(Employee empleado) {
-        String query = "INSERT INTO empleados (\"idEmpleado\", nombre, apellido, username, direccion, telefono, email, contrasenya, rol) VALUES (?,?,?,?,?,?,?,?,?)";
+        String query = "INSERT INTO empleados (id_empleado, nombre, apellido, username, direccion, telefono, email, contrasenya, rol) VALUES (?,?,?,?,?,?,?,?,?)";
         //Timestamp dateTime = new Timestamp(new Date().getTime());
         try {
             con = cn.conectar();
@@ -110,7 +110,7 @@ public class EmployeesConnection {
 //            }
 //            while (rs.next()) {
 //                Employee empleado = new Employee();
-//                empleado.setId(rs.getInt("\"idEmpleado\""));
+//                empleado.setId(rs.getInt("id_empleado"));
 //                empleado.setNombre(rs.getString("nombre"));
 //                empleado.setApellido(rs.getString("apellido"));
 //                empleado.setNombreDeUsuario(rs.getString("username"));
@@ -131,7 +131,7 @@ public class EmployeesConnection {
     //Modificar empleado
    public boolean actualizarEmpleado(Employee empleado) {
         String query = "UPDATE empleados SET nombre = ?, apellido = ?, username = ?, "
-                + "direccion = ?, telefono = ?, email = ?, rol = ?, contrasenya = ? WHERE \"idEmpleado\" = ?";
+                + "direccion = ?, telefono = ?, email = ?, rol = ?, contrasenya = ? WHERE id_empleado = ?";
         try {
             con = cn.conectar();
             ps = con.prepareStatement(query);
@@ -187,14 +187,14 @@ public class EmployeesConnection {
     
     public List<Employee> obtenerTodosLosEmpleados() {
         List<Employee> listaEmpleados = new ArrayList<>();
-        String query = "SELECT * FROM empleados ORDER BY \"idEmpleado\" ASC";
+        String query = "SELECT * FROM empleados ORDER BY id_empleado ASC";
         try {
             con = cn.conectar();
             ps = con.prepareStatement(query);
             rs = ps.executeQuery();
             while (rs.next()) {
                 Employee empleado = new Employee();
-                empleado.setId(rs.getInt("\"idEmpleado\""));
+                empleado.setId(rs.getInt("id_empleado"));
                 empleado.setNombre(rs.getString("nombre"));
                 empleado.setApellido(rs.getString("apellido"));
                 empleado.setNombreDeUsuario(rs.getString("username"));
@@ -218,7 +218,7 @@ public class EmployeesConnection {
         
     public List<Employee> buscarEmpleados(String valor) {
         List<Employee> listaEmpleados = new ArrayList<>();
-        String query = "SELECT * FROM empleados WHERE \"idEmpleado\"::text LIKE ? OR nombre LIKE ? OR apellido LIKE ? ORDER BY \"idEmpleado\" ASC";
+        String query = "SELECT * FROM empleados WHERE id_empleado::text LIKE ? OR nombre LIKE ? OR apellido LIKE ? ORDER BY id_empleado ASC";
         
         try {
             con = cn.conectar();
@@ -231,7 +231,7 @@ public class EmployeesConnection {
             rs = ps.executeQuery();
              while (rs.next()) {
                 Employee empleado = new Employee();
-                empleado.setId(rs.getInt("\"idEmpleado\""));
+                empleado.setId(rs.getInt("id_empleado"));
                 empleado.setNombre(rs.getString("nombre"));
                 empleado.setApellido(rs.getString("apellido"));
                 empleado.setNombreDeUsuario(rs.getString("username"));
@@ -257,7 +257,7 @@ public class EmployeesConnection {
     }
     
     public boolean eliminarEmpleado(int id) {
-        String query = "DELETE FROM empleados WHERE \"idEmpleado\" = ?";
+        String query = "DELETE FROM empleados WHERE id_empleado = ?";
         try {
             con = cn.conectar();
             ps = con.prepareStatement(query);

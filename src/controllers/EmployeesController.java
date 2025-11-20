@@ -186,7 +186,7 @@ public class EmployeesController implements ActionListener{
     }
     
     public Employee obtenerEmpleadoPorId(int id) {
-        String query = "SELECT * FROM empleados WHERE \"idEmpleado\" = ?";
+        String query = "SELECT * FROM empleados WHERE id_empleado = ?";
         Employee empleado = new Employee();
         
         Connection con = null;
@@ -202,7 +202,7 @@ public class EmployeesController implements ActionListener{
             rs = ps.executeQuery();
             
             if (rs.next()) {
-                empleado.setId(rs.getInt("\"idEmpleado\""));
+                empleado.setId(rs.getInt("id_empleado"));
                 empleado.setNombre(rs.getString("nombre"));
                 empleado.setApellido(rs.getString("apellido"));
                 empleado.setNombreDeUsuario(rs.getString("username"));
