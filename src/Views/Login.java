@@ -27,7 +27,7 @@ public class Login extends javax.swing.JFrame {
         //colocarImagenLabel(jlabel1, "/images/logo_UnsiSmile.png");
         //colocarImagenLabel(jlabel1, "/images/tooth.png");
         //Controlador de login
-        LoginController emplado_login = new LoginController(this);
+//        LoginController emplado_login = new LoginController(this);
     }
 
     /**
