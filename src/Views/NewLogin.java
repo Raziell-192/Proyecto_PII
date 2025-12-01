@@ -6,6 +6,8 @@ import java.awt.Image;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import models.Employee;
+import models.EmployeesConnection;
 
 /**
  *
@@ -13,8 +15,11 @@ import javax.swing.JLabel;
  */
 public class NewLogin extends javax.swing.JFrame {
 
-    int xMouse, yMouse;
+    Employee empleado = new Employee();
+    EmployeesConnection empleado_conexion = new EmployeesConnection();
     
+    int xMouse, yMouse;
+
     /**
      * Creates new form NewLogin
      */
@@ -22,7 +27,8 @@ public class NewLogin extends javax.swing.JFrame {
         initComponents();
         colocarImagenLabel(lblLogo, "/images/logo_UnsiSmile.png");
         //Controlador de login
-        LoginController emplado_login = new LoginController(this);
+        LoginController empleado_login = new LoginController(empleado, empleado_conexion, this);
+
     }
 
     /**
@@ -340,7 +346,7 @@ public class NewLogin extends javax.swing.JFrame {
         etiqueta.setIcon(icono);
         this.repaint();
     }
-    
+
     /**
      * @param args the command line arguments
      */
