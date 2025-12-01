@@ -51,7 +51,7 @@ public class Conexion {
     private static String ip = "localhost";
     private static String puerto = "5432";
     private static String usuario = "postgres";
-    private static String bd = "bd_clinica_dental";
+    private static String bd = "bd_clinica_odonto";
     private static String contra = "JAKIM";
 
     private static String url = "jdbc:postgresql://" + ip + ":" + puerto + "/" + bd;

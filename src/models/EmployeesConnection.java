@@ -12,63 +12,63 @@ import javax.swing.table.DefaultTableModel;
  * @author jakim
  */
 public class EmployeesConnection {
+
     Conexion cn = new Conexion();
     Connection con;
     PreparedStatement ps;
     ResultSet rs;
-    
+
     //Variables para enviar datos entre interfaces
     public static int idUsuario = 0;
-    public static String nombreUsuario = "";
-    public static String apellidoUsuario = "";
+    public static String nombresUsuario = "";
+    public static String apellidosUsuario = "";
     public static String usernameUsuario = "";
     public static String direccionUsuario = "";
     public static String telefonoUsuario = "";
     public static String emailUsuario = "";
     public static String rolUsuario = "";
-    
+
     //Método Login
-    public Employee consultarEmpleado(String usuario, String contrasenya){
-        String query = "SELECT * FROM empleados WHERE username = ? AND contrasenya = ?";
+    public Employee consultarEmpleado(String usuario, String password) {
+        String query = "SELECT * FROM usuarios WHERE username = ? AND password = ?";
         Employee empleado = new Employee();
-        try{
+        try {
             con = cn.conectar();
             ps = con.prepareStatement(query);
 
             //Enviar parámetros
             ps.setString(1, usuario);
-            ps.setString(2, contrasenya);
-            
+            ps.setString(2, password);
+
             rs = ps.executeQuery();
-            
-            if(rs.next()){
-                empleado.setId(rs.getInt("id_empleado"));
+
+            if (rs.next()) {
+                empleado.setId(rs.getInt("id_usuario"));
                 idUsuario = empleado.getId();
-                empleado.setNombre(rs.getString("nombre"));
-                nombreUsuario = empleado.getNombre();
-                empleado.setApellido(rs.getString("apellido"));
-                apellidoUsuario = empleado.getApellido();
+                empleado.setNombre(rs.getString("nombress"));
+                nombresUsuario = empleado.getNombre();
+                empleado.setApellido(rs.getString("apellidoss"));
+                apellidosUsuario = empleado.getApellido();
                 empleado.setNombreDeUsuario(rs.getString("username"));
                 usernameUsuario = empleado.getNombreDeUsuario();
-                empleado.setDireccion(rs.getString("direccion"));
-                direccionUsuario = empleado.getDireccion();
-                empleado.setTelefono(rs.getString("telefono"));
-                telefonoUsuario = empleado.getTelefono();
+//                empleado.setDireccion(rs.getString("direccion"));
+//                direccionUsuario = empleado.getDireccion();
+//                empleado.setTelefono(rs.getString("telefono"));
+//                telefonoUsuario = empleado.getTelefono();
                 empleado.setEmail(rs.getString("email"));
                 emailUsuario = empleado.getEmail();
                 empleado.setRol(rs.getString("rol"));
                 rolUsuario = empleado.getRol();
             }
-        }
-        catch(Exception e) {
-            JOptionPane.showMessageDialog(null, "Error al obtner el empleado. "+e);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error al obtner el empleado. " + e);
         }
         return empleado;
     }
-    
+
     //Registrar empleado
     public boolean registrarEmpleadoQuery(Employee empleado) {
-        String query = "INSERT INTO empleados (id_empleado, nombre, apellido, username, direccion, telefono, email, contrasenya, rol) VALUES (?,?,?,?,?,?,?,?,?)";
+        String query = "INSERT INTO usuarios (id_usuario, nombres, apellidos, username, email, password, rol) VALUES (?,?,?,?,?,?,?)";
         //Timestamp dateTime = new Timestamp(new Date().getTime());
         try {
             con = cn.conectar();
@@ -77,11 +77,11 @@ public class EmployeesConnection {
             ps.setString(2, empleado.getNombre());
             ps.setString(3, empleado.getApellido());
             ps.setString(4, empleado.getNombreDeUsuario());
-            ps.setString(5, empleado.getDireccion());
-            ps.setString(6, empleado.getTelefono());
-            ps.setString(7, empleado.getEmail());
-            ps.setString(8, empleado.getContrasenya());
-            ps.setString(9, empleado.getRol());
+//            ps.setString(5, empleado.getDireccion());
+//            ps.setString(6, empleado.getTelefono());
+            ps.setString(5, empleado.getEmail());
+            ps.setString(6, empleado.getContrasenya());
+            ps.setString(7, empleado.getRol());
 
 //            ps.setTimestamp(9, dateTime);
 //            ps.setTimestamp(10, dateTime);
@@ -98,7 +98,7 @@ public class EmployeesConnection {
 //    public List listaEmpleadosQuery(String valor) {
 //        List<Employee> listaEmpleados = new ArrayList();
 //        String query = "SELECT * FROM emplados ORDER BY rol ASC";
-//        String queryBuscarEmpleado = "SELECT * FROM empleados WHERE id LIKE '%" + valor + "%'";
+//        String queryBuscarEmpleado = "SELECT * FROM usuarios WHERE id LIKE '%" + valor + "%'";
 //        try {
 //            con = cn.conectar();
 //            if (valor.equalsIgnoreCase("")) {
@@ -110,9 +110,9 @@ public class EmployeesConnection {
 //            }
 //            while (rs.next()) {
 //                Employee empleado = new Employee();
-//                empleado.setId(rs.getInt("id_empleado"));
-//                empleado.setNombre(rs.getString("nombre"));
-//                empleado.setApellido(rs.getString("apellido"));
+//                empleado.setId(rs.getInt("id_usuario"));
+//                empleado.setNombre(rs.getString("nombres"));
+//                empleado.setApellido(rs.getString("apellidos"));
 //                empleado.setNombreDeUsuario(rs.getString("username"));
 //                empleado.setDireccion(rs.getString("direccion"));
 //                empleado.setTelefono(rs.getString("telefono"));
@@ -127,11 +127,10 @@ public class EmployeesConnection {
 //        }
 //        return listaEmpleados;
 //    }
-
     //Modificar empleado
-   public boolean actualizarEmpleado(Employee empleado) {
-        String query = "UPDATE empleados SET nombre = ?, apellido = ?, username = ?, "
-                + "direccion = ?, telefono = ?, email = ?, rol = ?, contrasenya = ? WHERE id_empleado = ?";
+    public boolean actualizarEmpleado(Employee empleado) {
+        String query = "UPDATE usuarios SET nombres = ?, apellidos = ?, username = ?, "
+                + "email = ?, rol = ?, password = ? WHERE id_usuario = ?";
         try {
             con = cn.conectar();
             ps = con.prepareStatement(query);
@@ -139,12 +138,12 @@ public class EmployeesConnection {
             ps.setString(1, empleado.getNombre());
             ps.setString(2, empleado.getApellido());
             ps.setString(3, empleado.getNombreDeUsuario());
-            ps.setString(4, empleado.getDireccion());
-            ps.setString(5, empleado.getTelefono());
-            ps.setString(6, empleado.getEmail());
-            ps.setString(7, empleado.getContrasenya());
-            ps.setString(8, empleado.getRol());
-            ps.setInt(9, empleado.getId());
+//            ps.setString(4, empleado.getDireccion());
+//            ps.setString(5, empleado.getTelefono());
+            ps.setString(4, empleado.getEmail());
+            ps.setString(5, empleado.getContrasenya());
+            ps.setString(6, empleado.getRol());
+            ps.setInt(7, empleado.getId());
 
             ps.execute();
 
@@ -157,7 +156,7 @@ public class EmployeesConnection {
 
     //Eliminar empleado
     public boolean eliminarEmpleadoQuery(int id) {
-        String query = "DELETE FROM empleados WHERE idEmpleado = " + id;
+        String query = "DELETE FROM usuarios WHERE id_usuario = " + id;
         try {
             con = cn.conectar();
             ps = con.prepareStatement(query);
@@ -172,54 +171,62 @@ public class EmployeesConnection {
 
     //Cambiar contraseña
     public boolean cambiarEmpleadoContrasenya(Employee empleado) {
-        String query = "UPDATE empleados SET contrasenya = ? WHERE username = '" + usernameUsuario + "'";
-        try{
+        String query = "UPDATE usuarios SET password = ? WHERE username = '" + usernameUsuario + "'";
+        try {
             con = cn.conectar();
             ps = con.prepareStatement(query);
             ps.setString(1, empleado.getContrasenya());
             ps.execute();
             return true;
-        }catch(SQLException e){
+        } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Ha ocurrido un error al intentar modificar la contraseña: " + e);
             return false;
         }
     }
-    
+
     public List<Employee> obtenerTodosLosEmpleados() {
         List<Employee> listaEmpleados = new ArrayList<>();
-        String query = "SELECT * FROM empleados ORDER BY id_empleado ASC";
+        String query = "SELECT * FROM usuarios ORDER BY id_usuario ASC";
         try {
             con = cn.conectar();
             ps = con.prepareStatement(query);
             rs = ps.executeQuery();
             while (rs.next()) {
                 Employee empleado = new Employee();
-                empleado.setId(rs.getInt("id_empleado"));
-                empleado.setNombre(rs.getString("nombre"));
-                empleado.setApellido(rs.getString("apellido"));
+                empleado.setId(rs.getInt("id_usuario"));
+                empleado.setNombre(rs.getString("nombres"));
+                empleado.setApellido(rs.getString("apellidos"));
                 empleado.setNombreDeUsuario(rs.getString("username"));
-                empleado.setDireccion(rs.getString("direccion"));
-                empleado.setTelefono(rs.getString("telefono"));
+//                empleado.setDireccion(rs.getString("direccion"));
+//                empleado.setTelefono(rs.getString("telefono"));
                 empleado.setEmail(rs.getString("email"));
                 empleado.setRol(rs.getString("rol"));
-                listaEmpleados.add(empleado);}            } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error al obtener empleados: " + e.toString());
+                listaEmpleados.add(empleado);
+            }
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error al obtener usuarios: " + e.toString());
         } finally {
             try {
-                if (rs != null) rs.close();
-                if (ps != null) ps.close();
-                if (con != null) con.close();
+                if (rs != null) {
+                    rs.close();
+                }
+                if (ps != null) {
+                    ps.close();
+                }
+                if (con != null) {
+                    con.close();
+                }
             } catch (SQLException e) {
                 e.printStackTrace();
             }
         }
         return listaEmpleados;
     }
-        
+
     public List<Employee> buscarEmpleados(String valor) {
         List<Employee> listaEmpleados = new ArrayList<>();
-        String query = "SELECT * FROM empleados WHERE id_empleado::text LIKE ? OR nombre LIKE ? OR apellido LIKE ? ORDER BY id_empleado ASC";
-        
+        String query = "SELECT * FROM usuarios WHERE id_usuario::text LIKE ? OR nombres LIKE ? OR apellidos LIKE ? ORDER BY id_usuario ASC";
+
         try {
             con = cn.conectar();
             ps = con.prepareStatement(query);
@@ -227,57 +234,66 @@ public class EmployeesConnection {
             ps.setString(1, likeValor);
             ps.setString(2, likeValor);
             ps.setString(3, likeValor);
-            
+
             rs = ps.executeQuery();
-             while (rs.next()) {
+            while (rs.next()) {
                 Employee empleado = new Employee();
-                empleado.setId(rs.getInt("id_empleado"));
-                empleado.setNombre(rs.getString("nombre"));
-                empleado.setApellido(rs.getString("apellido"));
+                empleado.setId(rs.getInt("id_usuario"));
+                empleado.setNombre(rs.getString("nombres"));
+                empleado.setApellido(rs.getString("apellidos"));
                 empleado.setNombreDeUsuario(rs.getString("username"));
-                empleado.setDireccion(rs.getString("direccion"));
-                empleado.setTelefono(rs.getString("telefono"));
+//                empleado.setDireccion(rs.getString("direccion"));
+//                empleado.setTelefono(rs.getString("telefono"));
                 empleado.setEmail(rs.getString("email"));
                 empleado.setRol(rs.getString("rol"));
-                
+
                 listaEmpleados.add(empleado);
             }
         } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error al buscar empleados: " + e.toString());
-            } finally {
+            JOptionPane.showMessageDialog(null, "Error al buscar usuarios: " + e.toString());
+        } finally {
             try {
-                if (rs != null) rs.close();
-                if (ps != null) ps.close();
-                if (con != null) con.close();
+                if (rs != null) {
+                    rs.close();
+                }
+                if (ps != null) {
+                    ps.close();
+                }
+                if (con != null) {
+                    con.close();
+                }
             } catch (SQLException e) {
                 e.printStackTrace();
             }
         }
         return listaEmpleados;
     }
-    
+
     public boolean eliminarEmpleado(int id) {
-        String query = "DELETE FROM empleados WHERE id_empleado = ?";
+        String query = "DELETE FROM usuarios WHERE id_usuario = ?";
         try {
             con = cn.conectar();
             ps = con.prepareStatement(query);
             ps.setInt(1, id);
-            
+
             int resultado = ps.executeUpdate();
             return resultado > 0;
-            
+
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Error al eliminar empleado: " + e.toString());
             return false;
         } finally {
             try {
-                if (ps != null) ps.close();
-                if (con != null) con.close();
+                if (ps != null) {
+                    ps.close();
+                }
+                if (con != null) {
+                    con.close();
+                }
             } catch (SQLException e) {
                 e.printStackTrace();
             }
         }
     }
-    
 
 }

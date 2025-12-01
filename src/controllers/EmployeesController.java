@@ -58,8 +58,8 @@ public class EmployeesController implements ActionListener{
             empleado.setNombre(vista.txtNombreEmpleado.getText().trim());
             empleado.setApellido(vista.txtApellidoEmpleado.getText().trim());
             empleado.setNombreDeUsuario(vista.txtUsernameEmpleado.getText().trim());
-            empleado.setDireccion(vista.txtDireccionEmpleado.getText().trim());
-            empleado.setTelefono(vista.txtTelefonoEmpleado.getText().trim());
+//            empleado.setDireccion(vista.txtDireccionEmpleado.getText().trim());
+//            empleado.setTelefono(vista.txtTelefonoEmpleado.getText().trim());
             empleado.setEmail(vista.txtEmailEmpleado.getText().trim());
             empleado.setContrasenya(String.valueOf(vista.passwordEmpleado.getPassword()));
             empleado.setRol(vista.cmbRolEmpleado.getSelectedItem().toString());
@@ -98,8 +98,8 @@ public class EmployeesController implements ActionListener{
             vista.txtNombreEmpleado.setText(empleadoEditar.getNombre());
             vista.txtApellidoEmpleado.setText(empleadoEditar.getApellido());
             vista.txtUsernameEmpleado.setText(empleadoEditar.getNombreDeUsuario());
-            vista.txtDireccionEmpleado.setText(empleadoEditar.getDireccion());
-            vista.txtTelefonoEmpleado.setText(empleadoEditar.getTelefono());
+//            vista.txtDireccionEmpleado.setText(empleadoEditar.getDireccion());
+//            vista.txtTelefonoEmpleado.setText(empleadoEditar.getTelefono());
             vista.txtEmailEmpleado.setText(empleadoEditar.getEmail());
             vista.cmbRolEmpleado.setSelectedItem(empleadoEditar.getRol());
             vista.passwordEmpleado.setText(empleadoEditar.getContrasenya());
@@ -150,8 +150,8 @@ public class EmployeesController implements ActionListener{
                 emp.getNombre(),
                 emp.getApellido(),
                 emp.getNombreDeUsuario(),
-                emp.getDireccion(),
-                emp.getTelefono(),
+//                emp.getDireccion(),
+//                emp.getTelefono(),
                 emp.getEmail(),
                 emp.getRol()
             };
@@ -164,8 +164,8 @@ public class EmployeesController implements ActionListener{
                 || vista.txtNombreEmpleado.getText().trim().isEmpty()
                 || vista.txtApellidoEmpleado.getText().trim().isEmpty()
                 || vista.txtUsernameEmpleado.getText().trim().isEmpty()
-                || vista.txtDireccionEmpleado.getText().trim().isEmpty()
-                || vista.txtTelefonoEmpleado.getText().trim().isEmpty()
+//                || vista.txtDireccionEmpleado.getText().trim().isEmpty()
+//                || vista.txtTelefonoEmpleado.getText().trim().isEmpty()
                 || vista.txtEmailEmpleado.getText().trim().isEmpty()
                 || vista.cmbRolEmpleado.getSelectedItem().toString().isEmpty()
                 || String.valueOf(vista.passwordEmpleado.getPassword()).isEmpty()){
@@ -186,7 +186,7 @@ public class EmployeesController implements ActionListener{
     }
     
     public Employee obtenerEmpleadoPorId(int id) {
-        String query = "SELECT * FROM empleados WHERE id_empleado = ?";
+        String query = "SELECT * FROM usuarios WHERE id_empleado = ?";
         Employee empleado = new Employee();
         
         Connection con = null;
@@ -202,15 +202,15 @@ public class EmployeesController implements ActionListener{
             rs = ps.executeQuery();
             
             if (rs.next()) {
-                empleado.setId(rs.getInt("id_empleado"));
-                empleado.setNombre(rs.getString("nombre"));
-                empleado.setApellido(rs.getString("apellido"));
+                empleado.setId(rs.getInt("id_usuario"));
+                empleado.setNombre(rs.getString("nombres"));
+                empleado.setApellido(rs.getString("apellidos"));
                 empleado.setNombreDeUsuario(rs.getString("username"));
-                empleado.setDireccion(rs.getString("direccion"));
-                empleado.setTelefono(rs.getString("telefono"));
+//                empleado.setDireccion(rs.getString("direccion"));
+//                empleado.setTelefono(rs.getString("telefono"));
                 empleado.setEmail(rs.getString("email"));
                 empleado.setRol(rs.getString("rol"));
-                empleado.setContrasenya(rs.getString("contrasenya"));
+                empleado.setContrasenya(rs.getString("password"));
             }
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Error al obtener empleado: " + e.toString());
@@ -232,8 +232,8 @@ public class EmployeesController implements ActionListener{
         vista.txtNombreEmpleado.setText("");
         vista.txtApellidoEmpleado.setText("");
         vista.txtUsernameEmpleado.setText("");
-        vista.txtDireccionEmpleado.setText("");
-        vista.txtTelefonoEmpleado.setText("");
+//        vista.txtDireccionEmpleado.setText("");
+//        vista.txtTelefonoEmpleado.setText("");
         vista.txtEmailEmpleado.setText("");
         vista.passwordEmpleado.setText("");
         vista.cmbRolEmpleado.setSelectedIndex(0);
