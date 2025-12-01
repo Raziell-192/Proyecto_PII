@@ -45,9 +45,9 @@ public class EmployeesConnection {
             if (rs.next()) {
                 empleado.setId(rs.getInt("id_usuario"));
                 idUsuario = empleado.getId();
-                empleado.setNombre(rs.getString("nombress"));
+                empleado.setNombre(rs.getString("nombres"));
                 nombresUsuario = empleado.getNombre();
-                empleado.setApellido(rs.getString("apellidoss"));
+                empleado.setApellido(rs.getString("apellidos"));
                 apellidosUsuario = empleado.getApellido();
                 empleado.setNombreDeUsuario(rs.getString("username"));
                 usernameUsuario = empleado.getNombreDeUsuario();
@@ -61,27 +61,27 @@ public class EmployeesConnection {
                 rolUsuario = empleado.getRol();
             }
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Error al obtner el empleado. " + e);
+            JOptionPane.showMessageDialog(null, "Error al obtener el empleado. " + e);
         }
         return empleado;
     }
 
     //Registrar empleado
     public boolean registrarEmpleadoQuery(Employee empleado) {
-        String query = "INSERT INTO usuarios (id_usuario, nombres, apellidos, username, email, password, rol) VALUES (?,?,?,?,?,?,?)";
+        String query = "INSERT INTO usuarios (nombres, apellidos, username, email, password, rol) VALUES (?,?,?,?,?,?)";
         //Timestamp dateTime = new Timestamp(new Date().getTime());
         try {
             con = cn.conectar();
             ps = con.prepareStatement(query);
-            ps.setInt(1, empleado.getId());
-            ps.setString(2, empleado.getNombre());
-            ps.setString(3, empleado.getApellido());
-            ps.setString(4, empleado.getNombreDeUsuario());
+//            ps.setInt(1, empleado.getId());
+            ps.setString(1, empleado.getNombre());
+            ps.setString(2, empleado.getApellido());
+            ps.setString(3, empleado.getNombreDeUsuario());
 //            ps.setString(5, empleado.getDireccion());
 //            ps.setString(6, empleado.getTelefono());
-            ps.setString(5, empleado.getEmail());
-            ps.setString(6, empleado.getContrasenya());
-            ps.setString(7, empleado.getRol());
+            ps.setString(4, empleado.getEmail());
+            ps.setString(5, empleado.getContrasenya());
+            ps.setString(6, empleado.getRol());
 
 //            ps.setTimestamp(9, dateTime);
 //            ps.setTimestamp(10, dateTime);

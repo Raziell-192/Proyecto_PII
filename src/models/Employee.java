@@ -9,8 +9,8 @@ public class Employee {
     private String nombre;
     private String apellido;
     private String nombreDeUsuario;
-    private String direccion;
-    private String telefono;
+//    private String direccion;
+//    private String telefono;
     private String email;
     private String contrasenya;
     private String rol;
@@ -20,13 +20,13 @@ public class Employee {
     public Employee() {
     }
 
-    public Employee(int id, String nombre, String apellido, String nombreDeUsuario, String direccion, String telefono, String email, String contrasenya, String rol/*, String created, String update*/) {
-        this.id = id;
+    public Employee(/*int id,*/ String nombre, String apellido, String nombreDeUsuario, /*String direccion, String telefono,*/ String email, String contrasenya, String rol/*, String created, String update*/) {
+//        this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
         this.nombreDeUsuario = nombreDeUsuario;
-        this.direccion = direccion;
-        this.telefono = telefono;
+//        this.direccion = direccion;
+//        this.telefono = telefono;
         this.email = email;
         this.contrasenya = contrasenya;
         this.rol = rol;
@@ -66,21 +66,21 @@ public class Employee {
         this.nombreDeUsuario = nombreDeUsuario;
     }
 
-    public String getDireccion() {
-        return direccion;
-    }
-
-    public void setDireccion(String direccion) {
-        this.direccion = direccion;
-    }
-
-    public String getTelefono() {
-        return telefono;
-    }
-
-    public void setTelefono(String telefono) {
-        this.telefono = telefono;
-    }
+//    public String getDireccion() {
+//        return direccion;
+//    }
+//
+//    public void setDireccion(String direccion) {
+//        this.direccion = direccion;
+//    }
+//
+//    public String getTelefono() {
+//        return telefono;
+//    }
+//
+//    public void setTelefono(String telefono) {
+//        this.telefono = telefono;
+//    }
 
     public String getEmail() {
         return email;

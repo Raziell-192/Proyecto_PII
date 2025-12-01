@@ -34,6 +34,7 @@ public class EmployeesController implements ActionListener{
         this.vista.jButton3.addActionListener(this); // Buscar
         this.vista.jButton4.addActionListener(this); // Editar
         this.vista.jButton5.addActionListener(this); // Eliminar
+        this.vista.btnMostrar.addActionListener(this);
         
         // Cargar datos iniciales
         cargarEmpleadosEnTabla();
@@ -49,12 +50,14 @@ public class EmployeesController implements ActionListener{
             editarEmpleado();
         } else if(e.getSource() == vista.jButton5) {
             eliminarEmpleado();
+        } else if(e.getSource() == vista.btnMostrar) {
+            cargarEmpleadosEnTabla();
         }
     }
     
     private void registrarEmpleado() {
         if(validarCampos()) {
-            empleado.setId(Integer.parseInt(vista.txtIdEmpleado.getText().trim()));
+//            empleado.setId(Integer.parseInt(vista.txtIdEmpleado.getText().trim()));
             empleado.setNombre(vista.txtNombreEmpleado.getText().trim());
             empleado.setApellido(vista.txtApellidoEmpleado.getText().trim());
             empleado.setNombreDeUsuario(vista.txtUsernameEmpleado.getText().trim());
@@ -94,7 +97,7 @@ public class EmployeesController implements ActionListener{
         
         if (empleadoEditar.getId() != 0) {
             // Llenar los campos con los datos del empleado
-            vista.txtIdEmpleado.setText(String.valueOf(empleadoEditar.getId()));
+//            vista.txtIdEmpleado.setText(String.valueOf(empleadoEditar.getId()));
             vista.txtNombreEmpleado.setText(empleadoEditar.getNombre());
             vista.txtApellidoEmpleado.setText(empleadoEditar.getApellido());
             vista.txtUsernameEmpleado.setText(empleadoEditar.getNombreDeUsuario());
@@ -160,8 +163,8 @@ public class EmployeesController implements ActionListener{
     }
     
     private boolean validarCampos() {
-        if(vista.txtIdEmpleado.getText().trim().isEmpty()
-                || vista.txtNombreEmpleado.getText().trim().isEmpty()
+        if(/*vista.txtIdEmpleado.getText().trim().isEmpty()
+                ||*/vista.txtNombreEmpleado.getText().trim().isEmpty()
                 || vista.txtApellidoEmpleado.getText().trim().isEmpty()
                 || vista.txtUsernameEmpleado.getText().trim().isEmpty()
 //                || vista.txtDireccionEmpleado.getText().trim().isEmpty()
@@ -174,14 +177,14 @@ public class EmployeesController implements ActionListener{
             return false;
         }
         
-        // Validar que el ID sea numérico
-        try {
-            Integer.parseInt(vista.txtIdEmpleado.getText().trim());
-        } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(null, "El ID debe ser un número válido.");
-            return false;
-        }
-        
+//        // Validar que el ID sea numérico
+//        try {
+//            Integer.parseInt(vista.txtIdEmpleado.getText().trim());
+//        } catch (NumberFormatException e) {
+//            JOptionPane.showMessageDialog(null, "El ID debe ser un número válido.");
+//            return false;
+//        }
+//        
         return true;
     }
     
@@ -228,7 +231,7 @@ public class EmployeesController implements ActionListener{
     }
     
     private void limpiarCampos() {
-        vista.txtIdEmpleado.setText("");
+//        vista.txtIdEmpleado.setText("");
         vista.txtNombreEmpleado.setText("");
         vista.txtApellidoEmpleado.setText("");
         vista.txtUsernameEmpleado.setText("");
