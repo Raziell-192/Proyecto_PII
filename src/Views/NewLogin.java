@@ -6,8 +6,8 @@ import java.awt.Image;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
-import models.Employee;
-import models.EmployeesConnection;
+import models.User;
+import models.UsersConnection;
 
 /**
  *
@@ -15,8 +15,8 @@ import models.EmployeesConnection;
  */
 public class NewLogin extends javax.swing.JFrame {
 
-    Employee empleado = new Employee();
-    EmployeesConnection empleado_conexion = new EmployeesConnection();
+    User empleado = new User();
+    UsersConnection empleado_conexion = new UsersConnection();
     
     int xMouse, yMouse;
 

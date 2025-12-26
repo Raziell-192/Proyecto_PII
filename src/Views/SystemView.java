@@ -6,9 +6,9 @@ package Views;
 
 //import controllers.SettingsControllesr;
 
-import models.Employee;
-import models.EmployeesConnection;
-import controllers.EmployeesController;
+import models.User;
+import models.UsersConnection;
+import controllers.UsersController;
 
 /**
  *
@@ -19,8 +19,8 @@ public class SystemView extends javax.swing.JFrame {
     /**
      * Creates new form SystemView
      */
-    Employee empleado = new Employee();
-    EmployeesConnection empleadoConexion = new EmployeesConnection();
+    User empleado = new User();
+    UsersConnection empleadoConexion = new UsersConnection();
     
     public SystemView() {
         initComponents();
@@ -28,7 +28,7 @@ public class SystemView extends javax.swing.JFrame {
       //  SettingsControllesr setting = new SettingsControllesr(this);
       
       //Controlador de empleados:
-      EmployeesController cuentaEmpleado = new EmployeesController(empleado, empleadoConexion, this);
+      UsersController cuentaEmpleado = new UsersController(empleado, empleadoConexion, this);
       
     }
 
@@ -71,16 +71,16 @@ public class SystemView extends javax.swing.JFrame {
         jLabel53 = new javax.swing.JLabel();
         jLabel55 = new javax.swing.JLabel();
         jLabel56 = new javax.swing.JLabel();
-        txtNombreEmpleado = new javax.swing.JTextField();
-        txtApellidoEmpleado = new javax.swing.JTextField();
-        txtEmailEmpleado = new javax.swing.JTextField();
+        txtNombreUsuario = new javax.swing.JTextField();
+        txtApellidoUsuario = new javax.swing.JTextField();
+        txtEmailUsuario = new javax.swing.JTextField();
         jLabel61 = new javax.swing.JLabel();
         jLabel63 = new javax.swing.JLabel();
         jLabel125 = new javax.swing.JLabel();
-        txtUsernameEmpleado = new javax.swing.JTextField();
-        cmbRolEmpleado = new javax.swing.JComboBox<>();
-        passwordEmpleado = new javax.swing.JPasswordField();
-        btnRegistrarEmpleado = new javax.swing.JButton();
+        txtUsernameUsuario = new javax.swing.JTextField();
+        cmbRolUsuario = new javax.swing.JComboBox<>();
+        passwordUsuario = new javax.swing.JPasswordField();
+        btnRegistrarUsuario = new javax.swing.JButton();
         jPanel23 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
@@ -454,7 +454,7 @@ public class SystemView extends javax.swing.JFrame {
         jPanel21.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel51.setFont(new java.awt.Font("Liberation Serif", 1, 24)); // NOI18N
-        jLabel51.setText("Registrar empleado ");
+        jLabel51.setText("Registrar usuario ");
         jPanel21.add(jLabel51, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, -1, -1));
 
         jLabel53.setFont(new java.awt.Font("Liberation Serif", 0, 18)); // NOI18N
@@ -469,14 +469,14 @@ public class SystemView extends javax.swing.JFrame {
         jLabel56.setText("Email:");
         jPanel21.add(jLabel56, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 50, -1, -1));
 
-        txtNombreEmpleado.setFont(new java.awt.Font("Liberation Serif", 0, 18)); // NOI18N
-        jPanel21.add(txtNombreEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 50, 200, -1));
+        txtNombreUsuario.setFont(new java.awt.Font("Liberation Serif", 0, 18)); // NOI18N
+        jPanel21.add(txtNombreUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 50, 200, -1));
 
-        txtApellidoEmpleado.setFont(new java.awt.Font("Liberation Serif", 0, 18)); // NOI18N
-        jPanel21.add(txtApellidoEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 90, 200, -1));
+        txtApellidoUsuario.setFont(new java.awt.Font("Liberation Serif", 0, 18)); // NOI18N
+        jPanel21.add(txtApellidoUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 90, 200, -1));
 
-        txtEmailEmpleado.setFont(new java.awt.Font("Liberation Serif", 0, 18)); // NOI18N
-        jPanel21.add(txtEmailEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 50, 200, -1));
+        txtEmailUsuario.setFont(new java.awt.Font("Liberation Serif", 0, 18)); // NOI18N
+        jPanel21.add(txtEmailUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 50, 200, -1));
 
         jLabel61.setFont(new java.awt.Font("Liberation Serif", 0, 18)); // NOI18N
         jLabel61.setText("Contraseña:");
@@ -490,20 +490,20 @@ public class SystemView extends javax.swing.JFrame {
         jLabel125.setText("Username:");
         jPanel21.add(jLabel125, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 50, -1, -1));
 
-        txtUsernameEmpleado.setFont(new java.awt.Font("Liberation Serif", 0, 18)); // NOI18N
-        jPanel21.add(txtUsernameEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 50, 200, -1));
+        txtUsernameUsuario.setFont(new java.awt.Font("Liberation Serif", 0, 18)); // NOI18N
+        jPanel21.add(txtUsernameUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 50, 200, -1));
 
-        cmbRolEmpleado.setFont(new java.awt.Font("Liberation Serif", 0, 18)); // NOI18N
-        cmbRolEmpleado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Administrador", "Auxiliar" }));
-        jPanel21.add(cmbRolEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 90, 200, -1));
+        cmbRolUsuario.setFont(new java.awt.Font("Liberation Serif", 0, 18)); // NOI18N
+        cmbRolUsuario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Administrador", "Auxiliar" }));
+        jPanel21.add(cmbRolUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 90, 200, -1));
 
-        passwordEmpleado.setFont(new java.awt.Font("Liberation Serif", 0, 18)); // NOI18N
-        jPanel21.add(passwordEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 90, 200, -1));
+        passwordUsuario.setFont(new java.awt.Font("Liberation Serif", 0, 18)); // NOI18N
+        jPanel21.add(passwordUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 90, 200, -1));
 
-        btnRegistrarEmpleado.setFont(new java.awt.Font("Liberation Serif", 1, 24)); // NOI18N
-        btnRegistrarEmpleado.setText("Registrar");
-        btnRegistrarEmpleado.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel21.add(btnRegistrarEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 150, -1, -1));
+        btnRegistrarUsuario.setFont(new java.awt.Font("Liberation Serif", 1, 24)); // NOI18N
+        btnRegistrarUsuario.setText("Registrar");
+        btnRegistrarUsuario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel21.add(btnRegistrarUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 150, -1, -1));
 
         jPanel23.setBackground(new java.awt.Color(204, 255, 204));
         jPanel23.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -524,7 +524,7 @@ public class SystemView extends javax.swing.JFrame {
         jPanel23.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 50, 790, 300));
 
         jLabel57.setFont(new java.awt.Font("Liberation Serif", 1, 24)); // NOI18N
-        jLabel57.setText("Empleados");
+        jLabel57.setText("Usuarios");
         jPanel23.add(jLabel57, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 10, -1, -1));
 
         jButton3.setText("Buscar");
@@ -1454,12 +1454,12 @@ public class SystemView extends javax.swing.JFrame {
         jPanel13.setBackground(new java.awt.Color(196, 218, 250));
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel1.setFont(new java.awt.Font("Ubuntu Sans", 1, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Rockwell", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 102));
-        jLabel1.setText("Clinica de Odontologia");
+        jLabel1.setText("Clínica de Odontología");
 
         jLabel4.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel4.setFont(new java.awt.Font("Ubuntu Sans", 1, 18)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Lucida Calligraphy", 1, 36)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 0, 102));
         jLabel4.setText("UnsiSmile");
 
@@ -1614,12 +1614,12 @@ public class SystemView extends javax.swing.JFrame {
     public javax.swing.JLabel Trabajadores;
     public javax.swing.JLabel Usuario;
     public javax.swing.JButton btnMostrar;
-    public javax.swing.JButton btnRegistrarEmpleado;
+    public javax.swing.JButton btnRegistrarUsuario;
     public javax.swing.JButton btnSalir;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
     public javax.swing.JLabel clinicos;
-    public javax.swing.JComboBox<String> cmbRolEmpleado;
+    public javax.swing.JComboBox<String> cmbRolUsuario;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     public javax.swing.JButton jButton3;
@@ -1766,12 +1766,12 @@ public class SystemView extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField95;
     private javax.swing.JTextField jTextField96;
     private javax.swing.JTextField jTextField98;
-    public javax.swing.JPasswordField passwordEmpleado;
+    public javax.swing.JPasswordField passwordUsuario;
     private javax.swing.JPanel pnlUsuarios;
-    public javax.swing.JTextField txtApellidoEmpleado;
-    public javax.swing.JTextField txtEmailEmpleado;
-    public javax.swing.JTextField txtNombreEmpleado;
-    public javax.swing.JTextField txtUsernameEmpleado;
+    public javax.swing.JTextField txtApellidoUsuario;
+    public javax.swing.JTextField txtEmailUsuario;
+    public javax.swing.JTextField txtNombreUsuario;
+    public javax.swing.JTextField txtUsernameUsuario;
     // End of variables declaration//GEN-END:variables
 
 

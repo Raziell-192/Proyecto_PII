@@ -590,7 +590,7 @@
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Liberation Serif" size="24" style="1"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="Registrar empleado "/>
+                        <Property name="text" type="java.lang.String" value="Registrar usuario "/>
                       </Properties>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -637,7 +637,7 @@
                         </Constraint>
                       </Constraints>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="txtNombreEmpleado">
+                    <Component class="javax.swing.JTextField" name="txtNombreUsuario">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Liberation Serif" size="18" style="0"/>
@@ -652,7 +652,7 @@
                         </Constraint>
                       </Constraints>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="txtApellidoEmpleado">
+                    <Component class="javax.swing.JTextField" name="txtApellidoUsuario">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Liberation Serif" size="18" style="0"/>
@@ -667,7 +667,7 @@
                         </Constraint>
                       </Constraints>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="txtEmailEmpleado">
+                    <Component class="javax.swing.JTextField" name="txtEmailUsuario">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Liberation Serif" size="18" style="0"/>
@@ -721,7 +721,7 @@
                         </Constraint>
                       </Constraints>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="txtUsernameEmpleado">
+                    <Component class="javax.swing.JTextField" name="txtUsernameUsuario">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Liberation Serif" size="18" style="0"/>
@@ -736,7 +736,7 @@
                         </Constraint>
                       </Constraints>
                     </Component>
-                    <Component class="javax.swing.JComboBox" name="cmbRolEmpleado">
+                    <Component class="javax.swing.JComboBox" name="cmbRolUsuario">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Liberation Serif" size="18" style="0"/>
@@ -758,7 +758,7 @@
                         </Constraint>
                       </Constraints>
                     </Component>
-                    <Component class="javax.swing.JPasswordField" name="passwordEmpleado">
+                    <Component class="javax.swing.JPasswordField" name="passwordUsuario">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Liberation Serif" size="18" style="0"/>
@@ -773,7 +773,7 @@
                         </Constraint>
                       </Constraints>
                     </Component>
-                    <Component class="javax.swing.JButton" name="btnRegistrarEmpleado">
+                    <Component class="javax.swing.JButton" name="btnRegistrarUsuario">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Liberation Serif" size="24" style="1"/>
@@ -841,7 +841,7 @@
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Liberation Serif" size="24" style="1"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="Empleados"/>
+                        <Property name="text" type="java.lang.String" value="Usuarios"/>
                       </Properties>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -2477,12 +2477,12 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Ubuntu Sans" size="18" style="1"/>
+              <Font name="Rockwell" size="18" style="1"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="66" green="0" red="0" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Clinica de Odontologia"/>
+            <Property name="text" type="java.lang.String" value="Cl&#xed;nica de Odontolog&#xed;a"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel4">
@@ -2491,7 +2491,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Ubuntu Sans" size="18" style="1"/>
+              <Font name="Lucida Calligraphy" size="36" style="1"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="66" green="0" red="0" type="rgb"/>
