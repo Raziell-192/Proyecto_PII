@@ -48,17 +48,20 @@ public class Conexion {
     public static Connection con = null;
     public static Statement st;
 
-    private static String ip = "localhost";
-    private static String puerto = "5432";
-    private static String usuario = "postgres";
-    private static String bd = "bd_clinica_odonto";
-    private static String contra = "root";
+//    private static String ip = "localhost";
+//    private static String puerto = "5432";
+//    private static String usuario = "postgres";
+//    private static String bd = "bd_clinica_odonto";
+//    private static String contra = "root";
+    String url = "jdbc:postgresql://aws-0-us-west-2.pooler.supabase.com:5432/postgres";
+    String user = "postgres.urqdkgyjzoblpxuikmbp";
+    String password = "JRLE4java#80";
 
-    private static String url = "jdbc:postgresql://" + ip + ":" + puerto + "/" + bd;
+//    private static String url = "jdbc:postgresql://" + ip + ":" + puerto + "/" + bd;
 
     public Connection conectar() {
         try {
-            con = DriverManager.getConnection(url, usuario, contra);
+            con = DriverManager.getConnection(url, user, password);
             System.out.println("Conexión establecida");
             st = con.createStatement();
         } catch (Exception ex) {
