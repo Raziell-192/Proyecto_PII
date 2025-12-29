@@ -213,6 +213,7 @@ public class SystemView extends javax.swing.JFrame {
         jTextField3 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jPasswordField1 = new javax.swing.JPasswordField();
+        pnlVentas = new javax.swing.JPanel();
         jPanel13 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -1162,7 +1163,7 @@ public class SystemView extends javax.swing.JFrame {
                 .addContainerGap(87, Short.MAX_VALUE))
         );
 
-        JTabbedPane.addTab("Administradores", jPanel8);
+        JTabbedPane.addTab("Administradores?", jPanel8);
 
         pnlPacientes.setBackground(new java.awt.Color(196, 218, 250));
 
@@ -1445,6 +1446,19 @@ public class SystemView extends javax.swing.JFrame {
 
         JTabbedPane.addTab("Usuarios", jPanel4);
 
+        javax.swing.GroupLayout pnlVentasLayout = new javax.swing.GroupLayout(pnlVentas);
+        pnlVentas.setLayout(pnlVentasLayout);
+        pnlVentasLayout.setHorizontalGroup(
+            pnlVentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1048, Short.MAX_VALUE)
+        );
+        pnlVentasLayout.setVerticalGroup(
+            pnlVentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 715, Short.MAX_VALUE)
+        );
+
+        JTabbedPane.addTab("Ventas?", pnlVentas);
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -1477,7 +1491,7 @@ public class SystemView extends javax.swing.JFrame {
         jPanel13.setLayout(jPanel13Layout);
         jPanel13Layout.setHorizontalGroup(
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 210, Short.MAX_VALUE)
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
             .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel13Layout.setVerticalGroup(
@@ -1786,6 +1800,7 @@ public class SystemView extends javax.swing.JFrame {
     public javax.swing.JPasswordField passwordUsuario;
     private javax.swing.JPanel pnlPacientes;
     private javax.swing.JPanel pnlUsuarios;
+    private javax.swing.JPanel pnlVentas;
     public javax.swing.JTextField txtApellidoUsuario;
     public javax.swing.JTextField txtEmailUsuario;
     public javax.swing.JTextField txtNombreUsuario;
