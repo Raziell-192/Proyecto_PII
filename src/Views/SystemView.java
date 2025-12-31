@@ -6,12 +6,15 @@ package Views;
 
 //import controllers.SettingsControllesr;
 import controllers.PacienteController;
+import controllers.ProductsController;
 import controllers.SettingsControllers;
 import models.User;
 import models.UsersConnection;
 import controllers.UsersController;
 import models.Paciente;
 import models.PacienteConnection;
+import models.Products;
+import models.ProductsConnection;
 
 /**
  *
@@ -27,6 +30,9 @@ public class SystemView extends javax.swing.JFrame {
     private Paciente paciente = new Paciente();
     private PacienteConnection pacienteConexion = new PacienteConnection();
     private PacienteController pacienteController;
+    private Products producto = new Products();
+    private ProductsConnection productoConnection = new ProductsConnection();
+    private ProductsController productosController;
 
     public SystemView() {
         initComponents();
@@ -37,6 +43,8 @@ public class SystemView extends javax.swing.JFrame {
         UsersController cuentaEmpleado = new UsersController(empleado, empleadoConexion, this);
         //Controlador de Pacientes
         pacienteController = new PacienteController(paciente, pacienteConexion, this);
+        // Controlador de Insumos 
+        productosController = new ProductsController(producto, productoConnection, this);
     }
 
     /**
@@ -213,7 +221,7 @@ public class SystemView extends javax.swing.JFrame {
         jTextField3 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jPasswordField1 = new javax.swing.JPasswordField();
-        pnlVentas = new javax.swing.JPanel();
+        pnlInsumos = new javax.swing.JPanel();
         jPanel25 = new javax.swing.JPanel();
         jLabel18 = new javax.swing.JLabel();
         jLabel34 = new javax.swing.JLabel();
@@ -1474,7 +1482,7 @@ public class SystemView extends javax.swing.JFrame {
 
         JTabbedPane.addTab("Usuarios", jPanel4);
 
-        pnlVentas.setBackground(new java.awt.Color(196, 218, 250));
+        pnlInsumos.setBackground(new java.awt.Color(196, 218, 250));
 
         jPanel25.setBackground(new java.awt.Color(0, 204, 204));
 
@@ -1616,26 +1624,26 @@ public class SystemView extends javax.swing.JFrame {
         jLabel67.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel67.setText("Productos");
 
-        javax.swing.GroupLayout pnlVentasLayout = new javax.swing.GroupLayout(pnlVentas);
-        pnlVentas.setLayout(pnlVentasLayout);
-        pnlVentasLayout.setHorizontalGroup(
-            pnlVentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlVentasLayout.createSequentialGroup()
-                .addGroup(pnlVentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnlVentasLayout.createSequentialGroup()
+        javax.swing.GroupLayout pnlInsumosLayout = new javax.swing.GroupLayout(pnlInsumos);
+        pnlInsumos.setLayout(pnlInsumosLayout);
+        pnlInsumosLayout.setHorizontalGroup(
+            pnlInsumosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlInsumosLayout.createSequentialGroup()
+                .addGroup(pnlInsumosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlInsumosLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jPanel25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(pnlVentasLayout.createSequentialGroup()
+                    .addGroup(pnlInsumosLayout.createSequentialGroup()
                         .addGap(33, 33, 33)
                         .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 895, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(pnlVentasLayout.createSequentialGroup()
+                    .addGroup(pnlInsumosLayout.createSequentialGroup()
                         .addGap(397, 397, 397)
                         .addComponent(jLabel67, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(120, Short.MAX_VALUE))
         );
-        pnlVentasLayout.setVerticalGroup(
-            pnlVentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlVentasLayout.createSequentialGroup()
+        pnlInsumosLayout.setVerticalGroup(
+            pnlInsumosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlInsumosLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
@@ -1645,7 +1653,7 @@ public class SystemView extends javax.swing.JFrame {
                 .addGap(39, 39, 39))
         );
 
-        JTabbedPane.addTab("Ventas?", pnlVentas);
+        JTabbedPane.addTab("Insumos", pnlInsumos);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -1679,7 +1687,7 @@ public class SystemView extends javax.swing.JFrame {
         jPanel13.setLayout(jPanel13Layout);
         jPanel13Layout.setHorizontalGroup(
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
+            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 210, Short.MAX_VALUE)
             .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel13Layout.setVerticalGroup(
@@ -1838,7 +1846,7 @@ public class SystemView extends javax.swing.JFrame {
     private javax.swing.JButton Edit;
     public javax.swing.JLabel Estudiante;
     private javax.swing.JButton Insert;
-    private javax.swing.JTabbedPane JTabbedPane;
+    public javax.swing.JTabbedPane JTabbedPane;
     private javax.swing.JTextField Nommmm;
     public javax.swing.JLabel Profesores;
     public javax.swing.JLabel Trabajadores;
@@ -1859,10 +1867,10 @@ public class SystemView extends javax.swing.JFrame {
     public javax.swing.JButton jButton3;
     public javax.swing.JButton jButton4;
     public javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
+    public javax.swing.JButton jButton6;
+    public javax.swing.JButton jButton7;
+    public javax.swing.JButton jButton8;
+    public javax.swing.JButton jButton9;
     private javax.swing.JComboBox<String> jComboBox1;
     public javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
@@ -1971,12 +1979,12 @@ public class SystemView extends javax.swing.JFrame {
     public javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
     public javax.swing.JTable jTable3;
-    private javax.swing.JTable jTable4;
+    public javax.swing.JTable jTable4;
     public javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField102;
-    private javax.swing.JTextField jTextField11;
-    private javax.swing.JTextField jTextField12;
-    private javax.swing.JTextField jTextField13;
+    public javax.swing.JTextField jTextField11;
+    public javax.swing.JTextField jTextField12;
+    public javax.swing.JTextField jTextField13;
     private javax.swing.JTextField jTextField14;
     private javax.swing.JTextField jTextField15;
     private javax.swing.JTextField jTextField16;
@@ -2003,19 +2011,19 @@ public class SystemView extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField35;
     private javax.swing.JTextField jTextField36;
     private javax.swing.JTextField jTextField37;
-    private javax.swing.JTextField jTextField38;
-    private javax.swing.JTextField jTextField39;
+    public javax.swing.JTextField jTextField38;
+    public javax.swing.JTextField jTextField39;
     public javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField40;
-    private javax.swing.JTextField jTextField41;
+    public javax.swing.JTextField jTextField40;
+    public javax.swing.JTextField jTextField41;
     private javax.swing.JTextField jTextField94;
     private javax.swing.JTextField jTextField95;
     private javax.swing.JTextField jTextField96;
     private javax.swing.JTextField jTextField98;
     public javax.swing.JPasswordField passwordUsuario;
+    private javax.swing.JPanel pnlInsumos;
     private javax.swing.JPanel pnlPacientes;
     private javax.swing.JPanel pnlUsuarios;
-    private javax.swing.JPanel pnlVentas;
     public javax.swing.JTextField txtApellidoUsuario;
     public javax.swing.JTextField txtEmailUsuario;
     public javax.swing.JTextField txtNombreUsuario;

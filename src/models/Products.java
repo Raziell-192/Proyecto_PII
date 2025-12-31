@@ -13,6 +13,9 @@ public class Products {
     private double total_piezas;
     private double precio_unitario;
 
+    public Products() {
+    }
+
     public Products(int id_insumo, int codigo, String nombre, String descripcion, String presentacion, double total_piezas, double precio_unitario) {
         this.id_insumo = id_insumo;
         this.codigo = codigo;
@@ -79,4 +82,8 @@ public class Products {
         this.precio_unitario = precio_unitario;
     }
     
+    @Override
+    public String toString() {
+        return nombre + " (Código: " + codigo + ")";
+    }
 }
