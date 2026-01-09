@@ -533,9 +533,8 @@ public class SystemViewResponsive extends javax.swing.JFrame {
         JTabbedPane.setFont(new java.awt.Font("Rockwell", 0, 16)); // NOI18N
         JTabbedPane.setPreferredSize(new java.awt.Dimension(1200, 800));
 
-        pnlUsuarios.setBackground(new java.awt.Color(100, 181, 246));
-
         jPanel4.setBackground(new java.awt.Color(47, 78, 115));
+        jPanel4.setPreferredSize(new java.awt.Dimension(108, 50));
 
         jLabel10.setFont(new java.awt.Font("Rockwell", 1, 24)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
@@ -550,13 +549,11 @@ public class SystemViewResponsive extends javax.swing.JFrame {
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE)
+            .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
-        jPanel21.setBackground(new java.awt.Color(100, 181, 246));
         jPanel21.setLayout(new java.awt.BorderLayout(10, 15));
 
-        jPanel11.setBackground(new java.awt.Color(100, 181, 246));
         jPanel11.setLayout(new java.awt.GridLayout(2, 6, 15, 30));
 
         jLabel53.setFont(new java.awt.Font("Nunito", 1, 18)); // NOI18N
@@ -621,7 +618,6 @@ public class SystemViewResponsive extends javax.swing.JFrame {
 
         jPanel21.add(jPanel11, java.awt.BorderLayout.CENTER);
 
-        jPanel16.setBackground(new java.awt.Color(100, 181, 246));
         jPanel16.setLayout(new java.awt.BorderLayout());
 
         jLabel51.setFont(new java.awt.Font("Rockwell", 1, 24)); // NOI18N
@@ -631,7 +627,6 @@ public class SystemViewResponsive extends javax.swing.JFrame {
 
         jPanel21.add(jPanel16, java.awt.BorderLayout.PAGE_START);
 
-        jPanel17.setBackground(new java.awt.Color(100, 181, 246));
         jPanel17.setLayout(new java.awt.GridBagLayout());
 
         btnRegistrarUsuario.setBackground(new java.awt.Color(79, 164, 122));
@@ -652,8 +647,6 @@ public class SystemViewResponsive extends javax.swing.JFrame {
 
         jPanel21.add(jPanel17, java.awt.BorderLayout.PAGE_END);
 
-        jPanel19.setBackground(new java.awt.Color(100, 181, 246));
-
         javax.swing.GroupLayout jPanel19Layout = new javax.swing.GroupLayout(jPanel19);
         jPanel19.setLayout(jPanel19Layout);
         jPanel19Layout.setHorizontalGroup(
@@ -667,15 +660,12 @@ public class SystemViewResponsive extends javax.swing.JFrame {
 
         jPanel21.add(jPanel19, java.awt.BorderLayout.LINE_END);
 
-        jPanel23.setBackground(new java.awt.Color(129, 199, 132));
         jPanel23.setLayout(new java.awt.BorderLayout());
 
         jLabel57.setFont(new java.awt.Font("Rockwell", 1, 24)); // NOI18N
         jLabel57.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel57.setText("Usuarios");
         jPanel23.add(jLabel57, java.awt.BorderLayout.PAGE_START);
-
-        jPanel7.setBackground(new java.awt.Color(100, 181, 246));
 
         jTable1.setBackground(new java.awt.Color(245, 245, 245));
         jTable1.setFont(new java.awt.Font("Nunito", 0, 18)); // NOI18N
@@ -692,10 +682,7 @@ public class SystemViewResponsive extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(jTable1);
 
-        pnlBotones.setBackground(new java.awt.Color(100, 181, 246));
         pnlBotones.setLayout(new java.awt.GridLayout(9, 1, 5, 5));
-
-        jPanel5.setBackground(new java.awt.Color(100, 181, 246));
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -705,7 +692,7 @@ public class SystemViewResponsive extends javax.swing.JFrame {
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 41, Short.MAX_VALUE)
+            .addGap(0, 45, Short.MAX_VALUE)
         );
 
         pnlBotones.add(jPanel5);
@@ -724,8 +711,6 @@ public class SystemViewResponsive extends javax.swing.JFrame {
         });
         pnlBotones.add(jButton3);
 
-        jPanel18.setBackground(new java.awt.Color(100, 181, 246));
-
         javax.swing.GroupLayout jPanel18Layout = new javax.swing.GroupLayout(jPanel18);
         jPanel18.setLayout(jPanel18Layout);
         jPanel18Layout.setHorizontalGroup(
@@ -734,7 +719,7 @@ public class SystemViewResponsive extends javax.swing.JFrame {
         );
         jPanel18Layout.setVerticalGroup(
             jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 41, Short.MAX_VALUE)
+            .addGap(0, 45, Short.MAX_VALUE)
         );
 
         pnlBotones.add(jPanel18);
@@ -748,8 +733,6 @@ public class SystemViewResponsive extends javax.swing.JFrame {
         jButton4.setPreferredSize(new java.awt.Dimension(100, 50));
         pnlBotones.add(jButton4);
 
-        jPanel20.setBackground(new java.awt.Color(100, 181, 246));
-
         javax.swing.GroupLayout jPanel20Layout = new javax.swing.GroupLayout(jPanel20);
         jPanel20.setLayout(jPanel20Layout);
         jPanel20Layout.setHorizontalGroup(
@@ -758,7 +741,7 @@ public class SystemViewResponsive extends javax.swing.JFrame {
         );
         jPanel20Layout.setVerticalGroup(
             jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 41, Short.MAX_VALUE)
+            .addGap(0, 45, Short.MAX_VALUE)
         );
 
         pnlBotones.add(jPanel20);
@@ -772,8 +755,6 @@ public class SystemViewResponsive extends javax.swing.JFrame {
         jButton5.setPreferredSize(new java.awt.Dimension(100, 50));
         pnlBotones.add(jButton5);
 
-        jPanel24.setBackground(new java.awt.Color(100, 181, 246));
-
         javax.swing.GroupLayout jPanel24Layout = new javax.swing.GroupLayout(jPanel24);
         jPanel24.setLayout(jPanel24Layout);
         jPanel24Layout.setHorizontalGroup(
@@ -782,7 +763,7 @@ public class SystemViewResponsive extends javax.swing.JFrame {
         );
         jPanel24Layout.setVerticalGroup(
             jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 41, Short.MAX_VALUE)
+            .addGap(0, 45, Short.MAX_VALUE)
         );
 
         pnlBotones.add(jPanel24);
@@ -801,8 +782,6 @@ public class SystemViewResponsive extends javax.swing.JFrame {
         });
         pnlBotones.add(btnMostrar);
 
-        jPanel29.setBackground(new java.awt.Color(100, 181, 246));
-
         javax.swing.GroupLayout jPanel29Layout = new javax.swing.GroupLayout(jPanel29);
         jPanel29.setLayout(jPanel29Layout);
         jPanel29Layout.setHorizontalGroup(
@@ -811,7 +790,7 @@ public class SystemViewResponsive extends javax.swing.JFrame {
         );
         jPanel29Layout.setVerticalGroup(
             jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 41, Short.MAX_VALUE)
+            .addGap(0, 45, Short.MAX_VALUE)
         );
 
         pnlBotones.add(jPanel29);
@@ -832,7 +811,7 @@ public class SystemViewResponsive extends javax.swing.JFrame {
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 415, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 451, Short.MAX_VALUE)
                     .addComponent(pnlBotones, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -843,7 +822,7 @@ public class SystemViewResponsive extends javax.swing.JFrame {
         pnlUsuarios.setLayout(pnlUsuariosLayout);
         pnlUsuariosLayout.setHorizontalGroup(
             pnlUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 1200, Short.MAX_VALUE)
             .addComponent(jPanel21, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
             .addComponent(jPanel23, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
         );
@@ -861,8 +840,6 @@ public class SystemViewResponsive extends javax.swing.JFrame {
 
         jPanel6.setBackground(new java.awt.Color(244, 246, 248));
         jPanel6.setLayout(new java.awt.BorderLayout());
-
-        jPanel12.setBackground(new java.awt.Color(132, 182, 244));
 
         jLabel35.setText("Datos del Profe:");
 
@@ -1092,7 +1069,7 @@ public class SystemViewResponsive extends javax.swing.JFrame {
                 .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel47)
                     .addComponent(jTextField33, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(386, Short.MAX_VALUE))
+                .addContainerGap(423, Short.MAX_VALUE))
         );
 
         jPanel6.add(jPanel12, java.awt.BorderLayout.CENTER);
@@ -1149,22 +1126,22 @@ public class SystemViewResponsive extends javax.swing.JFrame {
         });
 
         jPanel9.setBackground(new java.awt.Color(47, 78, 115));
+        jPanel9.setPreferredSize(new java.awt.Dimension(313, 50));
 
-        jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel13.setFont(new java.awt.Font("Rockwell", 1, 24)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel13.setText("Administradores");
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
         jPanel9Layout.setHorizontalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel9Layout.createSequentialGroup()
-                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 313, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE)
+            .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
@@ -1172,28 +1149,25 @@ public class SystemViewResponsive extends javax.swing.JFrame {
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel8Layout.createSequentialGroup()
+                .addGap(114, 114, 114)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel8Layout.createSequentialGroup()
-                        .addGap(114, 114, 114)
-                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel8Layout.createSequentialGroup()
-                                .addComponent(Nommmm, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(89, 89, 89)
-                                .addComponent(Buscar))
-                            .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel8Layout.createSequentialGroup()
-                                    .addGap(84, 84, 84)
-                                    .addComponent(Insert)
-                                    .addGap(78, 78, 78)
-                                    .addComponent(Edit)
-                                    .addGap(69, 69, 69)
-                                    .addComponent(Clear)
-                                    .addGap(76, 76, 76)
-                                    .addComponent(Delete))
-                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 692, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 388, Short.MAX_VALUE)))
-                .addContainerGap())
+                        .addComponent(Nommmm, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(89, 89, 89)
+                        .addComponent(Buscar))
+                    .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel8Layout.createSequentialGroup()
+                            .addGap(84, 84, 84)
+                            .addComponent(Insert)
+                            .addGap(78, 78, 78)
+                            .addComponent(Edit)
+                            .addGap(69, 69, 69)
+                            .addComponent(Clear)
+                            .addGap(76, 76, 76)
+                            .addComponent(Delete))
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 692, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(394, Short.MAX_VALUE))
+            .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, 1200, Short.MAX_VALUE)
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1205,7 +1179,7 @@ public class SystemViewResponsive extends javax.swing.JFrame {
                     .addComponent(Buscar))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Insert)
                     .addComponent(Edit)
@@ -1220,6 +1194,7 @@ public class SystemViewResponsive extends javax.swing.JFrame {
         pnlPacientes.setLayout(new java.awt.BorderLayout());
 
         jPanel10.setBackground(new java.awt.Color(47, 78, 115));
+        jPanel10.setPreferredSize(new java.awt.Dimension(1200, 50));
 
         jLabel14.setFont(new java.awt.Font("Rockwell", 1, 24)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
@@ -1559,7 +1534,7 @@ public class SystemViewResponsive extends javax.swing.JFrame {
         );
         jPanel53Layout.setVerticalGroup(
             jPanel53Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 43, Short.MAX_VALUE)
+            .addGap(0, 45, Short.MAX_VALUE)
         );
 
         jPanel51.add(jPanel53);
@@ -1580,7 +1555,7 @@ public class SystemViewResponsive extends javax.swing.JFrame {
         );
         jPanel54Layout.setVerticalGroup(
             jPanel54Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 43, Short.MAX_VALUE)
+            .addGap(0, 45, Short.MAX_VALUE)
         );
 
         jPanel51.add(jPanel54);
@@ -1606,7 +1581,7 @@ public class SystemViewResponsive extends javax.swing.JFrame {
         );
         jPanel55Layout.setVerticalGroup(
             jPanel55Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 43, Short.MAX_VALUE)
+            .addGap(0, 45, Short.MAX_VALUE)
         );
 
         jPanel51.add(jPanel55);
@@ -1627,7 +1602,7 @@ public class SystemViewResponsive extends javax.swing.JFrame {
         );
         jPanel56Layout.setVerticalGroup(
             jPanel56Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 43, Short.MAX_VALUE)
+            .addGap(0, 45, Short.MAX_VALUE)
         );
 
         jPanel51.add(jPanel56);
@@ -1648,7 +1623,7 @@ public class SystemViewResponsive extends javax.swing.JFrame {
         );
         jPanel63Layout.setVerticalGroup(
             jPanel63Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 43, Short.MAX_VALUE)
+            .addGap(0, 45, Short.MAX_VALUE)
         );
 
         jPanel51.add(jPanel63);
@@ -1670,7 +1645,7 @@ public class SystemViewResponsive extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel49Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel51, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 435, Short.MAX_VALUE))
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 451, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -1683,8 +1658,6 @@ public class SystemViewResponsive extends javax.swing.JFrame {
         JTabbedPane.addTab("Administradores Clínicos", pnlPacientes);
 
         jPanel22.setBackground(new java.awt.Color(244, 246, 248));
-
-        jPanel28.setBackground(new java.awt.Color(196, 218, 250));
 
         jLabel122.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel122.setText("Datos de la farmacia ");
@@ -1779,7 +1752,7 @@ public class SystemViewResponsive extends javax.swing.JFrame {
             .addGroup(jPanel22Layout.createSequentialGroup()
                 .addGap(62, 62, 62)
                 .addComponent(jPanel28, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(325, Short.MAX_VALUE))
+                .addContainerGap(362, Short.MAX_VALUE))
         );
 
         JTabbedPane.addTab("Configuraciones", jPanel22);
@@ -1922,22 +1895,22 @@ public class SystemViewResponsive extends javax.swing.JFrame {
         jLabel81.setText("Ventas");
 
         jPanel2.setBackground(new java.awt.Color(47, 78, 115));
+        jPanel2.setPreferredSize(new java.awt.Dimension(313, 50));
 
         jLabel3.setFont(new java.awt.Font("Rockwell", 1, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Administradores de Venta");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 313, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE)
+            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout pnlVentasLayout = new javax.swing.GroupLayout(pnlVentas);
@@ -1947,28 +1920,27 @@ public class SystemViewResponsive extends javax.swing.JFrame {
             .addGroup(pnlVentasLayout.createSequentialGroup()
                 .addGroup(pnlVentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlVentasLayout.createSequentialGroup()
-                        .addContainerGap()
+                        .addGap(391, 391, 391)
+                        .addComponent(jLabel81))
+                    .addGroup(pnlVentasLayout.createSequentialGroup()
+                        .addGap(12, 12, 12)
                         .addGroup(pnlVentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 850, Short.MAX_VALUE)
-                            .addComponent(jPanel27, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(pnlVentasLayout.createSequentialGroup()
-                        .addGap(391, 391, 391)
-                        .addComponent(jLabel81)))
-                .addContainerGap(344, Short.MAX_VALUE))
+                            .addComponent(jPanel27, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addContainerGap(338, Short.MAX_VALUE))
+            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1200, Short.MAX_VALUE)
         );
         pnlVentasLayout.setVerticalGroup(
             pnlVentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlVentasLayout.createSequentialGroup()
-                .addContainerGap()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(24, 24, 24)
                 .addComponent(jPanel27, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(29, 29, 29)
                 .addComponent(jLabel81)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(52, Short.MAX_VALUE))
+                .addContainerGap(88, Short.MAX_VALUE))
         );
 
         JTabbedPane.addTab("Venta", pnlVentas);
@@ -2121,22 +2093,22 @@ public class SystemViewResponsive extends javax.swing.JFrame {
         jLabel67.setText("Productos");
 
         jPanel15.setBackground(new java.awt.Color(47, 78, 115));
+        jPanel15.setPreferredSize(new java.awt.Dimension(313, 50));
 
         jLabel15.setFont(new java.awt.Font("Rockwell", 1, 24)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel15.setText("Registro de Insumos");
 
         javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
         jPanel15.setLayout(jPanel15Layout);
         jPanel15Layout.setHorizontalGroup(
             jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel15Layout.createSequentialGroup()
-                .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 313, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jLabel15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel15Layout.setVerticalGroup(
             jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel15, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE)
+            .addComponent(jLabel15, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout pnlInsumosLayout = new javax.swing.GroupLayout(pnlInsumos);
@@ -2144,30 +2116,26 @@ public class SystemViewResponsive extends javax.swing.JFrame {
         pnlInsumosLayout.setHorizontalGroup(
             pnlInsumosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlInsumosLayout.createSequentialGroup()
-                .addGroup(pnlInsumosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel15, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(pnlInsumosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(pnlInsumosLayout.createSequentialGroup()
-                        .addGroup(pnlInsumosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(pnlInsumosLayout.createSequentialGroup()
-                                .addGap(398, 398, 398)
-                                .addComponent(jLabel67, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(pnlInsumosLayout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 895, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jPanel25, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(0, 293, Short.MAX_VALUE)))
-                .addContainerGap())
+                        .addGap(398, 398, 398)
+                        .addComponent(jLabel67, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnlInsumosLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 895, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jPanel25, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(299, Short.MAX_VALUE))
+            .addComponent(jPanel15, javax.swing.GroupLayout.DEFAULT_SIZE, 1200, Short.MAX_VALUE)
         );
         pnlInsumosLayout.setVerticalGroup(
             pnlInsumosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlInsumosLayout.createSequentialGroup()
-                .addContainerGap()
                 .addComponent(jPanel15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20)
+                .addGap(26, 26, 26)
                 .addComponent(jPanel25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel67)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 76, Short.MAX_VALUE)
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(19, 19, 19))
         );
@@ -2329,22 +2297,22 @@ public class SystemViewResponsive extends javax.swing.JFrame {
         jLabel73.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         jPanel14.setBackground(new java.awt.Color(47, 78, 115));
+        jPanel14.setPreferredSize(new java.awt.Dimension(313, 50));
 
         jLabel5.setFont(new java.awt.Font("Rockwell", 1, 24)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("Registro de Tratamiento");
 
         javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
         jPanel14.setLayout(jPanel14Layout);
         jPanel14Layout.setHorizontalGroup(
             jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel14Layout.createSequentialGroup()
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 313, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel14Layout.setVerticalGroup(
             jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE)
+            .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout pnlTratamientoLayout = new javax.swing.GroupLayout(pnlTratamiento);
@@ -2352,19 +2320,16 @@ public class SystemViewResponsive extends javax.swing.JFrame {
         pnlTratamientoLayout.setHorizontalGroup(
             pnlTratamientoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlTratamientoLayout.createSequentialGroup()
-                .addGroup(pnlTratamientoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(pnlTratamientoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel26, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(pnlTratamientoLayout.createSequentialGroup()
-                        .addGroup(pnlTratamientoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jPanel26, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(pnlTratamientoLayout.createSequentialGroup()
-                                .addGap(393, 393, 393)
-                                .addComponent(jLabel73, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(pnlTratamientoLayout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jScrollPane5)))
-                        .addGap(0, 295, Short.MAX_VALUE)))
-                .addContainerGap())
+                        .addGap(393, 393, 393)
+                        .addComponent(jLabel73, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnlTratamientoLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane5)))
+                .addContainerGap(301, Short.MAX_VALUE))
+            .addComponent(jPanel14, javax.swing.GroupLayout.DEFAULT_SIZE, 1200, Short.MAX_VALUE)
         );
         pnlTratamientoLayout.setVerticalGroup(
             pnlTratamientoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2372,7 +2337,7 @@ public class SystemViewResponsive extends javax.swing.JFrame {
                 .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel26, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 65, Short.MAX_VALUE)
                 .addComponent(jLabel73)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE)
