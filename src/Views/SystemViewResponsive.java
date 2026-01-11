@@ -290,6 +290,8 @@ public class SystemViewResponsive extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("UnsiSmile");
+        setMinimumSize(new java.awt.Dimension(1200, 800));
 
         jPanel1.setBackground(new java.awt.Color(0, 81, 135));
         jPanel1.setPreferredSize(new java.awt.Dimension(210, 720));
@@ -1959,7 +1961,7 @@ public class SystemViewResponsive extends javax.swing.JFrame {
         jPanel57.add(jPanel65);
 
         jButton14.setBackground(new java.awt.Color(79, 164, 122));
-        jButton14.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButton14.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
         jButton14.setForeground(new java.awt.Color(255, 255, 255));
         jButton14.setText("Registrar");
         jButton14.addActionListener(new java.awt.event.ActionListener() {
@@ -1983,7 +1985,7 @@ public class SystemViewResponsive extends javax.swing.JFrame {
         jPanel57.add(jPanel60);
 
         jButton17.setBackground(new java.awt.Color(59, 130, 246));
-        jButton17.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButton17.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
         jButton17.setForeground(new java.awt.Color(255, 255, 255));
         jButton17.setText("Modificar");
         jPanel57.add(jButton17);
@@ -2002,7 +2004,7 @@ public class SystemViewResponsive extends javax.swing.JFrame {
         jPanel57.add(jPanel61);
 
         jButton16.setBackground(new java.awt.Color(229, 83, 61));
-        jButton16.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButton16.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
         jButton16.setForeground(new java.awt.Color(255, 255, 255));
         jButton16.setText("Eliminar");
         jPanel57.add(jButton16);
@@ -2021,7 +2023,7 @@ public class SystemViewResponsive extends javax.swing.JFrame {
         jPanel57.add(jPanel62);
 
         jButton15.setBackground(new java.awt.Color(156, 163, 175));
-        jButton15.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButton15.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
         jButton15.setForeground(new java.awt.Color(255, 255, 255));
         jButton15.setText("Cancelar");
         jPanel57.add(jButton15);
