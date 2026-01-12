@@ -1,6 +1,6 @@
 package controllers;
 
-import Views.SystemView;
+import Views.SystemViewResponsive ;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
@@ -17,12 +17,12 @@ public class ProductsController implements ActionListener {
     
     private Products producto;
     private ProductsConnection productoConnection;
-    private SystemView vista;
+    private SystemViewResponsive  vista;
     private DefaultTableModel modelo;
     
     private Products productoSeleccionado;
     
-    public ProductsController(Products producto, ProductsConnection productoConnection, SystemView vista) {
+    public ProductsController(Products producto, ProductsConnection productoConnection, SystemViewResponsive  vista) {
         this.producto = producto;
         this.productoConnection = productoConnection;
         this.vista = vista;

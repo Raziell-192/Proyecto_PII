@@ -1,6 +1,6 @@
 package controllers;
 
-import Views.SystemView;
+import Views.SystemViewResponsive ;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
@@ -17,12 +17,12 @@ public class PacienteController implements ActionListener {
     
     private Paciente paciente;
     private PacienteConnection pacienteConexion;
-    private SystemView vista;
+    private SystemViewResponsive  vista;
     private DefaultTableModel modelo;
     
     private Paciente pacienteSeleccionado;
     
-    public PacienteController(Paciente paciente, PacienteConnection pacienteConexion, SystemView vista) {
+    public PacienteController(Paciente paciente, PacienteConnection pacienteConexion, SystemViewResponsive  vista) {
         this.paciente = paciente;
         this.pacienteConexion = pacienteConexion;
         this.vista = vista;

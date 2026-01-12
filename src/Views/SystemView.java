@@ -36,17 +36,17 @@ public class SystemView extends javax.swing.JFrame {
 
     public SystemView() {
         initComponents();
-        //Controlador del Settings
-        SettingsControllers configuracion = new SettingsControllers(this);
-
-        //Controlador de empleados:
-        UsersController cuentaEmpleado = new UsersController(empleado, empleadoConexion, this);
-        //Controlador de Pacientes
-        pacienteController = new PacienteController(paciente, pacienteConexion, this);
-        // Controlador de Insumos 
-        productosController = new ProductsController(producto, productoConnection, this);
-        
-        this.setExtendedState(this.MAXIMIZED_BOTH);
+//        //Controlador del Settings
+//        SettingsControllers configuracion = new SettingsControllers(this);
+//
+//        //Controlador de empleados:
+//        UsersController cuentaEmpleado = new UsersController(empleado, empleadoConexion, this);
+//        //Controlador de Pacientes
+//        pacienteController = new PacienteController(paciente, pacienteConexion, this);
+//        // Controlador de Insumos 
+//        productosController = new ProductsController(producto, productoConnection, this);
+//        
+//        this.setExtendedState(this.MAXIMIZED_BOTH);
     }
 
     /**

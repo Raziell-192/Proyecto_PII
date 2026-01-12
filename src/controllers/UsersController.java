@@ -1,6 +1,6 @@
 package controllers;
 
-import Views.SystemView;
+import Views.SystemViewResponsive ;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
@@ -22,10 +22,10 @@ public class UsersController implements ActionListener {
 
     private User usuario;
     private UsersConnection usuarioConexion;
-    private SystemView vista;
+    private SystemViewResponsive  vista;
     String rol = rolUsuario;
 
-    public UsersController(User usuario, UsersConnection usuarioConexion, SystemView vista) {
+    public UsersController(User usuario, UsersConnection usuarioConexion, SystemViewResponsive  vista) {
         this.usuario = usuario;
         this.usuarioConexion = usuarioConexion;
         this.vista = vista;

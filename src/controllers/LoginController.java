@@ -2,7 +2,7 @@ package controllers;
 
 import Views.Login;
 import Views.NewLogin;
-import Views.SystemView;
+import Views.SystemViewResponsive ;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
@@ -49,7 +49,7 @@ public class LoginController implements ActionListener {
             if (!contrasenya.isEmpty()) {
                 if (usuario.equals(usuarioAdmin)) {
                     if (contrasenya.equals(contrasenyaAdmin)) {
-                        SystemView admin = new SystemView();
+                        SystemViewResponsive  admin = new SystemViewResponsive ();
                         admin.setVisible(true);
                         this.new_login_view.dispose();
                     } else {
@@ -57,7 +57,7 @@ public class LoginController implements ActionListener {
                     }
                 } else if (usuario.equals(usuarioUser)) {
                     if (contrasenya.equals(contrasenyaUser)) {
-                        SystemView aux = new SystemView();
+                        SystemViewResponsive  aux = new SystemViewResponsive ();
                         aux.setVisible(true);
                         this.new_login_view.dispose();
                     } else {
@@ -80,10 +80,10 @@ public class LoginController implements ActionListener {
 //                empleado = empleado_conexion.consultarEmpleado(usuario, contrasenya);
 //                if (empleado.getNombreDeUsuario() != null) {
 //                    if (empleado.getRol().equals("Administrador")) {
-//                        SystemView admin = new SystemView();
+//                        SystemViewResponsive  admin = new SystemViewResponsive ();
 //                        admin.setVisible(true);
 //                    } else {
-//                        SystemView aux = new SystemView();
+//                        SystemViewResponsive  aux = new SystemViewResponsive ();
 //                        aux.setVisible(true);
 //                    }
 //                    this.new_login_view.dispose();

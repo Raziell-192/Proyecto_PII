@@ -1,20 +1,47 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package Views;
+
+import controllers.PacienteController;
+import controllers.ProductsController;
+import controllers.SettingsControllers;
+import models.User;
+import models.UsersConnection;
+import controllers.UsersController;
+import models.Paciente;
+import models.PacienteConnection;
+import models.Products;
+import models.ProductsConnection;
 
 /**
  *
- * @author labdessw12
+ * @author jakim
  */
 public class SystemViewResponsive extends javax.swing.JFrame {
 
     /**
-     * Creates new form SystemView2
+     * Creates new form jakim
      */
+    
+    User empleado = new User();
+    UsersConnection empleadoConexion = new UsersConnection();
+    private Paciente paciente = new Paciente();
+    private PacienteConnection pacienteConexion = new PacienteConnection();
+    private PacienteController pacienteController;
+    private Products producto = new Products();
+    private ProductsConnection productoConnection = new ProductsConnection();
+    private ProductsController productosController;
+    
     public SystemViewResponsive() {
         initComponents();
+        //Controlador del Settings
+        SettingsControllers configuracion = new SettingsControllers(this);
+
+        //Controlador de empleados:
+        UsersController cuentaEmpleado = new UsersController(empleado, empleadoConexion, this);
+        //Controlador de Pacientes
+        pacienteController = new PacienteController(paciente, pacienteConexion, this);
+        // Controlador de Insumos 
+        productosController = new ProductsController(producto, productoConnection, this);
+        
         this.setExtendedState(this.MAXIMIZED_BOTH);
     }
 

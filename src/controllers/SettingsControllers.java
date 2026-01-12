@@ -1,6 +1,6 @@
 package controllers;
 
-import Views.SystemView;
+import Views.SystemViewResponsive ;
 import java.awt.Color;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -11,9 +11,9 @@ import java.awt.event.MouseListener;
  */
 public class SettingsControllers implements MouseListener {
 
-    private SystemView Views;
+    private SystemViewResponsive  Views;
 
-    public SettingsControllers(SystemView Views) {
+    public SettingsControllers(SystemViewResponsive  Views) {
         this.Views = Views;
         this.Views.Usuario.addMouseListener(this);
         this.Views.Estudiante.addMouseListener(this);
