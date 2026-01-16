@@ -25,7 +25,7 @@ public class NewLogin extends javax.swing.JFrame {
      */
     public NewLogin() {
         initComponents();
-        colocarImagenLabel(lblLogo, "/images/logo_UnsiSmile.png");
+        colocarImagenLabel(lblLogo, "/images/logo_UnsiSmile_2.png");
         //Controlador de login
         LoginController empleado_login = new LoginController(empleado, empleado_conexion, this);
 
