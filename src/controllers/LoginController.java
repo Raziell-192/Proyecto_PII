@@ -40,6 +40,7 @@ public class LoginController implements ActionListener {
         if (e.getSource() == new_login_view.btnIngresar) {
             SystemViewResponsive admin = new SystemViewResponsive();
             admin.setVisible(true);
+            this.new_login_view.dispose();
         }
 
 //        String contrasenyaAdmin = "123", contrasenyaUser = "123", usuarioAdmin = "admin", usuarioUser = "user";

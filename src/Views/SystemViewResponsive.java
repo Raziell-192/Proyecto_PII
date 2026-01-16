@@ -7,6 +7,7 @@ import models.User;
 import models.UsersConnection;
 import controllers.UsersController;
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Image;
 import java.awt.Rectangle;
 import javax.swing.Icon;
@@ -45,6 +46,7 @@ public class SystemViewResponsive extends javax.swing.JFrame {
         lblLogoHome.setText("");
 //        colocarImagenLabel(lblLogoHome, "/images/Icono_Odontología.png");
         colocarImagenLabel(lblLogoHome, "/images/Diente_sano.png");
+        configurarFuenteTabla();
 
         SettingsControllers configuracion = new SettingsControllers(this);
 
@@ -126,7 +128,7 @@ public class SystemViewResponsive extends javax.swing.JFrame {
         jLabel57 = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tblUsuarios = new javax.swing.JTable();
         pnlBotones = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         jButton3 = new javax.swing.JButton();
@@ -174,7 +176,7 @@ public class SystemViewResponsive extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         jPanel49 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTable3 = new javax.swing.JTable();
+        tblPacientes = new javax.swing.JTable();
         jPanel51 = new javax.swing.JPanel();
         jPanel53 = new javax.swing.JPanel();
         btnBuscarPaciente = new javax.swing.JButton();
@@ -221,7 +223,7 @@ public class SystemViewResponsive extends javax.swing.JFrame {
         jLabel81 = new javax.swing.JLabel();
         jPanel78 = new javax.swing.JPanel();
         jScrollPane6 = new javax.swing.JScrollPane();
-        jTable6 = new javax.swing.JTable();
+        tblVentas = new javax.swing.JTable();
         pnlInsumos = new javax.swing.JPanel();
         jPanel15 = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
@@ -254,7 +256,7 @@ public class SystemViewResponsive extends javax.swing.JFrame {
         jLabel67 = new javax.swing.JLabel();
         jPanel87 = new javax.swing.JPanel();
         jScrollPane4 = new javax.swing.JScrollPane();
-        jTable4 = new javax.swing.JTable();
+        tblInsumos = new javax.swing.JTable();
         pnlTratamiento = new javax.swing.JPanel();
         pnlHeaderTratamiento = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
@@ -283,7 +285,7 @@ public class SystemViewResponsive extends javax.swing.JFrame {
         jLabel73 = new javax.swing.JLabel();
         jPanel59 = new javax.swing.JPanel();
         jScrollPane5 = new javax.swing.JScrollPane();
-        jTable5 = new javax.swing.JTable();
+        tblTratamientos = new javax.swing.JTable();
         pnlAdministradores = new javax.swing.JPanel();
         pnlHeaderAdministradores = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
@@ -293,7 +295,7 @@ public class SystemViewResponsive extends javax.swing.JFrame {
         Buscar = new javax.swing.JButton();
         pnlTablaAdministradores = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        tblAdministradores = new javax.swing.JTable();
         pnlBotonesAdministradores = new javax.swing.JPanel();
         Insert = new javax.swing.JButton();
         Edit = new javax.swing.JButton();
@@ -361,7 +363,6 @@ public class SystemViewResponsive extends javax.swing.JFrame {
         setTitle("UnsiSmile");
         setMinimumSize(new java.awt.Dimension(1200, 800));
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(1410, 820));
 
         pnlBarraTitulo.setBackground(new java.awt.Color(0, 56, 101));
         pnlBarraTitulo.setPreferredSize(new java.awt.Dimension(1410, 40));
@@ -886,9 +887,9 @@ public class SystemViewResponsive extends javax.swing.JFrame {
 
         jPanel7.setPreferredSize(new java.awt.Dimension(1200, 380));
 
-        jTable1.setBackground(new java.awt.Color(245, 245, 245));
-        jTable1.setFont(new java.awt.Font("Nunito", 0, 18)); // NOI18N
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblUsuarios.setBackground(new java.awt.Color(245, 245, 245));
+        tblUsuarios.setFont(new java.awt.Font("Nunito", 0, 18)); // NOI18N
+        tblUsuarios.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
@@ -899,7 +900,7 @@ public class SystemViewResponsive extends javax.swing.JFrame {
                 "Identificador", "Nombre", "Apellido", "Nombre de usuario", "Correo electrónico", "Rol"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tblUsuarios);
 
         pnlBotones.setPreferredSize(new java.awt.Dimension(100, 380));
         pnlBotones.setLayout(new java.awt.GridLayout(9, 1, 5, 5));
@@ -1364,9 +1365,9 @@ public class SystemViewResponsive extends javax.swing.JFrame {
 
         jPanel49.setPreferredSize(new java.awt.Dimension(464, 380));
 
-        jTable3.setBackground(new java.awt.Color(229, 231, 235));
-        jTable3.setFont(new java.awt.Font("Nunito", 0, 18)); // NOI18N
-        jTable3.setModel(new javax.swing.table.DefaultTableModel(
+        tblPacientes.setBackground(new java.awt.Color(229, 231, 235));
+        tblPacientes.setFont(new java.awt.Font("Nunito", 0, 18)); // NOI18N
+        tblPacientes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
                 {null, null, null, null, null},
@@ -1385,7 +1386,7 @@ public class SystemViewResponsive extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane3.setViewportView(jTable3);
+        jScrollPane3.setViewportView(tblPacientes);
 
         jPanel51.setPreferredSize(new java.awt.Dimension(100, 380));
         jPanel51.setLayout(new java.awt.GridLayout(9, 1, 5, 5));
@@ -1747,9 +1748,9 @@ public class SystemViewResponsive extends javax.swing.JFrame {
 
         jPanel79.add(jPanel77, java.awt.BorderLayout.PAGE_START);
 
-        jTable6.setBackground(new java.awt.Color(229, 231, 235));
-        jTable6.setFont(new java.awt.Font("Nunito", 0, 18)); // NOI18N
-        jTable6.setModel(new javax.swing.table.DefaultTableModel(
+        tblVentas.setBackground(new java.awt.Color(229, 231, 235));
+        tblVentas.setFont(new java.awt.Font("Nunito", 0, 18)); // NOI18N
+        tblVentas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
@@ -1768,7 +1769,7 @@ public class SystemViewResponsive extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane6.setViewportView(jTable6);
+        jScrollPane6.setViewportView(tblVentas);
 
         javax.swing.GroupLayout jPanel78Layout = new javax.swing.GroupLayout(jPanel78);
         jPanel78.setLayout(jPanel78Layout);
@@ -1924,7 +1925,7 @@ public class SystemViewResponsive extends javax.swing.JFrame {
 
         jLabel67.setFont(new java.awt.Font("Rockwell", 1, 24)); // NOI18N
         jLabel67.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel67.setText("Productos");
+        jLabel67.setText("Insumos");
 
         javax.swing.GroupLayout jPanel85Layout = new javax.swing.GroupLayout(jPanel85);
         jPanel85.setLayout(jPanel85Layout);
@@ -1939,9 +1940,9 @@ public class SystemViewResponsive extends javax.swing.JFrame {
 
         jPanel86.add(jPanel85, java.awt.BorderLayout.PAGE_START);
 
-        jTable4.setBackground(new java.awt.Color(229, 231, 235));
-        jTable4.setFont(new java.awt.Font("Nunito", 0, 18)); // NOI18N
-        jTable4.setModel(new javax.swing.table.DefaultTableModel(
+        tblInsumos.setBackground(new java.awt.Color(229, 231, 235));
+        tblInsumos.setFont(new java.awt.Font("Nunito", 0, 18)); // NOI18N
+        tblInsumos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null},
@@ -1960,7 +1961,7 @@ public class SystemViewResponsive extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane4.setViewportView(jTable4);
+        jScrollPane4.setViewportView(tblInsumos);
 
         javax.swing.GroupLayout jPanel87Layout = new javax.swing.GroupLayout(jPanel87);
         jPanel87.setLayout(jPanel87Layout);
@@ -2108,9 +2109,9 @@ public class SystemViewResponsive extends javax.swing.JFrame {
 
         jPanel59.setPreferredSize(new java.awt.Dimension(1200, 470));
 
-        jTable5.setBackground(new java.awt.Color(229, 231, 235));
-        jTable5.setFont(new java.awt.Font("Nunito", 0, 18)); // NOI18N
-        jTable5.setModel(new javax.swing.table.DefaultTableModel(
+        tblTratamientos.setBackground(new java.awt.Color(229, 231, 235));
+        tblTratamientos.setFont(new java.awt.Font("Nunito", 0, 18)); // NOI18N
+        tblTratamientos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
@@ -2129,7 +2130,7 @@ public class SystemViewResponsive extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane5.setViewportView(jTable5);
+        jScrollPane5.setViewportView(tblTratamientos);
 
         javax.swing.GroupLayout jPanel59Layout = new javax.swing.GroupLayout(jPanel59);
         jPanel59.setLayout(jPanel59Layout);
@@ -2200,8 +2201,8 @@ public class SystemViewResponsive extends javax.swing.JFrame {
 
         pnlContenedorMainAdministradores.add(pnlBusquedaAdministradores, java.awt.BorderLayout.PAGE_START);
 
-        jTable2.setBackground(new java.awt.Color(229, 231, 235));
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        tblAdministradores.setBackground(new java.awt.Color(229, 231, 235));
+        tblAdministradores.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -2212,7 +2213,7 @@ public class SystemViewResponsive extends javax.swing.JFrame {
                 "Producto", "Cantidad", "Precio", "Fecha"
             }
         ));
-        jScrollPane2.setViewportView(jTable2);
+        jScrollPane2.setViewportView(tblAdministradores);
 
         javax.swing.GroupLayout pnlTablaAdministradoresLayout = new javax.swing.GroupLayout(pnlTablaAdministradores);
         pnlTablaAdministradores.setLayout(pnlTablaAdministradoresLayout);
@@ -2680,6 +2681,7 @@ public class SystemViewResponsive extends javax.swing.JFrame {
 
     private void btnMinimizeTxtMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMinimizeTxtMouseClicked
         this.setExtendedState(this.ICONIFIED);
+        maximized = false;
     }//GEN-LAST:event_btnMinimizeTxtMouseClicked
 
     private void btnMinimizeTxtMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMinimizeTxtMouseEntered
@@ -2729,6 +2731,15 @@ public class SystemViewResponsive extends javax.swing.JFrame {
         Icon icono = new ImageIcon(imagen.getImage().getScaledInstance(etiqueta.getWidth(), etiqueta.getHeight(), Image.SCALE_DEFAULT));
         etiqueta.setIcon(icono);
         this.repaint();
+    }
+
+    private void configurarFuenteTabla() {
+        tblUsuarios.getTableHeader().setFont(new Font("Nunito", Font.BOLD, 18));
+        tblPacientes.getTableHeader().setFont(new Font("Nunito", Font.BOLD, 18));
+        tblInsumos.getTableHeader().setFont(new Font("Nunito", Font.BOLD, 18));
+        tblTratamientos.getTableHeader().setFont(new Font("Nunito", Font.BOLD, 18));
+        tblVentas.getTableHeader().setFont(new Font("Nunito", Font.BOLD, 18));
+        tblAdministradores.getTableHeader().setFont(new Font("Nunito", Font.BOLD, 18));
     }
 
     /**
@@ -2984,12 +2995,6 @@ public class SystemViewResponsive extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
-    public javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
-    public javax.swing.JTable jTable3;
-    public javax.swing.JTable jTable4;
-    public javax.swing.JTable jTable5;
-    public javax.swing.JTable jTable6;
     public javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField102;
     public javax.swing.JTextField jTextField11;
@@ -3052,6 +3057,12 @@ public class SystemViewResponsive extends javax.swing.JFrame {
     private javax.swing.JPanel pnlUsuarios;
     private javax.swing.JPanel pnlVentas;
     private javax.swing.JPanel pnlVistas;
+    private javax.swing.JTable tblAdministradores;
+    public javax.swing.JTable tblInsumos;
+    public javax.swing.JTable tblPacientes;
+    public javax.swing.JTable tblTratamientos;
+    public javax.swing.JTable tblUsuarios;
+    public javax.swing.JTable tblVentas;
     public javax.swing.JTextField txtApellidoUsuario;
     public javax.swing.JTextField txtEmailUsuario;
     public javax.swing.JTextField txtNombreUsuario;

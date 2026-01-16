@@ -27,7 +27,7 @@ public class PacienteController implements ActionListener {
         this.pacienteConexion = pacienteConexion;
         this.vista = vista;
         
-        this.modelo = (DefaultTableModel) vista.jTable3.getModel();
+        this.modelo = (DefaultTableModel) vista.tblPacientes.getModel();
         
         this.vista.btnBuscarPaciente.addActionListener(this);
         this.vista.btnEditarPaciente.addActionListener(this);
@@ -55,8 +55,8 @@ public class PacienteController implements ActionListener {
     }
     
     private void configurarTabla() {
-        vista.jTable3.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);        
-        vista.jTable3.addMouseListener(new java.awt.event.MouseAdapter() {
+        vista.tblPacientes.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);        
+        vista.tblPacientes.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 seleccionarPacienteTabla();
@@ -104,7 +104,7 @@ public class PacienteController implements ActionListener {
     }
     
     private void seleccionarPacienteTabla() {
-        int filaSeleccionada = vista.jTable3.getSelectedRow();
+        int filaSeleccionada = vista.tblPacientes.getSelectedRow();
         if (filaSeleccionada >= 0) {
             int idPaciente = (int) modelo.getValueAt(filaSeleccionada, 0);
             pacienteSeleccionado = pacienteConexion.obtenerPacientePorId(idPaciente);
@@ -207,8 +207,8 @@ public class PacienteController implements ActionListener {
         vista.jTextField4.setText("");
         vista.jComboBox2.setSelectedIndex(0);
         
-        if (vista.jTable3.getSelectedRow() >= 0) {
-            vista.jTable3.clearSelection();
+        if (vista.tblPacientes.getSelectedRow() >= 0) {
+            vista.tblPacientes.clearSelection();
         }
         pacienteSeleccionado = null;
         vista.btnRegistrarPaciente.setEnabled(true);
@@ -217,8 +217,8 @@ public class PacienteController implements ActionListener {
     }
     
     private void limpiarSeleccion() {
-        if (vista.jTable3.getSelectedRow() >= 0) {
-            vista.jTable3.clearSelection();
+        if (vista.tblPacientes.getSelectedRow() >= 0) {
+            vista.tblPacientes.clearSelection();
         }
         
         if (pacienteSeleccionado == null) {

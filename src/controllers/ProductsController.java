@@ -28,7 +28,7 @@ public class ProductsController implements ActionListener {
         this.vista = vista;
         
         // Tabla de productos
-        this.modelo = (DefaultTableModel) vista.jTable4.getModel();
+        this.modelo = (DefaultTableModel) vista.tblInsumos.getModel();
         
         this.vista.jButton6.addActionListener(this); // Registrar
         this.vista.jButton9.addActionListener(this); // Modificar
@@ -54,9 +54,9 @@ public class ProductsController implements ActionListener {
     }
     
     private void configurarTabla() {
-        vista.jTable4.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        vista.tblInsumos.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         
-        vista.jTable4.addMouseListener(new java.awt.event.MouseAdapter() {
+        vista.tblInsumos.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 seleccionarProductoTabla();
@@ -82,7 +82,7 @@ public class ProductsController implements ActionListener {
     }
     
 private void seleccionarProductoTabla() {
-    int filaSeleccionada = vista.jTable4.getSelectedRow();
+    int filaSeleccionada = vista.tblInsumos.getSelectedRow();
     if (filaSeleccionada >= 0) {
         int idProducto = (int) modelo.getValueAt(filaSeleccionada, 0);
         productoSeleccionado = productoConnection.obtenerInsumoPorId(idProducto);
@@ -261,8 +261,8 @@ private boolean validarCampos() {
         vista.jTextField11.setText("");
         vista.jTextField12.setText("");
         
-        if (vista.jTable4.getSelectedRow() >= 0) {
-            vista.jTable4.clearSelection();
+        if (vista.tblInsumos.getSelectedRow() >= 0) {
+            vista.tblInsumos.clearSelection();
         }
         
         productoSeleccionado = null;

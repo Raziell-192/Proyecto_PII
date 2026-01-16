@@ -83,13 +83,13 @@ public class UsersController implements ActionListener {
     }
 
     private void editarUsuario() {
-        int filaSeleccionada = vista.jTable1.getSelectedRow();
+        int filaSeleccionada = vista.tblUsuarios.getSelectedRow();
         if (filaSeleccionada == -1) {
             JOptionPane.showMessageDialog(null, "Por favor, seleccione un usuario de la tabla.");
             return;
         }
 
-        int idUsuario = (int) vista.jTable1.getValueAt(filaSeleccionada, 0);
+        int idUsuario = (int) vista.tblUsuarios.getValueAt(filaSeleccionada, 0);
         User usuarioEditar = obtenerUsuarioPorId(idUsuario);
         usuarioConexion.eliminarUsuario(idUsuario);
         if (usuarioEditar.getId() != 0) {
@@ -108,14 +108,14 @@ public class UsersController implements ActionListener {
     }
 
     private void eliminarUsuario() {
-        int filaSeleccionada = vista.jTable1.getSelectedRow();
+        int filaSeleccionada = vista.tblUsuarios.getSelectedRow();
         if (filaSeleccionada == -1) {
             JOptionPane.showMessageDialog(null, "Por favor, seleccione un usuario de la tabla.");
             return;
         }
 
-        int idUsuario = (int) vista.jTable1.getValueAt(filaSeleccionada, 0);
-        String nombreUsuario = (String) vista.jTable1.getValueAt(filaSeleccionada, 1);
+        int idUsuario = (int) vista.tblUsuarios.getValueAt(filaSeleccionada, 0);
+        String nombreUsuario = (String) vista.tblUsuarios.getValueAt(filaSeleccionada, 1);
 
         int confirmacion = JOptionPane.showConfirmDialog(null,
                 "¿Está seguro de eliminar al usuario: " + nombreUsuario + "?",
@@ -138,7 +138,7 @@ public class UsersController implements ActionListener {
     }
 
     private void cargarUsuariosEnTabla(List<User> usuarios) {
-        DefaultTableModel modelo = (DefaultTableModel) vista.jTable1.getModel();
+        DefaultTableModel modelo = (DefaultTableModel) vista.tblUsuarios.getModel();
         modelo.setRowCount(0); // Limpiar tabla
 
         for (User emp : usuarios) {
