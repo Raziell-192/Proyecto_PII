@@ -23,6 +23,8 @@ public class SettingsControllers implements MouseListener {
         this.views.Clinicos.addMouseListener(this);
         this.views.Capturas.addMouseListener(this);
         this.views.Configuracion.addMouseListener(this);
+        this.views.jPanelBtnSalir.addMouseListener(this);
+        this.views.btnSalir.addMouseListener(this);
     }
 
     @Override
@@ -80,6 +82,8 @@ public class SettingsControllers implements MouseListener {
             views.jPanelCapturasEstado.setBackground(new Color(152, 202, 63));
         } else if (e.getSource() == views.Configuracion) {
             views.jPanelConfiguracion.setBackground(new Color(152, 202, 63));
+        } else if (e.getSource() == views.jPanelBtnSalir || e.getSource() == views.btnSalir) {
+            views.jPanelBtnSalir.setBackground(new Color(152, 202, 63));
         }
     }
 
@@ -101,6 +105,8 @@ public class SettingsControllers implements MouseListener {
             views.jPanelCapturasEstado.setBackground(new Color(77, 130, 188));
         } else if (e.getSource() == views.Configuracion) {
             views.jPanelConfiguracion.setBackground(new Color(77, 130, 188));
+        } else if (e.getSource() == views.jPanelBtnSalir || e.getSource() == views.btnSalir) {
+            views.jPanelBtnSalir.setBackground(new Color(77, 130, 188));
         }
     }
 

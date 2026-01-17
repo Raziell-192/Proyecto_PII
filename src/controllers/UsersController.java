@@ -32,10 +32,10 @@ public class UsersController implements ActionListener {
 
         // Agregar listeners
         this.vista.btnRegistrarUsuario.addActionListener(this);
-        this.vista.jButton3.addActionListener(this); // Buscar
-        this.vista.jButton4.addActionListener(this); // Editar
-        this.vista.jButton5.addActionListener(this); // Eliminar
-        this.vista.btnMostrar.addActionListener(this);
+        this.vista.btnBuscarUsuario.addActionListener(this); // Buscar
+        this.vista.btnEditarUsuario.addActionListener(this); // Editar
+        this.vista.btnEliminarUsuario.addActionListener(this); // Eliminar
+        this.vista.btnMostrarUsuario.addActionListener(this);
 
         // Cargar datos iniciales
         cargarUsuariosEnTabla();
@@ -45,13 +45,15 @@ public class UsersController implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == vista.btnRegistrarUsuario) {
             registrarUsuario();
-        } else if (e.getSource() == vista.jButton3) {
+        } else if (e.getSource() == vista.btnBuscarUsuario) {
             buscarUsuarios();
-        } else if (e.getSource() == vista.jButton4) {
+        } else if (e.getSource() == vista.btnEditarUsuario) {
+//            vista.btnRegistrarUsuario.setText("Actualizar");
             editarUsuario();
-        } else if (e.getSource() == vista.jButton5) {
+//            vista.btnRegistrarUsuario.setText("Registrar");
+        } else if (e.getSource() == vista.btnEliminarUsuario) {
             eliminarUsuario();
-        } else if (e.getSource() == vista.btnMostrar) {
+        } else if (e.getSource() == vista.btnMostrarUsuario) {
             cargarUsuariosEnTabla();
         }
     }
@@ -101,7 +103,8 @@ public class UsersController implements ActionListener {
             vista.cmbRolUsuario.setSelectedItem(usuarioEditar.getRol());
             vista.passwordUsuario.setText(usuarioEditar.getContrasenya());
 
-            JOptionPane.showMessageDialog(null, "Datos cargados para editar. Modifique y haga clic en Registrar para actualizar.");
+            JOptionPane.showMessageDialog(null, "Datos cargados para editar. Modifique y haga clic en «Registrar» para guardar cambios.");
+            //vista.btnRegistrarUsuario.setText("Actualizar");
         } else {
             JOptionPane.showMessageDialog(null, "No se pudo cargar los datos del usuario.");
         }
