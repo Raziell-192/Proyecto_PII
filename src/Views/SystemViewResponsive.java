@@ -1735,6 +1735,9 @@ public class SystemViewResponsive extends javax.swing.JFrame {
 
         jPanel79.add(jPanel77, java.awt.BorderLayout.PAGE_START);
 
+        jPanel78.setBorder(javax.swing.BorderFactory.createEmptyBorder(20, 20, 20, 20));
+        jPanel78.setLayout(new java.awt.BorderLayout());
+
         tblVentas.setBackground(new java.awt.Color(229, 231, 235));
         tblVentas.setFont(new java.awt.Font("Nunito", 0, 18)); // NOI18N
         tblVentas.setModel(new javax.swing.table.DefaultTableModel(
@@ -1758,22 +1761,7 @@ public class SystemViewResponsive extends javax.swing.JFrame {
         });
         jScrollPane6.setViewportView(tblVentas);
 
-        javax.swing.GroupLayout jPanel78Layout = new javax.swing.GroupLayout(jPanel78);
-        jPanel78.setLayout(jPanel78Layout);
-        jPanel78Layout.setHorizontalGroup(
-            jPanel78Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel78Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 1362, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        jPanel78Layout.setVerticalGroup(
-            jPanel78Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel78Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 389, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        jPanel78.add(jScrollPane6, java.awt.BorderLayout.CENTER);
 
         jPanel79.add(jPanel78, java.awt.BorderLayout.CENTER);
 
@@ -1927,6 +1915,9 @@ public class SystemViewResponsive extends javax.swing.JFrame {
 
         jPanel86.add(jPanel85, java.awt.BorderLayout.PAGE_START);
 
+        jPanel87.setBorder(javax.swing.BorderFactory.createEmptyBorder(20, 20, 20, 20));
+        jPanel87.setLayout(new java.awt.BorderLayout());
+
         tblInsumos.setBackground(new java.awt.Color(229, 231, 235));
         tblInsumos.setFont(new java.awt.Font("Nunito", 0, 18)); // NOI18N
         tblInsumos.setModel(new javax.swing.table.DefaultTableModel(
@@ -1950,21 +1941,7 @@ public class SystemViewResponsive extends javax.swing.JFrame {
         });
         jScrollPane4.setViewportView(tblInsumos);
 
-        javax.swing.GroupLayout jPanel87Layout = new javax.swing.GroupLayout(jPanel87);
-        jPanel87.setLayout(jPanel87Layout);
-        jPanel87Layout.setHorizontalGroup(
-            jPanel87Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel87Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 1362, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        jPanel87Layout.setVerticalGroup(
-            jPanel87Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel87Layout.createSequentialGroup()
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 397, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
+        jPanel87.add(jScrollPane4, java.awt.BorderLayout.CENTER);
 
         jPanel86.add(jPanel87, java.awt.BorderLayout.CENTER);
 
@@ -2094,7 +2071,9 @@ public class SystemViewResponsive extends javax.swing.JFrame {
 
         jPanel61.add(jPanel60, java.awt.BorderLayout.PAGE_START);
 
+        jPanel59.setBorder(javax.swing.BorderFactory.createEmptyBorder(20, 20, 20, 20));
         jPanel59.setPreferredSize(new java.awt.Dimension(1200, 470));
+        jPanel59.setLayout(new java.awt.BorderLayout());
 
         tblTratamientos.setBackground(new java.awt.Color(229, 231, 235));
         tblTratamientos.setFont(new java.awt.Font("Nunito", 0, 18)); // NOI18N
@@ -2119,26 +2098,7 @@ public class SystemViewResponsive extends javax.swing.JFrame {
         });
         jScrollPane5.setViewportView(tblTratamientos);
 
-        javax.swing.GroupLayout jPanel59Layout = new javax.swing.GroupLayout(jPanel59);
-        jPanel59.setLayout(jPanel59Layout);
-        jPanel59Layout.setHorizontalGroup(
-            jPanel59Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1374, Short.MAX_VALUE)
-            .addGroup(jPanel59Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel59Layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(jScrollPane5)
-                    .addContainerGap()))
-        );
-        jPanel59Layout.setVerticalGroup(
-            jPanel59Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 450, Short.MAX_VALUE)
-            .addGroup(jPanel59Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel59Layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(44, Short.MAX_VALUE)))
-        );
+        jPanel59.add(jScrollPane5, java.awt.BorderLayout.CENTER);
 
         jPanel61.add(jPanel59, java.awt.BorderLayout.CENTER);
 
@@ -2634,7 +2594,7 @@ public class SystemViewResponsive extends javax.swing.JFrame {
 
         JTabbedPane.addTab("Configuraciones", pnlConfiguracion);
 
-        pnlVistas.add(JTabbedPane, java.awt.BorderLayout.PAGE_START);
+        pnlVistas.add(JTabbedPane, java.awt.BorderLayout.CENTER);
 
         pnlMain.add(pnlVistas, java.awt.BorderLayout.CENTER);
 
