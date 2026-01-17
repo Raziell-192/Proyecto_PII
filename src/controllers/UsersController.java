@@ -1,6 +1,6 @@
 package controllers;
 
-import views.SystemViewResponsive ;
+import Views.SystemViewResponsive ;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Connection;

@@ -1,6 +1,6 @@
 package controllers;
 
-import views.SystemViewResponsive;
+import Views.SystemViewResponsive;
 import java.awt.Color;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;

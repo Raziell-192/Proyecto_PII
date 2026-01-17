@@ -1,7 +1,7 @@
 package main;
 
-import views.Login;
-import views.NewLogin;
+import Views.Login;
+import Views.NewLogin;
 import javax.swing.UIManager;
 
 /**
