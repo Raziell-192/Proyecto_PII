@@ -1,6 +1,6 @@
 package controllers;
 
-import Views.SystemViewResponsive ;
+import views.SystemViewResponsive;
 import java.awt.Color;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -11,22 +11,47 @@ import java.awt.event.MouseListener;
  */
 public class SettingsControllers implements MouseListener {
 
-    private SystemViewResponsive  Views;
+    private SystemViewResponsive views;
 
-    public SettingsControllers(SystemViewResponsive  Views) {
-        this.Views = Views;
-        this.Views.Usuario.addMouseListener(this);
-        this.Views.Estudiante.addMouseListener(this);
-        this.Views.Profesores.addMouseListener(this);
-        this.Views.Trabajadores.addMouseListener(this);
-        this.Views.Administradores.addMouseListener(this);
-        this.Views.Clinicos.addMouseListener(this);
-        this.Views.Capturas.addMouseListener(this);
-        this.Views.Configuracion.addMouseListener(this);
+    public SettingsControllers(SystemViewResponsive views) {
+        this.views = views;
+        this.views.Usuario.addMouseListener(this);
+        this.views.Paciente.addMouseListener(this);
+        this.views.Venta.addMouseListener(this);
+        this.views.Insumos.addMouseListener(this);
+        this.views.Tratamiento.addMouseListener(this);
+        this.views.Clinicos.addMouseListener(this);
+        this.views.Capturas.addMouseListener(this);
+        this.views.Configuracion.addMouseListener(this);
     }
 
     @Override
     public void mouseClicked(MouseEvent e) {
+
+        if (e.getSource() == views.Usuario) {
+            views.JTabbedPane.setSelectedIndex(0);
+
+        } else if (e.getSource() == views.Paciente) {
+            views.JTabbedPane.setSelectedIndex(1);
+
+        } else if (e.getSource() == views.Venta) {
+            views.JTabbedPane.setSelectedIndex(2);
+
+        } else if (e.getSource() == views.Insumos) {
+            views.JTabbedPane.setSelectedIndex(3);
+
+        } else if (e.getSource() == views.Tratamiento) {
+            views.JTabbedPane.setSelectedIndex(4);
+
+        } else if (e.getSource() == views.Clinicos) {
+            views.JTabbedPane.setSelectedIndex(5);
+
+        } else if (e.getSource() == views.Capturas) {
+            views.JTabbedPane.setSelectedIndex(6);
+
+        } else if (e.getSource() == views.Configuracion) {
+            views.JTabbedPane.setSelectedIndex(7);
+        }
     }
 
     @Override
@@ -39,43 +64,43 @@ public class SettingsControllers implements MouseListener {
 
     @Override
     public void mouseEntered(MouseEvent e) {
-        if (e.getSource() == Views.Usuario) {
-            Views.jPanelUsuarios.setBackground(new Color(152, 202, 63));
-        } else if (e.getSource() == Views.Estudiante) {
-            Views.jPanelEstudiantes.setBackground(new Color(152, 202, 63));
-        } else if (e.getSource() == Views.Profesores) {
-            Views.jPanelProfesores.setBackground(new Color(152, 202, 63));
-        } else if (e.getSource() == Views.Trabajadores) {
-            Views.jPanelTrabajadores.setBackground(new Color(152, 202, 63));
-        } else if (e.getSource() == Views.Administradores) {
-            Views.jPanelAdministradores.setBackground(new Color(152, 202, 63));
-        } else if (e.getSource() == Views.Clinicos) {
-            Views.jPanelAdministradoresClinicos.setBackground(new Color(152, 202, 63));
-        } else if (e.getSource() == Views.Capturas) {
-            Views.jPanelCapturasEstado.setBackground(new Color(152, 202, 63));
-        } else if (e.getSource() == Views.Configuracion) {
-            Views.jPanelConfiguracion.setBackground(new Color(152, 202, 63));
+        if (e.getSource() == views.Usuario) {
+            views.jPanelUsuarios.setBackground(new Color(152, 202, 63));
+        } else if (e.getSource() == views.Paciente) {
+            views.jPanelPacientes.setBackground(new Color(152, 202, 63));
+        } else if (e.getSource() == views.Venta) {
+            views.jPanelVenta.setBackground(new Color(152, 202, 63));
+        } else if (e.getSource() == views.Insumos) {
+            views.jPanelInsumos.setBackground(new Color(152, 202, 63));
+        } else if (e.getSource() == views.Tratamiento) {
+            views.jPanelTratamiento.setBackground(new Color(152, 202, 63));
+        } else if (e.getSource() == views.Clinicos) {
+            views.jPanelAdministradoresClinicos.setBackground(new Color(152, 202, 63));
+        } else if (e.getSource() == views.Capturas) {
+            views.jPanelCapturasEstado.setBackground(new Color(152, 202, 63));
+        } else if (e.getSource() == views.Configuracion) {
+            views.jPanelConfiguracion.setBackground(new Color(152, 202, 63));
         }
     }
 
     @Override
     public void mouseExited(MouseEvent e) {
-        if (e.getSource() == Views.Usuario) {
-            Views.jPanelUsuarios.setBackground(new Color(0, 131, 195));
-        } else if (e.getSource() == Views.Estudiante) {
-            Views.jPanelEstudiantes.setBackground(new Color(77,130,188));
-        } else if (e.getSource() == Views.Profesores) {
-            Views.jPanelProfesores.setBackground(new Color(77,130,188));
-        } else if (e.getSource() == Views.Trabajadores) {
-            Views.jPanelTrabajadores.setBackground(new Color(77,130,188));
-        } else if (e.getSource() == Views.Administradores) {
-            Views.jPanelAdministradores.setBackground(new Color(77,130,188));
-        } else if (e.getSource() == Views.Clinicos) {
-            Views.jPanelAdministradoresClinicos.setBackground(new Color(77,130,188));
-        } else if (e.getSource() == Views.Capturas) {
-            Views.jPanelCapturasEstado.setBackground(new Color(77,130,188));
-        } else if (e.getSource() == Views.Configuracion) {
-            Views.jPanelConfiguracion.setBackground(new Color(77,130,188));
+        if (e.getSource() == views.Usuario) {
+            views.jPanelUsuarios.setBackground(new Color(0, 131, 195));
+        } else if (e.getSource() == views.Paciente) {
+            views.jPanelPacientes.setBackground(new Color(77, 130, 188));
+        } else if (e.getSource() == views.Venta) {
+            views.jPanelVenta.setBackground(new Color(77, 130, 188));
+        } else if (e.getSource() == views.Insumos) {
+            views.jPanelInsumos.setBackground(new Color(77, 130, 188));
+        } else if (e.getSource() == views.Tratamiento) {
+            views.jPanelTratamiento.setBackground(new Color(77, 130, 188));
+        } else if (e.getSource() == views.Clinicos) {
+            views.jPanelAdministradoresClinicos.setBackground(new Color(77, 130, 188));
+        } else if (e.getSource() == views.Capturas) {
+            views.jPanelCapturasEstado.setBackground(new Color(77, 130, 188));
+        } else if (e.getSource() == views.Configuracion) {
+            views.jPanelConfiguracion.setBackground(new Color(77, 130, 188));
         }
     }
 

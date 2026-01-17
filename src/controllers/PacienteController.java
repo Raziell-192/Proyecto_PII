@@ -1,6 +1,6 @@
 package controllers;
 
-import Views.SystemViewResponsive ;
+import views.SystemViewResponsive ;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
