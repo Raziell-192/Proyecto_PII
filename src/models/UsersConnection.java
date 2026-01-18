@@ -120,7 +120,7 @@ public class UsersConnection {
 //        return listaUsuarios;
 //    }
     //Modificar usuario
-    public boolean actualizarUsuario(User usuario) {
+    public boolean actualizarUsuarioQuery(User usuario) {
         String query = "UPDATE usuarios SET nombres = ?, apellidos = ?, username = ?, "
                 + "email = ?, rol = ?, password = ? WHERE id_usuario = ?";
         try {
@@ -131,8 +131,8 @@ public class UsersConnection {
             ps.setString(2, usuario.getApellido());
             ps.setString(3, usuario.getNombreDeUsuario());
             ps.setString(4, usuario.getEmail());
-            ps.setString(5, usuario.getContrasenya());
-            ps.setString(6, usuario.getRol());
+            ps.setString(5, usuario.getRol());
+            ps.setString(6, usuario.getContrasenya());
             ps.setInt(7, usuario.getId());
 
             ps.execute();

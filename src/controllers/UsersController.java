@@ -1,6 +1,6 @@
 package controllers;
 
-import Views.SystemViewResponsive ;
+import Views.SystemViewResponsive;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
@@ -22,10 +22,11 @@ public class UsersController implements ActionListener {
 
     private User usuario;
     private UsersConnection usuarioConexion;
-    private SystemViewResponsive  vista;
+    private SystemViewResponsive vista;
     String rol = rolUsuario;
+    private int idUsuarioEnEdicion = -1;
 
-    public UsersController(User usuario, UsersConnection usuarioConexion, SystemViewResponsive  vista) {
+    public UsersController(User usuario, UsersConnection usuarioConexion, SystemViewResponsive vista) {
         this.usuario = usuario;
         this.usuarioConexion = usuarioConexion;
         this.vista = vista;
@@ -36,6 +37,8 @@ public class UsersController implements ActionListener {
         this.vista.btnEditarUsuario.addActionListener(this); // Editar
         this.vista.btnEliminarUsuario.addActionListener(this); // Eliminar
         this.vista.btnMostrarUsuario.addActionListener(this);
+        this.vista.btnActualizarUsuario.addActionListener(this);
+        this.vista.btnActualizarUsuario.setVisible(false);
 
         // Cargar datos iniciales
         cargarUsuariosEnTabla();
@@ -45,14 +48,14 @@ public class UsersController implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == vista.btnRegistrarUsuario) {
             registrarUsuario();
-        } else if (e.getSource() == vista.btnBuscarUsuario) {
-            buscarUsuarios();
         } else if (e.getSource() == vista.btnEditarUsuario) {
-//            vista.btnRegistrarUsuario.setText("Actualizar");
-            editarUsuario();
-//            vista.btnRegistrarUsuario.setText("Registrar");
+            cargarUsuarioParaEdicion();
+        } else if (e.getSource() == vista.btnActualizarUsuario) {
+            actualizarUsuario();
         } else if (e.getSource() == vista.btnEliminarUsuario) {
             eliminarUsuario();
+        } else if (e.getSource() == vista.btnBuscarUsuario) {
+            buscarUsuarios();
         } else if (e.getSource() == vista.btnMostrarUsuario) {
             cargarUsuariosEnTabla();
         }
@@ -84,6 +87,62 @@ public class UsersController implements ActionListener {
         }
     }
 
+    private void cargarUsuarioParaEdicion() {
+
+        int fila = vista.tblUsuarios.getSelectedRow();
+
+        if (fila == -1) {
+            JOptionPane.showMessageDialog(null, "Seleccione un usuario.");
+            return;
+        }
+
+        idUsuarioEnEdicion = (int) vista.tblUsuarios.getValueAt(fila, 0);
+        User u = obtenerUsuarioPorId(idUsuarioEnEdicion);
+
+        vista.txtNombreUsuario.setText(u.getNombre());
+        vista.txtApellidoUsuario.setText(u.getApellido());
+        vista.txtUsernameUsuario.setText(u.getNombreDeUsuario());
+        vista.txtEmailUsuario.setText(u.getEmail());
+        vista.passwordUsuario.setText(u.getContrasenya());
+        vista.cmbRolUsuario.setSelectedItem(u.getRol());
+
+        // Cambiar botones
+        vista.btnRegistrarUsuario.setVisible(false);
+        vista.btnActualizarUsuario.setVisible(true);
+        
+        JOptionPane.showMessageDialog(null, "Datos cargados para editar. Modifique y haga clic en «Actualizar» para guardar cambios.");
+    }
+
+    private void actualizarUsuario() {
+
+        if (!validarCampos()) {
+            return;
+        }
+
+        usuario.setId(idUsuarioEnEdicion);
+        usuario.setNombre(vista.txtNombreUsuario.getText().trim());
+        usuario.setApellido(vista.txtApellidoUsuario.getText().trim());
+        usuario.setNombreDeUsuario(vista.txtUsernameUsuario.getText().trim());
+        usuario.setEmail(vista.txtEmailUsuario.getText().trim());
+        usuario.setContrasenya(String.valueOf(vista.passwordUsuario.getPassword()));
+        usuario.setRol(vista.cmbRolUsuario.getSelectedItem().toString());
+
+        if (usuarioConexion.actualizarUsuarioQuery(usuario)) {
+            JOptionPane.showMessageDialog(null, "Usuario actualizado correctamente.");
+
+            limpiarCampos();
+            cargarUsuariosEnTabla();
+
+            // Restaurar botones
+            vista.btnRegistrarUsuario.setVisible(true);
+            vista.btnActualizarUsuario.setVisible(false);
+
+            idUsuarioEnEdicion = -1;
+        } else {
+            JOptionPane.showMessageDialog(null, "Error al actualizar usuario.");
+        }
+    }
+
     private void editarUsuario() {
         int filaSeleccionada = vista.tblUsuarios.getSelectedRow();
         if (filaSeleccionada == -1) {
@@ -103,8 +162,7 @@ public class UsersController implements ActionListener {
             vista.cmbRolUsuario.setSelectedItem(usuarioEditar.getRol());
             vista.passwordUsuario.setText(usuarioEditar.getContrasenya());
 
-            JOptionPane.showMessageDialog(null, "Datos cargados para editar. Modifique y haga clic en «Registrar» para guardar cambios.");
-            //vista.btnRegistrarUsuario.setText("Actualizar");
+            JOptionPane.showMessageDialog(null, "Datos cargados para editar. Modifique y haga clic en «Registrar» para actualizar.");
         } else {
             JOptionPane.showMessageDialog(null, "No se pudo cargar los datos del usuario.");
         }
