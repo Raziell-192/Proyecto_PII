@@ -2450,7 +2450,7 @@ public class SystemViewResponsive extends javax.swing.JFrame {
 
         JTabbedPane.addTab("Citas", pnlConfiguracion);
 
-        pnlVistas.add(JTabbedPane, java.awt.BorderLayout.PAGE_START);
+        pnlVistas.add(JTabbedPane, java.awt.BorderLayout.CENTER);
 
         pnlMain.add(pnlVistas, java.awt.BorderLayout.CENTER);
 
