@@ -51,6 +51,8 @@ public class SystemViewResponsive extends javax.swing.JFrame {
 //        colocarImagenLabel(lblLogoHome, "/images/Icono_Odontología.png");
 //        colocarImagenLabel(lblLogoHome, "/images/Diente_sano.png");
         colocarImagenLabel(lblLogoHome, "/images/logo_UnsiSmile_2.png");
+//        colocarImagenLabel(lblIzqLogo, "/images/pilar.png");
+//        colocarImagenLabel(lblDerLogo, "/images/pilar.png");
         configurarFuenteTabla();
 
         SettingsControllers configuracion = new SettingsControllers(this);
@@ -521,13 +523,13 @@ public class SystemViewResponsive extends javax.swing.JFrame {
         lblLogoHome.setPreferredSize(new java.awt.Dimension(110, 110));
         pnlLogoHome.add(lblLogoHome, java.awt.BorderLayout.CENTER);
 
-        lblIzqLogo.setForeground(new java.awt.Color(13, 71, 161));
+        lblIzqLogo.setForeground(new java.awt.Color(30, 42, 74));
         lblIzqLogo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblIzqLogo.setText("Smile");
         lblIzqLogo.setPreferredSize(new java.awt.Dimension(50, 110));
         pnlLogoHome.add(lblIzqLogo, java.awt.BorderLayout.LINE_START);
 
-        lblDerLogo.setForeground(new java.awt.Color(13, 71, 161));
+        lblDerLogo.setForeground(new java.awt.Color(30, 42, 74));
         lblDerLogo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblDerLogo.setText("Smile");
         lblDerLogo.setPreferredSize(new java.awt.Dimension(50, 110));
@@ -542,177 +544,97 @@ public class SystemViewResponsive extends javax.swing.JFrame {
 
         jPanelUsuarios.setBackground(new java.awt.Color(30, 42, 74));
         jPanelUsuarios.setPreferredSize(new java.awt.Dimension(210, 50));
+        jPanelUsuarios.setLayout(new java.awt.BorderLayout());
 
         Usuario.setFont(new java.awt.Font("Nunito ExtraBold", 1, 16)); // NOI18N
         Usuario.setForeground(new java.awt.Color(255, 255, 255));
         Usuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Usuario.png"))); // NOI18N
         Usuario.setText("Usuarios");
-
-        javax.swing.GroupLayout jPanelUsuariosLayout = new javax.swing.GroupLayout(jPanelUsuarios);
-        jPanelUsuarios.setLayout(jPanelUsuariosLayout);
-        jPanelUsuariosLayout.setHorizontalGroup(
-            jPanelUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelUsuariosLayout.createSequentialGroup()
-                .addComponent(Usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        jPanelUsuariosLayout.setVerticalGroup(
-            jPanelUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Usuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+        jPanelUsuarios.add(Usuario, java.awt.BorderLayout.CENTER);
 
         pnlMenusLaterales.add(jPanelUsuarios);
 
         jPanelPacientes.setBackground(new java.awt.Color(30, 42, 74));
         jPanelPacientes.setPreferredSize(new java.awt.Dimension(210, 50));
+        jPanelPacientes.setLayout(new java.awt.BorderLayout());
 
         Paciente.setFont(new java.awt.Font("Nunito ExtraBold", 1, 16)); // NOI18N
         Paciente.setForeground(new java.awt.Color(255, 255, 255));
         Paciente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Estu.png"))); // NOI18N
         Paciente.setText("Pacientes");
-
-        javax.swing.GroupLayout jPanelPacientesLayout = new javax.swing.GroupLayout(jPanelPacientes);
-        jPanelPacientes.setLayout(jPanelPacientesLayout);
-        jPanelPacientesLayout.setHorizontalGroup(
-            jPanelPacientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelPacientesLayout.createSequentialGroup()
-                .addComponent(Paciente, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        jPanelPacientesLayout.setVerticalGroup(
-            jPanelPacientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Paciente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+        jPanelPacientes.add(Paciente, java.awt.BorderLayout.CENTER);
 
         pnlMenusLaterales.add(jPanelPacientes);
 
         jPanelVenta.setBackground(new java.awt.Color(30, 42, 74));
         jPanelVenta.setPreferredSize(new java.awt.Dimension(210, 50));
+        jPanelVenta.setLayout(new java.awt.BorderLayout());
 
         Venta.setFont(new java.awt.Font("Nunito ExtraBold", 1, 16)); // NOI18N
         Venta.setForeground(new java.awt.Color(255, 255, 255));
         Venta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/profesor.png"))); // NOI18N
         Venta.setText("Venta");
-
-        javax.swing.GroupLayout jPanelVentaLayout = new javax.swing.GroupLayout(jPanelVenta);
-        jPanelVenta.setLayout(jPanelVentaLayout);
-        jPanelVentaLayout.setHorizontalGroup(
-            jPanelVentaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelVentaLayout.createSequentialGroup()
-                .addComponent(Venta, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        jPanelVentaLayout.setVerticalGroup(
-            jPanelVentaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Venta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+        jPanelVenta.add(Venta, java.awt.BorderLayout.CENTER);
 
         pnlMenusLaterales.add(jPanelVenta);
 
         jPanelInsumos.setBackground(new java.awt.Color(30, 42, 74));
         jPanelInsumos.setPreferredSize(new java.awt.Dimension(210, 50));
+        jPanelInsumos.setLayout(new java.awt.BorderLayout());
 
         Insumos.setFont(new java.awt.Font("Nunito ExtraBold", 1, 16)); // NOI18N
         Insumos.setForeground(new java.awt.Color(255, 255, 255));
         Insumos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/trabajador.png"))); // NOI18N
         Insumos.setText("Insumos");
-
-        javax.swing.GroupLayout jPanelInsumosLayout = new javax.swing.GroupLayout(jPanelInsumos);
-        jPanelInsumos.setLayout(jPanelInsumosLayout);
-        jPanelInsumosLayout.setHorizontalGroup(
-            jPanelInsumosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelInsumosLayout.createSequentialGroup()
-                .addComponent(Insumos, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        jPanelInsumosLayout.setVerticalGroup(
-            jPanelInsumosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Insumos, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 54, Short.MAX_VALUE)
-        );
+        jPanelInsumos.add(Insumos, java.awt.BorderLayout.CENTER);
 
         pnlMenusLaterales.add(jPanelInsumos);
 
         jPanelTratamiento.setBackground(new java.awt.Color(30, 42, 74));
         jPanelTratamiento.setPreferredSize(new java.awt.Dimension(210, 50));
+        jPanelTratamiento.setLayout(new java.awt.BorderLayout());
 
         Tratamiento.setFont(new java.awt.Font("Nunito ExtraBold", 1, 16)); // NOI18N
         Tratamiento.setForeground(new java.awt.Color(255, 255, 255));
         Tratamiento.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/prove.png"))); // NOI18N
         Tratamiento.setText("Tratamiento");
-
-        javax.swing.GroupLayout jPanelTratamientoLayout = new javax.swing.GroupLayout(jPanelTratamiento);
-        jPanelTratamiento.setLayout(jPanelTratamientoLayout);
-        jPanelTratamientoLayout.setHorizontalGroup(
-            jPanelTratamientoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Tratamiento, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
-        );
-        jPanelTratamientoLayout.setVerticalGroup(
-            jPanelTratamientoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Tratamiento, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+        jPanelTratamiento.add(Tratamiento, java.awt.BorderLayout.CENTER);
 
         pnlMenusLaterales.add(jPanelTratamiento);
 
         jPanelAdministradoresClinicos.setBackground(new java.awt.Color(30, 42, 74));
         jPanelAdministradoresClinicos.setPreferredSize(new java.awt.Dimension(210, 50));
+        jPanelAdministradoresClinicos.setLayout(new java.awt.BorderLayout());
 
         Clinicos.setFont(new java.awt.Font("Nunito ExtraBold", 1, 16)); // NOI18N
         Clinicos.setForeground(new java.awt.Color(255, 255, 255));
         Clinicos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/categorias.png"))); // NOI18N
         Clinicos.setText("<html>Administradores<br>clínicos</html>");
-
-        javax.swing.GroupLayout jPanelAdministradoresClinicosLayout = new javax.swing.GroupLayout(jPanelAdministradoresClinicos);
-        jPanelAdministradoresClinicos.setLayout(jPanelAdministradoresClinicosLayout);
-        jPanelAdministradoresClinicosLayout.setHorizontalGroup(
-            jPanelAdministradoresClinicosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Clinicos, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
-        );
-        jPanelAdministradoresClinicosLayout.setVerticalGroup(
-            jPanelAdministradoresClinicosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Clinicos, javax.swing.GroupLayout.DEFAULT_SIZE, 54, Short.MAX_VALUE)
-        );
+        jPanelAdministradoresClinicos.add(Clinicos, java.awt.BorderLayout.CENTER);
 
         pnlMenusLaterales.add(jPanelAdministradoresClinicos);
 
         jPanelCapturasEstado.setBackground(new java.awt.Color(30, 42, 74));
         jPanelCapturasEstado.setPreferredSize(new java.awt.Dimension(210, 50));
+        jPanelCapturasEstado.setLayout(new java.awt.BorderLayout());
 
         Capturas.setFont(new java.awt.Font("Nunito ExtraBold", 1, 16)); // NOI18N
         Capturas.setForeground(new java.awt.Color(255, 255, 255));
         Capturas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/informe.png"))); // NOI18N
         Capturas.setText("<html><p>Capturas de <br>estado</p></html>");
-
-        javax.swing.GroupLayout jPanelCapturasEstadoLayout = new javax.swing.GroupLayout(jPanelCapturasEstado);
-        jPanelCapturasEstado.setLayout(jPanelCapturasEstadoLayout);
-        jPanelCapturasEstadoLayout.setHorizontalGroup(
-            jPanelCapturasEstadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Capturas, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
-        );
-        jPanelCapturasEstadoLayout.setVerticalGroup(
-            jPanelCapturasEstadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Capturas, javax.swing.GroupLayout.DEFAULT_SIZE, 54, Short.MAX_VALUE)
-        );
+        jPanelCapturasEstado.add(Capturas, java.awt.BorderLayout.CENTER);
 
         pnlMenusLaterales.add(jPanelCapturasEstado);
 
         jPanelConfiguracion.setBackground(new java.awt.Color(30, 42, 74));
         jPanelConfiguracion.setPreferredSize(new java.awt.Dimension(210, 50));
+        jPanelConfiguracion.setLayout(new java.awt.BorderLayout());
 
         Configuracion.setFont(new java.awt.Font("Nunito ExtraBold", 1, 16)); // NOI18N
         Configuracion.setForeground(new java.awt.Color(255, 255, 255));
         Configuracion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/configuraciones.png"))); // NOI18N
         Configuracion.setText("Configuraciones");
-
-        javax.swing.GroupLayout jPanelConfiguracionLayout = new javax.swing.GroupLayout(jPanelConfiguracion);
-        jPanelConfiguracion.setLayout(jPanelConfiguracionLayout);
-        jPanelConfiguracionLayout.setHorizontalGroup(
-            jPanelConfiguracionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Configuracion, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
-        );
-        jPanelConfiguracionLayout.setVerticalGroup(
-            jPanelConfiguracionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Configuracion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+        jPanelConfiguracion.add(Configuracion, java.awt.BorderLayout.CENTER);
 
         pnlMenusLaterales.add(jPanelConfiguracion);
 

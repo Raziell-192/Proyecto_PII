@@ -90,23 +90,23 @@ public class SettingsControllers implements MouseListener {
     @Override
     public void mouseExited(MouseEvent e) {
         if (e.getSource() == views.Usuario) {
-            views.jPanelUsuarios.setBackground(new Color(0, 131, 195));
+            views.jPanelUsuarios.setBackground(new Color(30, 42, 74));
         } else if (e.getSource() == views.Paciente) {
-            views.jPanelPacientes.setBackground(new Color(77, 130, 188));
+            views.jPanelPacientes.setBackground(new Color(30, 42, 74));
         } else if (e.getSource() == views.Venta) {
-            views.jPanelVenta.setBackground(new Color(77, 130, 188));
+            views.jPanelVenta.setBackground(new Color(30, 42, 74));
         } else if (e.getSource() == views.Insumos) {
-            views.jPanelInsumos.setBackground(new Color(77, 130, 188));
+            views.jPanelInsumos.setBackground(new Color(30, 42, 74));
         } else if (e.getSource() == views.Tratamiento) {
-            views.jPanelTratamiento.setBackground(new Color(77, 130, 188));
+            views.jPanelTratamiento.setBackground(new Color(30, 42, 74));
         } else if (e.getSource() == views.Clinicos) {
-            views.jPanelAdministradoresClinicos.setBackground(new Color(77, 130, 188));
+            views.jPanelAdministradoresClinicos.setBackground(new Color(30, 42, 74));
         } else if (e.getSource() == views.Capturas) {
-            views.jPanelCapturasEstado.setBackground(new Color(77, 130, 188));
+            views.jPanelCapturasEstado.setBackground(new Color(30, 42, 74));
         } else if (e.getSource() == views.Configuracion) {
-            views.jPanelConfiguracion.setBackground(new Color(77, 130, 188));
+            views.jPanelConfiguracion.setBackground(new Color(30, 42, 74));
         } else if (e.getSource() == views.jPanelBtnSalir || e.getSource() == views.btnSalir) {
-            views.jPanelBtnSalir.setBackground(new Color(77, 130, 188));
+            views.jPanelBtnSalir.setBackground(new Color(30, 42, 74));
         }
     }
 
