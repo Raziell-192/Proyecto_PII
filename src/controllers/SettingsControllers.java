@@ -67,23 +67,23 @@ public class SettingsControllers implements MouseListener {
     @Override
     public void mouseEntered(MouseEvent e) {
         if (e.getSource() == views.Usuario) {
-            views.jPanelUsuarios.setBackground(new Color(152, 202, 63));
+            views.jPanelUsuarios.setBackground(new Color(59, 130, 246));
         } else if (e.getSource() == views.Paciente) {
-            views.jPanelPacientes.setBackground(new Color(152, 202, 63));
+            views.jPanelPacientes.setBackground(new Color(59, 130, 246));
         } else if (e.getSource() == views.Venta) {
-            views.jPanelVenta.setBackground(new Color(152, 202, 63));
+            views.jPanelVenta.setBackground(new Color(59, 130, 246));
         } else if (e.getSource() == views.Insumos) {
-            views.jPanelInsumos.setBackground(new Color(152, 202, 63));
+            views.jPanelInsumos.setBackground(new Color(59, 130, 246));
         } else if (e.getSource() == views.Tratamiento) {
-            views.jPanelTratamiento.setBackground(new Color(152, 202, 63));
+            views.jPanelTratamiento.setBackground(new Color(59, 130, 246));
         } else if (e.getSource() == views.Clinicos) {
-            views.jPanelAdministradoresClinicos.setBackground(new Color(152, 202, 63));
+            views.jPanelAdministradoresClinicos.setBackground(new Color(59, 130, 246));
         } else if (e.getSource() == views.Capturas) {
-            views.jPanelCapturasEstado.setBackground(new Color(152, 202, 63));
+            views.jPanelCapturasEstado.setBackground(new Color(59, 130, 246));
         } else if (e.getSource() == views.Configuracion) {
-            views.jPanelConfiguracion.setBackground(new Color(152, 202, 63));
+            views.jPanelConfiguracion.setBackground(new Color(59, 130, 246));
         } else if (e.getSource() == views.jPanelBtnSalir || e.getSource() == views.btnSalir) {
-            views.jPanelBtnSalir.setBackground(new Color(152, 202, 63));
+            views.jPanelBtnSalir.setBackground(new Color(59, 130, 246));
         }
     }
 

@@ -50,9 +50,9 @@ public class Conexion {
 
 //    private static String ip = "localhost";
 //    private static String puerto = "5432";
-//    private static String usuario = "postgres";
+//    private static String user = "postgres";
 //    private static String bd = "bd_clinica_odonto";
-//    private static String contra = "root";
+//    private static String password = "root";
     String url = "jdbc:postgresql://aws-0-us-west-2.pooler.supabase.com:5432/postgres";
     String user = "postgres.urqdkgyjzoblpxuikmbp";
     String password = "JRLE4java#80";
