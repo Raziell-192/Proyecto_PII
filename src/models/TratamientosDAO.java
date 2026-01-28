@@ -18,11 +18,10 @@ public class TratamientosDAO {
     ResultSet rs;
 
     /**
-     * ========================= 
-     * REGISTRAR TRATAMIENTO 
-     * =========================
+     * REGISTRAR TRATAMIENTO
+     *
      * @param tratamiento
-     * @return 
+     * @return
      */
     public boolean registrarTratamientoQuery(Tratamiento tratamiento) {
         String query = "INSERT INTO tratamientos (id_categoria, codigo, nombre, descripcion) VALUES (?,?,?,?)";
@@ -48,10 +47,9 @@ public class TratamientosDAO {
     }
 
     /**
-     * ========================= 
-     * LISTAR TRATAMIENTOS 
-     * =========================
-     * @return 
+     * LISTAR TRATAMIENTOS
+     *
+     * @return
      */
     public List<Tratamiento> listarTratamientosQuery() {
         List<Tratamiento> lista = new ArrayList<>();
@@ -82,11 +80,10 @@ public class TratamientosDAO {
     }
 
     /**
-     * ========================= 
-     * BUSCAR TRATAMIENTOS 
-     * =========================
+     * BUSCAR TRATAMIENTOS
+     *
      * @param valor
-     * @return 
+     * @return
      */
     public List<Tratamiento> buscarTratamientosQuery(String valor) {
         List<Tratamiento> lista = new ArrayList<>();
@@ -123,11 +120,10 @@ public class TratamientosDAO {
     }
 
     /**
-     * ========================= 
      * ACTUALIZAR TRATAMIENTO
-     * =========================
+     *
      * @param tratamiento
-     * @return 
+     * @return
      */
     public boolean actualizarTratamientoQuery(Tratamiento tratamiento) {
         String query = "UPDATE tratamientos SET id_categoria = ?, codigo = ?, nombre = ?, descripcion = ? "
@@ -155,11 +151,10 @@ public class TratamientosDAO {
     }
 
     /**
-     * ========================= 
-     * ELIMINAR TRATAMIENTO 
-     * =========================
+     * ELIMINAR TRATAMIENTO
+     *
      * @param idTratamiento
-     * @return 
+     * @return
      */
     public boolean eliminarTratamientoQuery(int idTratamiento) {
         String query = "DELETE FROM tratamientos WHERE id_tratamiento = ?";
@@ -181,9 +176,7 @@ public class TratamientosDAO {
     }
 
     /**
-     * ========================= 
-     * CERRAR CONEXIONES 
-     * =========================
+     * CERRAR CONEXIONES
      */
     private void cerrarConexion() {
         try {

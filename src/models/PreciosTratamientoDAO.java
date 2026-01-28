@@ -18,11 +18,10 @@ public class PreciosTratamientoDAO {
     ResultSet rs;
 
     /**
-     * ========================= 
-     * REGISTRAR PRECIO 
-     * =========================
-     * @param precioTratamiento
-     * @return 
+     * REGISTRAR PRECIO
+     *
+     * @param precioTratamiento El objeto de tipo «PrecioTratamiento» que se insertará en la base de datos
+     * @return true si sí fue insertado en la base de datos o false si hubo un error
      */
     public boolean registrarPrecio(PrecioTratamiento precioTratamiento) {
         String query = "INSERT INTO precios_tratamiento (id_tratamiento, id_tipo_precio, precio) VALUES (?, ?, ?)";
@@ -45,10 +44,9 @@ public class PreciosTratamientoDAO {
     }
 
     /**
-     * ========================= 
-     * LISTAR PRECIOS 
-     * =========================
-     * @return 
+     * LISTAR PRECIOS
+     *
+     * @return la lista de precios de los tratamientos
      */
     public List<PrecioTratamiento> listarPrecios() {
         List<PrecioTratamiento> lista = new ArrayList<>();
@@ -77,11 +75,10 @@ public class PreciosTratamientoDAO {
     }
 
     /**
-     * ========================= 
-     * ACTUALIZAR PRECIO 
-     * =========================
-     * @param precioTratamiento
-     * @return 
+     * ACTUALIZAR PRECIO
+     *
+     * @param precioTratamiento El objeto de tipo «PrecioTratamiento» que se actualizará en la base de datos
+     * @return true si el precio sí fue actualizado o false si hubo un error
      */
     public boolean actualizarPrecio(PrecioTratamiento precioTratamiento) {
         String query = "UPDATE precios_tratamiento SET id_tratamiento = ?, id_tipo_precio = ?, precio = ? "
@@ -106,11 +103,10 @@ public class PreciosTratamientoDAO {
     }
 
     /**
-     * ========================= 
-     * ELIMINAR PRECIO 
-     * =========================
-     * @param idPrecio
-     * @return 
+     * ELIMINAR PRECIO
+     *
+     * @param idPrecio El id del precio a eliminar
+     * @return true si el precio sí fue eliminado o false hubo un error
      */
     public boolean eliminarPrecio(int idPrecio) {
         String query = "DELETE FROM precios_tratamiento WHERE id_precio = ?";
@@ -132,9 +128,7 @@ public class PreciosTratamientoDAO {
     }
 
     /**
-     * ========================= 
-     * CERRAR CONEXIONES 
-     * =========================
+     * CERRAR CONEXIONES
      */
     private void cerrarConexion() {
         try {
