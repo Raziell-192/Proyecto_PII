@@ -4283,7 +4283,7 @@
                                 <Component class="javax.swing.JLabel" name="jLabel21">
                                   <Properties>
                                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                                      <Font name="Rockwell Condensed" size="24" style="1"/>
+                                      <Font name="Rockwell" size="24" style="1"/>
                                     </Property>
                                     <Property name="horizontalAlignment" type="int" value="0"/>
                                     <Property name="text" type="java.lang.String" value="Reportes"/>

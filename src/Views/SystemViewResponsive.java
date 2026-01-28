@@ -2180,7 +2180,7 @@ public class SystemViewResponsive extends javax.swing.JFrame {
         jPanel15.setPreferredSize(new java.awt.Dimension(680, 50));
         jPanel15.setLayout(new java.awt.BorderLayout());
 
-        jLabel21.setFont(new java.awt.Font("Rockwell Condensed", 1, 24)); // NOI18N
+        jLabel21.setFont(new java.awt.Font("Rockwell", 1, 24)); // NOI18N
         jLabel21.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel21.setText("Reportes");
         jPanel15.add(jLabel21, java.awt.BorderLayout.CENTER);

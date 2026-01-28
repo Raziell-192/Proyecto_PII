@@ -5,7 +5,6 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
-import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -18,7 +17,9 @@ public class UsersConnection {
     PreparedStatement ps;
     ResultSet rs;
 
-    //Variables para enviar datos entre interfaces
+    /**
+     * Variables para enviar datos entre interfaces
+     */
     public static int idUsuario = 0;
     public static String nombresUsuario = "";
     public static String apellidosUsuario = "";
@@ -28,7 +29,13 @@ public class UsersConnection {
     public static String emailUsuario = "";
     public static String rolUsuario = "";
 
-    //Método Login
+    /**
+     * Método Login
+     *
+     * @param user
+     * @param password
+     * @return
+     */
     public User consultarUsuario(String user, String password) {
         String query = "SELECT * FROM usuarios WHERE username = ? AND password = ?";
         User usuario = new User();
@@ -62,7 +69,12 @@ public class UsersConnection {
         return usuario;
     }
 
-    //Registrar usuario
+    /**
+     * Registrar usuario
+     *
+     * @param usuario
+     * @return
+     */
     public boolean registrarUsuarioQuery(User usuario) {
         String query = "INSERT INTO usuarios (nombres, apellidos, username, email, password, rol) VALUES (?,?,?,?,?,?)";
         //Timestamp dateTime = new Timestamp(new Date().getTime());
@@ -86,7 +98,12 @@ public class UsersConnection {
         }
     }
 
-    //Método listar usuario
+    /**
+     * Método listar usuario
+     *
+     * @param usuario
+     * @return
+     */
 //    public List listaUsuariosQuery(String valor) {
 //        List<Employee> listaUsuarios = new ArrayList();
 //        String query = "SELECT * FROM emplados ORDER BY rol ASC";
@@ -119,7 +136,12 @@ public class UsersConnection {
 //        }
 //        return listaUsuarios;
 //    }
-    //Modificar usuario
+    /**
+     * Modificar usuario
+     *
+     * @param usuario
+     * @return
+     */
     public boolean actualizarUsuarioQuery(User usuario) {
         String query = "UPDATE usuarios SET nombres = ?, apellidos = ?, username = ?, "
                 + "email = ?, rol = ?, password = ? WHERE id_usuario = ?";
@@ -144,7 +166,12 @@ public class UsersConnection {
         }
     }
 
-    //Eliminar usuario
+    /**
+     * Eliminar usuario
+     *
+     * @param id
+     * @return
+     */
     public boolean eliminarUsuarioQuery(int id) {
         String query = "DELETE FROM usuarios WHERE id_usuario = " + id;
         try {
@@ -154,12 +181,17 @@ public class UsersConnection {
 
             return true;
         } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "No se puede eleimnar un usuario que tenga relacion con otra tabla " + e);
+            JOptionPane.showMessageDialog(null, "No se puede eliminar un usuario que tenga relacion con otra tabla " + e);
             return false;
         }
     }
 
-    //Cambiar contraseña
+    /**
+     * Cambiar contraseña
+     *
+     * @param usuario
+     * @return
+     */
     public boolean cambiarUsuarioContrasenya(User usuario) {
         String query = "UPDATE usuarios SET password = ? WHERE username = '" + usernameUsuario + "'";
         try {
@@ -174,6 +206,11 @@ public class UsersConnection {
         }
     }
 
+    /**
+     * Obtener todos los usuarios
+     *
+     * @return
+     */
     public List<User> obtenerTodosLosUsuarios() {
         List<User> listaUsuarios = new ArrayList<>();
         String query = "SELECT * FROM usuarios ORDER BY id_usuario ASC";
@@ -211,6 +248,12 @@ public class UsersConnection {
         return listaUsuarios;
     }
 
+    /**
+     * Buscar usuarios
+     *
+     * @param valor
+     * @return
+     */
     public List<User> buscarUsuarios(String valor) {
         List<User> listaUsuarios = new ArrayList<>();
         String query = "SELECT * FROM usuarios WHERE id_usuario::text LIKE ? OR nombres LIKE ? OR apellidos LIKE ? ORDER BY id_usuario ASC";
@@ -255,6 +298,12 @@ public class UsersConnection {
         return listaUsuarios;
     }
 
+    /**
+     * Eliminar usuario
+     *
+     * @param id
+     * @return
+     */
     public boolean eliminarUsuario(int id) {
         String query = "DELETE FROM usuarios WHERE id_usuario = ?";
         try {
