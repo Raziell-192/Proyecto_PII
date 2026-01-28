@@ -314,19 +314,17 @@ public class SystemViewResponsive extends javax.swing.JFrame {
         jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
         jPanel13 = new javax.swing.JPanel();
-        jPanel68 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jMonthChooser1 = new com.toedter.calendar.JMonthChooser();
-        jLabel4 = new javax.swing.JLabel();
-        jMonthChooser2 = new com.toedter.calendar.JMonthChooser();
-        jLabel12 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jLabel2 = new javax.swing.JLabel();
-        jComboBox4 = new javax.swing.JComboBox<>();
         jPanel69 = new javax.swing.JPanel();
         jPanel70 = new javax.swing.JPanel();
         jButton5 = new javax.swing.JButton();
         jPanel71 = new javax.swing.JPanel();
+        jPanel68 = new javax.swing.JPanel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jLabel1 = new javax.swing.JLabel();
+        jComboBox4 = new javax.swing.JComboBox<>();
         jPanel67 = new javax.swing.JPanel();
         jPanel66 = new javax.swing.JPanel();
         btnGenerarPDF = new javax.swing.JButton();
@@ -841,7 +839,7 @@ public class SystemViewResponsive extends javax.swing.JFrame {
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 42, Short.MAX_VALUE)
+            .addGap(0, 41, Short.MAX_VALUE)
         );
 
         pnlBotones.add(jPanel5);
@@ -862,7 +860,7 @@ public class SystemViewResponsive extends javax.swing.JFrame {
         );
         jPanel18Layout.setVerticalGroup(
             jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 42, Short.MAX_VALUE)
+            .addGap(0, 41, Short.MAX_VALUE)
         );
 
         pnlBotones.add(jPanel18);
@@ -883,7 +881,7 @@ public class SystemViewResponsive extends javax.swing.JFrame {
         );
         jPanel20Layout.setVerticalGroup(
             jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 42, Short.MAX_VALUE)
+            .addGap(0, 41, Short.MAX_VALUE)
         );
 
         pnlBotones.add(jPanel20);
@@ -904,7 +902,7 @@ public class SystemViewResponsive extends javax.swing.JFrame {
         );
         jPanel24Layout.setVerticalGroup(
             jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 42, Short.MAX_VALUE)
+            .addGap(0, 41, Short.MAX_VALUE)
         );
 
         pnlBotones.add(jPanel24);
@@ -925,7 +923,7 @@ public class SystemViewResponsive extends javax.swing.JFrame {
         );
         jPanel29Layout.setVerticalGroup(
             jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 42, Short.MAX_VALUE)
+            .addGap(0, 41, Short.MAX_VALUE)
         );
 
         pnlBotones.add(jPanel29);
@@ -2065,46 +2063,6 @@ public class SystemViewResponsive extends javax.swing.JFrame {
         jPanel13.setBackground(new java.awt.Color(255, 255, 255));
         jPanel13.setLayout(new java.awt.BorderLayout());
 
-        jPanel68.setBorder(javax.swing.BorderFactory.createEmptyBorder(20, 20, 20, 20));
-        jPanel68.setLayout(new java.awt.GridLayout(2, 4, 20, 20));
-
-        jLabel1.setFont(new java.awt.Font("Nunito", 1, 18)); // NOI18N
-        jLabel1.setText("Fecha inicio:");
-        jPanel68.add(jLabel1);
-
-        jMonthChooser1.setFont(new java.awt.Font("Nunito", 0, 18)); // NOI18N
-        jPanel68.add(jMonthChooser1);
-
-        jLabel4.setFont(new java.awt.Font("Nunito", 1, 18)); // NOI18N
-        jLabel4.setText("Fecha fin:");
-        jPanel68.add(jLabel4);
-
-        jMonthChooser2.setFont(new java.awt.Font("Nunito", 0, 18)); // NOI18N
-        jPanel68.add(jMonthChooser2);
-
-        jLabel12.setFont(new java.awt.Font("Nunito", 1, 18)); // NOI18N
-        jLabel12.setText("Tipo de venta:");
-        jPanel68.add(jLabel12);
-
-        jComboBox1.setFont(new java.awt.Font("Nunito", 0, 18)); // NOI18N
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tratamiento", " " }));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
-            }
-        });
-        jPanel68.add(jComboBox1);
-
-        jLabel2.setFont(new java.awt.Font("Nunito", 1, 18)); // NOI18N
-        jLabel2.setText("Usuario:");
-        jPanel68.add(jLabel2);
-
-        jComboBox4.setFont(new java.awt.Font("Nunito", 0, 18)); // NOI18N
-        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Usuario", " " }));
-        jPanel68.add(jComboBox4);
-
-        jPanel13.add(jPanel68, java.awt.BorderLayout.CENTER);
-
         jPanel69.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 20, 10));
         jPanel69.setPreferredSize(new java.awt.Dimension(680, 80));
         jPanel69.setLayout(new java.awt.GridLayout(1, 3, 10, 10));
@@ -2145,6 +2103,40 @@ public class SystemViewResponsive extends javax.swing.JFrame {
         jPanel13.add(jPanel69, java.awt.BorderLayout.PAGE_END);
 
         jPanel1.add(jPanel13, java.awt.BorderLayout.CENTER);
+
+        jPanel68.setBorder(javax.swing.BorderFactory.createEmptyBorder(20, 20, 20, 20));
+        jPanel68.setLayout(new java.awt.GridLayout(2, 4, 20, 20));
+
+        jLabel12.setFont(new java.awt.Font("Nunito", 1, 18)); // NOI18N
+        jLabel12.setText("Tipo de venta:");
+        jPanel68.add(jLabel12);
+
+        jLabel4.setFont(new java.awt.Font("Nunito", 1, 18)); // NOI18N
+        jLabel4.setText("Fecha fin:");
+        jPanel68.add(jLabel4);
+
+        jLabel2.setFont(new java.awt.Font("Nunito", 1, 18)); // NOI18N
+        jLabel2.setText("Usuario:");
+        jPanel68.add(jLabel2);
+
+        jComboBox1.setFont(new java.awt.Font("Nunito", 0, 18)); // NOI18N
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tratamiento", " " }));
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
+            }
+        });
+        jPanel68.add(jComboBox1);
+
+        jLabel1.setFont(new java.awt.Font("Nunito", 1, 18)); // NOI18N
+        jLabel1.setText("Fecha inicio:");
+        jPanel68.add(jLabel1);
+
+        jComboBox4.setFont(new java.awt.Font("Nunito", 0, 18)); // NOI18N
+        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Usuario", " " }));
+        jPanel68.add(jComboBox4);
+
+        jPanel1.add(jPanel68, java.awt.BorderLayout.PAGE_END);
 
         pnlContainerReportes.add(jPanel1, java.awt.BorderLayout.PAGE_START);
 
@@ -2568,8 +2560,6 @@ public class SystemViewResponsive extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel80;
     private javax.swing.JLabel jLabel81;
     private javax.swing.JLabel jLabel9;
-    private com.toedter.calendar.JMonthChooser jMonthChooser1;
-    private com.toedter.calendar.JMonthChooser jMonthChooser2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
