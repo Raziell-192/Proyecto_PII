@@ -542,7 +542,7 @@ public class SystemViewResponsive extends javax.swing.JFrame {
 
         Paciente.setFont(new java.awt.Font("Nunito ExtraBold", 1, 16)); // NOI18N
         Paciente.setForeground(new java.awt.Color(255, 255, 255));
-        Paciente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Estu.png"))); // NOI18N
+        Paciente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/pacientes.png"))); // NOI18N
         Paciente.setText("Pacientes");
         Paciente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanelPacientes.add(Paciente, java.awt.BorderLayout.CENTER);
@@ -555,7 +555,7 @@ public class SystemViewResponsive extends javax.swing.JFrame {
 
         Venta.setFont(new java.awt.Font("Nunito ExtraBold", 1, 16)); // NOI18N
         Venta.setForeground(new java.awt.Color(255, 255, 255));
-        Venta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/profesor.png"))); // NOI18N
+        Venta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/ventas.jpg"))); // NOI18N
         Venta.setText("Venta");
         Venta.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanelVenta.add(Venta, java.awt.BorderLayout.CENTER);
@@ -568,7 +568,7 @@ public class SystemViewResponsive extends javax.swing.JFrame {
 
         Insumos.setFont(new java.awt.Font("Nunito ExtraBold", 1, 16)); // NOI18N
         Insumos.setForeground(new java.awt.Color(255, 255, 255));
-        Insumos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/trabajador.png"))); // NOI18N
+        Insumos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/medicamentos(1).png"))); // NOI18N
         Insumos.setText("Insumos");
         Insumos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanelInsumos.add(Insumos, java.awt.BorderLayout.CENTER);
@@ -581,7 +581,7 @@ public class SystemViewResponsive extends javax.swing.JFrame {
 
         Tratamiento.setFont(new java.awt.Font("Nunito ExtraBold", 1, 16)); // NOI18N
         Tratamiento.setForeground(new java.awt.Color(255, 255, 255));
-        Tratamiento.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/prove.png"))); // NOI18N
+        Tratamiento.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/insumos.png"))); // NOI18N
         Tratamiento.setText("Tratamiento");
         Tratamiento.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanelTratamiento.add(Tratamiento, java.awt.BorderLayout.CENTER);
@@ -594,7 +594,7 @@ public class SystemViewResponsive extends javax.swing.JFrame {
 
         Clinicos.setFont(new java.awt.Font("Nunito ExtraBold", 1, 16)); // NOI18N
         Clinicos.setForeground(new java.awt.Color(255, 255, 255));
-        Clinicos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/categorias.png"))); // NOI18N
+        Clinicos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/appointment_5954502.png"))); // NOI18N
         Clinicos.setText("Citas");
         Clinicos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanelAdministradoresClinicos.add(Clinicos, java.awt.BorderLayout.CENTER);
@@ -607,7 +607,7 @@ public class SystemViewResponsive extends javax.swing.JFrame {
 
         Capturas.setFont(new java.awt.Font("Nunito ExtraBold", 1, 16)); // NOI18N
         Capturas.setForeground(new java.awt.Color(255, 255, 255));
-        Capturas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/informe.png"))); // NOI18N
+        Capturas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/reporte.png"))); // NOI18N
         Capturas.setText("Reportes");
         Capturas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanelCapturasEstado.add(Capturas, java.awt.BorderLayout.CENTER);

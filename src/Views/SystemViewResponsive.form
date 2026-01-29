@@ -450,7 +450,7 @@
                           <Color blue="ff" green="ff" red="ff" type="rgb"/>
                         </Property>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="3" name="/images/Estu.png"/>
+                          <Image iconType="3" name="/images/pacientes.png"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="Pacientes"/>
                         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -492,7 +492,7 @@
                           <Color blue="ff" green="ff" red="ff" type="rgb"/>
                         </Property>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="3" name="/images/profesor.png"/>
+                          <Image iconType="3" name="/images/ventas.jpg"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="Venta"/>
                         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -534,7 +534,7 @@
                           <Color blue="ff" green="ff" red="ff" type="rgb"/>
                         </Property>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="3" name="/images/trabajador.png"/>
+                          <Image iconType="3" name="/images/medicamentos(1).png"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="Insumos"/>
                         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -576,7 +576,7 @@
                           <Color blue="ff" green="ff" red="ff" type="rgb"/>
                         </Property>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="3" name="/images/prove.png"/>
+                          <Image iconType="3" name="/images/insumos.png"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="Tratamiento"/>
                         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -618,7 +618,7 @@
                           <Color blue="ff" green="ff" red="ff" type="rgb"/>
                         </Property>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="3" name="/images/categorias.png"/>
+                          <Image iconType="3" name="/images/appointment_5954502.png"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="Citas"/>
                         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -660,7 +660,7 @@
                           <Color blue="ff" green="ff" red="ff" type="rgb"/>
                         </Property>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="3" name="/images/informe.png"/>
+                          <Image iconType="3" name="/images/reporte.png"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="Reportes"/>
                         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
