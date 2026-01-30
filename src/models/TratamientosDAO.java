@@ -7,8 +7,17 @@ import java.util.List;
 import javax.swing.JOptionPane;
 
 /**
+ * Clase DAO (Data Access Object) para la gestión de tratamientos.
+ * <p>
+ * Esta clase se encarga de realizar las operaciones CRUD (Crear, Leer,
+ * Actualizar y Eliminar) sobre la tabla {@code tratamientos} en la base de
+ * datos.
+ * </p>
  *
- * @author jakim
+ * Utiliza {@link PreparedStatement} para ejecutar consultas SQL de forma segura
+ * y la clase {@link Conexion} para la conexión con la base de datos.
+ *
+ * @author Jakim
  */
 public class TratamientosDAO {
 
@@ -19,9 +28,14 @@ public class TratamientosDAO {
 
     /**
      * REGISTRAR TRATAMIENTO
+     * <p>
+     * Registra un nuevo tratamiento en la base de datos.
+     * </p>
      *
-     * @param tratamiento
-     * @return
+     * @param tratamiento Objeto {@link Tratamiento} con la información del
+     * tratamiento a registrar.
+     * @return {@code true} si el tratamiento se registra correctamente,
+     * {@code false} en caso de error.
      */
     public boolean registrarTratamientoQuery(Tratamiento tratamiento) {
         String query = "INSERT INTO tratamientos (id_categoria, codigo, nombre, descripcion) VALUES (?,?,?,?)";
@@ -48,8 +62,12 @@ public class TratamientosDAO {
 
     /**
      * LISTAR TRATAMIENTOS
+     * <p>
+     * Obtiene la lista completa de tratamientos registrados.
+     * </p>
      *
-     * @return
+     * @return Lista de objetos {@link Tratamiento} obtenidos desde la base de
+     * datos.
      */
     public List<Tratamiento> listarTratamientosQuery() {
         List<Tratamiento> lista = new ArrayList<>();
@@ -81,9 +99,12 @@ public class TratamientosDAO {
 
     /**
      * BUSCAR TRATAMIENTOS
+     * <p>
+     * Busca tratamientos por código o nombre.
+     * </p>
      *
-     * @param valor
-     * @return
+     * @param valor Texto a buscar dentro del código o nombre del tratamiento.
+     * @return Lista de tratamientos que coinciden con el criterio de búsqueda.
      */
     public List<Tratamiento> buscarTratamientosQuery(String valor) {
         List<Tratamiento> lista = new ArrayList<>();
@@ -121,9 +142,14 @@ public class TratamientosDAO {
 
     /**
      * ACTUALIZAR TRATAMIENTO
+     * <p>
+     * Actualiza la información de un tratamiento existente.
+     * </p>
      *
-     * @param tratamiento
-     * @return
+     * @param tratamiento Objeto {@link Tratamiento} con los datos actualizados
+     * del tratamiento.
+     * @return {@code true} si la actualización se realiza correctamente,
+     * {@code false} si ocurre algún error.
      */
     public boolean actualizarTratamientoQuery(Tratamiento tratamiento) {
         String query = "UPDATE tratamientos SET id_categoria = ?, codigo = ?, nombre = ?, descripcion = ? "
@@ -152,9 +178,13 @@ public class TratamientosDAO {
 
     /**
      * ELIMINAR TRATAMIENTO
+     * <p>
+     * Elimina un tratamiento de la base de datos.
+     * </p>
      *
-     * @param idTratamiento
-     * @return
+     * @param idTratamiento Identificador del tratamiento a eliminar.
+     * @return {@code true} si el tratamiento se elimina correctamente,
+     * {@code false} si el tratamiento tiene relaciones o ocurre un error.
      */
     public boolean eliminarTratamientoQuery(int idTratamiento) {
         String query = "DELETE FROM tratamientos WHERE id_tratamiento = ?";
@@ -177,6 +207,13 @@ public class TratamientosDAO {
 
     /**
      * CERRAR CONEXIONES
+     * <p>
+     * Cierra los recursos de base de datos utilizados.
+     * </p>
+     * <p>
+     * Este método libera el {@link ResultSet}, {@link PreparedStatement} y
+     * {@link Connection} para evitar fugas de memoria.
+     * </p>
      */
     private void cerrarConexion() {
         try {

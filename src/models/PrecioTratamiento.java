@@ -1,8 +1,15 @@
 package models;
 
 /**
+ * Modelo que representa el precio de un tratamiento odontológico.
+ * <p>
+ * Permite asociar un tratamiento con un tipo de precio y su valor
+ * correspondiente.
+ * </p>
  *
- * @author jakim
+ * Corresponde a la tabla {@code precios_tratamiento}.
+ *
+ * @author Jakim
  */
 public class PrecioTratamiento {
 

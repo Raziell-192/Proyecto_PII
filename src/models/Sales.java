@@ -1,63 +1,38 @@
 package models;
 
-import java.util.List;
+import java.sql.Timestamp;
 
 /**
+ * Modelo que representa una venta realizada en la clínica de odontología.
+ * <p>
+ * Una venta puede incluir tratamientos y/o insumos asociados a un paciente bajo
+ * un tipo de precio específico.
+ * </p>
  *
- * @author jakim
+ * Corresponde directamente a la tabla {@code ventas}.
+ *
+ * @author Jakim
  */
 public class Sales {
-    //Variables:
+
+    // Datos principales de la venta
     private int idVenta;
     private String numeroVenta;
     private int idPaciente;
-    private String nombrePaciente;
-    private int idUsuario;
-    private String nombreUsuario;
-    private double tipoPrecio;
-    private String fechaVenta;
+    private int idTipoPrecio;
+    private Timestamp fechaVenta;
     private double total;
-
-    // Relaciones
-    private List<String> tratamientos;
-    private List<Double> insumos;
 
     public Sales() {
     }
 
-    public Sales(int idVenta, String numeroVenta, int idPaciente, double tipoPrecio, String fechaVenta, double total) {
+    public Sales(int idVenta, String numeroVenta, int idPaciente, int idTipoPrecio, Timestamp fechaVenta, double total) {
         this.idVenta = idVenta;
         this.numeroVenta = numeroVenta;
         this.idPaciente = idPaciente;
-        this.tipoPrecio = tipoPrecio;
+        this.idTipoPrecio = idTipoPrecio;
         this.fechaVenta = fechaVenta;
         this.total = total;
-    }
-
-    public Sales(int idVenta, String numeroVenta, int idPaciente, String nombrePaciente, int idUsuario, String nombreUsuario, double tipoPrecio, String fechaVenta, double total) {
-        this.idVenta = idVenta;
-        this.numeroVenta = numeroVenta;
-        this.idPaciente = idPaciente;
-        this.nombrePaciente = nombrePaciente;
-        this.idUsuario = idUsuario;
-        this.nombreUsuario = nombreUsuario;
-        this.tipoPrecio = tipoPrecio;
-        this.fechaVenta = fechaVenta;
-        this.total = total;
-    }
-
-    public Sales(int idVenta, String numeroVenta, int idPaciente, String nombrePaciente, int idUsuario, String nombreUsuario, double tipoPrecio, String fechaVenta, double total, List<String> tratamientos, List<Double> insumos) {
-        this.idVenta = idVenta;
-        this.numeroVenta = numeroVenta;
-        this.idPaciente = idPaciente;
-        this.nombrePaciente = nombrePaciente;
-        this.idUsuario = idUsuario;
-        this.nombreUsuario = nombreUsuario;
-        this.tipoPrecio = tipoPrecio;
-        this.fechaVenta = fechaVenta;
-        this.total = total;
-        this.tratamientos = tratamientos;
-        this.insumos = insumos;
     }
 
     public int getIdVenta() {
@@ -84,43 +59,19 @@ public class Sales {
         this.idPaciente = idPaciente;
     }
 
-    public String getNombrePaciente() {
-        return nombrePaciente;
+    public int getIdTipoPrecio() {
+        return idTipoPrecio;
     }
 
-    public void setNombrePaciente(String nombrePaciente) {
-        this.nombrePaciente = nombrePaciente;
+    public void setIdTipoPrecio(int idTipoPrecio) {
+        this.idTipoPrecio = idTipoPrecio;
     }
 
-    public int getIdUsuario() {
-        return idUsuario;
-    }
-
-    public void setIdUsuario(int idUsuario) {
-        this.idUsuario = idUsuario;
-    }
-
-    public String getNombreUsuario() {
-        return nombreUsuario;
-    }
-
-    public void setNombreUsuario(String nombreUsuario) {
-        this.nombreUsuario = nombreUsuario;
-    }
-
-    public double getTipoPrecio() {
-        return tipoPrecio;
-    }
-
-    public void setTipoPrecio(double tipoPrecio) {
-        this.tipoPrecio = tipoPrecio;
-    }
-
-    public String getFechaVenta() {
+    public Timestamp getFechaVenta() {
         return fechaVenta;
     }
 
-    public void setFechaVenta(String fechaVenta) {
+    public void setFechaVenta(Timestamp fechaVenta) {
         this.fechaVenta = fechaVenta;
     }
 
@@ -132,20 +83,4 @@ public class Sales {
         this.total = total;
     }
 
-    public List<String> getTratamientos() {
-        return tratamientos;
-    }
-
-    public void setTratamientos(List<String> tratamientos) {
-        this.tratamientos = tratamientos;
-    }
-
-    public List<Double> getInsumos() {
-        return insumos;
-    }
-
-    public void setInsumos(List<Double> insumos) {
-        this.insumos = insumos;
-    }
-    
 }

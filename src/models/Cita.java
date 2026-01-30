@@ -3,24 +3,25 @@ package models;
 import java.sql.Timestamp;
 
 /**
+ * Modelo que representa una cita médica.
  *
- * @author jakim
+ * @author Jakim
  */
 public class Cita {
 
     private int idCita;
     private int idPaciente;
     private int idTratamiento;
-    private Timestamp fecha_hora;
+    private Timestamp fechaHora;
 
     public Cita() {
     }
 
-    public Cita(int idCita, int idPaciente, int idTratamiento, Timestamp fecha_hora) {
+    public Cita(int idCita, int idPaciente, int idTratamiento, Timestamp fechaHora) {
         this.idCita = idCita;
         this.idPaciente = idPaciente;
         this.idTratamiento = idTratamiento;
-        this.fecha_hora = fecha_hora;
+        this.fechaHora = fechaHora;
     }
 
     public int getIdCita() {
@@ -47,12 +48,11 @@ public class Cita {
         this.idTratamiento = idTratamiento;
     }
 
-    public Timestamp getFecha_hora() {
-        return fecha_hora;
+    public Timestamp getFechaHora() {
+        return fechaHora;
     }
 
-    public void setFecha_hora(Timestamp fecha_hora) {
-        this.fecha_hora = fecha_hora;
+    public void setFechaHora(Timestamp fechaHora) {
+        this.fechaHora = fechaHora;
     }
-
 }

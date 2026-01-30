@@ -1,8 +1,15 @@
 package models;
 
 /**
+ * Modelo que representa una categoría de tratamientos odontológicos.
+ * <p>
+ * Se utiliza para clasificar los tratamientos en grupos, facilitando su
+ * organización y gestión dentro del sistema.
+ * </p>
  *
- * @author jakim
+ * Corresponde a la tabla {@code categorias_tratamiento} de la base de datos.
+ *
+ * @author Jakim
  */
 public class CategoriaTratamiento {
 

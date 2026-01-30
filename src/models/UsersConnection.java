@@ -7,8 +7,17 @@ import java.util.List;
 import javax.swing.JOptionPane;
 
 /**
+ * Clase DAO encargada de la gestión de usuarios del sistema.
+ * <p>
+ * Esta clase implementa las operaciones de acceso a datos relacionadas con la
+ * tabla {@code usuarios}, incluyendo autenticación, registro, actualización,
+ * eliminación y consulta de usuarios.
+ * </p>
  *
- * @author jakim
+ * Además, maneja la información de sesión del usuario autenticado para
+ * controlar el acceso a las funcionalidades de la aplicación según su rol.
+ *
+ * @author Jakim
  */
 public class UsersConnection {
 
@@ -17,9 +26,7 @@ public class UsersConnection {
     PreparedStatement ps;
     ResultSet rs;
 
-    /**
-     * Variables para enviar datos entre interfaces
-     */
+    //Variables para enviar datos entre interfaces
     public static int idUsuario = 0;
     public static String nombresUsuario = "";
     public static String apellidosUsuario = "";
@@ -31,10 +38,14 @@ public class UsersConnection {
 
     /**
      * Método Login
+     * <p>
+     * Valida las credenciales del usuario para iniciar sesión.
+     * </p>
      *
-     * @param user
-     * @param password
-     * @return
+     * @param user Nombre de usuario ingresado.
+     * @param password Contraseña del usuario.
+     * @return Objeto {@link User} con la información del usuario autenticado;
+     * si no existe coincidencia, devuelve un objeto vacío.
      */
     public User consultarUsuario(String user, String password) {
         String query = "SELECT * FROM usuarios WHERE username = ? AND password = ?";
@@ -71,9 +82,13 @@ public class UsersConnection {
 
     /**
      * Registrar usuario
+     * <p>
+     * Registra un nuevo usuario en la base de datos.
+     * </p>
      *
-     * @param usuario
-     * @return
+     * @param usuario Objeto {@link User} con los datos del usuario a registrar.
+     * @return {@code true} si el usuario se registra correctamente,
+     * {@code false} si ocurre algún error.
      */
     public boolean registrarUsuarioQuery(User usuario) {
         String query = "INSERT INTO usuarios (nombres, apellidos, username, email, password, rol) VALUES (?,?,?,?,?,?)";
@@ -98,15 +113,15 @@ public class UsersConnection {
         }
     }
 
-    /**
-     * Método listar usuario
-     *
-     * @param usuario
-     * @return
-     */
+//    /**
+//     * Método listar usuario
+//     *
+//     * @param usuario
+//     * @return
+//     */
 //    public List listaUsuariosQuery(String valor) {
-//        List<Employee> listaUsuarios = new ArrayList();
-//        String query = "SELECT * FROM emplados ORDER BY rol ASC";
+//        List<User> listaUsuarios = new ArrayList();
+//        String query = "SELECT * FROM usuarios ORDER BY rol ASC";
 //        String queryBuscarUsuario = "SELECT * FROM usuarios WHERE id LIKE '%" + valor + "%'";
 //        try {
 //            con = cn.conectar();
@@ -137,10 +152,14 @@ public class UsersConnection {
 //        return listaUsuarios;
 //    }
     /**
-     * Modificar usuario
+     * Actualizar usuario
+     * <p>
+     * Actualiza la información de un usuario existente.
+     * </p>
      *
-     * @param usuario
-     * @return
+     * @param usuario Objeto {@link User} con los datos actualizados.
+     * @return {@code true} si la actualización se realiza correctamente,
+     * {@code false} en caso de error.
      */
     public boolean actualizarUsuarioQuery(User usuario) {
         String query = "UPDATE usuarios SET nombres = ?, apellidos = ?, username = ?, "
@@ -168,9 +187,13 @@ public class UsersConnection {
 
     /**
      * Eliminar usuario
+     * <p>
+     * Elimina un usuario de la base de datos.
+     * </p>
      *
-     * @param id
-     * @return
+     * @param id Identificador del usuario a eliminar.
+     * @return {@code true} si el usuario se elimina correctamente,
+     * {@code false} si el usuario tiene relaciones con otras tablas.
      */
     public boolean eliminarUsuarioQuery(int id) {
         String query = "DELETE FROM usuarios WHERE id_usuario = " + id;
@@ -188,9 +211,13 @@ public class UsersConnection {
 
     /**
      * Cambiar contraseña
+     * <p>
+     * Actualiza la contraseña del usuario autenticado.
+     * </p>
      *
-     * @param usuario
-     * @return
+     * @param usuario Objeto {@link User} que contiene la nueva contraseña.
+     * @return {@code true} si la contraseña se actualiza correctamente,
+     * {@code false} en caso de error.
      */
     public boolean cambiarUsuarioContrasenya(User usuario) {
         String query = "UPDATE usuarios SET password = ? WHERE username = '" + usernameUsuario + "'";
@@ -208,8 +235,11 @@ public class UsersConnection {
 
     /**
      * Obtener todos los usuarios
+     * <p>
+     * Obtiene la lista completa de usuarios registrados en el sistema.
+     * </p>
      *
-     * @return
+     * @return Lista de objetos {@link User}.
      */
     public List<User> obtenerTodosLosUsuarios() {
         List<User> listaUsuarios = new ArrayList<>();
@@ -250,9 +280,12 @@ public class UsersConnection {
 
     /**
      * Buscar usuarios
+     * <p>
+     * Busca usuarios por identificador, nombre o apellido.
+     * </p>
      *
-     * @param valor
-     * @return
+     * @param valor Texto utilizado como criterio de búsqueda.
+     * @return Lista de usuarios que coinciden con el criterio.
      */
     public List<User> buscarUsuarios(String valor) {
         List<User> listaUsuarios = new ArrayList<>();
@@ -300,9 +333,13 @@ public class UsersConnection {
 
     /**
      * Eliminar usuario
+     * <p>
+     * Elimina un usuario de forma permanente de la base de datos.
+     * </p>
      *
-     * @param id
-     * @return
+     * @param id Identificador del usuario a eliminar.
+     * @return {@code true} si el usuario se elimina correctamente,
+     * {@code false} en caso de error.
      */
     public boolean eliminarUsuario(int id) {
         String query = "DELETE FROM usuarios WHERE id_usuario = ?";

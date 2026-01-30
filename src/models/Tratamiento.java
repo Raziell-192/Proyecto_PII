@@ -1,8 +1,23 @@
 package models;
 
 /**
+ * Modelo que representa un tratamiento odontológico.
+ * <p>
+ * Esta clase se utiliza para mapear la tabla {@code tratamientos} de la base de
+ * datos y encapsula la información básica de cada tratamiento que ofrece la
+ * clínica de odontología.
+ * </p>
  *
- * @author jakim
+ * Contiene datos como:
+ * <ul>
+ * <li>Identificador del tratamiento</li>
+ * <li>Categoría a la que pertenece</li>
+ * <li>Código del tratamiento</li>
+ * <li>Nombre</li>
+ * <li>Descripción</li>
+ * </ul>
+ *
+ * @author Jakim
  */
 public class Tratamiento {
 

@@ -2,120 +2,241 @@ package models;
 
 import controllers.Conexion;
 import java.sql.*;
-import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
 
 /**
+ * DAO encargado de la gestión de operaciones CRUD relacionadas con las ventas,
+ * así como el registro de los detalles de venta de tratamientos e insumos.
  *
- * @author jakim
+ * @author Jakim
  */
 public class SalesConnection {
 
-    //Instanciar conexión:
+    // Conexión a la base de datos
     Conexion cn = new Conexion();
     Connection con = null;
     PreparedStatement ps;
     ResultSet rs;
 
-    //Registrar venta
-    public boolean registrarVentaQuery(int idPaciente, int idTipoPrecio, double total) {
-        String query = "INSERT INTO ventas(id_paciente, id_tipo_precio, total, fecha_venta) VALUES (?, ?, ?, ?);";
-        //Timestamp fecha = new Timestamp(new Date().getTime());
-        LocalDateTime now = LocalDateTime.now();
-        Timestamp sqlTimestamp = Timestamp.valueOf(now);
+    /**
+     * Registra una nueva venta en la base de datos.
+     *
+     * @param sale Objeto Sales con la información de la venta
+     * @return true si se registra correctamente
+     */
+    public boolean registrarVenta(Sales sale) {
+        String sql = """
+            INSERT INTO ventas (numero_venta, id_paciente, id_tipo_precio, fecha_venta, total)
+            VALUES (?, ?, ?, ?, ?)
+        """;
+
         try {
             con = cn.conectar();
-            ps = con.prepareStatement(query);
-            ps.setInt(1, idPaciente);
-            ps.setInt(2, idTipoPrecio);
-            ps.setDouble(3, total);
-            ps.setTimestamp(4, sqlTimestamp);
-            ps.execute();
+            ps = con.prepareStatement(sql);
+
+            ps.setString(1, sale.getNumeroVenta());
+            ps.setInt(2, sale.getIdPaciente());
+            ps.setInt(3, sale.getIdTipoPrecio());
+            ps.setTimestamp(4, Timestamp.valueOf(LocalDateTime.now()));
+            ps.setDouble(5, sale.getTotal());
+
+            ps.executeUpdate();
             return true;
+
         } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, e.getMessage());
+            JOptionPane.showMessageDialog(null, "Error al registrar venta: " + e.getMessage());
             return false;
         }
     }
 
-    //Registrar detalles de venta de tratamientos: detalle_venta_tratamientos
-    public boolean registrarDetallesVentaTratamientosQuery(int idVenta, int idTratamiento, int cantidad, double precioUnitario, double total) {
-        String query = "INSERT INTO detalle_venta_tratamientos(id_venta, id_tratamiento, cantidad, precio_unitario, total) VALUES (?, ?, ?, ?, ?);";
+    /**
+     * Registra un detalle de venta de tratamiento.
+     */
+    public boolean registrarDetalleTratamiento(
+            int idVenta, int idTratamiento, int cantidad,
+            double precioUnitario, double total) {
+
+        String sql = """
+            INSERT INTO detalle_venta_tratamientos
+            (id_venta, id_tratamiento, cantidad, precio_unitario, total)
+            VALUES (?, ?, ?, ?, ?)
+        """;
+
         try {
             con = cn.conectar();
-            ps = con.prepareStatement(query);
+            ps = con.prepareStatement(sql);
+
             ps.setInt(1, idVenta);
             ps.setInt(2, idTratamiento);
             ps.setInt(3, cantidad);
             ps.setDouble(4, precioUnitario);
-            ps.setDouble(4, total);
-            ps.execute();
+            ps.setDouble(5, total);
+
+            ps.executeUpdate();
             return true;
+
         } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, e.getMessage());
+            JOptionPane.showMessageDialog(null, "Error al registrar detalle de tratamiento: " + e.getMessage());
             return false;
         }
     }
 
-    //Registrar detalles de venta de insumos: detalle_venta_insumos
-    public boolean registrarDetallesVentaInsumosQuery(int idVenta, int idInsumo, double cantidad, double precioUnitario, double total) {
-        String query = "INSERT INTO detalle_venta_tratamientos(id_venta, id_insumo, cantidad, precio_unitario, total) VALUES (?, ?, ?, ?, ?);";
+    /**
+     * Registra un detalle de venta de insumo.
+     */
+    public boolean registrarDetalleInsumo(
+            int idVenta, int idInsumo, double cantidad,
+            double precioUnitario, double total) {
+
+        String sql = """
+            INSERT INTO detalle_venta_insumos
+            (id_venta, id_insumo, cantidad, precio_unitario, total)
+            VALUES (?, ?, ?, ?, ?)
+        """;
+
         try {
             con = cn.conectar();
-            ps = con.prepareStatement(query);
+            ps = con.prepareStatement(sql);
+
             ps.setInt(1, idVenta);
             ps.setInt(2, idInsumo);
             ps.setDouble(3, cantidad);
             ps.setDouble(4, precioUnitario);
-            ps.setDouble(4, total);
-            ps.execute();
+            ps.setDouble(5, total);
+
+            ps.executeUpdate();
             return true;
+
         } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, e.getMessage());
+            JOptionPane.showMessageDialog(null, "Error al registrar detalle de insumo: " + e.getMessage());
             return false;
         }
     }
 
-    public int idVenta() {
+    /**
+     * Obtiene el último ID de venta registrado.
+     */
+    public int obtenerUltimoIdVenta() {
+        String sql = "SELECT MAX(id_venta) FROM ventas";
         int id = 0;
-        String query = "SELECT MAX(id_venta) AS id_venta FROM ventas";
+
         try {
             con = cn.conectar();
-            ps = con.prepareStatement(query);
+            ps = con.prepareStatement(sql);
             rs = ps.executeQuery();
+
             if (rs.next()) {
-                id = rs.getInt("id_venta");
+                id = rs.getInt(1);
             }
+
         } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, e.getMessage());
+            JOptionPane.showMessageDialog(null, "Error al obtener ID de venta: " + e.getMessage());
         }
         return id;
     }
 
-    public List listarTodasLasVentasQuery() {
-        List<Sales> listaVentas = new ArrayList();
-        String query = "SELECT v.id_venta   AS factura, p.nombres AS paciente, u.nombres AS usuarios, v.total, v.fecha_venta FROM ventas s INNER JOIN pacientes p on v.id_paciente = p.id_paciente INNER JOIN usuarios u on v.id_usuario = u.id_usuario ORDER BY v.id_venta ASC";
+    /**
+     * Obtiene una venta por su ID.
+     */
+    public Sales obtenerVentaPorId(int idVenta) {
+        String sql = "SELECT * FROM ventas WHERE id_venta = ?";
+        Sales sale = null;
+
         try {
             con = cn.conectar();
-            ps = con.prepareStatement(query);
+            ps = con.prepareStatement(sql);
+            ps.setInt(1, idVenta);
             rs = ps.executeQuery();
-            while (rs.next()) {
-                Sales venta = new Sales();
-                venta.setIdVenta(rs.getInt("factura"));
-                venta.setIdPaciente(rs.getInt("paciente"));
-                venta.setNombrePaciente(rs.getString("paciente"));
-                venta.setNombreUsuario(rs.getString("usuario"));
-                venta.setTotal(rs.getDouble("total"));
-                venta.setFechaVenta(rs.getString("fecha_venta"));
-                listaVentas.add(venta);
+
+            if (rs.next()) {
+                sale = new Sales();
+                sale.setIdVenta(rs.getInt("id_venta"));
+                sale.setNumeroVenta(rs.getString("numero_venta"));
+                sale.setIdPaciente(rs.getInt("id_paciente"));
+                sale.setIdTipoPrecio(rs.getInt("id_tipo_precio"));
+                sale.setFechaVenta(rs.getTimestamp("fecha_venta"));
+                sale.setTotal(rs.getDouble("total"));
             }
+
         } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, e.getMessage());
+            JOptionPane.showMessageDialog(null, "Error al obtener venta: " + e.getMessage());
         }
-        return listaVentas;
+        return sale;
     }
 
+    /**
+     * Lista todas las ventas registradas.
+     */
+    public List<Sales> listarVentas() {
+        List<Sales> lista = new ArrayList<>();
+
+        String sql = """
+            SELECT v.id_venta, v.numero_venta,
+                   p.nombres AS paciente,
+                   v.total, v.fecha_venta
+            FROM ventas v
+            INNER JOIN pacientes p ON v.id_paciente = p.id_paciente
+            ORDER BY v.id_venta
+        """;
+
+        try {
+            con = cn.conectar();
+            ps = con.prepareStatement(sql);
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
+                Sales sale = new Sales();
+                sale.setIdVenta(rs.getInt("id_venta"));
+                sale.setNumeroVenta(rs.getString("numero_venta"));
+//                sale.setNombrePaciente(rs.getString("paciente"));
+                sale.setTotal(rs.getDouble("total"));
+                sale.setFechaVenta(rs.getTimestamp("fecha_venta"));
+                lista.add(sale);
+            }
+
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error al listar ventas: " + e.getMessage());
+        }
+        return lista;
+    }
+
+    /**
+     * Actualiza el total de una venta.
+     */
+    public boolean actualizarTotalVenta(int idVenta, double total) {
+        String sql = "UPDATE ventas SET total = ? WHERE id_venta = ?";
+
+        try {
+            con = cn.conectar();
+            ps = con.prepareStatement(sql);
+            ps.setDouble(1, total);
+            ps.setInt(2, idVenta);
+            return ps.executeUpdate() > 0;
+
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error al actualizar venta: " + e.getMessage());
+            return false;
+        }
+    }
+
+    /**
+     * Elimina una venta por su ID.
+     */
+    public boolean eliminarVenta(int idVenta) {
+        String sql = "DELETE FROM ventas WHERE id_venta = ?";
+
+        try {
+            con = cn.conectar();
+            ps = con.prepareStatement(sql);
+            ps.setInt(1, idVenta);
+            return ps.executeUpdate() > 0;
+
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error al eliminar venta: " + e.getMessage());
+            return false;
+        }
+    }
 }

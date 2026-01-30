@@ -1,8 +1,9 @@
 package models;
 
 /**
+ * Modelo que representa un tipo de precio (normal, afiliado, promoción, etc.).
  *
- * @author jakim
+ * @author Jakim
  */
 public class TipoPrecio {
 
@@ -42,5 +43,4 @@ public class TipoPrecio {
     public void setCodigo(String codigo) {
         this.codigo = codigo;
     }
-
 }

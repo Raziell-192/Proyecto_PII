@@ -1,10 +1,12 @@
 package models;
 
-import java.util.Date;
+import java.sql.Date;
 
 /**
+ * Modelo que representa el historial de tratamientos realizados a un paciente.
+ * Permite llevar el control clínico de los tratamientos aplicados.
  *
- * @author jakim
+ * @author Jakim
  */
 public class HistorialTratamiento {
 
@@ -54,5 +56,4 @@ public class HistorialTratamiento {
     public void setFechaRealizacion(Date fechaRealizacion) {
         this.fechaRealizacion = fechaRealizacion;
     }
-
 }
