@@ -1,18 +1,17 @@
-package views_temp;
+package views;
 
 import controllers.PacienteController;
-import controllers.ProductsController;
+import controllers.InsumosController;
 import controllers.SettingsControllers;
 import models.Usuario;
 import dao.UsuariosDAO;
-import controllers.UsersController;
+import controllers.UsuariosController;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Image;
 import java.awt.Rectangle;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
-import javax.swing.JButton;
 import javax.swing.JLabel;
 import models.Paciente;
 import dao.PacienteDAO;
@@ -21,49 +20,53 @@ import dao.InsumosDAO;
 
 /**
  *
- * @author jakim
+ * @author Jakim
  */
 public class SystemViewResponsive extends javax.swing.JFrame {
 
     /**
-     * Creates new form jakim
+     * Creates new form Jakim
      */
     int xMouse, yMouse;
     private boolean maximized = false;
     private Rectangle normalBounds;
     NewLogin login;
 
-    Usuario empleado = new Usuario();
-    UsuariosDAO empleadoConexion = new UsuariosDAO();
+    private SettingsControllers configuracion;
+
+    private Usuario usuario = new Usuario();
+    private UsuariosDAO usuarioDAO = new UsuariosDAO();
+    private UsuariosController usuarioController;
+
     private Paciente paciente = new Paciente();
-    private PacienteDAO pacienteConexion = new PacienteDAO();
+    private PacienteDAO pacienteDAO = new PacienteDAO();
     private PacienteController pacienteController;
-    private Insumo producto = new Insumo();
-    private InsumosDAO productoConnection = new InsumosDAO();
-    private ProductsController productosController;
+
+    private Insumo insumo = new Insumo();
+    private InsumosDAO insumoDAO = new InsumosDAO();
+    private InsumosController insumoController;
 
     public SystemViewResponsive() {
         initComponents();
         lblLogoHome.setText("");
         lblIzqLogo.setText("");
         lblDerLogo.setText("");
-//        colocarImagenLabel(lblLogoHome, "/images/Icono_Odontología.png");
-//        colocarImagenLabel(lblLogoHome, "/images/Diente_sano.png");
         colocarImagenLabel(lblLogoHome, "/images/logo_UnsiSmile_2.png");
 //        colocarImagenLabel(lblIzqLogo, "/images/pilar.png");
 //        colocarImagenLabel(lblDerLogo, "/images/pilar.png");
         configurarFuenteTabla();
 
-        SettingsControllers configuracion = new SettingsControllers(this);
+        //Controlador de Configuración
+        configuracion = new SettingsControllers(this);
 
-        //Controlador de empleados:
-        UsersController cuentaEmpleado = new UsersController(empleado, empleadoConexion, this);
+        //Controlador de Usuarios
+        usuarioController = new UsuariosController(usuario, usuarioDAO, this);
+
         //Controlador de Pacientes
-        pacienteController = new PacienteController(paciente, pacienteConexion, this);
-        // Controlador de Insumos 
-        productosController = new ProductsController(producto, productoConnection, this);
+        pacienteController = new PacienteController(paciente, pacienteDAO, this);
 
-//        this.setExtendedState(this.MAXIMIZED_BOTH);
+        // Controlador de Insumos 
+        insumoController = new InsumosController(insumo, insumoDAO, this);
     }
 
     /**
@@ -2121,11 +2124,6 @@ public class SystemViewResponsive extends javax.swing.JFrame {
 
         jComboBox1.setFont(new java.awt.Font("Nunito", 0, 18)); // NOI18N
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tratamiento", " " }));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
-            }
-        });
         jPanel68.add(jComboBox1);
 
         jLabel1.setFont(new java.awt.Font("Nunito", 1, 18)); // NOI18N
@@ -2151,11 +2149,6 @@ public class SystemViewResponsive extends javax.swing.JFrame {
         btnGenerarPDF.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/pdf_3.png"))); // NOI18N
         btnGenerarPDF.setText("Generar PDF");
         btnGenerarPDF.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnGenerarPDF.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGenerarPDFActionPerformed(evt);
-            }
-        });
         jPanel66.add(btnGenerarPDF);
 
         btnGenerarTicket.setFont(new java.awt.Font("Nunito", 1, 24)); // NOI18N
@@ -2168,11 +2161,6 @@ public class SystemViewResponsive extends javax.swing.JFrame {
         btnGenerarExcel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/xlsx_3.png"))); // NOI18N
         btnGenerarExcel.setText("Generar Excel");
         btnGenerarExcel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnGenerarExcel.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGenerarExcelActionPerformed(evt);
-            }
-        });
         jPanel66.add(btnGenerarExcel);
 
         jPanel67.add(jPanel66, java.awt.BorderLayout.CENTER);
@@ -2313,12 +2301,10 @@ public class SystemViewResponsive extends javax.swing.JFrame {
 
     private void btnExitTxtMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnExitTxtMouseEntered
         btnExit.setBackground(Color.RED);
-//        btnExitTxt.setForeground(Color.white);
     }//GEN-LAST:event_btnExitTxtMouseEntered
 
     private void btnExitTxtMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnExitTxtMouseExited
         btnExit.setBackground(Color.getColor("#003865"));
-//        btnExitTxt.setForeground(Color.black);
     }//GEN-LAST:event_btnExitTxtMouseExited
 
     private void btnMinimizeTxtMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMinimizeTxtMouseClicked
@@ -2337,21 +2323,14 @@ public class SystemViewResponsive extends javax.swing.JFrame {
     }//GEN-LAST:event_btnMinimizeTxtMouseExited
 
     private void btnMaximizeTxtMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMaximizeTxtMouseClicked
-//        this.setExtendedState(this.MAXIMIZED_BOTH);
         if (!maximized) {
             normalBounds = this.getBounds();
             this.setExtendedState(this.MAXIMIZED_BOTH);
             maximized = true;
-//            colocarImagenButton(btnGenerarPDF, "/images/pdf.png");
-//            colocarImagenButton(btnGenerarTicket, "/images/boleto.png");
-//            colocarImagenButton(btnGenerarExcel, "/images/xlsx.png");
         } else {
             this.setExtendedState(this.NORMAL);
             this.setBounds(normalBounds);
             maximized = false;
-//            colocarImagenButton(btnGenerarPDF, "/images/pdf.png");
-//            colocarImagenButton(btnGenerarTicket, "/images/boleto.png");
-//            colocarImagenButton(btnGenerarExcel, "/images/xlsx.png");
         }
     }//GEN-LAST:event_btnMaximizeTxtMouseClicked
 
@@ -2374,34 +2353,11 @@ public class SystemViewResponsive extends javax.swing.JFrame {
         this.setLocation(x - xMouse, y - yMouse);
     }//GEN-LAST:event_pnlBarraTituloMouseDragged
 
-    private void btnGenerarPDFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarPDFActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnGenerarPDFActionPerformed
-
-    private void btnGenerarExcelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarExcelActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnGenerarExcelActionPerformed
-
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
-
     private void colocarImagenLabel(JLabel etiqueta, String ruta) {
         try {
             ImageIcon imagen = new ImageIcon(getClass().getResource(ruta));
             Icon icono = new ImageIcon(imagen.getImage().getScaledInstance(etiqueta.getWidth(), etiqueta.getHeight(), Image.SCALE_DEFAULT));
             etiqueta.setIcon(icono);
-            this.repaint();
-        } catch (Exception e) {
-            System.out.println("Error: " + e.getMessage());
-        }
-    }
-
-    private void colocarImagenButton(JButton boton, String ruta) {
-        try {
-            ImageIcon imagen = new ImageIcon(getClass().getResource(ruta));
-            Icon icono = new ImageIcon(imagen.getImage().getScaledInstance(boton.getWidth(), boton.getHeight(), Image.SCALE_DEFAULT));
-            boton.setIcon(icono);
             this.repaint();
         } catch (Exception e) {
             System.out.println("Error: " + e.getMessage());

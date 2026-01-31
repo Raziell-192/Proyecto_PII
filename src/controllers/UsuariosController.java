@@ -1,7 +1,7 @@
 package controllers;
 
 import dao.Conexion;
-import views_temp.SystemViewResponsive;
+import views.SystemViewResponsive;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
@@ -19,7 +19,7 @@ import static dao.UsuariosDAO.rolUsuario;
  *
  * @author jakim
  */
-public class UsersController implements ActionListener {
+public class UsuariosController implements ActionListener {
 
     private Usuario usuario;
     private UsuariosDAO usuarioConexion;
@@ -27,7 +27,7 @@ public class UsersController implements ActionListener {
     String rol = rolUsuario;
     private int idUsuarioEnEdicion = -1;
 
-    public UsersController(Usuario usuario, UsuariosDAO usuarioConexion, SystemViewResponsive vista) {
+    public UsuariosController(Usuario usuario, UsuariosDAO usuarioConexion, SystemViewResponsive vista) {
         this.usuario = usuario;
         this.usuarioConexion = usuarioConexion;
         this.vista = vista;

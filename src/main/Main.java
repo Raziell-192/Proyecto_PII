@@ -1,7 +1,6 @@
 package main;
 
-import views_temp.Login;
-import views_temp.NewLogin;
+import views.NewLogin;
 import javax.swing.UIManager;
 
 /**
@@ -11,9 +10,6 @@ import javax.swing.UIManager;
 public class Main {
 
     public static void main(String[] args) {
-//        Login login = new Login();
-//        login.setVisible(true);
-
 //        NewLogin login = new NewLogin();
 //        login.setVisible(true);
 //        try {

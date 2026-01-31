@@ -1,8 +1,7 @@
 package controllers;
 
-import views_temp.Login;
-import views_temp.NewLogin;
-import views_temp.SystemViewResponsive;
+import views.NewLogin;
+import views.SystemViewResponsive;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;

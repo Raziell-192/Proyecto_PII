@@ -1,4 +1,4 @@
-package views_temp;
+package views;
 
 import controllers.LoginController;
 import java.awt.Color;
