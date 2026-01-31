@@ -1,10 +1,10 @@
-package models;
+package dao;
 
-import controllers.Conexion;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
+import models.Usuario;
 
 /**
  * Clase DAO encargada de la gestión de usuarios del sistema.
@@ -19,7 +19,7 @@ import javax.swing.JOptionPane;
  *
  * @author Jakim
  */
-public class UsersConnection {
+public class UsuariosDAO {
 
     Conexion cn = new Conexion();
     Connection con;
@@ -44,12 +44,12 @@ public class UsersConnection {
      *
      * @param user Nombre de usuario ingresado.
      * @param password Contraseña del usuario.
-     * @return Objeto {@link User} con la información del usuario autenticado;
+     * @return Objeto {@link Usuario} con la información del usuario autenticado;
      * si no existe coincidencia, devuelve un objeto vacío.
      */
-    public User consultarUsuario(String user, String password) {
+    public Usuario consultarUsuario(String user, String password) {
         String query = "SELECT * FROM usuarios WHERE username = ? AND password = ?";
-        User usuario = new User();
+        Usuario usuario = new Usuario();
         try {
             con = cn.conectar();
             ps = con.prepareStatement(query);
@@ -86,11 +86,11 @@ public class UsersConnection {
      * Registra un nuevo usuario en la base de datos.
      * </p>
      *
-     * @param usuario Objeto {@link User} con los datos del usuario a registrar.
+     * @param usuario Objeto {@link Usuario} con los datos del usuario a registrar.
      * @return {@code true} si el usuario se registra correctamente,
      * {@code false} si ocurre algún error.
      */
-    public boolean registrarUsuarioQuery(User usuario) {
+    public boolean registrarUsuarioQuery(Usuario usuario) {
         String query = "INSERT INTO usuarios (nombres, apellidos, username, email, password, rol) VALUES (?,?,?,?,?,?)";
         //Timestamp dateTime = new Timestamp(new Date().getTime());
         try {
@@ -133,7 +133,7 @@ public class UsersConnection {
 //                rs = ps.executeQuery();
 //            }
 //            while (rs.next()) {
-//                User usuario = new User();
+//                Usuario usuario = new Usuario();
 //                usuario.setId(rs.getInt("id_usuario"));
 //                usuario.setNombre(rs.getString("nombres"));
 //                usuario.setApellido(rs.getString("apellidos"));
@@ -157,11 +157,11 @@ public class UsersConnection {
      * Actualiza la información de un usuario existente.
      * </p>
      *
-     * @param usuario Objeto {@link User} con los datos actualizados.
+     * @param usuario Objeto {@link Usuario} con los datos actualizados.
      * @return {@code true} si la actualización se realiza correctamente,
      * {@code false} en caso de error.
      */
-    public boolean actualizarUsuarioQuery(User usuario) {
+    public boolean actualizarUsuarioQuery(Usuario usuario) {
         String query = "UPDATE usuarios SET nombres = ?, apellidos = ?, username = ?, "
                 + "email = ?, rol = ?, password = ? WHERE id_usuario = ?";
         try {
@@ -215,11 +215,11 @@ public class UsersConnection {
      * Actualiza la contraseña del usuario autenticado.
      * </p>
      *
-     * @param usuario Objeto {@link User} que contiene la nueva contraseña.
+     * @param usuario Objeto {@link Usuario} que contiene la nueva contraseña.
      * @return {@code true} si la contraseña se actualiza correctamente,
      * {@code false} en caso de error.
      */
-    public boolean cambiarUsuarioContrasenya(User usuario) {
+    public boolean cambiarUsuarioContrasenya(Usuario usuario) {
         String query = "UPDATE usuarios SET password = ? WHERE username = '" + usernameUsuario + "'";
         try {
             con = cn.conectar();
@@ -239,17 +239,17 @@ public class UsersConnection {
      * Obtiene la lista completa de usuarios registrados en el sistema.
      * </p>
      *
-     * @return Lista de objetos {@link User}.
+     * @return Lista de objetos {@link Usuario}.
      */
-    public List<User> obtenerTodosLosUsuarios() {
-        List<User> listaUsuarios = new ArrayList<>();
+    public List<Usuario> obtenerTodosLosUsuarios() {
+        List<Usuario> listaUsuarios = new ArrayList<>();
         String query = "SELECT * FROM usuarios ORDER BY id_usuario ASC";
         try {
             con = cn.conectar();
             ps = con.prepareStatement(query);
             rs = ps.executeQuery();
             while (rs.next()) {
-                User usuario = new User();
+                Usuario usuario = new Usuario();
                 usuario.setId(rs.getInt("id_usuario"));
                 usuario.setNombre(rs.getString("nombres"));
                 usuario.setApellido(rs.getString("apellidos"));
@@ -287,8 +287,8 @@ public class UsersConnection {
      * @param valor Texto utilizado como criterio de búsqueda.
      * @return Lista de usuarios que coinciden con el criterio.
      */
-    public List<User> buscarUsuarios(String valor) {
-        List<User> listaUsuarios = new ArrayList<>();
+    public List<Usuario> buscarUsuarios(String valor) {
+        List<Usuario> listaUsuarios = new ArrayList<>();
         String query = "SELECT * FROM usuarios WHERE id_usuario::text LIKE ? OR nombres LIKE ? OR apellidos LIKE ? ORDER BY id_usuario ASC";
 
         try {
@@ -301,7 +301,7 @@ public class UsersConnection {
 
             rs = ps.executeQuery();
             while (rs.next()) {
-                User usuario = new User();
+                Usuario usuario = new Usuario();
                 usuario.setId(rs.getInt("id_usuario"));
                 usuario.setNombre(rs.getString("nombres"));
                 usuario.setApellido(rs.getString("apellidos"));

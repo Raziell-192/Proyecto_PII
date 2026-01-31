@@ -1,13 +1,13 @@
 package controllers;
 
-import Views.SystemViewResponsive ;
+import views_temp.SystemViewResponsive ;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import models.Products;
-import models.ProductsConnection;
+import models.Insumo;
+import dao.InsumosDAO;
 
 /**
  *
@@ -15,14 +15,14 @@ import models.ProductsConnection;
  */
 public class ProductsController implements ActionListener {
     
-    private Products producto;
-    private ProductsConnection productoConnection;
+    private Insumo producto;
+    private InsumosDAO productoConnection;
     private SystemViewResponsive  vista;
     private DefaultTableModel modelo;
     
-    private Products productoSeleccionado;
+    private Insumo productoSeleccionado;
     
-    public ProductsController(Products producto, ProductsConnection productoConnection, SystemViewResponsive  vista) {
+    public ProductsController(Insumo producto, InsumosDAO productoConnection, SystemViewResponsive  vista) {
         this.producto = producto;
         this.productoConnection = productoConnection;
         this.vista = vista;
@@ -66,8 +66,8 @@ public class ProductsController implements ActionListener {
     
     private void cargarProductos() {
         modelo.setRowCount(0);
-        List<Products> productos = productoConnection.obtenerTodosLosInsumos();
-        for (Products p : productos) {
+        List<Insumo> productos = productoConnection.obtenerTodosLosInsumos();
+        for (Insumo p : productos) {
             Object[] fila = {
                 p.getId_insumo(),
                 p.getCodigo(),
@@ -105,9 +105,9 @@ private void seleccionarProductoTabla() {
     
 private void registrarProducto() {
     if (validarCampos()) {
-        int codigo;
+        String codigo;
         try {
-            codigo = Integer.parseInt(vista.jTextField38.getText().trim());
+            codigo = vista.jTextField38.getText().trim();
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(vista, "El código debe ser un número entero válido.", 
                 "Error", JOptionPane.ERROR_MESSAGE);
@@ -120,7 +120,7 @@ private void registrarProducto() {
             return;
         }
         
-        Products nuevoProducto = new Products();
+        Insumo nuevoProducto = new Insumo();
         nuevoProducto.setCodigo(codigo);
         nuevoProducto.setNombre(vista.jTextField39.getText().trim());
         nuevoProducto.setDescripcion(vista.jTextField40.getText().trim());
@@ -144,9 +144,9 @@ private void modificarProducto() {
     }
     
     if (validarCampos()) {
-        int codigo;
+        String codigo;
         try {
-            codigo = Integer.parseInt(vista.jTextField38.getText().trim());
+            codigo = vista.jTextField38.getText().trim();
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(vista, "El código debe ser un número entero válido.", 
                 "Error", JOptionPane.ERROR_MESSAGE);
@@ -279,8 +279,8 @@ private boolean validarCampos() {
     String criterio = JOptionPane.showInputDialog(vista, "Ingrese nombre, código o descripción a buscar:");
     if (criterio != null && !criterio.trim().isEmpty()) {
         modelo.setRowCount(0);
-        List<Products> productos = productoConnection.buscarInsumos(criterio.trim());
-        for (Products p : productos) {
+        List<Insumo> productos = productoConnection.buscarInsumos(criterio.trim());
+        for (Insumo p : productos) {
             Object[] fila = {
                 p.getId_insumo(),
                 p.getCodigo(),

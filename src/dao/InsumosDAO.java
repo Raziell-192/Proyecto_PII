@@ -1,16 +1,16 @@
-package models;
+package dao;
 
-import controllers.Conexion;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
+import models.Insumo;
 
 /**
  *
- * @author jakim
+ * @author Jakim
  */
-public class ProductsConnection {
+public class InsumosDAO {
 
     //Instanciar conexión
     Conexion cn = new Conexion();
@@ -18,13 +18,13 @@ public class ProductsConnection {
     PreparedStatement ps;
     ResultSet rs;
 
-    //Registrar productos
-    public boolean registrarInsumoQuery(Products insumo) {
+    //Registrar insumos
+    public boolean registrarInsumoQuery(Insumo insumo) {
         String query = "INSERT INTO insumos(codigo, nombre, descripcion, presentacion, total_piezas, precio_unitario) VALUES (?,?,?,?,?,?)";
         try {
             con = cn.conectar();
             ps = con.prepareStatement(query);
-            ps.setInt(1, insumo.getCodigo()); 
+            ps.setString(1, insumo.getCodigo()); 
             ps.setString(2, insumo.getNombre());
             ps.setString(3, insumo.getDescripcion());
             ps.setString(4, insumo.getPresentacion());
@@ -40,8 +40,8 @@ public class ProductsConnection {
         }
     }
     
-    public List<Products> obtenerTodosLosInsumos() {
-        List<Products> listaInsumos = new ArrayList<>();
+    public List<Insumo> obtenerTodosLosInsumos() {
+        List<Insumo> listaInsumos = new ArrayList<>();
         String query = "SELECT * FROM insumos ORDER BY nombre ASC";
         
         try {
@@ -50,9 +50,9 @@ public class ProductsConnection {
             rs = ps.executeQuery();
             
             while (rs.next()) {
-                Products insumo = new Products(
+                Insumo insumo = new Insumo(
                     rs.getInt("id_insumo"),
-                    rs.getInt("codigo"),
+                    rs.getString("codigo"),
                     rs.getString("nombre"),
                     rs.getString("descripcion"),
                     rs.getString("presentacion"),
@@ -69,8 +69,8 @@ public class ProductsConnection {
         return listaInsumos;
     }
     
-    public List<Products> buscarInsumos(String criterio) {
-        List<Products> listaInsumos = new ArrayList<>();
+    public List<Insumo> buscarInsumos(String criterio) {
+        List<Insumo> listaInsumos = new ArrayList<>();
         String query = "SELECT * FROM insumos WHERE nombre ILIKE ? OR codigo::text ILIKE ? OR descripcion ILIKE ? ORDER BY nombre ASC";
         
         try {
@@ -84,9 +84,9 @@ public class ProductsConnection {
             rs = ps.executeQuery();
             
             while (rs.next()) {
-                Products insumo = new Products(
+                Insumo insumo = new Insumo(
                     rs.getInt("id_insumo"),
-                    rs.getInt("codigo"),
+                    rs.getString("codigo"),
                     rs.getString("nombre"),
                     rs.getString("descripcion"),
                     rs.getString("presentacion"),
@@ -103,9 +103,9 @@ public class ProductsConnection {
         return listaInsumos;
     }
     
-    public Products obtenerInsumoPorId(int id) {
+    public Insumo obtenerInsumoPorId(int id) {
         String query = "SELECT * FROM insumos WHERE id_insumo = ?";
-        Products insumo = null;
+        Insumo insumo = null;
         
         try {
             con = cn.conectar();
@@ -114,9 +114,9 @@ public class ProductsConnection {
             rs = ps.executeQuery();
             
             if (rs.next()) {
-                insumo = new Products(
+                insumo = new Insumo(
                     rs.getInt("id_insumo"),
-                    rs.getInt("codigo"),
+                    rs.getString("codigo"),
                     rs.getString("nombre"),
                     rs.getString("descripcion"),
                     rs.getString("presentacion"),
@@ -132,14 +132,14 @@ public class ProductsConnection {
         return insumo;
     }
     
-    public boolean actualizarInsumoQuery(Products insumo) {
+    public boolean actualizarInsumoQuery(Insumo insumo) {
         String query = "UPDATE insumos SET codigo = ?, nombre = ?, descripcion = ?, "
                      + "presentacion = ?, total_piezas = ?, precio_unitario = ? WHERE id_insumo = ?";
         
         try {
             con = cn.conectar();
             ps = con.prepareStatement(query);
-            ps.setInt(1, insumo.getCodigo()); 
+            ps.setString(1, insumo.getCodigo()); 
             ps.setString(2, insumo.getNombre());
             ps.setString(3, insumo.getDescripcion());
             ps.setString(4, insumo.getPresentacion());
@@ -177,13 +177,13 @@ public class ProductsConnection {
         }
     }
     
-    public boolean verificarCodigoExistente(int codigo, int idExcluir) {
+    public boolean verificarCodigoExistente(String codigo, int idExcluir) {
         String query = "SELECT COUNT(*) FROM insumos WHERE codigo = ? AND id_insumo != ?";
         
         try {
             con = cn.conectar();
             ps = con.prepareStatement(query);
-            ps.setInt(1, codigo); 
+            ps.setString(1, codigo); 
             ps.setInt(2, idExcluir);
             rs = ps.executeQuery();
             

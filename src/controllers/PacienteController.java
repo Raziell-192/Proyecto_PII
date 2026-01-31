@@ -1,13 +1,13 @@
 package controllers;
 
-import Views.SystemViewResponsive ;
+import views_temp.SystemViewResponsive ;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import models.Paciente;
-import models.PacienteConnection;
+import dao.PacienteDAO;
 
 /**
  *
@@ -16,13 +16,13 @@ import models.PacienteConnection;
 public class PacienteController implements ActionListener {
     
     private Paciente paciente;
-    private PacienteConnection pacienteConexion;
+    private PacienteDAO pacienteConexion;
     private SystemViewResponsive  vista;
     private DefaultTableModel modelo;
     
     private Paciente pacienteSeleccionado;
     
-    public PacienteController(Paciente paciente, PacienteConnection pacienteConexion, SystemViewResponsive  vista) {
+    public PacienteController(Paciente paciente, PacienteDAO pacienteConexion, SystemViewResponsive  vista) {
         this.paciente = paciente;
         this.pacienteConexion = pacienteConexion;
         this.vista = vista;

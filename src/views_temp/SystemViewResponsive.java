@@ -1,10 +1,10 @@
-package Views;
+package views_temp;
 
 import controllers.PacienteController;
 import controllers.ProductsController;
 import controllers.SettingsControllers;
-import models.User;
-import models.UsersConnection;
+import models.Usuario;
+import dao.UsuariosDAO;
 import controllers.UsersController;
 import java.awt.Color;
 import java.awt.Font;
@@ -15,9 +15,9 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import models.Paciente;
-import models.PacienteConnection;
-import models.Products;
-import models.ProductsConnection;
+import dao.PacienteDAO;
+import models.Insumo;
+import dao.InsumosDAO;
 
 /**
  *
@@ -33,13 +33,13 @@ public class SystemViewResponsive extends javax.swing.JFrame {
     private Rectangle normalBounds;
     NewLogin login;
 
-    User empleado = new User();
-    UsersConnection empleadoConexion = new UsersConnection();
+    Usuario empleado = new Usuario();
+    UsuariosDAO empleadoConexion = new UsuariosDAO();
     private Paciente paciente = new Paciente();
-    private PacienteConnection pacienteConexion = new PacienteConnection();
+    private PacienteDAO pacienteConexion = new PacienteDAO();
     private PacienteController pacienteController;
-    private Products producto = new Products();
-    private ProductsConnection productoConnection = new ProductsConnection();
+    private Insumo producto = new Insumo();
+    private InsumosDAO productoConnection = new InsumosDAO();
     private ProductsController productosController;
 
     public SystemViewResponsive() {

@@ -1,11 +1,11 @@
-package models;
+package dao;
 
-import controllers.Conexion;
 import java.sql.*;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
+import models.Venta;
 
 /**
  * DAO encargado de la gestión de operaciones CRUD relacionadas con las ventas,
@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
  *
  * @author Jakim
  */
-public class SalesConnection {
+public class VentasDAO {
 
     // Conexión a la base de datos
     Conexion cn = new Conexion();
@@ -24,10 +24,10 @@ public class SalesConnection {
     /**
      * Registra una nueva venta en la base de datos.
      *
-     * @param sale Objeto Sales con la información de la venta
+     * @param sale Objeto Venta con la información de la venta
      * @return true si se registra correctamente
      */
-    public boolean registrarVenta(Sales sale) {
+    public boolean registrarVenta(Venta sale) {
         String sql = """
             INSERT INTO ventas (numero_venta, id_paciente, id_tipo_precio, fecha_venta, total)
             VALUES (?, ?, ?, ?, ?)
@@ -141,9 +141,9 @@ public class SalesConnection {
     /**
      * Obtiene una venta por su ID.
      */
-    public Sales obtenerVentaPorId(int idVenta) {
+    public Venta obtenerVentaPorId(int idVenta) {
         String sql = "SELECT * FROM ventas WHERE id_venta = ?";
-        Sales sale = null;
+        Venta sale = null;
 
         try {
             con = cn.conectar();
@@ -152,7 +152,7 @@ public class SalesConnection {
             rs = ps.executeQuery();
 
             if (rs.next()) {
-                sale = new Sales();
+                sale = new Venta();
                 sale.setIdVenta(rs.getInt("id_venta"));
                 sale.setNumeroVenta(rs.getString("numero_venta"));
                 sale.setIdPaciente(rs.getInt("id_paciente"));
@@ -170,8 +170,8 @@ public class SalesConnection {
     /**
      * Lista todas las ventas registradas.
      */
-    public List<Sales> listarVentas() {
-        List<Sales> lista = new ArrayList<>();
+    public List<Venta> listarVentas() {
+        List<Venta> lista = new ArrayList<>();
 
         String sql = """
             SELECT v.id_venta, v.numero_venta,
@@ -188,7 +188,7 @@ public class SalesConnection {
             rs = ps.executeQuery();
 
             while (rs.next()) {
-                Sales sale = new Sales();
+                Venta sale = new Venta();
                 sale.setIdVenta(rs.getInt("id_venta"));
                 sale.setNumeroVenta(rs.getString("numero_venta"));
 //                sale.setNombrePaciente(rs.getString("paciente"));

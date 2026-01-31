@@ -1,16 +1,16 @@
-package models;
+package dao;
 
-import controllers.Conexion;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
+import models.Paciente;
 
 /**
  *
  * @author Raz
  */
-public class PacienteConnection {
+public class PacienteDAO {
     
     Conexion cn = new Conexion();
     Connection con;

@@ -1,10 +1,10 @@
-package models;
+package dao;
 
-import controllers.Conexion;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
+import models.Tratamiento;
 
 /**
  * Clase DAO (Data Access Object) para la gestión de tratamientos.

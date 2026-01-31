@@ -1,6 +1,7 @@
 package controllers;
 
-import Views.SystemViewResponsive;
+import dao.Conexion;
+import views_temp.SystemViewResponsive;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
@@ -10,9 +11,9 @@ import java.sql.SQLException;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import models.User;
-import models.UsersConnection;
-import static models.UsersConnection.rolUsuario;
+import models.Usuario;
+import dao.UsuariosDAO;
+import static dao.UsuariosDAO.rolUsuario;
 
 /**
  *
@@ -20,13 +21,13 @@ import static models.UsersConnection.rolUsuario;
  */
 public class UsersController implements ActionListener {
 
-    private User usuario;
-    private UsersConnection usuarioConexion;
+    private Usuario usuario;
+    private UsuariosDAO usuarioConexion;
     private SystemViewResponsive vista;
     String rol = rolUsuario;
     private int idUsuarioEnEdicion = -1;
 
-    public UsersController(User usuario, UsersConnection usuarioConexion, SystemViewResponsive vista) {
+    public UsersController(Usuario usuario, UsuariosDAO usuarioConexion, SystemViewResponsive vista) {
         this.usuario = usuario;
         this.usuarioConexion = usuarioConexion;
         this.vista = vista;
@@ -82,7 +83,7 @@ public class UsersController implements ActionListener {
     private void buscarUsuarios() {
         String textoBusqueda = JOptionPane.showInputDialog("Ingrese ID, nombre o apellido a buscar:");
         if (textoBusqueda != null && !textoBusqueda.trim().isEmpty()) {
-            List<User> usuarios = usuarioConexion.buscarUsuarios(textoBusqueda.trim());
+            List<Usuario> usuarios = usuarioConexion.buscarUsuarios(textoBusqueda.trim());
             cargarUsuariosEnTabla(usuarios);
         }
     }
@@ -97,7 +98,7 @@ public class UsersController implements ActionListener {
         }
 
         idUsuarioEnEdicion = (int) vista.tblUsuarios.getValueAt(fila, 0);
-        User u = obtenerUsuarioPorId(idUsuarioEnEdicion);
+        Usuario u = obtenerUsuarioPorId(idUsuarioEnEdicion);
 
         vista.txtNombreUsuario.setText(u.getNombre());
         vista.txtApellidoUsuario.setText(u.getApellido());
@@ -151,7 +152,7 @@ public class UsersController implements ActionListener {
         }
 
         int idUsuario = (int) vista.tblUsuarios.getValueAt(filaSeleccionada, 0);
-        User usuarioEditar = obtenerUsuarioPorId(idUsuario);
+        Usuario usuarioEditar = obtenerUsuarioPorId(idUsuario);
         usuarioConexion.eliminarUsuario(idUsuario);
         if (usuarioEditar.getId() != 0) {
             // Llenar los campos con los datos del usuario
@@ -194,15 +195,15 @@ public class UsersController implements ActionListener {
     }
 
     private void cargarUsuariosEnTabla() {
-        List<User> usuarios = usuarioConexion.obtenerTodosLosUsuarios();
+        List<Usuario> usuarios = usuarioConexion.obtenerTodosLosUsuarios();
         cargarUsuariosEnTabla(usuarios);
     }
 
-    private void cargarUsuariosEnTabla(List<User> usuarios) {
+    private void cargarUsuariosEnTabla(List<Usuario> usuarios) {
         DefaultTableModel modelo = (DefaultTableModel) vista.tblUsuarios.getModel();
         modelo.setRowCount(0); // Limpiar tabla
 
-        for (User emp : usuarios) {
+        for (Usuario emp : usuarios) {
             Object[] fila = {
                 emp.getId(),
                 emp.getNombre(),
@@ -229,9 +230,9 @@ public class UsersController implements ActionListener {
         return true;
     }
 
-    public User obtenerUsuarioPorId(int id) {
+    public Usuario obtenerUsuarioPorId(int id) {
         String query = "SELECT * FROM usuarios WHERE id_usuario = ?";
-        User usuario = new User();
+        Usuario usuario = new Usuario();
 
         Connection con = null;
         PreparedStatement ps = null;

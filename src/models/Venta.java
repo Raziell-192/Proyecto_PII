@@ -13,7 +13,7 @@ import java.sql.Timestamp;
  *
  * @author Jakim
  */
-public class Sales {
+public class Venta {
 
     // Datos principales de la venta
     private int idVenta;
@@ -23,10 +23,10 @@ public class Sales {
     private Timestamp fechaVenta;
     private double total;
 
-    public Sales() {
+    public Venta() {
     }
 
-    public Sales(int idVenta, String numeroVenta, int idPaciente, int idTipoPrecio, Timestamp fechaVenta, double total) {
+    public Venta(int idVenta, String numeroVenta, int idPaciente, int idTipoPrecio, Timestamp fechaVenta, double total) {
         this.idVenta = idVenta;
         this.numeroVenta = numeroVenta;
         this.idPaciente = idPaciente;

@@ -1,10 +1,10 @@
-package models;
+package dao;
 
-import controllers.Conexion;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
+import models.HistorialTratamiento;
 
 /**
  * DAO encargado de gestionar el historial de tratamientos de los pacientes.

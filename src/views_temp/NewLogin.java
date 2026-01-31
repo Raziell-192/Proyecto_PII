@@ -1,4 +1,4 @@
-package Views;
+package views_temp;
 
 import controllers.LoginController;
 import java.awt.Color;
@@ -6,8 +6,8 @@ import java.awt.Image;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
-import models.User;
-import models.UsersConnection;
+import models.Usuario;
+import dao.UsuariosDAO;
 
 /**
  *
@@ -15,8 +15,8 @@ import models.UsersConnection;
  */
 public class NewLogin extends javax.swing.JFrame {
 
-    User empleado = new User();
-    UsersConnection empleado_conexion = new UsersConnection();
+    Usuario empleado = new Usuario();
+    UsuariosDAO empleado_conexion = new UsuariosDAO();
     
     int xMouse, yMouse;
 

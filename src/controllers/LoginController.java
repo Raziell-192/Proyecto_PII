@@ -1,13 +1,13 @@
 package controllers;
 
-import Views.Login;
-import Views.NewLogin;
-import Views.SystemViewResponsive;
+import views_temp.Login;
+import views_temp.NewLogin;
+import views_temp.SystemViewResponsive;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
-import models.User;
-import models.UsersConnection;
+import models.Usuario;
+import dao.UsuariosDAO;
 
 /**
  *
@@ -16,12 +16,12 @@ import models.UsersConnection;
 public class LoginController implements ActionListener {
 
     //Encapsular variables:
-    private User empleado;
-    private UsersConnection empleado_conexion;
+    private Usuario empleado;
+    private UsuariosDAO empleado_conexion;
     //Login login_view;
     private NewLogin new_login_view;
 
-    public LoginController(User empleado, UsersConnection empleado_conexion, NewLogin new_login_view) {
+    public LoginController(Usuario empleado, UsuariosDAO empleado_conexion, NewLogin new_login_view) {
         this.empleado = empleado;
         this.empleado_conexion = empleado_conexion;
         this.new_login_view = new_login_view;

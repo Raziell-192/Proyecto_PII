@@ -4,19 +4,19 @@ package models;
  *
  * @author jakim
  */
-public class Products {
+public class Insumo {
     private int id_insumo;
-    private int codigo;
+    private String codigo;
     private String nombre;
     private String descripcion;
     private String presentacion;
     private double total_piezas;
     private double precio_unitario;
 
-    public Products() {
+    public Insumo() {
     }
 
-    public Products(int id_insumo, int codigo, String nombre, String descripcion, String presentacion, double total_piezas, double precio_unitario) {
+    public Insumo(int id_insumo, String codigo, String nombre, String descripcion, String presentacion, double total_piezas, double precio_unitario) {
         this.id_insumo = id_insumo;
         this.codigo = codigo;
         this.nombre = nombre;
@@ -34,11 +34,11 @@ public class Products {
         this.id_insumo = id_insumo;
     }
 
-    public int getCodigo() {
+    public String getCodigo() {
         return codigo;
     }
 
-    public void setCodigo(int codigo) {
+    public void setCodigo(String codigo) {
         this.codigo = codigo;
     }
 

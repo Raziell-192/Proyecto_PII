@@ -4,7 +4,7 @@ package models;
  *
  * @author jakim
  */
-public class User {
+public class Usuario {
     private int id;
     private String nombre;
     private String apellido;
@@ -15,10 +15,10 @@ public class User {
 //    private String created;
 //    private String update;
 
-    public User() {
+    public Usuario() {
     }
 
-    public User(String nombre, String apellido, String nombreDeUsuario, String email, String contrasenya, String rol/*, String created, String update*/) {
+    public Usuario(String nombre, String apellido, String nombreDeUsuario, String email, String contrasenya, String rol/*, String created, String update*/) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.nombreDeUsuario = nombreDeUsuario;
