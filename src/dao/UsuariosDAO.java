@@ -374,8 +374,9 @@ public class UsuariosDAO {
      * <p>
      * Verifica si hay usuarios registrados en la base de datos.
      * </p>
-     * @return {@code true} si existen usuarios,
-     * {@code false} en caso de estar vacía la tabla {@code usuarios}.
+     *
+     * @return {@code true} si existen usuarios, {@code false} en caso de estar
+     * vacía la tabla {@code usuarios}.
      */
     public boolean existenUsuarios() {
         String query = "SELECT COUNT(*) FROM usuarios";
@@ -388,8 +389,52 @@ public class UsuariosDAO {
             }
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Error al verificar usuarios: " + e);
+        } finally {
+            try {
+                if (ps != null) {
+                    ps.close();
+                }
+                if (con != null) {
+                    con.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
         return false;
+    }
+
+    public boolean existeUsername(String username) {
+
+        String query = "SELECT id_usuario FROM usuarios WHERE username = ?";
+
+        try {
+            con = cn.conectar();
+            ps = con.prepareStatement(query);
+            ps.setString(1, username);
+            rs = ps.executeQuery();
+
+            return rs.next(); // true si existe
+
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error al verificar username: " + e);
+            return false;
+
+        } finally {
+            try {
+                if (rs != null) {
+                    rs.close();
+                }
+                if (ps != null) {
+                    ps.close();
+                }
+                if (con != null) {
+                    con.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
 }

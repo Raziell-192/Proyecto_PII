@@ -56,37 +56,6 @@ public class SystemViewResponsive extends javax.swing.JFrame {
 
     public SystemViewResponsive() {
         initComponents();
-        lblLogoHome.setText("");
-        lblIzqLogo.setText("");
-        lblDerLogo.setText("");
-        colocarImagenLabel(lblLogoHome, "/images/logo_UnsiSmile_2.png");
-        //        colocarImagenLabel(lblIzqLogo, "/images/pilar.png");
-//        colocarImagenLabel(lblDerLogo, "/images/pilar.png");
-        configurarFuenteTabla();
-
-        //Controlador de Configuración
-        configuracion = new SettingsControllers(this);
-
-        //Controlador de Usuarios
-        usuarioController = new UsuariosController(usuario, usuarioDAO, this);
-
-        //Controlador de Pacientes
-        pacienteController = new PacienteController(paciente, pacienteDAO, this);
-
-        // Controlador de Insumos 
-        insumoController = new InsumosController(insumo, insumoDAO, this);
-
-        Tratamiento tratamiento = new Tratamiento();
-        TratamientosDAO tratamientoDAO = new TratamientosDAO();
-        CategoriasTratamientoDAO categoriaDAO = new CategoriasTratamientoDAO();
-        TratamientosController tratamientoController = new TratamientosController(tratamiento, tratamientoDAO, categoriaDAO, this);
-
-        // Controlador de Ventas
-        Venta ventaModel = new Venta();
-        VentasDAO ventaDAO = new VentasDAO();
-        PacienteDAO pacienteDAO = new PacienteDAO();
-        TipoPrecioDAO tipoPrecioDAO = new TipoPrecioDAO();
-        VentasController ventaController = new VentasController(ventaModel, ventaDAO, pacienteDAO, tipoPrecioDAO, this);
     }
 
     public SystemViewResponsive(Usuario usuario) {
@@ -2344,29 +2313,30 @@ public class SystemViewResponsive extends javax.swing.JFrame {
         String rol = usuario.getRol();
 
         switch (rol) {
-
-            case "Superadministrador":
-                // Acceso total
-                break;
-
-            case "Administrador":
+            case "SuperAdmin" -> {
+            }
+            case "Administrador" ->
                 JTabbedPane.remove(pnlConfiguraciones);
-                break;
-
-            case "Cajero":
+            case "Cajero" -> {
                 JTabbedPane.remove(pnlUsuarios);
                 JTabbedPane.remove(pnlInsumos);
                 JTabbedPane.remove(pnlTratamiento);
                 JTabbedPane.remove(pnlReportes);
                 JTabbedPane.remove(pnlConfiguraciones);
-                break;
+            }
         }
     }
 
     private void configurarRolesDisponibles() {
-
-        if (!"Superadministrador".equals(usuario.getRol())) {
-            this.cmbRolUsuario.removeItem("Superadministrador");
+        if ("SuperAdmin".equals(usuario.getRol())) {
+            this.cmbRolUsuario.removeAllItems();
+            this.cmbRolUsuario.addItem("SuperAdmin");
+            this.cmbRolUsuario.addItem("Administrador");
+            this.cmbRolUsuario.addItem("Cajero");
+        } else {
+            this.cmbRolUsuario.removeAllItems();
+            this.cmbRolUsuario.addItem("Administrador");
+            this.cmbRolUsuario.addItem("Cajero");
         }
     }
 
