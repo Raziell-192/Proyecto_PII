@@ -92,6 +92,7 @@ public class NewLogin extends javax.swing.JFrame {
         btnExitTxt.setFont(new java.awt.Font("Rockwell", 0, 24)); // NOI18N
         btnExitTxt.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         btnExitTxt.setText("X");
+        btnExitTxt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnExitTxt.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnExitTxtMouseClicked(evt);

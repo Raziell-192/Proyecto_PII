@@ -30,10 +30,10 @@ public class InsumosController implements ActionListener {
         // Tabla de productos
         this.modelo = (DefaultTableModel) vista.tblInsumos.getModel();
 
-        this.vista.jButton6.addActionListener(this); // Registrar
-        this.vista.jButton9.addActionListener(this); // Modificar
-        this.vista.jButton8.addActionListener(this); // Eliminar
-        this.vista.jButton7.addActionListener(this); // Cancelar/Limpiar
+        this.vista.btnRegistrarInsumo.addActionListener(this); // Registrar
+        this.vista.btnModificarInsumo.addActionListener(this); // Modificar
+        this.vista.btnEliminarInsumo.addActionListener(this); // Eliminar
+        this.vista.btnCancelarInsumo.addActionListener(this); // Cancelar/Limpiar
 
         configurarTabla();
         cargarProductos();
@@ -42,13 +42,13 @@ public class InsumosController implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == vista.jButton6) {
+        if (e.getSource() == vista.btnRegistrarInsumo) {
             registrarProducto();
-        } else if (e.getSource() == vista.jButton9) {
+        } else if (e.getSource() == vista.btnModificarInsumo) {
             modificarProducto();
-        } else if (e.getSource() == vista.jButton8) {
+        } else if (e.getSource() == vista.btnEliminarInsumo) {
             eliminarProducto();
-        } else if (e.getSource() == vista.jButton7) {
+        } else if (e.getSource() == vista.btnCancelarInsumo) {
             limpiarCampos();
         }
     }
@@ -96,9 +96,9 @@ public class InsumosController implements ActionListener {
                 vista.jTextField11.setText(String.valueOf(productoSeleccionado.getTotal_piezas()));
                 vista.jTextField12.setText(String.valueOf(productoSeleccionado.getPrecio_unitario()));
 
-                vista.jButton6.setEnabled(false);
-                vista.jButton9.setEnabled(true);
-                vista.jButton8.setEnabled(true);
+                vista.btnRegistrarInsumo.setEnabled(false);
+                vista.btnModificarInsumo.setEnabled(true);
+                vista.btnEliminarInsumo.setEnabled(true);
             }
         }
     }
@@ -270,9 +270,9 @@ public class InsumosController implements ActionListener {
     }
 
     private void deshabilitarBotonesEdicion() {
-        vista.jButton6.setEnabled(true);
-        vista.jButton9.setEnabled(false);
-        vista.jButton8.setEnabled(false);
+        vista.btnRegistrarInsumo.setEnabled(true);
+        vista.btnModificarInsumo.setEnabled(false);
+        vista.btnEliminarInsumo.setEnabled(false);
     }
 
     private void buscarProductos() {
