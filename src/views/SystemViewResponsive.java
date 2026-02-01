@@ -3,9 +3,11 @@ package views;
 import controllers.PacienteController;
 import controllers.InsumosController;
 import controllers.SettingsControllers;
+import controllers.TratamientosController;
 import models.Usuario;
 import dao.UsuariosDAO;
 import controllers.UsuariosController;
+import dao.CategoriasTratamientoDAO;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Image;
@@ -17,6 +19,8 @@ import models.Paciente;
 import dao.PacienteDAO;
 import models.Insumo;
 import dao.InsumosDAO;
+import dao.TratamientosDAO;
+import models.Tratamiento;
 
 /**
  *
@@ -68,6 +72,11 @@ public class SystemViewResponsive extends javax.swing.JFrame {
 
         // Controlador de Insumos 
         insumoController = new InsumosController(insumo, insumoDAO, this);
+        
+        Tratamiento tratamiento = new Tratamiento();
+        TratamientosDAO tratamientoDAO = new TratamientosDAO();
+        CategoriasTratamientoDAO categoriaDAO = new CategoriasTratamientoDAO();
+        TratamientosController tratamientoController = new TratamientosController(tratamiento, tratamientoDAO, categoriaDAO, this);
     }
 
     /**
@@ -268,12 +277,10 @@ public class SystemViewResponsive extends javax.swing.JFrame {
         jPanel26 = new javax.swing.JPanel();
         jLabel60 = new javax.swing.JLabel();
         jTextField45 = new javax.swing.JTextField();
-        jLabel62 = new javax.swing.JLabel();
-        jTextField46 = new javax.swing.JTextField();
         jLabel68 = new javax.swing.JLabel();
         jTextField44 = new javax.swing.JTextField();
         jLabel69 = new javax.swing.JLabel();
-        jTextField42 = new javax.swing.JTextField();
+        cmbCategoriaTratamiento = new javax.swing.JComboBox<>();
         jLabel70 = new javax.swing.JLabel();
         jTextField43 = new javax.swing.JTextField();
         jLabel71 = new javax.swing.JLabel();
@@ -289,7 +296,7 @@ public class SystemViewResponsive extends javax.swing.JFrame {
         jPanel59 = new javax.swing.JPanel();
         jScrollPane5 = new javax.swing.JScrollPane();
         tblTratamientos = new javax.swing.JTable();
-        pnlConfiguracion = new javax.swing.JPanel();
+        pnlCitas = new javax.swing.JPanel();
         pnlHeaderConfiguracion = new javax.swing.JPanel();
         jLabel17 = new javax.swing.JLabel();
         jPanel8 = new javax.swing.JPanel();
@@ -1715,23 +1722,15 @@ public class SystemViewResponsive extends javax.swing.JFrame {
 
         jLabel60.setFont(new java.awt.Font("Nunito", 1, 18)); // NOI18N
         jLabel60.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel60.setText("Detalle venta tratamiento:");
+        jLabel60.setText("Descripción:");
         jPanel26.add(jLabel60);
 
         jTextField45.setFont(new java.awt.Font("Nunito", 0, 18)); // NOI18N
         jPanel26.add(jTextField45);
 
-        jLabel62.setFont(new java.awt.Font("Nunito", 1, 18)); // NOI18N
-        jLabel62.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel62.setText("Identificador de venta:");
-        jPanel26.add(jLabel62);
-
-        jTextField46.setFont(new java.awt.Font("Nunito", 0, 18)); // NOI18N
-        jPanel26.add(jTextField46);
-
         jLabel68.setFont(new java.awt.Font("Nunito", 1, 18)); // NOI18N
         jLabel68.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel68.setText("Identificador tratamiento: ");
+        jLabel68.setText("ID Tratamiento:");
         jPanel26.add(jLabel68);
 
         jTextField44.setFont(new java.awt.Font("Nunito", 0, 18)); // NOI18N
@@ -1739,15 +1738,15 @@ public class SystemViewResponsive extends javax.swing.JFrame {
 
         jLabel69.setFont(new java.awt.Font("Nunito", 1, 18)); // NOI18N
         jLabel69.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel69.setText("Cantidad:");
+        jLabel69.setText("Categoría:");
         jPanel26.add(jLabel69);
 
-        jTextField42.setFont(new java.awt.Font("Nunito", 0, 18)); // NOI18N
-        jPanel26.add(jTextField42);
+        cmbCategoriaTratamiento.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel26.add(cmbCategoriaTratamiento);
 
         jLabel70.setFont(new java.awt.Font("Nunito", 1, 18)); // NOI18N
         jLabel70.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel70.setText("Total :");
+        jLabel70.setText("Nombre:");
         jPanel26.add(jLabel70);
 
         jTextField43.setFont(new java.awt.Font("Nunito", 0, 18)); // NOI18N
@@ -1755,7 +1754,7 @@ public class SystemViewResponsive extends javax.swing.JFrame {
 
         jLabel71.setFont(new java.awt.Font("Nunito", 1, 18)); // NOI18N
         jLabel71.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel71.setText("Precio unitario:");
+        jLabel71.setText("Código:");
         jPanel26.add(jLabel71);
 
         jTextField47.setFont(new java.awt.Font("Nunito", 0, 18)); // NOI18N
@@ -1822,17 +1821,17 @@ public class SystemViewResponsive extends javax.swing.JFrame {
         tblTratamientos.setFont(new java.awt.Font("Nunito", 0, 18)); // NOI18N
         tblTratamientos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Detalle venta de tratamiento", "Identificador de venta", "Identificador de tratamiento", "Cantidad", "Precio unitario", "Total"
+                "ID Tratamiento", "Categoría", "Código", "Nombre", "Descripción"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false
+                false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -1852,8 +1851,8 @@ public class SystemViewResponsive extends javax.swing.JFrame {
 
         JTabbedPane.addTab("Tratamiento", pnlTratamiento);
 
-        pnlConfiguracion.setBackground(new java.awt.Color(244, 246, 248));
-        pnlConfiguracion.setLayout(new java.awt.BorderLayout());
+        pnlCitas.setBackground(new java.awt.Color(244, 246, 248));
+        pnlCitas.setLayout(new java.awt.BorderLayout());
 
         pnlHeaderConfiguracion.setBackground(new java.awt.Color(47, 78, 115));
         pnlHeaderConfiguracion.setPreferredSize(new java.awt.Dimension(313, 50));
@@ -1874,7 +1873,7 @@ public class SystemViewResponsive extends javax.swing.JFrame {
             .addComponent(jLabel17, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
-        pnlConfiguracion.add(pnlHeaderConfiguracion, java.awt.BorderLayout.PAGE_START);
+        pnlCitas.add(pnlHeaderConfiguracion, java.awt.BorderLayout.PAGE_START);
 
         jPanel8.setBorder(javax.swing.BorderFactory.createEmptyBorder(50, 50, 50, 50));
         jPanel8.setLayout(new java.awt.BorderLayout());
@@ -1958,9 +1957,9 @@ public class SystemViewResponsive extends javax.swing.JFrame {
 
         jPanel8.add(jPanel22, java.awt.BorderLayout.PAGE_END);
 
-        pnlConfiguracion.add(jPanel8, java.awt.BorderLayout.CENTER);
+        pnlCitas.add(jPanel8, java.awt.BorderLayout.CENTER);
 
-        JTabbedPane.addTab("Citas", pnlConfiguracion);
+        JTabbedPane.addTab("Citas", pnlCitas);
 
         pnlReportes.setBackground(new java.awt.Color(244, 246, 248));
         pnlReportes.setLayout(new java.awt.BorderLayout());
@@ -2512,6 +2511,7 @@ public class SystemViewResponsive extends javax.swing.JFrame {
     public javax.swing.JButton btnRegistrarUsuario;
     public javax.swing.JButton btnRegistrarVenta;
     public javax.swing.JButton btnSalir;
+    public javax.swing.JComboBox<String> cmbCategoriaTratamiento;
     public javax.swing.JComboBox<String> cmbRolUsuario;
     private javax.swing.JButton jButton5;
     private javax.swing.JComboBox<String> jComboBox1;
@@ -2567,7 +2567,6 @@ public class SystemViewResponsive extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel60;
     private javax.swing.JLabel jLabel61;
-    private javax.swing.JLabel jLabel62;
     private javax.swing.JLabel jLabel63;
     private javax.swing.JLabel jLabel64;
     private javax.swing.JLabel jLabel65;
@@ -2702,11 +2701,9 @@ public class SystemViewResponsive extends javax.swing.JFrame {
     public javax.swing.JTextField jTextField4;
     public javax.swing.JTextField jTextField40;
     public javax.swing.JTextField jTextField41;
-    public javax.swing.JTextField jTextField42;
     public javax.swing.JTextField jTextField43;
     public javax.swing.JTextField jTextField44;
     public javax.swing.JTextField jTextField45;
-    public javax.swing.JTextField jTextField46;
     public javax.swing.JTextField jTextField47;
     public javax.swing.JTextField jTextField49;
     public javax.swing.JTextField jTextField51;
@@ -2721,7 +2718,7 @@ public class SystemViewResponsive extends javax.swing.JFrame {
     private javax.swing.JPanel pnlBarraTitulo;
     private javax.swing.JPanel pnlBotones;
     private javax.swing.JPanel pnlBotonesTratamiento;
-    private javax.swing.JPanel pnlConfiguracion;
+    private javax.swing.JPanel pnlCitas;
     private javax.swing.JPanel pnlConfiguraciones;
     private javax.swing.JPanel pnlConfiguracionesAdministradores;
     private javax.swing.JPanel pnlContainerInsumos;
@@ -2743,7 +2740,7 @@ public class SystemViewResponsive extends javax.swing.JFrame {
     private javax.swing.JPanel pnlReportes;
     private javax.swing.JPanel pnlTablaPacientes;
     private javax.swing.JPanel pnlTitleConfiguraciones;
-    private javax.swing.JPanel pnlTratamiento;
+    public javax.swing.JPanel pnlTratamiento;
     private javax.swing.JPanel pnlUsuarios;
     private javax.swing.JPanel pnlVentas;
     private javax.swing.JPanel pnlVistas;

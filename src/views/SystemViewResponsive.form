@@ -3136,6 +3136,9 @@
                       <Color blue="f8" green="f6" red="f4" type="rgb"/>
                     </Property>
                   </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                  </AuxValues>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
                       <JTabbedPaneConstraints tabName="Tratamiento">
@@ -3230,29 +3233,10 @@
                                       <Font name="Nunito" size="18" style="1"/>
                                     </Property>
                                     <Property name="horizontalAlignment" type="int" value="4"/>
-                                    <Property name="text" type="java.lang.String" value="Detalle venta tratamiento:"/>
+                                    <Property name="text" type="java.lang.String" value="Descripci&#xf3;n:"/>
                                   </Properties>
                                 </Component>
                                 <Component class="javax.swing.JTextField" name="jTextField45">
-                                  <Properties>
-                                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                                      <Font name="Nunito" size="18" style="0"/>
-                                    </Property>
-                                  </Properties>
-                                  <AuxValues>
-                                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
-                                  </AuxValues>
-                                </Component>
-                                <Component class="javax.swing.JLabel" name="jLabel62">
-                                  <Properties>
-                                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                                      <Font name="Nunito" size="18" style="1"/>
-                                    </Property>
-                                    <Property name="horizontalAlignment" type="int" value="4"/>
-                                    <Property name="text" type="java.lang.String" value="Identificador de venta:"/>
-                                  </Properties>
-                                </Component>
-                                <Component class="javax.swing.JTextField" name="jTextField46">
                                   <Properties>
                                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                                       <Font name="Nunito" size="18" style="0"/>
@@ -3268,7 +3252,7 @@
                                       <Font name="Nunito" size="18" style="1"/>
                                     </Property>
                                     <Property name="horizontalAlignment" type="int" value="4"/>
-                                    <Property name="text" type="java.lang.String" value="Identificador tratamiento: "/>
+                                    <Property name="text" type="java.lang.String" value="ID Tratamiento:"/>
                                   </Properties>
                                 </Component>
                                 <Component class="javax.swing.JTextField" name="jTextField44">
@@ -3287,16 +3271,22 @@
                                       <Font name="Nunito" size="18" style="1"/>
                                     </Property>
                                     <Property name="horizontalAlignment" type="int" value="4"/>
-                                    <Property name="text" type="java.lang.String" value="Cantidad:"/>
+                                    <Property name="text" type="java.lang.String" value="Categor&#xed;a:"/>
                                   </Properties>
                                 </Component>
-                                <Component class="javax.swing.JTextField" name="jTextField42">
+                                <Component class="javax.swing.JComboBox" name="cmbCategoriaTratamiento">
                                   <Properties>
-                                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                                      <Font name="Nunito" size="18" style="0"/>
+                                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                                      <StringArray count="4">
+                                        <StringItem index="0" value="Item 1"/>
+                                        <StringItem index="1" value="Item 2"/>
+                                        <StringItem index="2" value="Item 3"/>
+                                        <StringItem index="3" value="Item 4"/>
+                                      </StringArray>
                                     </Property>
                                   </Properties>
                                   <AuxValues>
+                                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                                     <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
                                   </AuxValues>
                                 </Component>
@@ -3306,7 +3296,7 @@
                                       <Font name="Nunito" size="18" style="1"/>
                                     </Property>
                                     <Property name="horizontalAlignment" type="int" value="4"/>
-                                    <Property name="text" type="java.lang.String" value="Total :"/>
+                                    <Property name="text" type="java.lang.String" value="Nombre:"/>
                                   </Properties>
                                 </Component>
                                 <Component class="javax.swing.JTextField" name="jTextField43">
@@ -3325,7 +3315,7 @@
                                       <Font name="Nunito" size="18" style="1"/>
                                     </Property>
                                     <Property name="horizontalAlignment" type="int" value="4"/>
-                                    <Property name="text" type="java.lang.String" value="Precio unitario:"/>
+                                    <Property name="text" type="java.lang.String" value="C&#xf3;digo:"/>
                                   </Properties>
                                 </Component>
                                 <Component class="javax.swing.JTextField" name="jTextField47">
@@ -3538,13 +3528,12 @@
                                           <Font name="Nunito" size="18" style="0"/>
                                         </Property>
                                         <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                                          <Table columnCount="6" rowCount="4">
-                                            <Column editable="false" title="Detalle venta de tratamiento" type="java.lang.Object"/>
-                                            <Column editable="false" title="Identificador de venta" type="java.lang.Object"/>
-                                            <Column editable="false" title="Identificador de tratamiento" type="java.lang.Object"/>
-                                            <Column editable="false" title="Cantidad" type="java.lang.Object"/>
-                                            <Column editable="false" title="Precio unitario" type="java.lang.Object"/>
-                                            <Column editable="false" title="Total" type="java.lang.Object"/>
+                                          <Table columnCount="5" rowCount="4">
+                                            <Column editable="false" title="ID Tratamiento" type="java.lang.Object"/>
+                                            <Column editable="false" title="Categor&#xed;a" type="java.lang.Object"/>
+                                            <Column editable="false" title="C&#xf3;digo" type="java.lang.Object"/>
+                                            <Column editable="false" title="Nombre" type="java.lang.Object"/>
+                                            <Column editable="false" title="Descripci&#xf3;n" type="java.lang.Object"/>
                                           </Table>
                                         </Property>
                                         <Property name="rowHeight" type="int" value="25"/>
@@ -3566,7 +3555,7 @@
                     </Container>
                   </SubComponents>
                 </Container>
-                <Container class="javax.swing.JPanel" name="pnlConfiguracion">
+                <Container class="javax.swing.JPanel" name="pnlCitas">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="f8" green="f6" red="f4" type="rgb"/>

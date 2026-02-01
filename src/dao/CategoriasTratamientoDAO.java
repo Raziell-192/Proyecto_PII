@@ -64,29 +64,28 @@ public class CategoriasTratamientoDAO {
      * @return Lista de objetos {@link CategoriaTratamiento}.
      */
     public List<CategoriaTratamiento> listarCategorias() {
-        List<CategoriaTratamiento> lista = new ArrayList<>();
-        String query = "SELECT * FROM categorias_tratamiento ORDER BY id_categoria ASC";
-
-        try {
-            con = cn.conectar();
-            ps = con.prepareStatement(query);
-            rs = ps.executeQuery();
-
-            while (rs.next()) {
-                CategoriaTratamiento categoria = new CategoriaTratamiento();
-                categoria.setIdCategoria(rs.getInt("id_categoria"));
-                categoria.setNombre(rs.getString("nombre"));
-                categoria.setCodigo(rs.getString("codigo"));
-                lista.add(categoria);
-            }
-
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error al listar categorías: " + e);
-        } finally {
-            cerrarConexion();
+    List<CategoriaTratamiento> lista = new ArrayList<>();
+    String query = "SELECT * FROM categorias_tratamiento ORDER BY id_categoria ASC";
+    
+    try {
+        con = cn.conectar();
+        ps = con.prepareStatement(query);
+        rs = ps.executeQuery();
+        
+        while (rs.next()) {
+            CategoriaTratamiento categoria = new CategoriaTratamiento();
+            categoria.setIdCategoria(rs.getInt("id_categoria"));
+            categoria.setNombre(rs.getString("nombre"));
+            categoria.setCodigo(rs.getString("codigo"));
+            lista.add(categoria);
         }
-        return lista;
+    } catch (SQLException e) {
+        JOptionPane.showMessageDialog(null, "Error al listar categorías: " + e);
+    } finally {
+        cerrarConexion();
     }
+    return lista;
+}
 
     /**
      * ACTUALIZAR CATEGORÍA
