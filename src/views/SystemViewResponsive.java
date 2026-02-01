@@ -590,7 +590,7 @@ public class SystemViewResponsive extends javax.swing.JFrame {
 
         Insumos.setFont(new java.awt.Font("Nunito ExtraBold", 1, 16)); // NOI18N
         Insumos.setForeground(new java.awt.Color(255, 255, 255));
-        Insumos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tools_(1).png"))); // NOI18N
+        Insumos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tools_10508273.png"))); // NOI18N
         Insumos.setText("Insumos");
         Insumos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanelInsumos.add(Insumos, java.awt.BorderLayout.CENTER);
@@ -659,6 +659,7 @@ public class SystemViewResponsive extends javax.swing.JFrame {
         btnSalir.setFont(new java.awt.Font("Rockwell", 1, 18)); // NOI18N
         btnSalir.setForeground(new java.awt.Color(255, 255, 255));
         btnSalir.setText("Salir");
+        btnSalir.setBorderPainted(false);
         btnSalir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2364,13 +2365,10 @@ public class SystemViewResponsive extends javax.swing.JFrame {
             .addGroup(jPanel90Layout.createSequentialGroup()
                 .addGap(19, 19, 19)
                 .addComponent(jLabel32)
+                .addGap(25, 25, 25)
                 .addGroup(jPanel90Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel90Layout.createSequentialGroup()
-                        .addGap(25, 25, 25)
-                        .addComponent(jLabel35, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel90Layout.createSequentialGroup()
-                        .addGap(25, 25, 25)
-                        .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jLabel35, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(48, Short.MAX_VALUE))
         );
         jPanel90Layout.setVerticalGroup(
@@ -2473,7 +2471,7 @@ public class SystemViewResponsive extends javax.swing.JFrame {
                 .addGroup(jPanel73Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel74, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel88, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 109, Short.MAX_VALUE)
                 .addGroup(jPanel73Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel90, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel91, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
