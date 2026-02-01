@@ -44,8 +44,8 @@ public class UsuariosDAO {
      *
      * @param user Nombre de usuario ingresado.
      * @param password Contraseña del usuario.
-     * @return Objeto {@link Usuario} con la información del usuario autenticado;
-     * si no existe coincidencia, devuelve un objeto vacío.
+     * @return Objeto {@link Usuario} con la información del usuario
+     * autenticado; si no existe coincidencia, devuelve un objeto vacío.
      */
     public Usuario consultarUsuario(String user, String password) {
         String query = "SELECT * FROM usuarios WHERE username = ? AND password = ?";
@@ -86,7 +86,8 @@ public class UsuariosDAO {
      * Registra un nuevo usuario en la base de datos.
      * </p>
      *
-     * @param usuario Objeto {@link Usuario} con los datos del usuario a registrar.
+     * @param usuario Objeto {@link Usuario} con los datos del usuario a
+     * registrar.
      * @return {@code true} si el usuario se registra correctamente,
      * {@code false} si ocurre algún error.
      */
@@ -366,6 +367,29 @@ public class UsuariosDAO {
                 e.printStackTrace();
             }
         }
+    }
+
+    /**
+     * Verificar si existen usuarios
+     * <p>
+     * Verifica si hay usuarios registrados en la base de datos.
+     * </p>
+     * @return {@code true} si existen usuarios,
+     * {@code false} en caso de estar vacía la tabla {@code usuarios}.
+     */
+    public boolean existenUsuarios() {
+        String query = "SELECT COUNT(*) FROM usuarios";
+        try {
+            con = cn.conectar();
+            ps = con.prepareStatement(query);
+            rs = ps.executeQuery();
+            if (rs.next()) {
+                return rs.getInt(1) > 0;
+            }
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error al verificar usuarios: " + e);
+        }
+        return false;
     }
 
 }

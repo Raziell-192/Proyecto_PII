@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import models.Usuario;
 import dao.UsuariosDAO;
-import static dao.UsuariosDAO.rolUsuario;
+//import static dao.UsuariosDAO.rolUsuario; //
 
 /**
  *
@@ -24,7 +24,7 @@ public class UsuariosController implements ActionListener {
     private Usuario usuario;
     private UsuariosDAO usuarioConexion;
     private SystemViewResponsive vista;
-    String rol = rolUsuario;
+//    String rol = rolUsuario; //
     private int idUsuarioEnEdicion = -1;
 
     public UsuariosController(Usuario usuario, UsuariosDAO usuarioConexion, SystemViewResponsive vista) {
@@ -110,7 +110,7 @@ public class UsuariosController implements ActionListener {
         // Cambiar botones
         vista.btnRegistrarUsuario.setVisible(false);
         vista.btnActualizarUsuario.setVisible(true);
-        
+
         JOptionPane.showMessageDialog(null, "Datos cargados para editar. Modifique y haga clic en «Actualizar» para guardar cambios.");
     }
 
@@ -169,27 +169,107 @@ public class UsuariosController implements ActionListener {
         }
     }
 
+    /**
+     * Verifica si el usuario autenticado tiene permisos para eliminar al
+     * usuario objetivo según su rol.
+     * <p>
+     * Reglas:
+     * <ul>
+     * <li>Superadministrador puede eliminar a cualquier usuario.</li>
+     * <li>Administrador solo puede eliminar usuarios con rol Cajero.</li>
+     * <li>Ningún usuario puede eliminarse a sí mismo.</li>
+     * </ul>
+     *
+     * @param usuarioSesion Usuario que inició sesión.
+     * @param usuarioObjetivo Usuario que se desea eliminar.
+     * @return {@code true} si la operación está permitida, {@code false} en
+     * caso contrario.
+     */
+    private boolean puedeEliminarUsuario(Usuario usuarioSesion, Usuario usuarioObjetivo) {
+
+        // Nadie puede eliminarse a sí mismo
+        if (usuarioSesion.getId() == usuarioObjetivo.getId()) {
+            return false;
+        }
+
+        // Superadministrador: acceso total
+        if ("Superadministrador".equals(usuarioSesion.getRol())) {
+            return true;
+        }
+
+        // Administrador: solo puede eliminar cajeros
+        if ("Administrador".equals(usuarioSesion.getRol())
+                && "Cajero".equals(usuarioObjetivo.getRol())) {
+            return true;
+        }
+
+        return false;
+    }
+
+    /**
+     * Obtiene el usuario seleccionado actualmente en la tabla de usuarios.
+     *
+     * @return Objeto {@link Usuario} correspondiente a la fila seleccionada o
+     * {@code null} si no hay selección.
+     */
+    private Usuario obtenerUsuarioSeleccionado() {
+
+        int fila = vista.tblUsuarios.getSelectedRow();
+
+        if (fila == -1) {
+            return null;
+        }
+
+        int idUsuario = (int) vista.tblUsuarios.getValueAt(fila, 0);
+        return obtenerUsuarioPorId(idUsuario);
+    }
+
+    /**
+     * Elimina un usuario seleccionado de la tabla, validando previamente los
+     * permisos del usuario autenticado.
+     * <p>
+     * Solo el Superadministrador puede eliminar a cualquier usuario. El Administrador
+     * únicamente puede eliminar usuarios con rol Cajero.
+     * </p>
+     */
     private void eliminarUsuario() {
-        int filaSeleccionada = vista.tblUsuarios.getSelectedRow();
-        if (filaSeleccionada == -1) {
-            JOptionPane.showMessageDialog(null, "Por favor, seleccione un usuario de la tabla.");
+
+        Usuario usuarioObjetivo = obtenerUsuarioSeleccionado();
+
+        if (usuarioObjetivo == null) {
+            JOptionPane.showMessageDialog(null,
+                    "Seleccione un usuario de la tabla.",
+                    "Advertencia",
+                    JOptionPane.WARNING_MESSAGE);
             return;
         }
 
-        int idUsuario = (int) vista.tblUsuarios.getValueAt(filaSeleccionada, 0);
-        String nombreUsuario = (String) vista.tblUsuarios.getValueAt(filaSeleccionada, 1);
+        // Validar permisos
+        if (!puedeEliminarUsuario(this.usuario, usuarioObjetivo)) {
+            JOptionPane.showMessageDialog(null,
+                    "No tiene permisos para eliminar este usuario.",
+                    "Acceso denegado",
+                    JOptionPane.ERROR_MESSAGE);
+            return;
+        }
 
         int confirmacion = JOptionPane.showConfirmDialog(null,
-                "¿Está seguro de eliminar al usuario: " + nombreUsuario + "?",
+                "¿Está seguro de eliminar al usuario: "
+                + usuarioObjetivo.getNombreDeUsuario() + "?",
                 "Confirmar eliminación",
                 JOptionPane.YES_NO_OPTION);
 
         if (confirmacion == JOptionPane.YES_OPTION) {
-            if (usuarioConexion.eliminarUsuario(idUsuario)) {
-                JOptionPane.showMessageDialog(null, "Usuario eliminado con éxito.");
+
+            if (usuarioConexion.eliminarUsuario(usuarioObjetivo.getId())) {
+                JOptionPane.showMessageDialog(null,
+                        "Usuario eliminado correctamente.");
                 cargarUsuariosEnTabla();
             } else {
-                JOptionPane.showMessageDialog(null, "Error al eliminar usuario.");
+                JOptionPane.showMessageDialog(null,
+                        "Error al eliminar usuario.",
+                        "Error",
+                        JOptionPane.ERROR_MESSAGE);
             }
         }
     }

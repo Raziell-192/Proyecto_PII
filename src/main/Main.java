@@ -1,22 +1,14 @@
 package main;
 
 import views.NewLogin;
-import javax.swing.UIManager;
 
 /**
  *
- * @author jakim
+ * @author Jakim
  */
 public class Main {
 
     public static void main(String[] args) {
-//        NewLogin login = new NewLogin();
-//        login.setVisible(true);
-//        try {
-//            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
