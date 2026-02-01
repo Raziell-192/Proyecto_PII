@@ -7,6 +7,7 @@ import controllers.TratamientosController;
 import models.Usuario;
 import dao.UsuariosDAO;
 import controllers.UsuariosController;
+import controllers.VentasController;
 import dao.CategoriasTratamientoDAO;
 import java.awt.Color;
 import java.awt.Font;
@@ -19,8 +20,11 @@ import models.Paciente;
 import dao.PacienteDAO;
 import models.Insumo;
 import dao.InsumosDAO;
+import dao.TipoPrecioDAO;
 import dao.TratamientosDAO;
+import dao.VentasDAO;
 import models.Tratamiento;
+import models.Venta;
 
 /**
  *
@@ -77,6 +81,13 @@ public class SystemViewResponsive extends javax.swing.JFrame {
         TratamientosDAO tratamientoDAO = new TratamientosDAO();
         CategoriasTratamientoDAO categoriaDAO = new CategoriasTratamientoDAO();
         TratamientosController tratamientoController = new TratamientosController(tratamiento, tratamientoDAO, categoriaDAO, this);
+        
+        // Controlador de Ventas
+        Venta ventaModel = new Venta();
+        VentasDAO ventaDAO = new VentasDAO();
+        PacienteDAO pacienteDAO = new PacienteDAO();
+        TipoPrecioDAO tipoPrecioDAO = new TipoPrecioDAO();
+        VentasController ventaController = new VentasController(ventaModel, ventaDAO, pacienteDAO, tipoPrecioDAO, this);
     }
 
     /**

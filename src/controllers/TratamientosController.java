@@ -13,6 +13,7 @@ import dao.CategoriasTratamientoDAO;
 
 /**
  * Controlador para el CRUD de tratamientos odontológicos con ComboBox para categorías
+ * @author Raz
  */
 public class TratamientosController implements ActionListener {
 
