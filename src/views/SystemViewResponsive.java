@@ -281,18 +281,29 @@ public class SystemViewResponsive extends javax.swing.JFrame {
         jScrollPane5 = new javax.swing.JScrollPane();
         tblTratamientos = new javax.swing.JTable();
         pnlCitas = new javax.swing.JPanel();
-        pnlHeaderConfiguracion = new javax.swing.JPanel();
+        pnlHeaderCitas = new javax.swing.JPanel();
         jLabel17 = new javax.swing.JLabel();
         jPanel8 = new javax.swing.JPanel();
+        jPanel18 = new javax.swing.JPanel();
+        jPanel20 = new javax.swing.JPanel();
+        jLabel42 = new javax.swing.JLabel();
+        ComboBoxPacientes = new javax.swing.JComboBox<>();
+        jLabel43 = new javax.swing.JLabel();
+        ComboBoxTratamientos = new javax.swing.JComboBox<>();
+        jPanel24 = new javax.swing.JPanel();
+        btnRegistrarCita = new javax.swing.JButton();
+        btnModificarCita = new javax.swing.JButton();
+        btnEliminarCita = new javax.swing.JButton();
+        btnCancelarCita = new javax.swing.JButton();
+        jPanel5 = new javax.swing.JPanel();
         jPanel9 = new javax.swing.JPanel();
         jLabel122 = new javax.swing.JLabel();
         jPanel28 = new javax.swing.JPanel();
         jScrollPane8 = new javax.swing.JScrollPane();
         tblCitas = new javax.swing.JTable();
         jPanel22 = new javax.swing.JPanel();
-        jPanel64 = new javax.swing.JPanel();
-        btnGuardarCita = new javax.swing.JButton();
-        jPanel65 = new javax.swing.JPanel();
+        jTextField3 = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
         pnlReportes = new javax.swing.JPanel();
         pnlHeaderReportes = new javax.swing.JPanel();
         jLabel18 = new javax.swing.JLabel();
@@ -1707,42 +1718,101 @@ public class SystemViewResponsive extends javax.swing.JFrame {
         pnlCitas.setBackground(new java.awt.Color(244, 246, 248));
         pnlCitas.setLayout(new java.awt.BorderLayout());
 
-        pnlHeaderConfiguracion.setBackground(new java.awt.Color(47, 78, 115));
-        pnlHeaderConfiguracion.setPreferredSize(new java.awt.Dimension(313, 50));
+        pnlHeaderCitas.setBackground(new java.awt.Color(47, 78, 115));
+        pnlHeaderCitas.setPreferredSize(new java.awt.Dimension(313, 50));
 
         jLabel17.setFont(new java.awt.Font("Rockwell", 1, 24)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(255, 255, 255));
         jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel17.setText("Citas");
 
-        javax.swing.GroupLayout pnlHeaderConfiguracionLayout = new javax.swing.GroupLayout(pnlHeaderConfiguracion);
-        pnlHeaderConfiguracion.setLayout(pnlHeaderConfiguracionLayout);
-        pnlHeaderConfiguracionLayout.setHorizontalGroup(
-            pnlHeaderConfiguracionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout pnlHeaderCitasLayout = new javax.swing.GroupLayout(pnlHeaderCitas);
+        pnlHeaderCitas.setLayout(pnlHeaderCitasLayout);
+        pnlHeaderCitasLayout.setHorizontalGroup(
+            pnlHeaderCitasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel17, javax.swing.GroupLayout.DEFAULT_SIZE, 1496, Short.MAX_VALUE)
         );
-        pnlHeaderConfiguracionLayout.setVerticalGroup(
-            pnlHeaderConfiguracionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        pnlHeaderCitasLayout.setVerticalGroup(
+            pnlHeaderCitasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel17, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
-        pnlCitas.add(pnlHeaderConfiguracion, java.awt.BorderLayout.PAGE_START);
+        pnlCitas.add(pnlHeaderCitas, java.awt.BorderLayout.PAGE_START);
 
-        jPanel8.setBorder(javax.swing.BorderFactory.createEmptyBorder(50, 50, 50, 50));
+        jPanel8.setBorder(javax.swing.BorderFactory.createEmptyBorder(20, 20, 20, 20));
         jPanel8.setLayout(new java.awt.BorderLayout());
+
+        jPanel18.setLayout(new java.awt.BorderLayout());
+
+        jPanel20.setBorder(javax.swing.BorderFactory.createEmptyBorder(20, 20, 20, 20));
+        jPanel20.setLayout(new java.awt.GridLayout(2, 2, 10, 20));
+
+        jLabel42.setFont(new java.awt.Font("Nunito", 1, 18)); // NOI18N
+        jLabel42.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel42.setText("Paciente:");
+        jPanel20.add(jLabel42);
+
+        ComboBoxPacientes.setFont(new java.awt.Font("Nunito", 0, 18)); // NOI18N
+        ComboBoxPacientes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel20.add(ComboBoxPacientes);
+
+        jLabel43.setFont(new java.awt.Font("Nunito", 1, 18)); // NOI18N
+        jLabel43.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel43.setText("Tratamiento:");
+        jPanel20.add(jLabel43);
+
+        ComboBoxTratamientos.setFont(new java.awt.Font("Nunito", 0, 18)); // NOI18N
+        ComboBoxTratamientos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel20.add(ComboBoxTratamientos);
+
+        jPanel18.add(jPanel20, java.awt.BorderLayout.CENTER);
+
+        jPanel24.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 20, 10, 20));
+        jPanel24.setPreferredSize(new java.awt.Dimension(400, 150));
+        jPanel24.setLayout(new java.awt.GridLayout(2, 2, 20, 20));
+
+        btnRegistrarCita.setBackground(new java.awt.Color(79, 164, 122));
+        btnRegistrarCita.setFont(new java.awt.Font("Rockwell", 1, 18)); // NOI18N
+        btnRegistrarCita.setForeground(new java.awt.Color(255, 255, 255));
+        btnRegistrarCita.setText("Registrar");
+        jPanel24.add(btnRegistrarCita);
+
+        btnModificarCita.setBackground(new java.awt.Color(59, 130, 246));
+        btnModificarCita.setFont(new java.awt.Font("Rockwell", 1, 18)); // NOI18N
+        btnModificarCita.setForeground(new java.awt.Color(255, 255, 255));
+        btnModificarCita.setText("Modificar");
+        jPanel24.add(btnModificarCita);
+
+        btnEliminarCita.setBackground(new java.awt.Color(229, 83, 61));
+        btnEliminarCita.setFont(new java.awt.Font("Rockwell", 1, 18)); // NOI18N
+        btnEliminarCita.setForeground(new java.awt.Color(255, 255, 255));
+        btnEliminarCita.setText("Eliminar");
+        jPanel24.add(btnEliminarCita);
+
+        btnCancelarCita.setBackground(new java.awt.Color(156, 163, 175));
+        btnCancelarCita.setFont(new java.awt.Font("Rockwell", 1, 18)); // NOI18N
+        btnCancelarCita.setForeground(new java.awt.Color(255, 255, 255));
+        btnCancelarCita.setText("Cancelar");
+        jPanel24.add(btnCancelarCita);
+
+        jPanel18.add(jPanel24, java.awt.BorderLayout.LINE_END);
+
+        jPanel8.add(jPanel18, java.awt.BorderLayout.PAGE_START);
+
+        jPanel5.setLayout(new java.awt.BorderLayout());
 
         jPanel9.setLayout(new java.awt.BorderLayout());
 
         jLabel122.setFont(new java.awt.Font("Rockwell", 1, 24)); // NOI18N
         jLabel122.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel122.setText("Datos  ");
+        jLabel122.setText("Lista de citas");
         jLabel122.setPreferredSize(new java.awt.Dimension(134, 40));
         jPanel9.add(jLabel122, java.awt.BorderLayout.CENTER);
 
-        jPanel8.add(jPanel9, java.awt.BorderLayout.PAGE_START);
+        jPanel5.add(jPanel9, java.awt.BorderLayout.PAGE_START);
 
         jPanel28.setBorder(javax.swing.BorderFactory.createEmptyBorder(20, 20, 20, 20));
-        jPanel28.setLayout(new java.awt.GridLayout(1, 0));
+        jPanel28.setLayout(new java.awt.BorderLayout(10, 10));
 
         tblCitas.setBackground(new java.awt.Color(229, 231, 235));
         tblCitas.setFont(new java.awt.Font("Nunito", 0, 18)); // NOI18N
@@ -1754,7 +1824,7 @@ public class SystemViewResponsive extends javax.swing.JFrame {
                 {null, null, null, null}
             },
             new String [] {
-                "Id de citas", " Id de pacientes", "Id de tratamiento", "Fecha y hora"
+                "ID de cita", "Paciente", "Tratamiento", "Fecha y hora"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -1768,47 +1838,22 @@ public class SystemViewResponsive extends javax.swing.JFrame {
         tblCitas.setRowHeight(25);
         jScrollPane8.setViewportView(tblCitas);
 
-        jPanel28.add(jScrollPane8);
+        jPanel28.add(jScrollPane8, java.awt.BorderLayout.CENTER);
 
-        jPanel8.add(jPanel28, java.awt.BorderLayout.CENTER);
+        jPanel22.setLayout(new java.awt.BorderLayout());
 
-        jPanel22.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 20, 10, 20));
-        jPanel22.setPreferredSize(new java.awt.Dimension(100, 60));
-        jPanel22.setLayout(new java.awt.GridLayout(1, 3, 20, 20));
+        jTextField3.setFont(new java.awt.Font("Nunito", 0, 18)); // NOI18N
+        jPanel22.add(jTextField3, java.awt.BorderLayout.CENTER);
 
-        javax.swing.GroupLayout jPanel64Layout = new javax.swing.GroupLayout(jPanel64);
-        jPanel64.setLayout(jPanel64Layout);
-        jPanel64Layout.setHorizontalGroup(
-            jPanel64Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 438, Short.MAX_VALUE)
-        );
-        jPanel64Layout.setVerticalGroup(
-            jPanel64Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
-        );
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/busqueda_32px.png"))); // NOI18N
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel22.add(jButton1, java.awt.BorderLayout.LINE_END);
 
-        jPanel22.add(jPanel64);
+        jPanel28.add(jPanel22, java.awt.BorderLayout.PAGE_START);
 
-        btnGuardarCita.setFont(new java.awt.Font("Rockwell", 1, 18)); // NOI18N
-        btnGuardarCita.setText("Guardar");
-        btnGuardarCita.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnGuardarCita.setPreferredSize(new java.awt.Dimension(100, 40));
-        jPanel22.add(btnGuardarCita);
+        jPanel5.add(jPanel28, java.awt.BorderLayout.CENTER);
 
-        javax.swing.GroupLayout jPanel65Layout = new javax.swing.GroupLayout(jPanel65);
-        jPanel65.setLayout(jPanel65Layout);
-        jPanel65Layout.setHorizontalGroup(
-            jPanel65Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 438, Short.MAX_VALUE)
-        );
-        jPanel65Layout.setVerticalGroup(
-            jPanel65Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
-        );
-
-        jPanel22.add(jPanel65);
-
-        jPanel8.add(jPanel22, java.awt.BorderLayout.PAGE_END);
+        jPanel8.add(jPanel5, java.awt.BorderLayout.CENTER);
 
         pnlCitas.add(jPanel8, java.awt.BorderLayout.CENTER);
 
@@ -2379,6 +2424,8 @@ public class SystemViewResponsive extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JLabel Capturas;
     public javax.swing.JLabel Clinicos;
+    private javax.swing.JComboBox<String> ComboBoxPacientes;
+    private javax.swing.JComboBox<String> ComboBoxTratamientos;
     public javax.swing.JLabel Configuracion;
     public javax.swing.JLabel Insumos;
     public javax.swing.JTabbedPane JTabbedPane;
@@ -2389,11 +2436,13 @@ public class SystemViewResponsive extends javax.swing.JFrame {
     public javax.swing.JButton btnActualizarUsuario;
     public javax.swing.JButton btnBuscarPaciente;
     public javax.swing.JButton btnBuscarUsuario;
+    private javax.swing.JButton btnCancelarCita;
     public javax.swing.JButton btnCancelarInsumo;
     public javax.swing.JButton btnCancelarTratamiento;
     public javax.swing.JButton btnCancelarVenta;
     public javax.swing.JButton btnEditarPaciente;
     public javax.swing.JButton btnEditarUsuario;
+    private javax.swing.JButton btnEliminarCita;
     public javax.swing.JButton btnEliminarInsumo;
     public javax.swing.JButton btnEliminarPaciente;
     public javax.swing.JButton btnEliminarTratamiento;
@@ -2404,16 +2453,17 @@ public class SystemViewResponsive extends javax.swing.JFrame {
     private javax.swing.JButton btnGenerarExcel;
     private javax.swing.JButton btnGenerarPDF;
     private javax.swing.JButton btnGenerarTicket;
-    private javax.swing.JButton btnGuardarCita;
     private javax.swing.JPanel btnMaximize;
     private javax.swing.JLabel btnMaximizeTxt;
     private javax.swing.JPanel btnMinimize;
     private javax.swing.JLabel btnMinimizeTxt;
+    private javax.swing.JButton btnModificarCita;
     public javax.swing.JButton btnModificarInsumo;
     public javax.swing.JButton btnModificarTratamiento;
     public javax.swing.JButton btnModificarVenta;
     public javax.swing.JButton btnMostrarPaciente;
     public javax.swing.JButton btnMostrarUsuario;
+    private javax.swing.JButton btnRegistrarCita;
     public javax.swing.JButton btnRegistrarInsumo;
     public javax.swing.JButton btnRegistrarPaciente;
     public javax.swing.JButton btnRegistrarTratamiento;
@@ -2422,6 +2472,7 @@ public class SystemViewResponsive extends javax.swing.JFrame {
     public javax.swing.JButton btnSalir;
     public javax.swing.JComboBox<String> cmbCategoriaTratamiento;
     public javax.swing.JComboBox<String> cmbRolUsuario;
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton5;
     private javax.swing.JComboBox<String> jComboBox1;
     public javax.swing.JComboBox<String> jComboBox2;
@@ -2464,6 +2515,8 @@ public class SystemViewResponsive extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel42;
+    private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel50;
     private javax.swing.JLabel jLabel51;
@@ -2505,11 +2558,14 @@ public class SystemViewResponsive extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel15;
     private javax.swing.JPanel jPanel16;
     private javax.swing.JPanel jPanel17;
+    private javax.swing.JPanel jPanel18;
     private javax.swing.JPanel jPanel19;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel20;
     private javax.swing.JPanel jPanel21;
     private javax.swing.JPanel jPanel22;
     private javax.swing.JPanel jPanel23;
+    private javax.swing.JPanel jPanel24;
     private javax.swing.JPanel jPanel25;
     private javax.swing.JPanel jPanel26;
     private javax.swing.JPanel jPanel27;
@@ -2535,6 +2591,7 @@ public class SystemViewResponsive extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel46;
     private javax.swing.JPanel jPanel48;
     private javax.swing.JPanel jPanel49;
+    private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel50;
     private javax.swing.JPanel jPanel51;
     private javax.swing.JPanel jPanel52;
@@ -2545,8 +2602,6 @@ public class SystemViewResponsive extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel60;
     private javax.swing.JPanel jPanel61;
     private javax.swing.JPanel jPanel62;
-    private javax.swing.JPanel jPanel64;
-    private javax.swing.JPanel jPanel65;
     private javax.swing.JPanel jPanel66;
     private javax.swing.JPanel jPanel67;
     private javax.swing.JPanel jPanel68;
@@ -2595,6 +2650,7 @@ public class SystemViewResponsive extends javax.swing.JFrame {
     public javax.swing.JTextField jTextField12;
     public javax.swing.JTextField jTextField13;
     public javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
     public javax.swing.JTextField jTextField38;
     public javax.swing.JTextField jTextField39;
     public javax.swing.JTextField jTextField4;
@@ -2625,7 +2681,7 @@ public class SystemViewResponsive extends javax.swing.JFrame {
     private javax.swing.JPanel pnlContenedorMainConfiguraciones;
     private javax.swing.JPanel pnlContenidoConfiguraciones;
     private javax.swing.JPanel pnlHeaderAdministradores;
-    private javax.swing.JPanel pnlHeaderConfiguracion;
+    private javax.swing.JPanel pnlHeaderCitas;
     private javax.swing.JPanel pnlHeaderInsumos;
     private javax.swing.JPanel pnlHeaderReportes;
     private javax.swing.JPanel pnlHeaderTratamiento;
