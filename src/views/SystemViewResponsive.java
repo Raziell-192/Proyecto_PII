@@ -34,6 +34,7 @@ import models.DetalleVentaInsumo;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.pdf.PdfWriter;
+import controllers.CategoriasTratamientoController;
 import controllers.TipoPrecioController;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -41,6 +42,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileSystemView;
+import models.CategoriaTratamiento;
 import models.TipoPrecio;
 
 /**
@@ -143,18 +145,18 @@ public class SystemViewResponsive extends javax.swing.JFrame {
         jPanel53 = new javax.swing.JPanel();
         jLabel95 = new javax.swing.JLabel();
         jLabel96 = new javax.swing.JLabel();
-        jTextField9 = new javax.swing.JTextField();
-        jButton7 = new javax.swing.JButton();
+        textefieldBuscar = new javax.swing.JTextField();
+        btnBuscar = new javax.swing.JButton();
         jScrollPane7 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        tablaTratamientos = new javax.swing.JTable();
         jLabel102 = new javax.swing.JLabel();
-        jTextField14 = new javax.swing.JTextField();
-        jTextField15 = new javax.swing.JTextField();
-        jTextField16 = new javax.swing.JTextField();
-        jButton9 = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
-        jButton11 = new javax.swing.JButton();
-        jButton12 = new javax.swing.JButton();
+        textfieldIdentificador = new javax.swing.JTextField();
+        txtfieldNombre = new javax.swing.JTextField();
+        textfieldCodigo = new javax.swing.JTextField();
+        btnRegistrar = new javax.swing.JButton();
+        btnModificar = new javax.swing.JButton();
+        btnEliminar = new javax.swing.JButton();
+        btnCancelar = new javax.swing.JButton();
         DialogTipoPrecio = new javax.swing.JDialog();
         jPanel42 = new javax.swing.JPanel();
         jLabel103 = new javax.swing.JLabel();
@@ -833,12 +835,12 @@ public class SystemViewResponsive extends javax.swing.JFrame {
         jLabel96.setFont(new java.awt.Font("Nunito", 1, 14)); // NOI18N
         jLabel96.setText("Nombre:");
 
-        jButton7.setBackground(new java.awt.Color(0, 153, 153));
-        jButton7.setFont(new java.awt.Font("Rockwell Condensed", 1, 24)); // NOI18N
-        jButton7.setForeground(new java.awt.Color(255, 255, 255));
-        jButton7.setText("Buscar");
+        btnBuscar.setBackground(new java.awt.Color(0, 153, 153));
+        btnBuscar.setFont(new java.awt.Font("Rockwell Condensed", 1, 24)); // NOI18N
+        btnBuscar.setForeground(new java.awt.Color(255, 255, 255));
+        btnBuscar.setText("Buscar");
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        tablaTratamientos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
                 {null, null, null},
@@ -849,30 +851,30 @@ public class SystemViewResponsive extends javax.swing.JFrame {
                 "ID de categoría", "Nombre ", "Código"
             }
         ));
-        jScrollPane7.setViewportView(jTable2);
+        jScrollPane7.setViewportView(tablaTratamientos);
 
         jLabel102.setFont(new java.awt.Font("Nunito", 1, 14)); // NOI18N
         jLabel102.setText("Código:");
 
-        jButton9.setBackground(new java.awt.Color(0, 153, 153));
-        jButton9.setFont(new java.awt.Font("Rockwell", 1, 24)); // NOI18N
-        jButton9.setForeground(new java.awt.Color(255, 255, 255));
-        jButton9.setText("Registrar");
+        btnRegistrar.setBackground(new java.awt.Color(0, 153, 153));
+        btnRegistrar.setFont(new java.awt.Font("Rockwell", 1, 24)); // NOI18N
+        btnRegistrar.setForeground(new java.awt.Color(255, 255, 255));
+        btnRegistrar.setText("Registrar");
 
-        jButton10.setBackground(new java.awt.Color(0, 153, 153));
-        jButton10.setFont(new java.awt.Font("Rockwell", 1, 24)); // NOI18N
-        jButton10.setForeground(new java.awt.Color(255, 255, 255));
-        jButton10.setText("Modificar");
+        btnModificar.setBackground(new java.awt.Color(0, 153, 153));
+        btnModificar.setFont(new java.awt.Font("Rockwell", 1, 24)); // NOI18N
+        btnModificar.setForeground(new java.awt.Color(255, 255, 255));
+        btnModificar.setText("Modificar");
 
-        jButton11.setBackground(new java.awt.Color(0, 153, 153));
-        jButton11.setFont(new java.awt.Font("Rockwell", 1, 24)); // NOI18N
-        jButton11.setForeground(new java.awt.Color(255, 255, 255));
-        jButton11.setText("Eliminar");
+        btnEliminar.setBackground(new java.awt.Color(0, 153, 153));
+        btnEliminar.setFont(new java.awt.Font("Rockwell", 1, 24)); // NOI18N
+        btnEliminar.setForeground(new java.awt.Color(255, 255, 255));
+        btnEliminar.setText("Eliminar");
 
-        jButton12.setBackground(new java.awt.Color(0, 153, 153));
-        jButton12.setFont(new java.awt.Font("Rockwell", 1, 24)); // NOI18N
-        jButton12.setForeground(new java.awt.Color(255, 255, 255));
-        jButton12.setText("Cancelar");
+        btnCancelar.setBackground(new java.awt.Color(0, 153, 153));
+        btnCancelar.setFont(new java.awt.Font("Rockwell", 1, 24)); // NOI18N
+        btnCancelar.setForeground(new java.awt.Color(255, 255, 255));
+        btnCancelar.setText("Cancelar");
 
         javax.swing.GroupLayout jPanel53Layout = new javax.swing.GroupLayout(jPanel53);
         jPanel53.setLayout(jPanel53Layout);
@@ -884,9 +886,9 @@ public class SystemViewResponsive extends javax.swing.JFrame {
                         .addContainerGap(50, Short.MAX_VALUE)
                         .addGroup(jPanel53Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel53Layout.createSequentialGroup()
-                                .addComponent(jTextField9)
+                                .addComponent(textefieldBuscar)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jButton7))
+                                .addComponent(btnBuscar))
                             .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 924, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel53Layout.createSequentialGroup()
                         .addGap(50, 50, 50)
@@ -894,24 +896,24 @@ public class SystemViewResponsive extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel53Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel53Layout.createSequentialGroup()
-                                .addComponent(jButton9)
+                                .addComponent(btnRegistrar)
                                 .addGap(53, 53, 53)
-                                .addComponent(jButton10)
+                                .addComponent(btnModificar)
                                 .addGap(51, 51, 51)
-                                .addComponent(jButton11)
+                                .addComponent(btnEliminar)
                                 .addGap(62, 62, 62)
-                                .addComponent(jButton12)
+                                .addComponent(btnCancelar)
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(jPanel53Layout.createSequentialGroup()
-                                .addComponent(jTextField14, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(textfieldIdentificador, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(44, 44, 44)
                                 .addComponent(jLabel96, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtfieldNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(52, 52, 52)
                                 .addComponent(jLabel102, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jTextField16)))))
+                                .addComponent(textfieldCodigo)))))
                 .addContainerGap(43, Short.MAX_VALUE))
         );
         jPanel53Layout.setVerticalGroup(
@@ -923,9 +925,9 @@ public class SystemViewResponsive extends javax.swing.JFrame {
                             .addGap(17, 17, 17)
                             .addGroup(jPanel53Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addComponent(jLabel95, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jTextField14, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jTextField16, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(textfieldIdentificador, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtfieldNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(textfieldCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel53Layout.createSequentialGroup()
                             .addContainerGap()
                             .addComponent(jLabel102, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -933,14 +935,14 @@ public class SystemViewResponsive extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel53Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel53Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jButton9)
-                        .addComponent(jButton10))
-                    .addComponent(jButton11)
-                    .addComponent(jButton12))
+                        .addComponent(btnRegistrar)
+                        .addComponent(btnModificar))
+                    .addComponent(btnEliminar)
+                    .addComponent(btnCancelar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
                 .addGroup(jPanel53Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton7))
+                    .addComponent(textefieldBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnBuscar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(20, 20, 20))
@@ -3191,6 +3193,10 @@ public class SystemViewResponsive extends javax.swing.JFrame {
         // Tipos de Precio
         TipoPrecio tipoPrecioModel = new TipoPrecio();
         new TipoPrecioController(tipoPrecioModel, tipoPrecioDAO, this);
+        
+        // Categorías de Tratamiento
+        CategoriaTratamiento categoriaModel = new CategoriaTratamiento();
+        new CategoriasTratamientoController(categoriaModel, categoriaDAO, this);
     }
 
     private void configurarAccesosPorRol() {
@@ -3441,14 +3447,17 @@ public class SystemViewResponsive extends javax.swing.JFrame {
     public javax.swing.JLabel Usuario;
     public javax.swing.JLabel Venta;
     public javax.swing.JButton btnActualizarUsuario;
+    public javax.swing.JButton btnBuscar;
     public javax.swing.JButton btnBuscarPaciente;
     public javax.swing.JButton btnBuscarUsuario;
+    public javax.swing.JButton btnCancelar;
     public javax.swing.JButton btnCancelarCita;
     public javax.swing.JButton btnCancelarInsumo;
     public javax.swing.JButton btnCancelarTratamiento;
     public javax.swing.JButton btnCancelarVenta;
     public javax.swing.JButton btnEditarPaciente;
     public javax.swing.JButton btnEditarUsuario;
+    public javax.swing.JButton btnEliminar;
     public javax.swing.JButton btnEliminarCita;
     public javax.swing.JButton btnEliminarInsumo;
     public javax.swing.JButton btnEliminarPaciente;
@@ -3465,12 +3474,14 @@ public class SystemViewResponsive extends javax.swing.JFrame {
     private javax.swing.JLabel btnMaximizeTxt;
     private javax.swing.JPanel btnMinimize;
     private javax.swing.JLabel btnMinimizeTxt;
+    public javax.swing.JButton btnModificar;
     public javax.swing.JButton btnModificarCita;
     public javax.swing.JButton btnModificarInsumo;
     public javax.swing.JButton btnModificarTratamiento;
     public javax.swing.JButton btnModificarVenta;
     public javax.swing.JButton btnMostrarPaciente;
     public javax.swing.JButton btnMostrarUsuario;
+    public javax.swing.JButton btnRegistrar;
     public javax.swing.JButton btnRegistrarCita;
     public javax.swing.JButton btnRegistrarInsumo;
     public javax.swing.JButton btnRegistrarPaciente;
@@ -3481,9 +3492,6 @@ public class SystemViewResponsive extends javax.swing.JFrame {
     public javax.swing.JComboBox<String> cmbCategoriaTratamiento;
     public javax.swing.JComboBox<String> cmbRolUsuario;
     public javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton11;
-    private javax.swing.JButton jButton12;
     public javax.swing.JButton jButton13;
     public javax.swing.JButton jButton14;
     public javax.swing.JButton jButton15;
@@ -3494,8 +3502,6 @@ public class SystemViewResponsive extends javax.swing.JFrame {
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton9;
     private javax.swing.JComboBox<String> jComboBox1;
     public javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox3;
@@ -3703,15 +3709,11 @@ public class SystemViewResponsive extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
     public javax.swing.JTable jTable4;
     public javax.swing.JTextField jTextField1;
     public javax.swing.JTextField jTextField11;
     public javax.swing.JTextField jTextField12;
     public javax.swing.JTextField jTextField13;
-    public javax.swing.JTextField jTextField14;
-    private javax.swing.JTextField jTextField15;
-    private javax.swing.JTextField jTextField16;
     public javax.swing.JTextField jTextField17;
     public javax.swing.JTextField jTextField18;
     public javax.swing.JTextField jTextField19;
@@ -3737,7 +3739,6 @@ public class SystemViewResponsive extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
     private javax.swing.JLabel jlabelUsuariosYRoles;
     public javax.swing.JLabel lblDerLogo;
     public javax.swing.JLabel lblIzqLogo;
@@ -3787,16 +3788,21 @@ public class SystemViewResponsive extends javax.swing.JFrame {
     public javax.swing.JPanel pnlUsuarios;
     public javax.swing.JPanel pnlVentas;
     private javax.swing.JPanel pnlVistas;
+    public javax.swing.JTable tablaTratamientos;
     public javax.swing.JTable tblCitas;
     public javax.swing.JTable tblInsumos;
     public javax.swing.JTable tblPacientes;
     public javax.swing.JTable tblTratamientos;
     public javax.swing.JTable tblUsuarios;
     public javax.swing.JTable tblVentas;
+    public javax.swing.JTextField textefieldBuscar;
+    public javax.swing.JTextField textfieldCodigo;
+    public javax.swing.JTextField textfieldIdentificador;
     public javax.swing.JTextField txtApellidoUsuario;
     public javax.swing.JTextField txtEmailUsuario;
     public javax.swing.JTextField txtNombreUsuario;
     public javax.swing.JTextField txtUsernameUsuario;
+    public javax.swing.JTextField txtfieldNombre;
     // End of variables declaration//GEN-END:variables
 
 }

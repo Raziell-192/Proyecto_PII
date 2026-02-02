@@ -225,14 +225,14 @@ public class TipoPrecioController {
             String codigo = (String) view.jTable4.getValueAt(filaSeleccionada, 2);
             
             // Llenar campos del formulario
-            view.jTextField14.setText(String.valueOf(idTipoPrecio));
+            view.textfieldIdentificador.setText(String.valueOf(idTipoPrecio));
             view.jTextField19.setText(nombre);
             view.jTextField20.setText(codigo);
         }
     }
     
     private void limpiarFormulario() {
-        view.jTextField14.setText("");
+        view.textfieldIdentificador.setText("");
         view.jTextField19.setText("");
         view.jTextField20.setText("");
         view.jTextField17.setText("");
