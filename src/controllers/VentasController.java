@@ -216,7 +216,7 @@ public class VentasController implements ActionListener {
         }
         
         if (validarCampos()) {
-            // Verificar si el número de venta ya existe (excluyendo la venta actual)
+            // Verificar si el número de venta ya existe
             if (ventaDAO.verificarNumeroVentaExistente(vista.jTextField51.getText().trim(), ventaSeleccionada.getIdVenta())) {
                 JOptionPane.showMessageDialog(vista, 
                     "El número de venta ya existe. Por favor, use otro número.",
@@ -376,7 +376,7 @@ public class VentasController implements ActionListener {
             return false;
         }
         
-        // Validar fecha (opcional)
+        // Validar fecha
         String fechaTexto = vista.jTextField53.getText().trim();
         if (!fechaTexto.isEmpty()) {
             try {
@@ -496,7 +496,7 @@ public class VentasController implements ActionListener {
             vista.jTextField49.setText("");
             vista.jTextField51.setText("");
             vista.jTextField52.setText("");
-            vista.jTextField55.setText("");
+            vista.jTextField55.setText(""); 
             vista.jTextField54.setText("0.00");
             configurarFechaActual();
         }

@@ -34,12 +34,14 @@ import models.DetalleVentaInsumo;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.pdf.PdfWriter;
+import controllers.TipoPrecioController;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileSystemView;
+import models.TipoPrecio;
 
 /**
  *
@@ -2814,7 +2816,7 @@ public class SystemViewResponsive extends javax.swing.JFrame {
         pnlHeaderAdministradores.setLayout(pnlHeaderAdministradoresLayout);
         pnlHeaderAdministradoresLayout.setHorizontalGroup(
             pnlHeaderAdministradoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, 1496, Short.MAX_VALUE)
+            .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, 1106, Short.MAX_VALUE)
         );
         pnlHeaderAdministradoresLayout.setVerticalGroup(
             pnlHeaderAdministradoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3185,6 +3187,10 @@ public class SystemViewResponsive extends javax.swing.JFrame {
         // Configurar listener para el botón de generar ticket
         btnGenerarTicket.addActionListener(e -> generarTicketPDFSimple());
         btnGenerarTicketVenta.addActionListener(e -> generarTicketPDFSimple());
+        
+        // Tipos de Precio
+        TipoPrecio tipoPrecioModel = new TipoPrecio();
+        new TipoPrecioController(tipoPrecioModel, tipoPrecioDAO, this);
     }
 
     private void configurarAccesosPorRol() {
@@ -3381,6 +3387,7 @@ public class SystemViewResponsive extends javax.swing.JFrame {
         }
     }
 
+
     /**
      * @param args the command line arguments
      */
@@ -3477,11 +3484,11 @@ public class SystemViewResponsive extends javax.swing.JFrame {
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;
-    private javax.swing.JButton jButton13;
-    private javax.swing.JButton jButton14;
-    private javax.swing.JButton jButton15;
-    private javax.swing.JButton jButton16;
-    private javax.swing.JButton jButton17;
+    public javax.swing.JButton jButton13;
+    public javax.swing.JButton jButton14;
+    public javax.swing.JButton jButton15;
+    public javax.swing.JButton jButton16;
+    public javax.swing.JButton jButton17;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -3697,19 +3704,19 @@ public class SystemViewResponsive extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
-    private javax.swing.JTable jTable4;
+    public javax.swing.JTable jTable4;
     public javax.swing.JTextField jTextField1;
     public javax.swing.JTextField jTextField11;
     public javax.swing.JTextField jTextField12;
     public javax.swing.JTextField jTextField13;
-    private javax.swing.JTextField jTextField14;
+    public javax.swing.JTextField jTextField14;
     private javax.swing.JTextField jTextField15;
     private javax.swing.JTextField jTextField16;
-    private javax.swing.JTextField jTextField17;
-    private javax.swing.JTextField jTextField18;
-    private javax.swing.JTextField jTextField19;
+    public javax.swing.JTextField jTextField17;
+    public javax.swing.JTextField jTextField18;
+    public javax.swing.JTextField jTextField19;
     public javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField20;
+    public javax.swing.JTextField jTextField20;
     public javax.swing.JTextField jTextField3;
     public javax.swing.JTextField jTextField38;
     public javax.swing.JTextField jTextField39;
