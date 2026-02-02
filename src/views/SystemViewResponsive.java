@@ -83,7 +83,7 @@ public class SystemViewResponsive extends javax.swing.JFrame {
     private void initComponents() {
         java.awt.GridBagConstraints gridBagConstraints;
 
-        reporte = new javax.swing.JDialog();
+        DialogReporte = new javax.swing.JDialog();
         jPanel29 = new javax.swing.JPanel();
         jLabel44 = new javax.swing.JLabel();
         jLabel45 = new javax.swing.JLabel();
@@ -374,38 +374,38 @@ public class SystemViewResponsive extends javax.swing.JFrame {
         pnlTitleConfiguraciones = new javax.swing.JPanel();
         jLabel22 = new javax.swing.JLabel();
         pnlContenidoConfiguraciones = new javax.swing.JPanel();
-        jPanel74 = new javax.swing.JPanel();
+        pnlBtnConfigGeneral = new javax.swing.JPanel();
         jLabel23 = new javax.swing.JLabel();
-        jPanel40 = new javax.swing.JPanel();
+        pnlBtnConfigGeneralContent = new javax.swing.JPanel();
         jLabel24 = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
-        jPanel88 = new javax.swing.JPanel();
+        pnlBtnReportes = new javax.swing.JPanel();
         jLabel26 = new javax.swing.JLabel();
-        jPanel41 = new javax.swing.JPanel();
+        pnlBtnReportesContent = new javax.swing.JPanel();
         jLabel27 = new javax.swing.JLabel();
         jLabel28 = new javax.swing.JLabel();
-        jPanel89 = new javax.swing.JPanel();
+        pnlBtnCitasYAgendas = new javax.swing.JPanel();
         jLabel29 = new javax.swing.JLabel();
-        jPanel42 = new javax.swing.JPanel();
+        pnlBtnCitasYAgendasContent = new javax.swing.JPanel();
         jLabel30 = new javax.swing.JLabel();
         jLabel31 = new javax.swing.JLabel();
-        jPanel90 = new javax.swing.JPanel();
-        jLabel32 = new javax.swing.JLabel();
-        jPanel43 = new javax.swing.JPanel();
+        pnlBtnUsuariosYRoles = new javax.swing.JPanel();
+        jlabelUsuariosYRoles = new javax.swing.JLabel();
+        pnlBtnUsuariosYRolesContent = new javax.swing.JPanel();
         jLabel33 = new javax.swing.JLabel();
         jLabel35 = new javax.swing.JLabel();
-        jPanel91 = new javax.swing.JPanel();
+        pnlBtnSistemas = new javax.swing.JPanel();
         jLabel36 = new javax.swing.JLabel();
-        jPanel44 = new javax.swing.JPanel();
+        pnlBtnSistemasContent = new javax.swing.JPanel();
         jLabel37 = new javax.swing.JLabel();
         jLabel38 = new javax.swing.JLabel();
-        jPanel92 = new javax.swing.JPanel();
+        pnlBtnVentasYFacturas = new javax.swing.JPanel();
         jLabel39 = new javax.swing.JLabel();
-        jPanel45 = new javax.swing.JPanel();
+        pnlBtnVentasYFacturasContent = new javax.swing.JPanel();
         jLabel40 = new javax.swing.JLabel();
         jLabel41 = new javax.swing.JLabel();
 
-        reporte.setTitle("Reporte");
+        DialogReporte.setTitle("Reporte");
 
         jLabel44.setFont(new java.awt.Font("Nunito", 0, 14)); // NOI18N
         jLabel44.setText("<html><p>Configuración de los datos generales de la clínica, el idioma, zona horaría y más.</p><br></html>");
@@ -413,7 +413,7 @@ public class SystemViewResponsive extends javax.swing.JFrame {
         jLabel45.setFont(new java.awt.Font("Nunito", 1, 36)); // NOI18N
         jLabel45.setText("Reportes");
 
-        jLabel46.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Reporte3.png"))); // NOI18N
+        jLabel46.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/reporte_128px.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel29Layout = new javax.swing.GroupLayout(jPanel29);
         jPanel29.setLayout(jPanel29Layout);
@@ -523,19 +523,19 @@ public class SystemViewResponsive extends javax.swing.JFrame {
                 .addGap(20, 20, 20))
         );
 
-        javax.swing.GroupLayout reporteLayout = new javax.swing.GroupLayout(reporte.getContentPane());
-        reporte.getContentPane().setLayout(reporteLayout);
-        reporteLayout.setHorizontalGroup(
-            reporteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(reporteLayout.createSequentialGroup()
+        javax.swing.GroupLayout DialogReporteLayout = new javax.swing.GroupLayout(DialogReporte.getContentPane());
+        DialogReporte.getContentPane().setLayout(DialogReporteLayout);
+        DialogReporteLayout.setHorizontalGroup(
+            DialogReporteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(DialogReporteLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(reporteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(DialogReporteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel47, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel29, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
-        reporteLayout.setVerticalGroup(
-            reporteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(reporteLayout.createSequentialGroup()
+        DialogReporteLayout.setVerticalGroup(
+            DialogReporteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(DialogReporteLayout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addComponent(jPanel29, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(15, 15, 15)
@@ -2155,24 +2155,28 @@ public class SystemViewResponsive extends javax.swing.JFrame {
         btnRegistrarCita.setFont(new java.awt.Font("Rockwell", 1, 18)); // NOI18N
         btnRegistrarCita.setForeground(new java.awt.Color(255, 255, 255));
         btnRegistrarCita.setText("Registrar");
+        btnRegistrarCita.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel24.add(btnRegistrarCita);
 
         btnModificarCita.setBackground(new java.awt.Color(59, 130, 246));
         btnModificarCita.setFont(new java.awt.Font("Rockwell", 1, 18)); // NOI18N
         btnModificarCita.setForeground(new java.awt.Color(255, 255, 255));
         btnModificarCita.setText("Modificar");
+        btnModificarCita.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel24.add(btnModificarCita);
 
         btnEliminarCita.setBackground(new java.awt.Color(229, 83, 61));
         btnEliminarCita.setFont(new java.awt.Font("Rockwell", 1, 18)); // NOI18N
         btnEliminarCita.setForeground(new java.awt.Color(255, 255, 255));
         btnEliminarCita.setText("Eliminar");
+        btnEliminarCita.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel24.add(btnEliminarCita);
 
         btnCancelarCita.setBackground(new java.awt.Color(156, 163, 175));
         btnCancelarCita.setFont(new java.awt.Font("Rockwell", 1, 18)); // NOI18N
         btnCancelarCita.setForeground(new java.awt.Color(255, 255, 255));
         btnCancelarCita.setText("Cancelar");
+        btnCancelarCita.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel24.add(btnCancelarCita);
 
         jPanel18.add(jPanel24, java.awt.BorderLayout.LINE_END);
@@ -2450,156 +2454,156 @@ public class SystemViewResponsive extends javax.swing.JFrame {
         pnlContenidoConfiguraciones.setBorder(javax.swing.BorderFactory.createEmptyBorder(40, 40, 40, 40));
         pnlContenidoConfiguraciones.setLayout(new java.awt.GridLayout(3, 2, 30, 30));
 
-        jPanel74.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel74.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
-        jPanel74.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel74.setLayout(new java.awt.BorderLayout());
+        pnlBtnConfigGeneral.setBackground(new java.awt.Color(255, 255, 255));
+        pnlBtnConfigGeneral.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
+        pnlBtnConfigGeneral.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        pnlBtnConfigGeneral.setLayout(new java.awt.BorderLayout());
 
         jLabel23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Configuracion1.png"))); // NOI18N
-        jPanel74.add(jLabel23, java.awt.BorderLayout.WEST);
+        pnlBtnConfigGeneral.add(jLabel23, java.awt.BorderLayout.WEST);
 
-        jPanel40.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel40.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
-        jPanel40.setLayout(new java.awt.BorderLayout());
+        pnlBtnConfigGeneralContent.setBackground(new java.awt.Color(255, 255, 255));
+        pnlBtnConfigGeneralContent.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
+        pnlBtnConfigGeneralContent.setLayout(new java.awt.BorderLayout());
 
         jLabel24.setFont(new java.awt.Font("Nunito", 1, 18)); // NOI18N
         jLabel24.setText("Configuracion General ");
-        jPanel40.add(jLabel24, java.awt.BorderLayout.PAGE_START);
+        pnlBtnConfigGeneralContent.add(jLabel24, java.awt.BorderLayout.PAGE_START);
 
         jLabel25.setFont(new java.awt.Font("Nunito", 0, 14)); // NOI18N
         jLabel25.setText("<html><p>Datos de la clínica, idioma, zona horaria, Formato de fecha.</p><br></html>");
         jLabel25.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         jLabel25.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 1, 10, 1));
-        jPanel40.add(jLabel25, java.awt.BorderLayout.CENTER);
+        pnlBtnConfigGeneralContent.add(jLabel25, java.awt.BorderLayout.CENTER);
 
-        jPanel74.add(jPanel40, java.awt.BorderLayout.CENTER);
+        pnlBtnConfigGeneral.add(pnlBtnConfigGeneralContent, java.awt.BorderLayout.CENTER);
 
-        pnlContenidoConfiguraciones.add(jPanel74);
+        pnlContenidoConfiguraciones.add(pnlBtnConfigGeneral);
 
-        jPanel88.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel88.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
-        jPanel88.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel88.setLayout(new java.awt.BorderLayout());
+        pnlBtnReportes.setBackground(new java.awt.Color(255, 255, 255));
+        pnlBtnReportes.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
+        pnlBtnReportes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        pnlBtnReportes.setLayout(new java.awt.BorderLayout());
 
         jLabel26.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/rep.png"))); // NOI18N
-        jPanel88.add(jLabel26, java.awt.BorderLayout.WEST);
+        pnlBtnReportes.add(jLabel26, java.awt.BorderLayout.WEST);
 
-        jPanel41.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel41.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
-        jPanel41.setLayout(new java.awt.BorderLayout());
+        pnlBtnReportesContent.setBackground(new java.awt.Color(255, 255, 255));
+        pnlBtnReportesContent.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
+        pnlBtnReportesContent.setLayout(new java.awt.BorderLayout());
 
         jLabel27.setFont(new java.awt.Font("Nunito", 1, 18)); // NOI18N
         jLabel27.setText("Reportes");
-        jPanel41.add(jLabel27, java.awt.BorderLayout.PAGE_START);
+        pnlBtnReportesContent.add(jLabel27, java.awt.BorderLayout.PAGE_START);
 
         jLabel28.setFont(new java.awt.Font("Nunito", 0, 14)); // NOI18N
         jLabel28.setText("<html><p>Formato PDF/Excel, ruta de guardados.</p><br></html>");
         jLabel28.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 1, 10, 1));
-        jPanel41.add(jLabel28, java.awt.BorderLayout.CENTER);
+        pnlBtnReportesContent.add(jLabel28, java.awt.BorderLayout.CENTER);
 
-        jPanel88.add(jPanel41, java.awt.BorderLayout.CENTER);
+        pnlBtnReportes.add(pnlBtnReportesContent, java.awt.BorderLayout.CENTER);
 
-        pnlContenidoConfiguraciones.add(jPanel88);
+        pnlContenidoConfiguraciones.add(pnlBtnReportes);
 
-        jPanel89.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel89.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
-        jPanel89.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel89.setLayout(new java.awt.BorderLayout());
+        pnlBtnCitasYAgendas.setBackground(new java.awt.Color(255, 255, 255));
+        pnlBtnCitasYAgendas.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
+        pnlBtnCitasYAgendas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        pnlBtnCitasYAgendas.setLayout(new java.awt.BorderLayout());
 
         jLabel29.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Agenda1(1).png"))); // NOI18N
-        jPanel89.add(jLabel29, java.awt.BorderLayout.WEST);
+        pnlBtnCitasYAgendas.add(jLabel29, java.awt.BorderLayout.WEST);
 
-        jPanel42.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel42.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
-        jPanel42.setLayout(new java.awt.BorderLayout());
+        pnlBtnCitasYAgendasContent.setBackground(new java.awt.Color(255, 255, 255));
+        pnlBtnCitasYAgendasContent.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
+        pnlBtnCitasYAgendasContent.setLayout(new java.awt.BorderLayout());
 
         jLabel30.setFont(new java.awt.Font("Nunito", 1, 18)); // NOI18N
         jLabel30.setText("Citas y Agendas");
-        jPanel42.add(jLabel30, java.awt.BorderLayout.PAGE_START);
+        pnlBtnCitasYAgendasContent.add(jLabel30, java.awt.BorderLayout.PAGE_START);
 
         jLabel31.setFont(new java.awt.Font("Nunito", 0, 14)); // NOI18N
         jLabel31.setText("<html><p>Horarios, duración de citas, recordatorios.</p><br></html>");
         jLabel31.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 1, 10, 1));
-        jPanel42.add(jLabel31, java.awt.BorderLayout.CENTER);
+        pnlBtnCitasYAgendasContent.add(jLabel31, java.awt.BorderLayout.CENTER);
 
-        jPanel89.add(jPanel42, java.awt.BorderLayout.CENTER);
+        pnlBtnCitasYAgendas.add(pnlBtnCitasYAgendasContent, java.awt.BorderLayout.CENTER);
 
-        pnlContenidoConfiguraciones.add(jPanel89);
+        pnlContenidoConfiguraciones.add(pnlBtnCitasYAgendas);
 
-        jPanel90.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel90.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
-        jPanel90.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel90.setLayout(new java.awt.BorderLayout());
+        pnlBtnUsuariosYRoles.setBackground(new java.awt.Color(255, 255, 255));
+        pnlBtnUsuariosYRoles.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
+        pnlBtnUsuariosYRoles.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        pnlBtnUsuariosYRoles.setLayout(new java.awt.BorderLayout());
 
-        jLabel32.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/user.png"))); // NOI18N
-        jPanel90.add(jLabel32, java.awt.BorderLayout.WEST);
+        jlabelUsuariosYRoles.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/user.png"))); // NOI18N
+        pnlBtnUsuariosYRoles.add(jlabelUsuariosYRoles, java.awt.BorderLayout.WEST);
 
-        jPanel43.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel43.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
-        jPanel43.setLayout(new java.awt.BorderLayout());
+        pnlBtnUsuariosYRolesContent.setBackground(new java.awt.Color(255, 255, 255));
+        pnlBtnUsuariosYRolesContent.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
+        pnlBtnUsuariosYRolesContent.setLayout(new java.awt.BorderLayout());
 
         jLabel33.setFont(new java.awt.Font("Nunito", 1, 18)); // NOI18N
         jLabel33.setText("Usuario y Roles");
-        jPanel43.add(jLabel33, java.awt.BorderLayout.PAGE_START);
+        pnlBtnUsuariosYRolesContent.add(jLabel33, java.awt.BorderLayout.PAGE_START);
 
         jLabel35.setFont(new java.awt.Font("Nunito", 0, 14)); // NOI18N
         jLabel35.setText("<html><p>Roles, permisos y gestión de usuarios.</p><br></html>");
         jLabel35.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 1, 10, 1));
-        jPanel43.add(jLabel35, java.awt.BorderLayout.CENTER);
+        pnlBtnUsuariosYRolesContent.add(jLabel35, java.awt.BorderLayout.CENTER);
 
-        jPanel90.add(jPanel43, java.awt.BorderLayout.CENTER);
+        pnlBtnUsuariosYRoles.add(pnlBtnUsuariosYRolesContent, java.awt.BorderLayout.CENTER);
 
-        pnlContenidoConfiguraciones.add(jPanel90);
+        pnlContenidoConfiguraciones.add(pnlBtnUsuariosYRoles);
 
-        jPanel91.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel91.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
-        jPanel91.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel91.setLayout(new java.awt.BorderLayout());
+        pnlBtnSistemas.setBackground(new java.awt.Color(255, 255, 255));
+        pnlBtnSistemas.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
+        pnlBtnSistemas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        pnlBtnSistemas.setLayout(new java.awt.BorderLayout());
 
         jLabel36.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Sistema (1).png"))); // NOI18N
-        jPanel91.add(jLabel36, java.awt.BorderLayout.WEST);
+        pnlBtnSistemas.add(jLabel36, java.awt.BorderLayout.WEST);
 
-        jPanel44.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel44.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
-        jPanel44.setLayout(new java.awt.BorderLayout());
+        pnlBtnSistemasContent.setBackground(new java.awt.Color(255, 255, 255));
+        pnlBtnSistemasContent.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
+        pnlBtnSistemasContent.setLayout(new java.awt.BorderLayout());
 
         jLabel37.setFont(new java.awt.Font("Nunito", 1, 18)); // NOI18N
         jLabel37.setText("Sistema");
-        jPanel44.add(jLabel37, java.awt.BorderLayout.PAGE_START);
+        pnlBtnSistemasContent.add(jLabel37, java.awt.BorderLayout.PAGE_START);
 
         jLabel38.setFont(new java.awt.Font("Nunito", 0, 14)); // NOI18N
         jLabel38.setText("<html><p>Respaldos, bases de datos, restaurar sitema.</p><br></html>");
         jLabel38.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 1, 10, 1));
-        jPanel44.add(jLabel38, java.awt.BorderLayout.CENTER);
+        pnlBtnSistemasContent.add(jLabel38, java.awt.BorderLayout.CENTER);
 
-        jPanel91.add(jPanel44, java.awt.BorderLayout.CENTER);
+        pnlBtnSistemas.add(pnlBtnSistemasContent, java.awt.BorderLayout.CENTER);
 
-        pnlContenidoConfiguraciones.add(jPanel91);
+        pnlContenidoConfiguraciones.add(pnlBtnSistemas);
 
-        jPanel92.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel92.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
-        jPanel92.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel92.setLayout(new java.awt.BorderLayout());
+        pnlBtnVentasYFacturas.setBackground(new java.awt.Color(255, 255, 255));
+        pnlBtnVentasYFacturas.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
+        pnlBtnVentasYFacturas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        pnlBtnVentasYFacturas.setLayout(new java.awt.BorderLayout());
 
         jLabel39.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/report.png"))); // NOI18N
-        jPanel92.add(jLabel39, java.awt.BorderLayout.WEST);
+        pnlBtnVentasYFacturas.add(jLabel39, java.awt.BorderLayout.WEST);
 
-        jPanel45.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel45.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
-        jPanel45.setLayout(new java.awt.BorderLayout());
+        pnlBtnVentasYFacturasContent.setBackground(new java.awt.Color(255, 255, 255));
+        pnlBtnVentasYFacturasContent.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
+        pnlBtnVentasYFacturasContent.setLayout(new java.awt.BorderLayout());
 
         jLabel40.setFont(new java.awt.Font("Nunito", 1, 18)); // NOI18N
-        jLabel40.setText("Ventas y Factiuración ");
-        jPanel45.add(jLabel40, java.awt.BorderLayout.PAGE_START);
+        jLabel40.setText("Ventas y Facturación ");
+        pnlBtnVentasYFacturasContent.add(jLabel40, java.awt.BorderLayout.PAGE_START);
 
         jLabel41.setFont(new java.awt.Font("Nunito", 0, 14)); // NOI18N
         jLabel41.setText("<html><p>Impuesto, descuento, formato de ticket.</p><br></html>");
         jLabel41.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 1, 10, 1));
-        jPanel45.add(jLabel41, java.awt.BorderLayout.CENTER);
+        pnlBtnVentasYFacturasContent.add(jLabel41, java.awt.BorderLayout.CENTER);
 
-        jPanel92.add(jPanel45, java.awt.BorderLayout.CENTER);
+        pnlBtnVentasYFacturas.add(pnlBtnVentasYFacturasContent, java.awt.BorderLayout.CENTER);
 
-        pnlContenidoConfiguraciones.add(jPanel92);
+        pnlContenidoConfiguraciones.add(pnlBtnVentasYFacturas);
 
         pnlConfiguracionesAdministradores.add(pnlContenidoConfiguraciones, java.awt.BorderLayout.CENTER);
 
@@ -2832,6 +2836,7 @@ public class SystemViewResponsive extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> ComboBoxTratamientos;
     public javax.swing.JLabel Configuracion;
     private javax.swing.JDialog Configuración;
+    public javax.swing.JDialog DialogReporte;
     public javax.swing.JLabel Insumos;
     public javax.swing.JTabbedPane JTabbedPane;
     public javax.swing.JLabel Paciente;
@@ -2916,7 +2921,6 @@ public class SystemViewResponsive extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
-    private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
@@ -3010,12 +3014,6 @@ public class SystemViewResponsive extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel38;
     private javax.swing.JPanel jPanel39;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel40;
-    private javax.swing.JPanel jPanel41;
-    private javax.swing.JPanel jPanel42;
-    private javax.swing.JPanel jPanel43;
-    private javax.swing.JPanel jPanel44;
-    private javax.swing.JPanel jPanel45;
     private javax.swing.JPanel jPanel46;
     private javax.swing.JPanel jPanel47;
     private javax.swing.JPanel jPanel48;
@@ -3038,7 +3036,6 @@ public class SystemViewResponsive extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel70;
     private javax.swing.JPanel jPanel71;
-    private javax.swing.JPanel jPanel74;
     private javax.swing.JPanel jPanel75;
     private javax.swing.JPanel jPanel76;
     private javax.swing.JPanel jPanel77;
@@ -3053,12 +3050,7 @@ public class SystemViewResponsive extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel85;
     private javax.swing.JPanel jPanel86;
     private javax.swing.JPanel jPanel87;
-    private javax.swing.JPanel jPanel88;
-    private javax.swing.JPanel jPanel89;
     private javax.swing.JPanel jPanel9;
-    private javax.swing.JPanel jPanel90;
-    private javax.swing.JPanel jPanel91;
-    private javax.swing.JPanel jPanel92;
     private javax.swing.JPanel jPanel95;
     private javax.swing.JPanel jPanel96;
     private javax.swing.JPanel jPanel97;
@@ -3104,6 +3096,7 @@ public class SystemViewResponsive extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
+    private javax.swing.JLabel jlabelUsuariosYRoles;
     public javax.swing.JLabel lblDerLogo;
     public javax.swing.JLabel lblIzqLogo;
     public javax.swing.JLabel lblLogoHome;
@@ -3111,6 +3104,18 @@ public class SystemViewResponsive extends javax.swing.JFrame {
     private javax.swing.JPanel pnlBarraTitulo;
     private javax.swing.JPanel pnlBotones;
     private javax.swing.JPanel pnlBotonesTratamiento;
+    public javax.swing.JPanel pnlBtnCitasYAgendas;
+    public javax.swing.JPanel pnlBtnCitasYAgendasContent;
+    public javax.swing.JPanel pnlBtnConfigGeneral;
+    public javax.swing.JPanel pnlBtnConfigGeneralContent;
+    public javax.swing.JPanel pnlBtnReportes;
+    public javax.swing.JPanel pnlBtnReportesContent;
+    public javax.swing.JPanel pnlBtnSistemas;
+    public javax.swing.JPanel pnlBtnSistemasContent;
+    public javax.swing.JPanel pnlBtnUsuariosYRoles;
+    public javax.swing.JPanel pnlBtnUsuariosYRolesContent;
+    public javax.swing.JPanel pnlBtnVentasYFacturas;
+    public javax.swing.JPanel pnlBtnVentasYFacturasContent;
     private javax.swing.JPanel pnlCitas;
     private javax.swing.JPanel pnlConfiguraciones;
     private javax.swing.JPanel pnlConfiguracionesAdministradores;
@@ -3136,7 +3141,6 @@ public class SystemViewResponsive extends javax.swing.JFrame {
     private javax.swing.JPanel pnlUsuarios;
     private javax.swing.JPanel pnlVentas;
     private javax.swing.JPanel pnlVistas;
-    private javax.swing.JDialog reporte;
     public javax.swing.JTable tblCitas;
     public javax.swing.JTable tblInsumos;
     public javax.swing.JTable tblPacientes;
