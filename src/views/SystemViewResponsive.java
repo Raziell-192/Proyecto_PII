@@ -23,6 +23,7 @@ import dao.InsumosDAO;
 import dao.TipoPrecioDAO;
 import dao.TratamientosDAO;
 import dao.VentasDAO;
+import javax.swing.JDialog;
 import models.Tratamiento;
 import models.Venta;
 
@@ -406,6 +407,7 @@ public class SystemViewResponsive extends javax.swing.JFrame {
         jLabel41 = new javax.swing.JLabel();
 
         DialogReporte.setTitle("Reporte");
+        DialogReporte.setModal(true);
 
         jLabel44.setFont(new java.awt.Font("Nunito", 0, 14)); // NOI18N
         jLabel44.setText("<html><p>Configuración de los datos generales de la clínica, el idioma, zona horaría y más.</p><br></html>");
@@ -452,20 +454,9 @@ public class SystemViewResponsive extends javax.swing.JFrame {
 
         jComboBox5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        jTextField5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField5ActionPerformed(evt);
-            }
-        });
-
         jButton2.setBackground(new java.awt.Color(0, 153, 153));
         jButton2.setFont(new java.awt.Font("Rockwell Condensed", 1, 24)); // NOI18N
         jButton2.setText("Buscar");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -544,6 +535,7 @@ public class SystemViewResponsive extends javax.swing.JFrame {
         );
 
         Configuración.setTitle("Configuración");
+        Configuración.setModal(true);
 
         jLabel62.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Configuracion1.png"))); // NOI18N
 
@@ -596,29 +588,14 @@ public class SystemViewResponsive extends javax.swing.JFrame {
 
         jTextField6.setFont(new java.awt.Font("Nunito", 0, 12)); // NOI18N
         jTextField6.setText("Smile Dental");
-        jTextField6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField6ActionPerformed(evt);
-            }
-        });
 
         jTextField7.setFont(new java.awt.Font("Nunito", 0, 12)); // NOI18N
         jTextField7.setText("Av. Principal No.123");
-        jTextField7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField7ActionPerformed(evt);
-            }
-        });
 
         jTextField8.setFont(new java.awt.Font("Nunito", 0, 12)); // NOI18N
         jTextField8.setText("(52)225068394");
 
         jComboBox8.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Español", "Inglés" }));
-        jComboBox8.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox8ActionPerformed(evt);
-            }
-        });
 
         jLabel87.setFont(new java.awt.Font("Nunito", 1, 14)); // NOI18N
         jLabel87.setText("Logo:");
@@ -626,11 +603,6 @@ public class SystemViewResponsive extends javax.swing.JFrame {
         jButton4.setBackground(new java.awt.Color(79, 164, 122));
         jButton4.setFont(new java.awt.Font("Rockwell Condensed", 1, 14)); // NOI18N
         jButton4.setText("Guardar");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
-            }
-        });
 
         jButton6.setBackground(new java.awt.Color(59, 130, 246));
         jButton6.setFont(new java.awt.Font("Rockwell Condensed", 1, 14)); // NOI18N
@@ -2689,30 +2661,6 @@ public class SystemViewResponsive extends javax.swing.JFrame {
         this.setLocation(x - xMouse, y - yMouse);
     }//GEN-LAST:event_pnlBarraTituloMouseDragged
 
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField5ActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField6ActionPerformed
-
-    private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField7ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField7ActionPerformed
-
-    private void jComboBox8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox8ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox8ActionPerformed
-
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
-
     private void colocarImagenLabel(JLabel etiqueta, String ruta) {
         try {
             ImageIcon imagen = new ImageIcon(getClass().getResource(ruta));
@@ -2791,6 +2739,14 @@ public class SystemViewResponsive extends javax.swing.JFrame {
             this.cmbRolUsuario.addItem("Administrador");
             this.cmbRolUsuario.addItem("Cajero");
         }
+    }
+
+    public JDialog getConfiguración() {
+        return Configuración;
+    }
+
+    public JDialog getDialogReporte() {
+        return DialogReporte;
     }
 
     /**

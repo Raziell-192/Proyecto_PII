@@ -4,6 +4,7 @@ import views.SystemViewResponsive;
 import java.awt.Color;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import javax.swing.JDialog;
 
 /**
  *
@@ -38,28 +39,30 @@ public class SettingsControllers implements MouseListener {
 
         if (e.getSource() == views.Usuario) {
             views.JTabbedPane.setSelectedIndex(0);
-
         } else if (e.getSource() == views.Paciente) {
             views.JTabbedPane.setSelectedIndex(1);
-
         } else if (e.getSource() == views.Venta) {
             views.JTabbedPane.setSelectedIndex(2);
-
         } else if (e.getSource() == views.Insumos) {
             views.JTabbedPane.setSelectedIndex(3);
-
         } else if (e.getSource() == views.Tratamiento) {
             views.JTabbedPane.setSelectedIndex(4);
-
         } else if (e.getSource() == views.Clinicos) {
             views.JTabbedPane.setSelectedIndex(5);
-
         } else if (e.getSource() == views.Capturas) {
             views.JTabbedPane.setSelectedIndex(6);
-
         } else if (e.getSource() == views.Configuracion) {
             views.JTabbedPane.setSelectedIndex(7);
-            
+        } else if (e.getSource() == views.pnlBtnConfigGeneral) {
+            JDialog dialog = views.getConfiguración();
+            dialog.pack();
+            dialog.setLocationRelativeTo(views);
+            dialog.setVisible(true);
+        } else if (e.getSource() == views.pnlBtnReportes) {
+            JDialog dialog = views.getDialogReporte();
+            dialog.pack();
+            dialog.setLocationRelativeTo(views);
+            dialog.setVisible(true);
         }
     }
 
