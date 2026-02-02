@@ -7,6 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
 import models.Venta;
+import models.DetalleVentaTratamiento;
+import models.DetalleVentaInsumo;
 
 /**
  * DAO encargado de la gestión de operaciones CRUD relacionadas con las ventas,
@@ -410,5 +412,91 @@ public class VentasDAO {
             JOptionPane.showMessageDialog(null, "Error al registrar detalle de insumo: " + e.getMessage());
             return false;
         }
+    }
+    
+    private void cerrarRecursos() {
+        try {
+            if (rs != null) {
+                rs.close();
+            }
+            if (ps != null) {
+                ps.close();
+            }
+            if (con != null) {
+                con.close();
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+    
+    public List<DetalleVentaTratamiento> obtenerDetallesTratamientosPorVenta(int idVenta) {
+        List<DetalleVentaTratamiento> detalles = new ArrayList<>();
+        String sql = """
+        SELECT dvt.*, t.nombre as nombre_tratamiento 
+        FROM detalle_venta_tratamientos dvt
+        LEFT JOIN tratamientos t ON dvt.id_tratamiento = t.id_tratamiento
+        WHERE dvt.id_venta = ?
+        ORDER BY dvt.id_detalle_venta_tratamiento
+    """;
+
+        try {
+            con = cn.conectar();
+            ps = con.prepareStatement(sql);
+            ps.setInt(1, idVenta);
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
+                DetalleVentaTratamiento detalle = new DetalleVentaTratamiento();
+                detalle.setIdDetalleVentaTratamiento(rs.getInt("id_detalle_venta_tratamiento"));
+                detalle.setIdVenta(rs.getInt("id_venta"));
+                detalle.setIdTratamiento(rs.getInt("id_tratamiento"));
+                detalle.setCantidad(rs.getInt("cantidad"));
+                detalle.setPrecioUnitario(rs.getDouble("precio_unitario"));
+                detalle.setTotal(rs.getDouble("total"));
+                detalle.setNombreTratamiento(rs.getString("nombre_tratamiento"));
+                detalles.add(detalle);
+            }
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error al obtener detalles de tratamientos: " + e.getMessage());
+        } finally {
+            cerrarRecursos();
+        }
+        return detalles;
+    }
+
+    public List<DetalleVentaInsumo> obtenerDetallesInsumosPorVenta(int idVenta) {
+        List<DetalleVentaInsumo> detalles = new ArrayList<>();
+        String sql = """
+        SELECT dvi.*, i.nombre as nombre_insumo 
+        FROM detalle_venta_insumos dvi
+        LEFT JOIN insumos i ON dvi.id_insumo = i.id_insumo
+        WHERE dvi.id_venta = ?
+        ORDER BY dvi.id_detalle_venta_insumo
+    """;
+
+        try {
+            con = cn.conectar();
+            ps = con.prepareStatement(sql);
+            ps.setInt(1, idVenta);
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
+                DetalleVentaInsumo detalle = new DetalleVentaInsumo();
+                detalle.setIdDetalleVentaInsumo(rs.getInt("id_detalle_venta_insumo"));
+                detalle.setIdVenta(rs.getInt("id_venta"));
+                detalle.setIdInsumo(rs.getInt("id_insumo"));
+                detalle.setCantidad(rs.getDouble("cantidad"));
+                detalle.setPrecioUnitario(rs.getDouble("precio_unitario"));
+                detalle.setTotal(rs.getDouble("total"));
+                detalle.setNombreInsumo(rs.getString("nombre_insumo"));
+                detalles.add(detalle);
+            }
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error al obtener detalles de insumos: " + e.getMessage());
+        } finally {
+            cerrarRecursos();
+        }
+        return detalles;
     }
 }

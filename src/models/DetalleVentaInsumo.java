@@ -14,6 +14,7 @@ public class DetalleVentaInsumo {
     private double cantidad;
     private double precioUnitario;
     private double total;
+    private String nombreInsumo;
 
     public DetalleVentaInsumo() {
     }
@@ -73,5 +74,13 @@ public class DetalleVentaInsumo {
 
     public void setTotal(double total) {
         this.total = total;
+    }
+    
+    public String getNombreInsumo() {
+        return nombreInsumo;
+    }
+
+    public void setNombreInsumo(String nombreInsumo) {
+        this.nombreInsumo = nombreInsumo;
     }
 }

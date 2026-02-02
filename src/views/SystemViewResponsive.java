@@ -29,6 +29,15 @@ import javax.swing.JDialog;
 import models.Cita;
 import models.Tratamiento;
 import models.Venta;
+import models.DetalleVentaTratamiento;
+import models.DetalleVentaInsumo;
+import com.itextpdf.text.Document;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.PdfWriter;
+import java.io.FileOutputStream;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -2717,6 +2726,9 @@ public class SystemViewResponsive extends javax.swing.JFrame {
         PacienteDAO pacienteDAOCitas = new PacienteDAO(); 
         TratamientosDAO tratamientoDAOCitas = new TratamientosDAO(); 
         new CitasController(citaModel, citaDAO, pacienteDAOCitas, tratamientoDAOCitas, this);
+        
+        // Configurar listener para el botón de generar ticket
+        btnGenerarTicket.addActionListener(e -> generarTicketPDFSimple());
     }
 
     private void configurarAccesosPorRol() {
@@ -2758,7 +2770,131 @@ public class SystemViewResponsive extends javax.swing.JFrame {
     public JDialog getDialogReporte() {
         return DialogReporte;
     }
+    
+    private void generarTicketPDFSimple() {
+        try {
+            // 1. Verificar si hay una venta seleccionada
+            int filaSeleccionada = tblVentas.getSelectedRow();
+            if (filaSeleccionada == -1) {
+                JOptionPane.showMessageDialog(this,
+                        "Seleccione una venta de la tabla primero",
+                        "Atención",
+                        JOptionPane.WARNING_MESSAGE);
+                return;
+            }
 
+            // 2. Obtener ID de la venta seleccionada
+            int idVenta = Integer.parseInt(tblVentas.getValueAt(filaSeleccionada, 0).toString());
+
+            // 3. Obtener datos de la venta
+            VentasDAO ventaDAO = new VentasDAO();
+            Venta venta = ventaDAO.obtenerVentaPorId(idVenta);
+
+            if (venta == null) {
+                JOptionPane.showMessageDialog(this, "Venta no encontrada", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+
+            // 4. Obtener datos del paciente
+            PacienteDAO pacienteDAO = new PacienteDAO();
+            Paciente paciente = pacienteDAO.obtenerPacientePorId(venta.getIdPaciente());
+
+            // 5. Crear PDF
+            crearPDFBasico(venta, paciente);
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this,
+                    "Error: " + e.getMessage(),
+                    "Error",
+                    JOptionPane.ERROR_MESSAGE);
+        }
+    }
+
+    private void crearPDFBasico(Venta venta, Paciente paciente) {
+        Document documento = null;
+
+        try {
+            // 1. Crear nombre del archivo
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd_HHmmss");
+            String timestamp = sdf.format(new Date());
+            String nombreArchivo = "Ticket_" + venta.getNumeroVenta() + ".pdf";
+            String ruta = System.getProperty("user.home") + "/Desktop/" + nombreArchivo;
+
+            // 2. Crear documento PDF
+            documento = new Document();
+            PdfWriter.getInstance(documento, new FileOutputStream(ruta));
+            documento.open();
+
+            // 3. Formatear fecha
+            SimpleDateFormat formatoFecha = new SimpleDateFormat("dd/MM/yyyy HH:mm");
+            String fecha = venta.getFechaVenta() != null
+                    ? formatoFecha.format(venta.getFechaVenta())
+                    : formatoFecha.format(new Date());
+
+            // 4. Escribir contenido (formato de ticket básico)
+            documento.add(new Paragraph("===================================="));
+            documento.add(new Paragraph("        CLÍNICA DENTAL UNSISMILE"));
+            documento.add(new Paragraph("===================================="));
+            documento.add(new Paragraph("Av. Principal No. 123"));
+            documento.add(new Paragraph("Tel: (52) 2250-68394"));
+            documento.add(new Paragraph(" ")); 
+
+            documento.add(new Paragraph("TICKET DE VENTA"));
+            documento.add(new Paragraph("Número: " + venta.getNumeroVenta()));
+            documento.add(new Paragraph("Fecha: " + fecha));
+            documento.add(new Paragraph(" "));
+
+            if (paciente != null) {
+                documento.add(new Paragraph("PACIENTE:"));
+                documento.add(new Paragraph("Nombre: " + paciente.getNombres() + " " + paciente.getApellidos()));
+                documento.add(new Paragraph("Teléfono: " + paciente.getTelefono()));
+                if (paciente.getTipoAfiliacion() != null) {
+                    documento.add(new Paragraph("Afiliación: " + paciente.getTipoAfiliacion()));
+                }
+            } else {
+                documento.add(new Paragraph("Paciente: No especificado"));
+            }
+
+            documento.add(new Paragraph(" "));
+            documento.add(new Paragraph("------------------------------------"));
+
+            documento.add(new Paragraph("TRATAMIENTOS/INSUMOS:"));
+
+            documento.add(new Paragraph(" "));
+            documento.add(new Paragraph("------------------------------------"));
+
+            documento.add(new Paragraph("SUBTOTAL: $" + String.format("%.2f", venta.getTotal())));
+            double iva = venta.getTotal() * 0.16;
+            documento.add(new Paragraph("IVA (16%): $" + String.format("%.2f", iva)));
+            double totalFinal = venta.getTotal() + iva;
+            documento.add(new Paragraph("TOTAL: $" + String.format("%.2f", totalFinal)));
+
+            documento.add(new Paragraph(" "));
+            documento.add(new Paragraph("===================================="));
+
+            documento.add(new Paragraph("¡Gracias por su preferencia!"));
+            documento.add(new Paragraph("Este es un comprobante de venta"));
+            documento.add(new Paragraph(" "));
+            documento.add(new Paragraph("Atendido por: " + (usuario != null ? usuario.getNombre() : "Sistema")));
+
+            documento.close();
+
+            JOptionPane.showMessageDialog(this,
+                    "Ticket generado exitosamente\n"
+                    + "Archivo: " + nombreArchivo + "\n"
+                    + "Guardado en el Escritorio\n\n"
+                    + "Total: $" + String.format("%.2f", totalFinal),
+                    "Ticket Listo",
+                    JOptionPane.INFORMATION_MESSAGE);
+
+        } catch (Exception e) {
+            if (documento != null && documento.isOpen()) {
+                documento.close();
+            }
+            throw new RuntimeException("Error al crear PDF: " + e.getMessage(), e);
+        }
+    }
+    
     /**
      * @param args the command line arguments
      */

@@ -14,6 +14,7 @@ public class DetalleVentaTratamiento {
     private int cantidad;
     private double precioUnitario;
     private double total;
+    private String nombreTratamiento;
 
     public DetalleVentaTratamiento() {
     }
@@ -73,5 +74,13 @@ public class DetalleVentaTratamiento {
 
     public void setTotal(double total) {
         this.total = total;
+    }
+    
+    public String getNombreTratamiento() {
+        return nombreTratamiento;
+    }
+
+    public void setNombreTratamiento(String nombreTratamiento) {
+        this.nombreTratamiento = nombreTratamiento;
     }
 }
