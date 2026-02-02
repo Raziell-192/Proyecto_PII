@@ -1,5 +1,6 @@
 package views;
 
+import controllers.CitasController;
 import controllers.PacienteController;
 import controllers.InsumosController;
 import controllers.SettingsControllers;
@@ -9,6 +10,7 @@ import dao.UsuariosDAO;
 import controllers.UsuariosController;
 import controllers.VentasController;
 import dao.CategoriasTratamientoDAO;
+import dao.CitaDAO;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Image;
@@ -24,6 +26,7 @@ import dao.TipoPrecioDAO;
 import dao.TratamientosDAO;
 import dao.VentasDAO;
 import javax.swing.JDialog;
+import models.Cita;
 import models.Tratamiento;
 import models.Venta;
 
@@ -2707,6 +2710,13 @@ public class SystemViewResponsive extends javax.swing.JFrame {
         PacienteDAO pacienteDAO = new PacienteDAO();
         TipoPrecioDAO tipoPrecioDAO = new TipoPrecioDAO();
         new VentasController(ventaModel, ventaDAO, pacienteDAO, tipoPrecioDAO, this);
+        
+        // Citas
+        Cita citaModel = new Cita();
+        CitaDAO citaDAO = new CitaDAO();
+        PacienteDAO pacienteDAOCitas = new PacienteDAO(); 
+        TratamientosDAO tratamientoDAOCitas = new TratamientosDAO(); 
+        new CitasController(citaModel, citaDAO, pacienteDAOCitas, tratamientoDAOCitas, this);
     }
 
     private void configurarAccesosPorRol() {
@@ -2788,8 +2798,8 @@ public class SystemViewResponsive extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JLabel Capturas;
     public javax.swing.JLabel Clinicos;
-    private javax.swing.JComboBox<String> ComboBoxPacientes;
-    private javax.swing.JComboBox<String> ComboBoxTratamientos;
+    public javax.swing.JComboBox<String> ComboBoxPacientes;
+    public javax.swing.JComboBox<String> ComboBoxTratamientos;
     public javax.swing.JLabel Configuracion;
     private javax.swing.JDialog Configuración;
     public javax.swing.JDialog DialogReporte;
@@ -2802,13 +2812,13 @@ public class SystemViewResponsive extends javax.swing.JFrame {
     public javax.swing.JButton btnActualizarUsuario;
     public javax.swing.JButton btnBuscarPaciente;
     public javax.swing.JButton btnBuscarUsuario;
-    private javax.swing.JButton btnCancelarCita;
+    public javax.swing.JButton btnCancelarCita;
     public javax.swing.JButton btnCancelarInsumo;
     public javax.swing.JButton btnCancelarTratamiento;
     public javax.swing.JButton btnCancelarVenta;
     public javax.swing.JButton btnEditarPaciente;
     public javax.swing.JButton btnEditarUsuario;
-    private javax.swing.JButton btnEliminarCita;
+    public javax.swing.JButton btnEliminarCita;
     public javax.swing.JButton btnEliminarInsumo;
     public javax.swing.JButton btnEliminarPaciente;
     public javax.swing.JButton btnEliminarTratamiento;
@@ -2823,13 +2833,13 @@ public class SystemViewResponsive extends javax.swing.JFrame {
     private javax.swing.JLabel btnMaximizeTxt;
     private javax.swing.JPanel btnMinimize;
     private javax.swing.JLabel btnMinimizeTxt;
-    private javax.swing.JButton btnModificarCita;
+    public javax.swing.JButton btnModificarCita;
     public javax.swing.JButton btnModificarInsumo;
     public javax.swing.JButton btnModificarTratamiento;
     public javax.swing.JButton btnModificarVenta;
     public javax.swing.JButton btnMostrarPaciente;
     public javax.swing.JButton btnMostrarUsuario;
-    private javax.swing.JButton btnRegistrarCita;
+    public javax.swing.JButton btnRegistrarCita;
     public javax.swing.JButton btnRegistrarInsumo;
     public javax.swing.JButton btnRegistrarPaciente;
     public javax.swing.JButton btnRegistrarTratamiento;
@@ -2838,7 +2848,7 @@ public class SystemViewResponsive extends javax.swing.JFrame {
     public javax.swing.JButton btnSalir;
     public javax.swing.JComboBox<String> cmbCategoriaTratamiento;
     public javax.swing.JComboBox<String> cmbRolUsuario;
-    private javax.swing.JButton jButton1;
+    public javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -3032,7 +3042,7 @@ public class SystemViewResponsive extends javax.swing.JFrame {
     public javax.swing.JTextField jTextField12;
     public javax.swing.JTextField jTextField13;
     public javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
+    public javax.swing.JTextField jTextField3;
     public javax.swing.JTextField jTextField38;
     public javax.swing.JTextField jTextField39;
     public javax.swing.JTextField jTextField4;
